@@ -1,0 +1,73 @@
+docker image build  --tag jonesyeh/mssql-2017-dev-sqlfile .
+docker container run -d --name mssql-2017-dev-sbpdb -p 1433 -v c:\database\sbp:c:\mssql -e sa_password=p@ssw0rd -e ACCEPT_EULA=Y  -e sql_filename=restore_sbp.sql  jonesyeh/mssql-2017-dev-sqlfile 
+docker container inspect mssql-2017-dev-sbpdb
+docker container logs mssql-2017-dev-sbpdb
+docker container stop mssql-2017-dev-sbpdb
+docker container rm mssql-2017-dev-sbpdb
+docker image rm jonesyeh/mssql-2017-dev-sqlfile
+docker container ls 
+docker container ls --all
+docker exec -it mssql-2017-dev-sbpdb cmd
+docker container inspect mssql-2017-dev-sbpdb
+docker container start mssql-2017-dev-sbpdb
+docker exec -it mssql-2017-dev-sbpdb powershell
+
+
+docker container run -d --name mssql-2017-dev-sbpdb -p 1433 -v c:\database\sbp:c:\mssql -e sa_password=p@ssw0rd -e ACCEPT_EULA=Y -e SQLCOLLATION=Chinese_Taiwan_Stroke_CI_AS -e sql_filename=attach_sbp.sql  -it -m 2GB jonesyeh/mssql-2017-dev-sql 
+
+
+NT Service\SQLTELEMETRY
+
+Invoke-Sqlcmd -InputFile C:\sql\restore_sbp.sql
+
+
+
+docker container run -d --name mssql-2017-dev-test -p 1433 -v c:\database\sbp:c:\mssql -e sa_password=p@ssw0rd -e ACCEPT_EULA=Y  -e sql_filename=CREATE_DB.sql jonesyeh/mssql-2017-dev-sqlfile 
+
+
+docker container run -d --name mssql-2017-dev-test -p 1433 -v c:\database\sbp:c:\mssql -e sa_password=p@ssw0rd -e ACCEPT_EULA=Y  -e sql_filename=restore_sbp.sql jonesyeh/mssql-2017-dev-sqlfile
+
+docker container run -d --name mssql-2017-dev-sbp -p 1433 -v c:\database\sbp:c:\mssql -e sa_password=p@ssw0rd -e ACCEPT_EULA=Y  jonesyeh/mssql-2017-dev-sbp 
+
+docker container inspect mssql-2017-dev-test
+
+
+docker image push jonesyeh/mssql-2017-dev-sqlfile
+
+
+docker image build --build-arg ARG_SQL_FILE=sbp.sql --tag jonesyeh/mssql-2017-dev-sbp .
+
+
+docker image build --build-arg ARG_SQL_FILE=restore_sbp.sql --tag jonesyeh/mssql-2017-dev-test .
+docker container stop mssql-2017-dev-sbp
+docker container rm mssql-2017-dev-sbpdb
+docker image rm jonesyeh/mssql-2017-dev-sbp
+docker image rm jonesyeh/mssql-2017-dev-sqlfile
+docker image rm jonesyeh/mssql-2017-dev-test
+
+docker container rm mssql-2017-dev-sqlfile
+
+
+docker container run -d --name mssql-2017-dev-test -p 1433 -v c:\database\sbp:c:\mssql -e sa_password=p@ssw0rd -e ACCEPT_EULA=Y  jonesyeh/mssql-2017-dev-sqlfile 
+
+
+docker container run -d --name mssql-2017-dev-test -p 1433 -v c:\database\sbp:c:\mssql -e sa_password=p@ssw0rd -e ACCEPT_EULA=Y  jonesyeh/mssql-2017-dev-sqlfile 
+
+docker container run -d --name mssql-2017-dev-test -p 1433  -e sa_password=p@ssw0rd -e ACCEPT_EULA=Y  jonesyeh/mssql-2017-dev-sqlfile 
+docker container run -d --name mssql-2017-dev-test -p 1433 -v c:\database\sbp:c:\mssql  -e sa_password=p@ssw0rd -e ACCEPT_EULA=Y  jonesyeh/mssql-2017-dev-test
+
+docker exec -it mssql-2017-dev-test cmd
+docker image build  --tag jonesyeh/mssql-2017-dev-sqlfile .
+docker container stop mssql-2017-dev-sbp
+docker container rm mssql-2017-dev-sbp
+docker image rm jonesyeh/mssql-2017-dev-sbp
+docker image rm jonesyeh/mssql-2017-dev-sqlfile
+docker image push jonesyeh/mssql-2017-dev-sqlfile
+docker image push jonesyeh/mssql-2017-dev-sbp
+docker container inspect mssql-2017-dev-sbp
+docker container logs mssql-2017-dev-sbp
+
+docker container run -d --net mynet --ip 172.18.0.23 --hostname sbpdb --name sbpdb -p 1433 -v c:\database\sbp:c:\mssql -e sa_password=p@ssw0rd -e ACCEPT_EULA=Y  jonesyeh/mssql-2017-dev-sbp
+
+
+docker container start sbpdb

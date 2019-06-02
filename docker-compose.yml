@@ -1,0 +1,38 @@
+version: '3.3'
+
+services:
+  
+  sbpdb:
+    image: jonesyeh/mssql-2017-dev-sqlfile
+    env_file:
+      - db.env
+    volumes:
+      - c:\database\sbp:c:\mssql
+    hostname: sbpdb
+    networks:
+      nd-net:
+        ipv4_address: 172.18.0.23
+      
+  sbpwebapi:
+    image: jonesyeh/sbpwebapi
+    env_file:
+      - webapi.env
+    volumes:
+      - c:\lic:c:\lic
+      - c:\log:c:\log
+    hostname: sbpwebapi
+    networks:
+      nd-net:
+        ipv4_address: 172.18.0.22
+      
+  sbpweb:
+    image: jonesyeh/sbpweb
+    hostname: sbpweb
+    networks:
+      nd-net:
+        ipv4_address: 172.18.0.21
+
+networks:
+  nd-net:
+        external:
+            name: mynet             

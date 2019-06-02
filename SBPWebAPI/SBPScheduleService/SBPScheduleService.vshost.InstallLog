@@ -1,0 +1,26 @@
+﻿正在安裝組件 'D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.InstallLog
+   assemblypath = D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe
+在 D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe 組件中找不到具有 RunInstallerAttribute.Yes 屬性的公用安裝程式。
+正在認可組件 'D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.InstallLog
+   assemblypath = D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe
+在 D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe 組件中找不到具有 RunInstallerAttribute.Yes 屬性的公用安裝程式。
+由於找不到安裝程式，所以必須移除 InstallState 檔案。
+正在安裝組件 'D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.InstallLog
+   assemblypath = D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe
+在 D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe 組件中找不到具有 RunInstallerAttribute.Yes 屬性的公用安裝程式。
+正在認可組件 'D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.InstallLog
+   assemblypath = D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe
+在 D:\OneDrive\MyProgram\SBPLIB\SBPScheduleService\bin\Release\SBPScheduleService.vshost.exe 組件中找不到具有 RunInstallerAttribute.Yes 屬性的公用安裝程式。
+由於找不到安裝程式，所以必須移除 InstallState 檔案。

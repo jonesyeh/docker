@@ -44,7 +44,7 @@ $checkClient = Get-ChildItem 'HKLM:\Software\Microsoft\*' -ea SilentlyContinue |
 if ($checkClient.name.Split('\') -eq 'Microsoft SQL Server Native Client 11.0')  {   
     Write-Host 'SQL Native Client 11.0 has been already installed'   $client11 = $True   
 } else {      
-    Write-Host 'Version 11 not present'      
+    Write-Host 'SQL Native Client 11.0 not present'      
     $client11 = $false    
 }
 if ($client11 -eq $false){ 

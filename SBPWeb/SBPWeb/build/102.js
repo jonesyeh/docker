@@ -1,6 +1,6 @@
 webpackJsonp([102],{
 
-/***/ 1017:
+/***/ 1018:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ webpackJsonp([102],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileCopyListResponse__ = __webpack_require__(1104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileCopyResponse__ = __webpack_require__(1105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileCopyListResponse__ = __webpack_require__(1106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileCopyResponse__ = __webpack_require__(1107);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__file_services_file_services__ = __webpack_require__(127);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -106,12 +106,12 @@ var FileCopyServicesProvider = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1104:
+/***/ 1106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileCopyListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileCopyViewModel__ = __webpack_require__(946);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileCopyViewModel__ = __webpack_require__(947);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(5);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -197,6 +197,20 @@ var FileCopyListResponse = /** @class */ (function (_super) {
                 else
                     item.date_filter_color = "light";
                 item.copy_to_filename = data.copy_to_filename;
+                item.file_func_proc_key = data.file_func_proc_key;
+                item.file_func_proc = data.file_func_proc;
+                item.is_pwd = data.is_pwd;
+                if (item.is_pwd === true) {
+                    item.pwd_color = "danger";
+                }
+                else
+                    item.pwd_color = "light";
+                item.loop_pwd_cnt = data.loop_pwd_cnt;
+                if (item.loop_pwd_cnt > 0) {
+                    item.loop_pwd_color = "danger";
+                }
+                else
+                    item.loop_pwd_color = "light";
                 _this.Model.push(item);
             }) || null;
         }
@@ -209,13 +223,13 @@ var FileCopyListResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1105:
+/***/ 1107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileCopyResponse; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileCopyViewModel__ = __webpack_require__(946);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileCopyViewModel__ = __webpack_require__(947);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -290,6 +304,21 @@ var FileCopyResponse = /** @class */ (function (_super) {
             else
                 _this.Model.date_filter_color = "light";
             _this.Model.copy_to_filename = obj.Model.copy_to_filename;
+            _this.Model.file_func_proc_key =
+                (obj && obj.Model.file_func_proc_key) || null;
+            _this.Model.file_func_proc = (obj && obj.Model.file_func_proc) || null;
+            _this.Model.is_pwd = obj.Model.is_pwd;
+            if (_this.Model.is_pwd === true) {
+                _this.Model.pwd_color = "danger";
+            }
+            else
+                _this.Model.pwd_color = "light";
+            _this.Model.loop_pwd_cnt = obj.Model.loop_pwd_cnt;
+            if (_this.Model.loop_pwd_cnt > 0) {
+                _this.Model.loop_pwd_color = "danger";
+            }
+            else
+                _this.Model.loop_pwd_color = "light";
         }
         return _this;
     }
@@ -300,7 +329,7 @@ var FileCopyResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1357:
+/***/ 1360:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -308,10 +337,10 @@ var FileCopyResponse = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_global__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_services_auth_services__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_file_copy_services_file_copy_services__ = __webpack_require__(1017);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_file_copy_services_file_copy_services__ = __webpack_require__(1018);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_String__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Model_ViewModel_FileCopyViewModel__ = __webpack_require__(946);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Model_ViewModel_FileCopyViewModel__ = __webpack_require__(947);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_table_services_table_services__ = __webpack_require__(265);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_run_job_services_run_job_services__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Model_MyAppSharedSettings__ = __webpack_require__(47);
@@ -368,7 +397,7 @@ var FileCopyPage = /** @class */ (function () {
         this.totalPages = 1;
         this.totalRows = 0;
         this.keyword = "";
-        this.title = "檔案複製後備份";
+        this.title = "檔案進階功能";
         this.exec_file_seq = 0;
         this.show_select = false;
         this.File_page = "FileCopyTablePage";
@@ -514,6 +543,8 @@ var FileCopyPage = /** @class */ (function () {
             item.can_rerun = true;
             item.recursive = false;
             item.copy_to_filename = "";
+            item.file_func_proc_key = "060|COPY";
+            item.file_func_proc = "複製";
         }
         else {
             this.mode = "PUT";
@@ -538,7 +569,7 @@ var FileCopyPage = /** @class */ (function () {
                     if (data.DidError === false) {
                         _this.LoadData(true);
                         _this.global.dismissLoading();
-                        _this.global.showPopup("檔案匯出", data.Message);
+                        _this.global.showPopup("檔案進階功能", data.Message);
                     }
                     else
                         _this.global.showError(data.ErrorMessage);
@@ -626,7 +657,7 @@ var FileCopyPage = /** @class */ (function () {
     };
     FileCopyPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: "page-file-copy",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\file-copy\file-copy.html"*/'<ion-header>\n  <headerComponent [title]="title" [permission_id]="\'CanBatch\'" [show_table_select]=true></headerComponent>\n</ion-header>\n\n<ion-content (window:resize)="onResize($event)">\n  <ion-row>\n    <ion-col>\n\n      <ion-searchbar [ngClass]="[\'search\']" (keyup.enter)="LoadData(true)" placeholder="搜尋關鍵字(轉檔群組包含、檔案關鍵字包含、備註包含)" [(ngModel)]="keyword">\n      </ion-searchbar>\n    </ion-col>\n  </ion-row>\n  <ion-grid *ngIf="subject>\'\'">\n    <ion-row>\n      <ion-col col-12 col-sm-2 col-md-3>\n      </ion-col>\n      <ion-col col-12 col-sm-8 col-md-6>\n\n        <ion-grid [ngClass]="[\'subject\']">\n          <ion-row>\n            <ion-col>\n\n              <b>{{subject}}</b>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n      </ion-col>\n      <ion-col col-12 col-sm-2 col-md-3>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-grid *ngIf="conf.mobile_mode==false && selectedItem!=null" [ngClass]="\'bordered\'">\n    <ion-row>\n      <ion-col>\n        <button small title="編輯" ion-button color="light" icon-left (click)="ShowModal(selectedItem,\'e\')">\n          <ion-icon name="create"></ion-icon>\n        </button>\n        <button *ngIf="CanEditBatch==true" small title="複製" ion-button color="light" icon-left (click)="ShowModal(selectedItem,\'c\')">\n          <ion-icon name="copy"></ion-icon>\n        </button>\n        <button *ngIf="CanEditBatch==true" small title="刪除" ion-button color="dark" icon-left (click)="Delete(selectedItem)">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n        <button small title="加入" *ngIf=" show_select==true" ion-button color="danger" icon-left (click)="add(selectedItem)">\n          <ion-icon name="checkmark-circle"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <button small title="日期篩選" ion-button [color]="selectedItem.date_filter_color" icon-left (click)="openNavPage(selectedItem,\'FileDateFilterAddEditPage\')">\n          <ion-icon name="clock"></ion-icon>\n        </button>\n        <button small title="回圈" ion-button color="light" icon-left (click)="openNavPage(selectedItem,\'FileLoopPage\')">\n          <ion-icon name="list-box"></ion-icon>\n        </button>\n\n        <button small title="執行後SQL語法" ion-button [color]="selectedItem.processed_sql_color" icon-left (click)="openNavPage(selectedItem,\'FileProcessedSqlAddEditPage\')">\n          <ion-icon name="barcode"></ion-icon>\n        </button>\n        <button small title="執行後程式" ion-button [color]="selectedItem.processed_exec_group_color" icon-left (click)="openNavPage(selectedItem,\'FileProcessedExecGroupAddEditPage\')">\n          <ion-icon name="apps"></ion-icon>\n        </button>\n        <button *ngIf="CanEditBatch==true" small title="手動執行" ion-button color="dark" icon-left (click)="openNavRunPage(selectedItem,7)">\n          <ion-icon name="arrow-dropright-circle"></ion-icon>\n        </button>\n        <button small title="執行檔案紀錄" ion-button color="light" icon-left (click)="openNavFileLogPage(selectedItem)">\n          <ion-icon name="logo-twitch"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-2>\n        <button small title="產生Insert SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(selectedItem,\'insert\')">\n          Ins\n        </button>\n        <button small title="產生Update SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(selectedItem,\'update\')">\n          Upd\n        </button>\n\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ngx-datatable NgxResizeWatcher class="bootstrap" *ngIf="totalRows>0 && conf.mobile_mode==false" [selected]="selected" [selectionType]="\'single\'"\n    (select)=\'onRowSelect($event)\'   [rows]="data_list" [columnMode]="\'flex\'" [headerHeight]="40" [rowHeight]="\'auto\'" [footerHeight]="40"\n    [reorderable]=false [limit]="limit" [count]="totalRows" [offset]="offset" (page)=\'setPage($event)\'>\n\n    <ngx-datatable-column prop="exec_file_seq" name="轉檔序號" [flexGrow]="1" [frozenLeft]="true">\n    </ngx-datatable-column>\n    <ngx-datatable-column prop="exec_group" name="轉檔群組" [flexGrow]="1"  >\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="file_keyword" name="檔案搜尋關鍵字" [flexGrow]="2" >\n        </ngx-datatable-column>\n        <ngx-datatable-column prop="copy_to_filename" name="複製後檔名" [flexGrow]="2" >\n        </ngx-datatable-column>\n        <ngx-datatable-column prop="file_min_length" name="檔名最小長度" [flexGrow]="1" *ngIf="innerWidth>=1024" >\n          </ngx-datatable-column>\n          <ngx-datatable-column prop="file_max_length" name="檔名最大長度" [flexGrow]="1" *ngIf="innerWidth>=1024" >\n            </ngx-datatable-column>\n\n            <ngx-datatable-column prop="file_proc" name="檔案處理方式" [flexGrow]="2">\n            </ngx-datatable-column>\n            <ngx-datatable-column prop="exec_seq" name="執行順序" [flexGrow]="1">\n            </ngx-datatable-column>\n            <ngx-datatable-column prop="can_rerun" name="重複執行" [flexGrow]="1">\n            </ngx-datatable-column>\n            <ngx-datatable-column prop="is_active_desc" name="啟用" [flexGrow]="1">\n              <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>\n                <div [ngClass]="row[\'is_active_color\']">{{value}}</div>\n              </ng-template>\n            </ngx-datatable-column>\n            <ngx-datatable-column prop="note" name="備註" [flexGrow]="2">\n            </ngx-datatable-column>\n\n  </ngx-datatable>\n  <div *ngIf="totalRows>0 && conf.mobile_mode==true">\n    <ion-row>\n\n      <ion-col col-lg-4 col-md-6 col-sm-6 col-12 *ngFor="let item of data_list">\n\n        <ion-grid [ngClass]="\'bordered\'">\n          <ion-row>\n            <ion-col>\n              <button small title="編輯" ion-button color="light" icon-left (click)="ShowModal(item,\'e\')">\n                <ion-icon name="create"></ion-icon>\n              </button>\n              <button *ngIf="CanEditBatch==true" small title="複製" ion-button color="light" icon-left (click)="ShowModal(item,\'c\')">\n                <ion-icon name="copy"></ion-icon>\n              </button>\n              <button *ngIf="CanEditBatch==true" small title="刪除" ion-button color="dark" icon-left (click)="Delete(item)">\n                <ion-icon name="trash"></ion-icon>\n              </button>\n              <button small title="加入" *ngIf=" show_select==true" ion-button color="danger" icon-left (click)="add(item)">\n                <ion-icon name="checkmark-circle"></ion-icon>\n              </button>\n\n            </ion-col>\n          </ion-row>\n          <ion-row *ngIf="show_select==false" >\n            <ion-col>\n                <button small title="日期篩選" ion-button [color]="item.date_filter_color" icon-left (click)="openNavPage(item,\'FileDateFilterAddEditPage\')">\n                    <ion-icon name="clock"></ion-icon>\n                  </button>\n                  <button small title="回圈"  ion-button color="light" icon-left (click)="openNavPage(item,\'FileLoopPage\')">\n                      <ion-icon name="list-box"></ion-icon>\n                    </button>\n\n                  <button small title="執行後SQL語法" ion-button [color]="item.processed_sql_color" icon-left (click)="openNavPage(item,\'FileProcessedSqlAddEditPage\')">\n                    <ion-icon name="barcode"></ion-icon>\n                  </button>\n                  <button small title="執行後程式" ion-button [color]="item.processed_exec_group_color" icon-left (click)="openNavPage(item,\'FileProcessedExecGroupAddEditPage\')">\n                    <ion-icon name="apps"></ion-icon>\n                  </button>\n            </ion-col>\n          </ion-row>\n          <ion-row *ngIf="show_select==false" >\n            <ion-col>\n              <button small title="產生Insert SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(item,\'insert\')">\n                Ins\n              </button>\n              <button small title="產生Update SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(item,\'update\')">\n                Upd\n              </button>\n              <button *ngIf="CanEditBatch==true" small title="手動執行" ion-button color="dark" icon-left (click)="openNavRunPage(item,7)">\n                <ion-icon name="arrow-dropright-circle"></ion-icon>\n              </button>\n              <button small title="執行檔案紀錄" ion-button color="light" icon-left (click)="openNavFileLogPage(item)">\n                <ion-icon name="logo-twitch"></ion-icon>\n              </button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-8>\n              <div title="轉檔群組">{{item.exec_group}}</div>\n            </ion-col>\n            <ion-col col-4>\n              <div text-right>\n                {{item.exec_file_seq}}\n              </div>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-8>\n              {{item.file_keyword}}\n            </ion-col>\n            <ion-col col-4>\n              <div [ngClass]="item.is_active_color_right">{{item.is_active_desc}}</div>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-8>\n              {{item.note}}\n            </ion-col>\n            <ion-col col-4>\n              <div text-right>\n                {{item.exec_seq}}\n              </div>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n      </ion-col>\n\n    </ion-row>\n  </div>\n  <ion-infinite-scroll *ngIf="pageNumber < totalPages && conf.mobile_mode==true" (ionInfinite)="$event.waitFor(doInfinite())">\n    <ion-infinite-scroll-content loadingSpinner="bubbles">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="重新整理" ion-button color="dark" icon-left (click)="LoadData(true)">\n            <ion-checkbox name="order_type" title="遞增/遞減" color="dark" [(ngModel)]="order_type" (ionChange)="LoadData(true)"></ion-checkbox>\n            <ion-icon name="refresh"></ion-icon>\n          </button>\n          <button *ngIf="CanEditBatch==true" small title="新增" ion-button color="dark" icon-left (click)="ShowModal(null,\'n\')">\n            <ion-icon name="add"></ion-icon>\n          </button>\n          <button small title="取消" *ngIf="show_select==true" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n\n        </div>\n        <StatusComponent [pageNumber]="pageNumber" [totalPages]="totalPages" [totalRows]="totalRows"></StatusComponent>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\file-copy\file-copy.html"*/
+            selector: "page-file-copy",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\file-copy\file-copy.html"*/'<ion-header>\n  <headerComponent [title]="title" [permission_id]="\'CanBatch\'" [show_table_select]=true></headerComponent>\n</ion-header>\n\n<ion-content (window:resize)="onResize($event)">\n  <ion-row>\n    <ion-col>\n\n      <ion-searchbar [ngClass]="[\'search\']" (keyup.enter)="LoadData(true)" placeholder="搜尋關鍵字(轉檔群組包含、檔案關鍵字包含、備註包含)" [(ngModel)]="keyword">\n      </ion-searchbar>\n    </ion-col>\n  </ion-row>\n  <ion-grid *ngIf="subject>\'\'">\n    <ion-row>\n      <ion-col col-12 col-sm-2 col-md-3>\n      </ion-col>\n      <ion-col col-12 col-sm-8 col-md-6>\n\n        <ion-grid [ngClass]="[\'subject\']">\n          <ion-row>\n            <ion-col>\n\n              <b>{{subject}}</b>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n      </ion-col>\n      <ion-col col-12 col-sm-2 col-md-3>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-grid *ngIf="conf.mobile_mode==false && selectedItem!=null" [ngClass]="\'bordered\'">\n    <ion-row>\n      <ion-col col-3>\n        <button small title="編輯" ion-button color="light" icon-left (click)="ShowModal(selectedItem,\'e\')">\n          <ion-icon name="create"></ion-icon>\n        </button>\n        <button *ngIf="CanEditBatch==true" small title="複製" ion-button color="light" icon-left (click)="ShowModal(selectedItem,\'c\')">\n          <ion-icon name="copy"></ion-icon>\n        </button>\n        <button *ngIf="CanEditBatch==true" small title="刪除" ion-button color="dark" icon-left (click)="Delete(selectedItem)">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n        <button small title="加入" *ngIf=" show_select==true" ion-button color="danger" icon-left (click)="add(selectedItem)">\n          <ion-icon name="checkmark-circle"></ion-icon>\n        </button>\n      </ion-col>\n      <ion-col col-6>\n        <button small title="日期篩選" ion-button [color]="selectedItem.date_filter_color" icon-left (click)="openNavPage(selectedItem,\'FileDateFilterAddEditPage\')">\n          <ion-icon name="clock"></ion-icon>\n        </button>\n        <button small title="回圈" ion-button color="light" icon-left (click)="openNavPage(selectedItem,\'FileLoopPage\')">\n          <ion-icon name="list-box"></ion-icon>\n        </button>\n        <button small title="回圈密碼" *ngIf="selectedItem.file_func_proc_key!=\'060|COPY\'"  [color]="selectedItem.loop_pwd_color"  ion-button color="light" icon-left (click)="openNavPage(selectedItem,\'UnZipFileLoopPwdPage\')">\n          <ion-icon name="unlock"></ion-icon>\n        </button>\n        <button small title="密碼" *ngIf="selectedItem.file_func_proc_key!=\'060|COPY\'" ion-button [color]="selectedItem.pwd_color" icon-left (click)="openNavPage(selectedItem,\'UnZipFilePwdAddEditPage\')">\n          <ion-icon name="key"></ion-icon>\n        </button>\n        <button small title="執行後SQL語法" ion-button [color]="selectedItem.processed_sql_color" icon-left (click)="openNavPage(selectedItem,\'FileProcessedSqlAddEditPage\')">\n          <ion-icon name="barcode"></ion-icon>\n        </button>\n        <button small title="執行後程式" ion-button [color]="selectedItem.processed_exec_group_color" icon-left (click)="openNavPage(selectedItem,\'FileProcessedExecGroupAddEditPage\')">\n          <ion-icon name="apps"></ion-icon>\n        </button>\n        \n      </ion-col>\n      <ion-col col-3>\n          <button *ngIf="CanEditBatch==true" small title="手動執行" ion-button color="dark" icon-left (click)="openNavRunPage(selectedItem,7)">\n              <ion-icon name="arrow-dropright-circle"></ion-icon>\n            </button>\n            <button small title="執行檔案紀錄" ion-button color="light" icon-left (click)="openNavFileLogPage(selectedItem)">\n              <ion-icon name="logo-twitch"></ion-icon>\n            </button>\n        <button small title="產生Insert SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(selectedItem,\'insert\')">\n          Ins\n        </button>\n        <button small title="產生Update SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(selectedItem,\'update\')">\n          Upd\n        </button>\n\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ngx-datatable NgxResizeWatcher class="bootstrap" *ngIf="totalRows>0 && conf.mobile_mode==false" [selected]="selected" [selectionType]="\'single\'"\n    (select)=\'onRowSelect($event)\'   [rows]="data_list" [columnMode]="\'flex\'" [headerHeight]="40" [rowHeight]="\'auto\'" [footerHeight]="40"\n    [reorderable]=false [limit]="limit" [count]="totalRows" [offset]="offset" (page)=\'setPage($event)\'>\n\n    <ngx-datatable-column prop="exec_file_seq" name="轉檔序號" [flexGrow]="1" [frozenLeft]="true">\n    </ngx-datatable-column>\n    <ngx-datatable-column prop="exec_group" name="轉檔群組" [flexGrow]="1"  >\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="file_keyword" name="檔案搜尋關鍵字" [flexGrow]="2" >\n        </ngx-datatable-column>\n        <ngx-datatable-column prop="copy_to_filename" name="複製後檔名" [flexGrow]="2" >\n        </ngx-datatable-column>\n        <ngx-datatable-column prop="file_min_length" name="檔名最小長度" [flexGrow]="1" *ngIf="innerWidth>=1024" >\n          </ngx-datatable-column>\n          <ngx-datatable-column prop="file_max_length" name="檔名最大長度" [flexGrow]="1" *ngIf="innerWidth>=1024" >\n            </ngx-datatable-column>\n\n            <ngx-datatable-column prop="file_proc" name="檔案處理後" [flexGrow]="2">\n            </ngx-datatable-column>\n            <ngx-datatable-column prop="file_func_proc" name="功能別" [flexGrow]="1">\n            </ngx-datatable-column>\n            <ngx-datatable-column prop="exec_seq" name="執行順序" [flexGrow]="1">\n            </ngx-datatable-column>\n            <ngx-datatable-column prop="can_rerun" name="重複執行" [flexGrow]="1">\n            </ngx-datatable-column>\n            <ngx-datatable-column prop="is_active_desc" name="啟用" [flexGrow]="1">\n              <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>\n                <div [ngClass]="row[\'is_active_color\']">{{value}}</div>\n              </ng-template>\n            </ngx-datatable-column>\n            <ngx-datatable-column prop="note" name="備註" [flexGrow]="2">\n            </ngx-datatable-column>\n\n  </ngx-datatable>\n  <div *ngIf="totalRows>0 && conf.mobile_mode==true">\n    <ion-row>\n\n      <ion-col col-lg-4 col-md-6 col-sm-6 col-12 *ngFor="let item of data_list">\n\n        <ion-grid [ngClass]="\'bordered\'">\n          <ion-row>\n            <ion-col>\n              <button small title="編輯" ion-button color="light" icon-left (click)="ShowModal(item,\'e\')">\n                <ion-icon name="create"></ion-icon>\n              </button>\n              <button *ngIf="CanEditBatch==true" small title="複製" ion-button color="light" icon-left (click)="ShowModal(item,\'c\')">\n                <ion-icon name="copy"></ion-icon>\n              </button>\n              <button *ngIf="CanEditBatch==true" small title="刪除" ion-button color="dark" icon-left (click)="Delete(item)">\n                <ion-icon name="trash"></ion-icon>\n              </button>\n              <button small title="加入" *ngIf=" show_select==true" ion-button color="danger" icon-left (click)="add(item)">\n                <ion-icon name="checkmark-circle"></ion-icon>\n              </button>\n\n            </ion-col>\n          </ion-row>\n          <ion-row *ngIf="show_select==false" >\n            <ion-col>\n                <button small title="日期篩選" ion-button [color]="item.date_filter_color" icon-left (click)="openNavPage(item,\'FileDateFilterAddEditPage\')">\n                    <ion-icon name="clock"></ion-icon>\n                  </button>\n                  <button small title="回圈"  ion-button color="light" icon-left (click)="openNavPage(item,\'FileLoopPage\')">\n                      <ion-icon name="list-box"></ion-icon>\n                    </button>\n                    <button small title="回圈密碼" *ngIf="item.file_func_proc_key!=\'060|COPY\'" [color]="item.loop_pwd_color" ion-button color="light" icon-left (click)="openNavPage(item,\'UnZipFileLoopPwdPage\')">\n                      <ion-icon name="unlock"></ion-icon>\n                    </button>\n                    <button small title="密碼" *ngIf="item.file_func_proc_key!=\'060|COPY\'" ion-button [color]="item.pwd_color" icon-left (click)="openNavPage(item,\'UnZipFilePwdAddEditPage\')">\n                      <ion-icon name="key"></ion-icon>\n                    </button>\n                    \n                  <button small title="執行後SQL語法" ion-button [color]="item.processed_sql_color" icon-left (click)="openNavPage(item,\'FileProcessedSqlAddEditPage\')">\n                    <ion-icon name="barcode"></ion-icon>\n                  </button>\n                  <button small title="執行後程式" ion-button [color]="item.processed_exec_group_color" icon-left (click)="openNavPage(item,\'FileProcessedExecGroupAddEditPage\')">\n                    <ion-icon name="apps"></ion-icon>\n                  </button>\n            </ion-col>\n          </ion-row>\n          <ion-row *ngIf="show_select==false" >\n            <ion-col>\n              <button small title="產生Insert SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(item,\'insert\')">\n                Ins\n              </button>\n              <button small title="產生Update SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(item,\'update\')">\n                Upd\n              </button>\n              <button *ngIf="CanEditBatch==true" small title="手動執行" ion-button color="dark" icon-left (click)="openNavRunPage(item,7)">\n                <ion-icon name="arrow-dropright-circle"></ion-icon>\n              </button>\n              <button small title="執行檔案紀錄" ion-button color="light" icon-left (click)="openNavFileLogPage(item)">\n                <ion-icon name="logo-twitch"></ion-icon>\n              </button>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-8>\n              <div title="轉檔群組">{{item.exec_group}}</div>\n            </ion-col>\n            <ion-col col-4>\n              <div text-right>\n                {{item.exec_file_seq}}\n              </div>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-8>\n              {{item.file_keyword}}\n            </ion-col>\n            <ion-col col-4>\n              <div [ngClass]="item.is_active_color_right">{{item.is_active_desc}}</div>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-8>\n              {{item.file_func_proc}}\n            </ion-col>\n            <ion-col col-4>\n              <div text-right>\n                {{item.exec_seq}}\n              </div>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n      </ion-col>\n\n    </ion-row>\n  </div>\n  <ion-infinite-scroll *ngIf="pageNumber < totalPages && conf.mobile_mode==true" (ionInfinite)="$event.waitFor(doInfinite())">\n    <ion-infinite-scroll-content loadingSpinner="bubbles">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="重新整理" ion-button color="dark" icon-left (click)="LoadData(true)">\n            <ion-checkbox name="order_type" title="遞增/遞減" color="dark" [(ngModel)]="order_type" (ionChange)="LoadData(true)"></ion-checkbox>\n            <ion-icon name="refresh"></ion-icon>\n          </button>\n          <button *ngIf="CanEditBatch==true" small title="新增" ion-button color="dark" icon-left (click)="ShowModal(null,\'n\')">\n            <ion-icon name="add"></ion-icon>\n          </button>\n          <button small title="取消" *ngIf="show_select==true" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n\n        </div>\n        <StatusComponent [pageNumber]="pageNumber" [totalPages]="totalPages" [totalRows]="totalRows"></StatusComponent>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\file-copy\file-copy.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* NavParams */],
@@ -649,7 +680,7 @@ var FileCopyPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 506:
+/***/ 509:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -657,9 +688,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileCopyPageModule", function() { return FileCopyPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_copy__ = __webpack_require__(1357);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_copy__ = __webpack_require__(1360);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(797);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_copy_services_file_copy_services__ = __webpack_require__(1017);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_copy_services_file_copy_services__ = __webpack_require__(1018);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19726,7 +19757,7 @@ var NgxResizeWatcherDirective = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 946:
+/***/ 947:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

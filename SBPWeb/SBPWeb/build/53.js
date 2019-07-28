@@ -264,7 +264,7 @@ var ProgramPermissionResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1592:
+/***/ 1593:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -527,7 +527,7 @@ var PermissionProgramPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 690:
+/***/ 691:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -535,7 +535,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PermissionProgramPageModule", function() { return PermissionProgramPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__permission_program__ = __webpack_require__(1592);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__permission_program__ = __webpack_require__(1593);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(797);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_program_permission_services_program_permission_services__ = __webpack_require__(1062);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

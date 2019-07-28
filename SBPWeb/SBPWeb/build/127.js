@@ -284,7 +284,7 @@ var MenuResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1577:
+/***/ 1581:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -546,7 +546,7 @@ var MenuPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 679:
+/***/ 681:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -554,7 +554,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuPageModule", function() { return MenuPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menu__ = __webpack_require__(1577);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menu__ = __webpack_require__(1581);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(797);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_menu_services_menu_services__ = __webpack_require__(1067);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

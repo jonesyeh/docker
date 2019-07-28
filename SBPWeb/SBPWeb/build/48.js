@@ -23,8 +23,8 @@ var SqlAllViewModel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_SqlAllListResponse__ = __webpack_require__(1643);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_SqlAllResponse__ = __webpack_require__(1644);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_SqlAllListResponse__ = __webpack_require__(1641);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_SqlAllResponse__ = __webpack_require__(1642);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__table_set_services_table_set_services__ = __webpack_require__(131);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -136,7 +136,7 @@ var SqlAllServicesProvider = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1642:
+/***/ 1640:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -490,7 +490,7 @@ var SqlAllPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1643:
+/***/ 1641:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -585,7 +585,7 @@ var SqlAllListResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1644:
+/***/ 1642:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -665,7 +665,7 @@ var SqlAllResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 730:
+/***/ 728:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -673,7 +673,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SqlAllPageModule", function() { return SqlAllPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sql_all__ = __webpack_require__(1642);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sql_all__ = __webpack_require__(1640);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(797);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_sql_all_services_sql_all_services__ = __webpack_require__(1243);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

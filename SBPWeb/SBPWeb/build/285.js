@@ -1,28 +1,28 @@
 webpackJsonp([285],{
 
-/***/ 1076:
+/***/ 1092:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchOneDayTimeViewModel; });
-var SchOneDayTimeViewModel = /** @class */ (function () {
-    function SchOneDayTimeViewModel() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WarningCheckViewModel; });
+var WarningCheckViewModel = /** @class */ (function () {
+    function WarningCheckViewModel() {
     }
-    return SchOneDayTimeViewModel;
+    return WarningCheckViewModel;
 }());
 
-//# sourceMappingURL=SchOneDayTimeViewModel.js.map
+//# sourceMappingURL=WarningCheckViewModel.js.map
 
 /***/ }),
 
-/***/ 1625:
+/***/ 1699:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchOneDayTimeAddEditModalPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WarningCheckAddEditModalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_SchOneDayTimeViewModel__ = __webpack_require__(1076);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_WarningCheckViewModel__ = __webpack_require__(1092);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -36,66 +36,80 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the SchOneDayTimeModalPage page.
+ * Generated class for the WarningCheckModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var SchOneDayTimeAddEditModalPage = /** @class */ (function () {
-    function SchOneDayTimeAddEditModalPage(navCtrl, navParams, viewCtrl) {
+var WarningCheckAddEditModalPage = /** @class */ (function () {
+    function WarningCheckAddEditModalPage(navCtrl, navParams, viewCtrl, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
-        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_SchOneDayTimeViewModel__["a" /* SchOneDayTimeViewModel */]();
-        this.item.sch_no = navParams.data.item.sch_no;
-        this.item.sch_name = navParams.data.item.sch_name;
-        this.item.active_start_date = navParams.data.item.active_start_date;
-        this.item.active_start_time = navParams.data.item.active_start_time;
-        this.item.is_active = navParams.data.item.is_active;
+        this.modalCtrl = modalCtrl;
+        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_WarningCheckViewModel__["a" /* WarningCheckViewModel */]();
+        this.item.schemaname = navParams.data.item.schemaname;
+        this.item.tablename = navParams.data.item.tablename;
+        this.item.columnname = navParams.data.item.columnname;
+        this.item.check_key = navParams.data.item.check_key;
         this.item.creator = navParams.data.item.creator;
         this.item.create_time = navParams.data.item.create_time;
         this.item.modifier = navParams.data.item.modifier;
         this.item.last_update_time = navParams.data.item.last_update_time;
         this.mode = navParams.data.mode;
-        this.CanEditSch = navParams.data.CanEditSch;
+        this.CanEditJob = navParams.data.CanEditJob;
         if (this.mode === "POST")
             this.title = "新增";
         else
             this.title = "更新";
     }
-    SchOneDayTimeAddEditModalPage.prototype.Save = function () {
+    WarningCheckAddEditModalPage.prototype.SelectCheckKey = function () {
+        var _this = this;
+        var modal = this.modalCtrl.create("WarningCheckSelectModalPage", {
+            item: this.item,
+        });
+        modal.onDidDismiss(function (select_data) {
+            if (select_data == null)
+                return;
+            _this.item.check_key = select_data.code_key;
+            _this.item.check_desc = select_data.code_desc;
+        });
+        modal.present();
+    };
+    WarningCheckAddEditModalPage.prototype.Save = function () {
         this.viewCtrl.dismiss(this.item);
     };
-    SchOneDayTimeAddEditModalPage.prototype.close = function () {
+    WarningCheckAddEditModalPage.prototype.close = function () {
         this.viewCtrl.dismiss();
     };
-    SchOneDayTimeAddEditModalPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad SchOneDayTimeModalPage");
+    WarningCheckAddEditModalPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad WarningCheckAddEditModalPage");
     };
-    SchOneDayTimeAddEditModalPage = __decorate([
+    WarningCheckAddEditModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: "page-sch-one-day-time-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\sch-one-day-time-add-edit-modal\sch-one-day-time-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm">\n\n    <ion-row>\n      <ion-col col-8>\n        <ion-item>\n          <ion-label>排程名稱</ion-label>\n          <ion-input type="text"  name="sch_name" [disabled]="CanEditSch==false" #sch_name="ngModel" [(ngModel)]="item.sch_name" required></ion-input>\n        </ion-item>\n        <div *ngIf="sch_name.errors && sch_name.touched" class="error-message">\n          排程名稱不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-4>\n        <ion-item>\n          <ion-label>啟用</ion-label>\n          <ion-checkbox name="is_active" [disabled]="CanEditSch==false" [(ngModel)]="item.is_active"></ion-checkbox>\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n\n\n    </ion-row>\n\n\n    <ion-row>\n      <ion-col col-12 col-sm-6 col-md-6>\n        <ion-item>\n\n          <ion-label>開始日期</ion-label>\n          <ion-datetime [disabled]="CanEditSch==false" name="active_start_date" displayFormat="YYYY-MM-DD" [(ngModel)]="item.active_start_date"></ion-datetime>\n        </ion-item>\n      </ion-col>\n      <ion-col col-12 col-sm-6 col-md-6>\n        <ion-item>\n          <ion-label>開始時間</ion-label>\n          <ion-datetime [disabled]="CanEditSch==false" name="active_start_time" #active_start_time="ngModel" pickerFormat="HH:mm" displayFormat="HH:mm" [(ngModel)]="item.active_start_time"></ion-datetime>\n\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n\n\n\n    </ion-row>\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button [disabled]="CanEditSch==false" small title="確認" ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\sch-one-day-time-add-edit-modal\sch-one-day-time-add-edit-modal.html"*/
+            selector: "page warning-check-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\warning-check-add-edit-modal\warning-check-add-edit-modal.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <ion-title>{{title}}</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n  <ion-content padding>\n    <form #Form="ngForm" >\n\n      <ion-row>\n        <ion-col col-12 >\n            <ion-item>\n                <ion-label stacked>警訊項目</ion-label>\n                <ion-input type="text" readonly=true name="check_type" #check_key="ngModel" [(ngModel)]="item.check_key" required></ion-input>\n\n                <button ion-button outline item-end   icon-right (click)="SelectCheckKey()">\n                  <ion-icon name="arrow-dropdown"></ion-icon>\n                </button>\n              </ion-item>\n              <div *ngIf="check_key.errors && check_key.touched " class="error-message">\n                  警訊項目不能為空白\n                </div>\n        </ion-col>\n        <ion-col col-12 >\n            <ion-item>\n                {{item.check_desc}}\n              </ion-item>\n        </ion-col>\n\n      </ion-row>\n\n\n\n    </form>\n\n  </ion-content>\n  <ion-footer>\n    <ion-toolbar>\n      <ion-row>\n        <ion-col>\n          <div [ngClass]="[\'command\']">\n            <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n              <ion-icon name="backspace"></ion-icon>\n            </button>\n            <button small [disabled]="CanEditJob==false" title="確認" ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n              <ion-icon name="checkmark-circle"></ion-icon>\n            </button>\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-toolbar>\n  </ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\warning-check-add-edit-modal\warning-check-add-edit-modal.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */]])
-    ], SchOneDayTimeAddEditModalPage);
-    return SchOneDayTimeAddEditModalPage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */]])
+    ], WarningCheckAddEditModalPage);
+    return WarningCheckAddEditModalPage;
 }());
 
-//# sourceMappingURL=sch-one-day-time-add-edit-modal.js.map
+//# sourceMappingURL=warning-check-add-edit-modal.js.map
 
 /***/ }),
 
-/***/ 718:
+/***/ 775:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SchOneDayTimeAddEditModalPageModule", function() { return SchOneDayTimeAddEditModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WarningCheckAddEditModalPageModule", function() { return WarningCheckAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sch_one_day_time_add_edit_modal__ = __webpack_require__(1625);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__warning_check_add_edit_modal__ = __webpack_require__(1699);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -105,23 +119,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var SchOneDayTimeAddEditModalPageModule = /** @class */ (function () {
-    function SchOneDayTimeAddEditModalPageModule() {
+var WarningCheckAddEditModalPageModule = /** @class */ (function () {
+    function WarningCheckAddEditModalPageModule() {
     }
-    SchOneDayTimeAddEditModalPageModule = __decorate([
+    WarningCheckAddEditModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__sch_one_day_time_add_edit_modal__["a" /* SchOneDayTimeAddEditModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__warning_check_add_edit_modal__["a" /* WarningCheckAddEditModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sch_one_day_time_add_edit_modal__["a" /* SchOneDayTimeAddEditModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__warning_check_add_edit_modal__["a" /* WarningCheckAddEditModalPage */]),
             ],
         })
-    ], SchOneDayTimeAddEditModalPageModule);
-    return SchOneDayTimeAddEditModalPageModule;
+    ], WarningCheckAddEditModalPageModule);
+    return WarningCheckAddEditModalPageModule;
 }());
 
-//# sourceMappingURL=sch-one-day-time-add-edit-modal.module.js.map
+//# sourceMappingURL=warning-check-add-edit-modal.module.js.map
 
 /***/ })
 

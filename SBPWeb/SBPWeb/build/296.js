@@ -1,13 +1,28 @@
 webpackJsonp([296],{
 
-/***/ 1510:
+/***/ 1077:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FtpDirectoryBrowserAddEditModalPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JobStepLoopViewModel; });
+var JobStepLoopViewModel = /** @class */ (function () {
+    function JobStepLoopViewModel() {
+    }
+    return JobStepLoopViewModel;
+}());
+
+//# sourceMappingURL=JobStepLoopViewModel.js.map
+
+/***/ }),
+
+/***/ 1567:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JobStepLoopAddEditModalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_FtpDirectoryBrowserViewModel__ = __webpack_require__(916);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_JobStepLoopViewModel__ = __webpack_require__(1077);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,65 +37,70 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the FtpDirectoryBrowserModalPage page.
+ * Generated class for the JobStepLoopModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var FtpDirectoryBrowserAddEditModalPage = /** @class */ (function () {
-    function FtpDirectoryBrowserAddEditModalPage(navCtrl, navParams, viewCtrl, loadingCtrl) {
+var JobStepLoopAddEditModalPage = /** @class */ (function () {
+    function JobStepLoopAddEditModalPage(navCtrl, navParams, viewCtrl, loadingCtrl, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
         this.loadingCtrl = loadingCtrl;
-        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_FtpDirectoryBrowserViewModel__["a" /* FtpDirectoryBrowserViewModel */]();
-        this.item.remote_conn_id = navParams.data.filter.remote_conn_id;
-        this.item.conn_type_key = navParams.data.filter.conn_type_key;
-        this.item.encrypt_method_key = navParams.data.filter.encrypt_method_key;
-        this.item.filepath = navParams.data.item.filepath;
-        this.item.directory_name = navParams.data.item.directory_name;
-        this.item.create_time = navParams.data.item.create_time;
-        this.CanEditFtpFileBrowser = navParams.data.CanEditFtpFileBrowser;
+        this.modalCtrl = modalCtrl;
+        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_JobStepLoopViewModel__["a" /* JobStepLoopViewModel */]();
+        this.CanEditJob = navParams.data.CanEditJob;
         this.mode = navParams.data.mode;
-        if (this.mode === "POST")
-            this.title = "新增資料夾";
-        else
-            this.title = "變更資料夾";
+        this.title = navParams.data.item.job_step_id;
+        this.item.job_step_loop_id = navParams.data.item.job_step_loop_id;
+        this.item.job_step_id = navParams.data.item.job_step_id;
+        this.item.success_step = navParams.data.item.success_step;
+        this.item.fail_step = navParams.data.item.fail_step;
+        this.item.is_active = navParams.data.item.is_active;
+        this.item.job01 = navParams.data.item.job01;
+        this.item.job02 = navParams.data.item.job02;
+        this.item.job03 = navParams.data.item.job03;
+        this.item.creator = navParams.data.item.creator;
+        this.item.create_time = navParams.data.item.create_time;
+        this.item.modifier = navParams.data.item.modifier;
+        this.item.last_update_time = navParams.data.item.last_update_time;
     }
-    FtpDirectoryBrowserAddEditModalPage.prototype.Save = function () {
+    JobStepLoopAddEditModalPage.prototype.Save = function () {
         this.viewCtrl.dismiss(this.item);
     };
-    FtpDirectoryBrowserAddEditModalPage.prototype.close = function () {
+    JobStepLoopAddEditModalPage.prototype.close = function () {
         this.viewCtrl.dismiss();
     };
-    FtpDirectoryBrowserAddEditModalPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad FtpDirectoryBrowserModalPage");
+    JobStepLoopAddEditModalPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad JobStepLoopModalPage");
     };
-    FtpDirectoryBrowserAddEditModalPage = __decorate([
+    JobStepLoopAddEditModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: "page-ftp-directory-browser-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\ftp-directory-browser-add-edit-modal\ftp-directory-browser-add-edit-modal.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <ion-title>{{title}}</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n  <ion-content  padding>\n      <form #Form="ngForm">\n\n          <ion-row>\n            <ion-col>\n              <ion-item>\n                <ion-label stacked >目前路徑</ion-label>\n                <ion-input type="text" disabled=true name="filepath" #filepath="ngModel" [(ngModel)]="item.filepath"\n                  required></ion-input>\n              </ion-item>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              <ion-item>\n                <ion-label stacked >資料夾名稱</ion-label>\n                <ion-input type="text" [disabled]="CanEditFtpFileBrowser==false" name="directory_name" #directory_name="ngModel" [(ngModel)]="item.directory_name"\n                  required ></ion-input>\n              </ion-item>\n              <div *ngIf="directory_name.errors && directory_name.touched" class="error-message">\n                資料夾名稱不能為空白\n              </div>\n\n            </ion-col>\n          </ion-row>\n        </form>\n\n  </ion-content>\n  <ion-footer>\n    <ion-toolbar>\n      <ion-row>\n        <ion-col>\n          <div [ngClass]="[\'command\']">\n            <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n              <ion-icon name="backspace"></ion-icon>\n            </button>\n            <button small title="確認" [disabled]="CanEditFtpFileBrowser==false"  ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n              <ion-icon name="checkmark-circle"></ion-icon>\n            </button>\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-toolbar>\n  </ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\ftp-directory-browser-add-edit-modal\ftp-directory-browser-add-edit-modal.html"*/
+            selector: "page-job-step-loop-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\job-step-loop-add-edit-modal\job-step-loop-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm">\n\n    <ion-row>\n      <ion-col col-12>\n        <ion-item>\n          <ion-label stacked>作業步驟回圈編號</ion-label>\n          <ion-input type="text"  name="job_step_loop_id" [disabled]="CanEditJob==false || mode==\'PUT\'" #job_step_loop_id="ngModel" [(ngModel)]="item.job_step_loop_id" required></ion-input>\n        </ion-item>\n        <div *ngIf="job_step_loop_id.errors && job_step_loop_id.touched" class="error-message">\n          作業步驟回圈編號不能為空白\n        </div>\n      </ion-col>\n\n    </ion-row>\n    <ion-row>\n\n      <ion-col >\n        <ion-item>\n          <ion-label stacked>啟用</ion-label>\n          <ion-checkbox name="is_active" [disabled]="CanEditJob==false" [(ngModel)]="item.is_active"></ion-checkbox>\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>Job01</ion-label>\n          <ion-input [disabled]="CanEditJob==false" type="text" name="job01" #job01="ngModel" [(ngModel)]="item.job01"></ion-input>\n        </ion-item>\n      </ion-col>\n\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>Job02</ion-label>\n          <ion-input [disabled]="CanEditJob==false" type="text" name="job02" #job02="ngModel" [(ngModel)]="item.job02"></ion-input>\n        </ion-item>\n      </ion-col>\n\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>Job03</ion-label>\n          <ion-input [disabled]="CanEditJob==false" type="text" name="job03" #job03="ngModel" [(ngModel)]="item.job03"></ion-input>\n        </ion-item>\n      </ion-col>\n\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>成功後步驟(0:停止、1:下一步、其他)</ion-label>\n          <ion-input type="number" min=0 max=100 [disabled]="CanEditJob==false"   name="success_step" #success_step="ngModel" [(ngModel)]="item.success_step"\n            ></ion-input>\n        </ion-item>\n      </ion-col>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>失敗後步驟(0:停止、1:下一步、其他)</ion-label>\n          <ion-input type="number"  min=0 max=100 [disabled]="CanEditJob==false"   name="fail_step" #fail_step="ngModel" [(ngModel)]="item.fail_step"\n            ></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n\n\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button [disabled]="CanEditJob==false" small title="確認" ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\job-step-loop-add-edit-modal\job-step-loop-add-edit-modal.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */]])
-    ], FtpDirectoryBrowserAddEditModalPage);
-    return FtpDirectoryBrowserAddEditModalPage;
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */]])
+    ], JobStepLoopAddEditModalPage);
+    return JobStepLoopAddEditModalPage;
 }());
 
-//# sourceMappingURL=ftp-directory-browser-add-edit-modal.js.map
+//# sourceMappingURL=job-step-loop-add-edit-modal.js.map
 
 /***/ }),
 
-/***/ 623:
+/***/ 669:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FtpDirectoryBrowserAddEditModelPageModule", function() { return FtpDirectoryBrowserAddEditModelPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "JobStepLoopAddEditModalPageModule", function() { return JobStepLoopAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ftp_directory_browser_add_edit_modal__ = __webpack_require__(1510);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__job_step_loop_add_edit_modal__ = __webpack_require__(1567);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -90,52 +110,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FtpDirectoryBrowserAddEditModelPageModule = /** @class */ (function () {
-    function FtpDirectoryBrowserAddEditModelPageModule() {
+var JobStepLoopAddEditModalPageModule = /** @class */ (function () {
+    function JobStepLoopAddEditModalPageModule() {
     }
-    FtpDirectoryBrowserAddEditModelPageModule = __decorate([
+    JobStepLoopAddEditModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__ftp_directory_browser_add_edit_modal__["a" /* FtpDirectoryBrowserAddEditModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__job_step_loop_add_edit_modal__["a" /* JobStepLoopAddEditModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__ftp_directory_browser_add_edit_modal__["a" /* FtpDirectoryBrowserAddEditModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__job_step_loop_add_edit_modal__["a" /* JobStepLoopAddEditModalPage */]),
             ],
         })
-    ], FtpDirectoryBrowserAddEditModelPageModule);
-    return FtpDirectoryBrowserAddEditModelPageModule;
+    ], JobStepLoopAddEditModalPageModule);
+    return JobStepLoopAddEditModalPageModule;
 }());
 
-//# sourceMappingURL=ftp-directory-browser-add-edit-modal.module.js.map
-
-/***/ }),
-
-/***/ 916:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FtpDirectoryBrowserViewModel; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_DirectoryBrowserViewModel__ = __webpack_require__(130);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-var FtpDirectoryBrowserViewModel = /** @class */ (function (_super) {
-    __extends(FtpDirectoryBrowserViewModel, _super);
-    function FtpDirectoryBrowserViewModel() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return FtpDirectoryBrowserViewModel;
-}(__WEBPACK_IMPORTED_MODULE_0__ViewModel_DirectoryBrowserViewModel__["a" /* DirectoryBrowserViewModel */]));
-
-//# sourceMappingURL=FtpDirectoryBrowserViewModel.js.map
+//# sourceMappingURL=job-step-loop-add-edit-modal.module.js.map
 
 /***/ })
 

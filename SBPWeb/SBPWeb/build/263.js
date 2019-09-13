@@ -1,15 +1,15 @@
 webpackJsonp([263],{
 
-/***/ 1027:
+/***/ 1041:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileExportScriptTableServicesProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileExportTsqlTableServicesProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileExportScriptTableListResponse__ = __webpack_require__(1123);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileExportScriptTableResponse__ = __webpack_require__(1124);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileExportTsqlTableListResponse__ = __webpack_require__(1140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileExportTsqlTableResponse__ = __webpack_require__(1141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_Response_StringResponse__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Model_Response_NumberResponse__ = __webpack_require__(128);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -29,24 +29,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /*
-  Generated class for the FileExportScriptTableServiceProvider provider.
+  Generated class for the FileExportTsqlTableServiceProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-var FileExportScriptTableServicesProvider = /** @class */ (function () {
-    function FileExportScriptTableServicesProvider(Services) {
+var FileExportTsqlTableServicesProvider = /** @class */ (function () {
+    function FileExportTsqlTableServicesProvider(Services) {
         this.Services = Services;
-        this.ctl = "FileExportScriptTable";
-        console.log("Hello FileExportScriptTableServiceProvider Provider");
+        this.ctl = "FileExportTsqlTable";
+        console.log("Hello FileExportTsqlTableServiceProvider Provider");
     }
-    FileExportScriptTableServicesProvider.prototype.GetListsByAsync = function (PageSize, PageNumber, keyword, exec_file_seq, order_type) {
+    FileExportTsqlTableServicesProvider.prototype.GetListsByAsync = function (PageSize, PageNumber, keyword, exec_file_seq, order_type) {
         var _this = this;
         var sub_url;
-        sub_url = "FileExportScriptTable?PageSize={1}&PageNumber={2}&keyword={3}&exec_file_seq={4}&order_type={5}";
+        sub_url = "FileExportTsqlTable?PageSize={1}&PageNumber={2}&keyword={3}&exec_file_seq={4}&order_type={5}";
         sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, PageSize, PageNumber, keyword, exec_file_seq, order_type);
         return this.Services.GetAsync(sub_url, this.ctl, true).map(function (item) {
-            _this.FileExportScriptTables = new __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileExportScriptTableListResponse__["a" /* FileExportScriptTableListResponse */]({
+            _this.FileExportTsqlTables = new __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileExportTsqlTableListResponse__["a" /* FileExportTsqlTableListResponse */]({
                 Message: item.Message,
                 DidError: item.DidError,
                 ErrorMessage: item.ErrorMessage,
@@ -57,30 +57,30 @@ var FileExportScriptTableServicesProvider = /** @class */ (function () {
                 TotalPages: item.TotalPages,
                 Model: item.Model
             });
-            return _this.FileExportScriptTables;
+            return _this.FileExportTsqlTables;
         });
     };
-    FileExportScriptTableServicesProvider.prototype.PostPutAsync = function (FileExportScriptTableViewModel, mode) {
+    FileExportTsqlTableServicesProvider.prototype.PostPutAsync = function (FileExportTsqlTableViewModel, mode) {
         var _this = this;
         var sub_url;
         if (mode === "POST")
-            sub_url = "FileExportScriptTable";
+            sub_url = "FileExportTsqlTable";
         else
-            sub_url = "FileExportScriptTable?exec_file_seq={1}&schemaname={2}&tablename={3}&db_conn_id={4}&parameter_column_group={5}&src_export_type_key={6}";
-        sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, FileExportScriptTableViewModel.exec_file_seq, FileExportScriptTableViewModel.schemaname, FileExportScriptTableViewModel.tablename, FileExportScriptTableViewModel.db_conn_id, FileExportScriptTableViewModel.parameter_column_group, "008|S");
-        return this.Services.PostPutAsync(sub_url, this.ctl, true, FileExportScriptTableViewModel, mode).map(function (item) {
-            _this.FileExportScriptTable = new __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileExportScriptTableResponse__["a" /* FileExportScriptTableResponse */]({
+            sub_url = "FileExportTsqlTable?exec_file_seq={1}&schemaname={2}&tablename={3}&db_conn_id={4}&parameter_column_group={5}&src_export_type_key={6}";
+        sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, FileExportTsqlTableViewModel.exec_file_seq, FileExportTsqlTableViewModel.schemaname, FileExportTsqlTableViewModel.tablename, FileExportTsqlTableViewModel.db_conn_id, FileExportTsqlTableViewModel.parameter_column_group, "008|TS");
+        return this.Services.PostPutAsync(sub_url, this.ctl, true, FileExportTsqlTableViewModel, mode).map(function (item) {
+            _this.FileExportTsqlTable = new __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileExportTsqlTableResponse__["a" /* FileExportTsqlTableResponse */]({
                 Message: item.Message,
                 DidError: item.DidError,
                 ErrorMessage: item.ErrorMessage,
                 Model: item.Model
             });
-            return _this.FileExportScriptTable;
+            return _this.FileExportTsqlTable;
         });
     };
-    FileExportScriptTableServicesProvider.prototype.DeleteAsync = function (exec_file_seq, schemaname, tablename, db_conn_id, parameter_column_group, src_export_type_key) {
+    FileExportTsqlTableServicesProvider.prototype.DeleteAsync = function (exec_file_seq, schemaname, tablename, db_conn_id, parameter_column_group, src_export_type_key) {
         var sub_url;
-        sub_url = "FileExportScriptTable?exec_file_seq={1}&schemaname={2}&tablename={3}&db_conn_id={4}&parameter_column_group={5}&src_export_type_key={6}";
+        sub_url = "FileExportTsqlTable?exec_file_seq={1}&schemaname={2}&tablename={3}&db_conn_id={4}&parameter_column_group={5}&src_export_type_key={6}";
         sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, exec_file_seq, schemaname, tablename, db_conn_id, parameter_column_group, src_export_type_key);
         return this.Services.DeleteAsync(sub_url, this.ctl, true).map(function (item) {
             return new __WEBPACK_IMPORTED_MODULE_5__Model_Response_StringResponse__["a" /* StringResponse */]({
@@ -91,7 +91,7 @@ var FileExportScriptTableServicesProvider = /** @class */ (function () {
             });
         });
     };
-    FileExportScriptTableServicesProvider.prototype.GetMaxExecSeqAsync = function (exec_file_seq) {
+    FileExportTsqlTableServicesProvider.prototype.GetMaxExecSeqAsync = function (exec_file_seq) {
         var sub_url;
         sub_url = "FileExportTable/get_max_exec_seq?exec_file_seq={1}";
         sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, exec_file_seq);
@@ -104,7 +104,7 @@ var FileExportScriptTableServicesProvider = /** @class */ (function () {
             });
         });
     };
-    FileExportScriptTableServicesProvider.prototype.GetSqlAsync = function (exec_file_seq, schemaname, tablename, db_conn_id, parameter_column_group, src_export_type_key, method) {
+    FileExportTsqlTableServicesProvider.prototype.GetSqlAsync = function (exec_file_seq, schemaname, tablename, db_conn_id, parameter_column_group, src_export_type_key, method) {
         var sub_url;
         sub_url = "FileExportTable/get_{7}_sql?exec_file_seq={1}&schemaname={2}&tablename={3}&db_conn_id={4}&parameter_column_group={5}&src_export_type_key={6}";
         sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, exec_file_seq, schemaname, tablename, db_conn_id, parameter_column_group, src_export_type_key, method);
@@ -117,24 +117,24 @@ var FileExportScriptTableServicesProvider = /** @class */ (function () {
             });
         });
     };
-    FileExportScriptTableServicesProvider = __decorate([
+    FileExportTsqlTableServicesProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_services__["a" /* ServicesProvider */]])
-    ], FileExportScriptTableServicesProvider);
-    return FileExportScriptTableServicesProvider;
+    ], FileExportTsqlTableServicesProvider);
+    return FileExportTsqlTableServicesProvider;
 }());
 
-//# sourceMappingURL=file-export-script-table-services.js.map
+//# sourceMappingURL=file-export-tsql-table-services.js.map
 
 /***/ }),
 
-/***/ 1123:
+/***/ 1140:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileExportScriptTableListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileExportScriptTableViewModel__ = __webpack_require__(955);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(5);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileExportTsqlTableListResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileExportTsqlTableViewModel__ = __webpack_require__(969);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -147,9 +147,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 
 
-var FileExportScriptTableListResponse = /** @class */ (function (_super) {
-    __extends(FileExportScriptTableListResponse, _super);
-    function FileExportScriptTableListResponse(obj) {
+var FileExportTsqlTableListResponse = /** @class */ (function (_super) {
+    __extends(FileExportTsqlTableListResponse, _super);
+    function FileExportTsqlTableListResponse(obj) {
         var _this = _super.call(this, obj) || this;
         _this.Model = [];
         _this.Message = obj.Messag;
@@ -162,7 +162,7 @@ var FileExportScriptTableListResponse = /** @class */ (function (_super) {
         _this.TotalRows = obj.TotalRows;
         if (_this.DidError === false) {
             obj.Model.forEach(function (data) {
-                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileExportScriptTableViewModel__["a" /* FileExportScriptTableViewModel */]();
+                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileExportTsqlTableViewModel__["a" /* FileExportTsqlTableViewModel */]();
                 item.exec_file_seq = data.exec_file_seq;
                 item.schemaname = data.schemaname;
                 item.tablename = data.tablename;
@@ -170,6 +170,7 @@ var FileExportScriptTableListResponse = /** @class */ (function (_super) {
                 item.parameter_column_group = data.parameter_column_group;
                 item.filename = data.filename;
                 item.export_mode_key = (data && data.export_mode_key) || null;
+                item.sql_statement = data.sql_statement;
                 item.file_format_key = (data && data.file_format_key) || null;
                 item.field_terminator = (data && data.field_terminator) || null;
                 item.row_terminator = (data && data.row_terminator) || null;
@@ -203,7 +204,6 @@ var FileExportScriptTableListResponse = /** @class */ (function (_super) {
                 item.row_terminator = data.row_terminator;
                 item.tablefullname = data.tablefullname;
                 item.db_conn_string = data.db_conn_string;
-                item.script_filename = data.script_filename;
                 item.is_exported_sql = data.is_exported_sql;
                 if (item.is_exported_sql === true) {
                     item.exported_sql_color = "danger";
@@ -223,20 +223,20 @@ var FileExportScriptTableListResponse = /** @class */ (function (_super) {
         }
         return _this;
     }
-    return FileExportScriptTableListResponse;
+    return FileExportTsqlTableListResponse;
 }(__WEBPACK_IMPORTED_MODULE_1__ListModelResponse__["a" /* ListModelResponse */]));
 
-//# sourceMappingURL=FileExportScriptTableListResponse.js.map
+//# sourceMappingURL=FileExportTsqlTableListResponse.js.map
 
 /***/ }),
 
-/***/ 1124:
+/***/ 1141:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileExportScriptTableResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileExportScriptTableViewModel__ = __webpack_require__(955);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileExportTsqlTableResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileExportTsqlTableViewModel__ = __webpack_require__(969);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -249,15 +249,15 @@ var __extends = (this && this.__extends) || (function () {
 })();
 
 
-var FileExportScriptTableResponse = /** @class */ (function (_super) {
-    __extends(FileExportScriptTableResponse, _super);
-    function FileExportScriptTableResponse(obj) {
+var FileExportTsqlTableResponse = /** @class */ (function (_super) {
+    __extends(FileExportTsqlTableResponse, _super);
+    function FileExportTsqlTableResponse(obj) {
         var _this = _super.call(this, obj) || this;
         _this.Message = obj.Message;
         _this.DidError = obj.DidError;
         _this.ErrorMessage = obj.ErrorMessage;
         if (_this.DidError === false) {
-            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileExportScriptTableViewModel__["a" /* FileExportScriptTableViewModel */]();
+            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileExportTsqlTableViewModel__["a" /* FileExportTsqlTableViewModel */]();
             _this.Model.exec_file_seq = obj.Model.exec_file_seq;
             _this.Model.schemaname = obj.Model.schemaname;
             _this.Model.tablename = obj.Model.tablename;
@@ -265,6 +265,7 @@ var FileExportScriptTableResponse = /** @class */ (function (_super) {
             _this.Model.parameter_column_group = obj.Model.parameter_column_group;
             _this.Model.filename = obj.Model.filename;
             _this.Model.export_mode_key = obj && obj.Model.export_mode_key || null;
+            _this.Model.sql_statement = obj.Model.sql_statement;
             _this.Model.file_format_key = obj && obj.Model.file_format_key || null;
             _this.Model.field_terminator = obj && obj.Model.field_terminator || null;
             _this.Model.row_terminator = obj && obj.Model.row_terminator || null;
@@ -296,10 +297,9 @@ var FileExportScriptTableResponse = /** @class */ (function (_super) {
             _this.Model.row_terminator = (obj && obj.Model.row_terminator) || null;
             _this.Model.tablefullname = obj.Model.tablefullname;
             _this.Model.db_conn_string = obj.Model.db_conn_string;
-            _this.Model.is_exported_sql = obj.Model.is_expoted_sql;
-            _this.Model.script_filename = obj.Model.script_filename;
             _this.Model.src_export_type_key = obj.Model.src_export_type_key;
             _this.Model.src_export_type = obj.Model.src_export_type;
+            _this.Model.is_exported_sql = obj.Model.is_expoted_sql;
             if (_this.Model.is_exported_sql === true) {
                 _this.Model.exported_sql_color = "danger";
             }
@@ -314,25 +314,25 @@ var FileExportScriptTableResponse = /** @class */ (function (_super) {
         }
         return _this;
     }
-    return FileExportScriptTableResponse;
+    return FileExportTsqlTableResponse;
 }(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
 
-//# sourceMappingURL=FileExportScriptTableResponse.js.map
+//# sourceMappingURL=FileExportTsqlTableResponse.js.map
 
 /***/ }),
 
-/***/ 1389:
+/***/ 1408:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileExportScriptTableAddEditModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_file_export_script_table_services_file_export_script_table_services__ = __webpack_require__(1027);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileExportTsqlTableAddEditModalPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_file_export_tsql_table_services_file_export_tsql_table_services__ = __webpack_require__(1041);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_global__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_String__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileExportScriptTableViewModel__ = __webpack_require__(955);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_conn_services_conn_services__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileExportTsqlTableViewModel__ = __webpack_require__(969);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_conn_services_conn_services__ = __webpack_require__(267);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -351,24 +351,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the FileExportScriptTableModalPage page.
+ * Generated class for the FileExportTsqlTableModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
-    function FileExportScriptTableAddEditModalPage(navCtrl, navParams, viewCtrl, FileExportScriptTableServices, loadingCtrl, global, modalCtrl, ConnServices) {
+var FileExportTsqlTableAddEditModalPage = /** @class */ (function () {
+    function FileExportTsqlTableAddEditModalPage(navCtrl, navParams, viewCtrl, FileExportTsqlTableServices, loadingCtrl, global, modalCtrl, ConnServices) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
-        this.FileExportScriptTableServices = FileExportScriptTableServices;
+        this.FileExportTsqlTableServices = FileExportTsqlTableServices;
         this.loadingCtrl = loadingCtrl;
         this.global = global;
         this.modalCtrl = modalCtrl;
         this.ConnServices = ConnServices;
         this.func_no = 3;
         this.func_key = "014|" + this.func_no;
-        this.min_exec_file_seq = 35000;
+        this.min_exec_file_seq = 36000;
         this.max_exec_file_seq = this.min_exec_file_seq + 999;
         this.exec_file_seq = 0;
         this.sql_help = "\n  \u8B8A\u6578\u8AAA\u660E\uFF1A\n  {exec_log_seq}=\u8F49\u6A94\u5E8F\u865F,\n  {filename}=\u6A94\u540D,\n  {schema}=\u7D50\u69CB\u63CF\u8FF0,\n  {tablename}=\u532F\u51FA\u8CC7\u6599\u8868\u540D\u7A31,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n  ";
@@ -376,7 +376,7 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
         this.mode = navParams.data.mode;
         this.change_mode = navParams.data.change_mode;
         this.exec_file_seq = navParams.data.exec_file_seq;
-        this.item = new __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileExportScriptTableViewModel__["a" /* FileExportScriptTableViewModel */]();
+        this.item = new __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileExportTsqlTableViewModel__["a" /* FileExportTsqlTableViewModel */]();
         this.item.exec_file_seq = navParams.data.item.exec_file_seq;
         this.item.is_active = navParams.data.item.is_active;
         this.item.exec_seq = navParams.data.item.exec_seq;
@@ -394,9 +394,7 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
         this.item.parameter_column_group =
             navParams.data.item.parameter_column_group;
         this.item.filename = navParams.data.item.filename;
-        this.item.script_filename = navParams.data.item.script_filename;
-        this.item.script_file_proc_key = navParams.data.item.script_file_proc_key;
-        this.item.script_file_proc = navParams.data.item.script_file_proc;
+        this.item.sql_statement = navParams.data.item.sql_statement;
         this.item.file_format_key = navParams.data.item.file_format_key;
         this.item.file_format = navParams.data.item.file_format;
         this.item.field_terminator = navParams.data.item.field_terminator;
@@ -417,14 +415,14 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
         this.CanEditBatch = navParams.data.CanEditBatch;
         this.title = __WEBPACK_IMPORTED_MODULE_4__Model_String__["a" /* String */].Format("{0}", this.exec_file_seq);
     }
-    FileExportScriptTableAddEditModalPage.prototype.Help = function () {
+    FileExportTsqlTableAddEditModalPage.prototype.Help = function () {
         var _this = this;
         this.global.createLoader();
         this.global.loading.present().then(function () {
             _this.global.showMessage("SQL語法說明", _this.sql_help);
         });
     };
-    FileExportScriptTableAddEditModalPage.prototype.openNavParameterColumnPage = function (item) {
+    FileExportTsqlTableAddEditModalPage.prototype.openNavParameterColumnPage = function (item) {
         var _this = this;
         this.global.createLoader("連線中...");
         this.global.loading.present().then(function () {
@@ -432,7 +430,7 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
         });
         this.global.dismissLoading();
     };
-    FileExportScriptTableAddEditModalPage.prototype.get_conn_string = function (remote_conn_id) {
+    FileExportTsqlTableAddEditModalPage.prototype.get_conn_string = function (remote_conn_id) {
         var _this = this;
         this.global.createLoader("取得連線字串中...");
         this.global.loading.present().then(function () {
@@ -452,7 +450,7 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
             });
         });
     };
-    FileExportScriptTableAddEditModalPage.prototype.SelectExportMode = function () {
+    FileExportTsqlTableAddEditModalPage.prototype.SelectExportMode = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
             select_key: this.item.export_mode_key,
@@ -466,21 +464,7 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileExportScriptTableAddEditModalPage.prototype.SelectScriptFileProc = function () {
-        var _this = this;
-        var modal = this.modalCtrl.create("CodeSelectModalPage", {
-            select_key: this.item.script_file_proc_key,
-            code_type: "018"
-        });
-        modal.onDidDismiss(function (select_data) {
-            if (select_data == null)
-                return;
-            _this.item.script_file_proc_key = select_data.code_key;
-            _this.item.script_file_proc = select_data.code_desc;
-        });
-        modal.present();
-    };
-    FileExportScriptTableAddEditModalPage.prototype.SelectLastDataType = function () {
+    FileExportTsqlTableAddEditModalPage.prototype.SelectLastDataType = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
             select_key: this.item.last_data_type_key,
@@ -494,7 +478,7 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileExportScriptTableAddEditModalPage.prototype.SelectFileFormat = function () {
+    FileExportTsqlTableAddEditModalPage.prototype.SelectFileFormat = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
             select_key: this.item.file_format_key,
@@ -508,7 +492,7 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileExportScriptTableAddEditModalPage.prototype.SelectConn = function () {
+    FileExportTsqlTableAddEditModalPage.prototype.SelectConn = function () {
         var _this = this;
         var modal = this.modalCtrl.create("ConnSelectModalPage", {
             select_remote_conn_id: this.item.db_conn_id,
@@ -522,7 +506,7 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileExportScriptTableAddEditModalPage.prototype.SelectParameterGroup = function () {
+    FileExportTsqlTableAddEditModalPage.prototype.SelectParameterGroup = function () {
         var _this = this;
         var modal = this.modalCtrl.create("ParameterGroupSelectModelPage", {
             select_parameter_column_group: this.item.parameter_column_group
@@ -534,7 +518,7 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileExportScriptTableAddEditModalPage.prototype.SelectTable = function () {
+    FileExportTsqlTableAddEditModalPage.prototype.SelectTable = function () {
         var _this = this;
         var modal = this.modalCtrl.create("TableExtSelectModalPage", {
             select_item: this.item.tablefullname
@@ -548,11 +532,11 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileExportScriptTableAddEditModalPage.prototype.get_max_exec_seq = function () {
+    FileExportTsqlTableAddEditModalPage.prototype.get_max_exec_seq = function () {
         var _this = this;
         this.global.createLoader("取得最大值中...");
         this.global.loading.present().then(function () {
-            _this.FileExportScriptTableServices.GetMaxExecSeqAsync(_this.exec_file_seq).subscribe(function (data) {
+            _this.FileExportTsqlTableServices.GetMaxExecSeqAsync(_this.exec_file_seq).subscribe(function (data) {
                 if (data.DidError === true) {
                     _this.global.dismissLoading();
                     _this.global.showError(data.ErrorMessage);
@@ -567,45 +551,45 @@ var FileExportScriptTableAddEditModalPage = /** @class */ (function () {
             });
         });
     };
-    FileExportScriptTableAddEditModalPage.prototype.Save = function () {
+    FileExportTsqlTableAddEditModalPage.prototype.Save = function () {
         this.viewCtrl.dismiss(this.item);
     };
-    FileExportScriptTableAddEditModalPage.prototype.close = function () {
+    FileExportTsqlTableAddEditModalPage.prototype.close = function () {
         this.viewCtrl.dismiss();
     };
-    FileExportScriptTableAddEditModalPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad FileExportScriptTableModalPage");
+    FileExportTsqlTableAddEditModalPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad FileExportTsqlTableModalPage");
     };
-    FileExportScriptTableAddEditModalPage = __decorate([
+    FileExportTsqlTableAddEditModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
-            selector: "page-file-export-script-table-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\file-export-script-table-add-edit-modal\file-export-script-table-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm">\n\n\n\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>結構描述</ion-label>\n          <ion-input type="text"  [disabled]="CanEditBatch==false  || mode==\'PUT\'" name="schemaname" #schemaname="ngModel" [(ngModel)]="item.schemaname"\n             maxlength="30"></ion-input>\n        </ion-item>\n\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>資料表名稱</ion-label>\n          <ion-input type="text"  [disabled]="CanEditBatch==false || mode==\'PUT\'" name="tablename" #tablename="ngModel" [(ngModel)]="item.tablename"\n            required maxlength="50"></ion-input>\n          <button ion-button outline item-end icon-right *ngIf="CanEditBatch==true && mode==\'POST\'" (click)="SelectTable()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n        <div *ngIf="tablename.errors && tablename.touched" class="error-message">\n          資料表名稱不能為空白\n        </div>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>篩選條件</ion-label>\n          <ion-input type="text" title="不需含where關鍵字" maxlength="255" [disabled]="CanEditBatch==false" name="where_condition" #where_condition="ngModel"\n            [(ngModel)]="item.where_condition"></ion-input>\n        </ion-item>\n\n      </ion-col>\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>參數群組</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false || mode==\'PUT\'" name="parameter_column_group" #parameter_column_group="ngModel"\n            [(ngModel)]="item.parameter_column_group" required maxlength="3"></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="SelectParameterGroup()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="parameter_column_group.errors && parameter_column_group.touched " class="error-message">\n          參數群組不能為空白\n        </div>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-6>\n        <ion-item>\n          <ion-label stacked>執行順序</ion-label>\n          <ion-input type="number" [disabled]="CanEditBatch==false" name="exec_seq" #exec_seq="ngModel" [(ngModel)]="item.exec_seq"\n            required></ion-input>\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="get_max_exec_seq()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n        <div *ngIf="exec_seq.errors && exec_seq.touched" class="error-message">\n          執行順序不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-6>\n        <ion-item>\n          <ion-label stacked>連線編號</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false || mode==\'PUT\'" name="db_conn_id" #db_conn_id="ngModel" [(ngModel)]="item.db_conn_id"\n            required maxlength="20"></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="SelectConn()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="db_conn_id.errors && db_conn_id.touched " class="error-message">\n          連線編號不能為空白\n        </div>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12>\n        <ion-item>\n          <ion-label stacked>連線字串</ion-label>\n          <ion-textarea rows=4 [disabled]=true name="db_conn_string" #db_conn_string="ngModel" [(ngModel)]="item.db_conn_string" required></ion-textarea>\n\n        </ion-item>\n\n      </ion-col>\n\n    </ion-row>\n    <ion-row>\n\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>Script檔案名稱</ion-label>\n          <ion-input type="text" [disabled]="CanEditBatch==false" name="script_filename" #script_filename="ngModel" [(ngModel)]="item.script_filename"\n            required maxlength="50"></ion-input>\n        </ion-item>\n        <div *ngIf="script_filename.errors && script_filename.touched" class="error-message">\n          Script檔案名稱不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>檔案名稱</ion-label>\n          <ion-input type="text" [disabled]="CanEditBatch==false" name="filename" #filename="ngModel" [(ngModel)]="item.filename" required\n            maxlength="50"></ion-input>\n        </ion-item>\n        <div *ngIf="filename.errors && filename.touched" class="error-message">\n          檔案名稱不能為空白\n        </div>\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>啟用</ion-label>\n          <ion-checkbox [disabled]="CanEditBatch==false" name="is_active" #is_active="ngModel" [(ngModel)]="item.is_active"></ion-checkbox>\n        </ion-item>\n\n      </ion-col>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>刪除空檔</ion-label>\n          <ion-checkbox [disabled]="CanEditBatch==false" name="del_empty_file" #del_empty_file="ngModel" [(ngModel)]="item.del_empty_file"></ion-checkbox>\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-6>\n        <ion-item>\n          <ion-label stacked>欄位分隔符號</ion-label>\n          <ion-input type="text" title="f:表固定長度,\\t:tab,\\b:char(8),\\0:char(0),f|:固定長度後加上|" maxlength="2" [disabled]="CanEditBatch==false"\n            name="field_terminator" #field_terminator="ngModel" [(ngModel)]="item.field_terminator" required></ion-input>\n        </ion-item>\n        <div *ngIf="field_terminator.errors && field_terminator.touched " class="error-message">\n          欄位分隔符號不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-6>\n        <ion-item>\n          <ion-label stacked>列結尾符號</ion-label>\n          <ion-input type="text" maxlength="5" [disabled]="CanEditBatch==false" name="row_terminator" #row_terminator="ngModel" [(ngModel)]="item.row_terminator"\n            required></ion-input>\n        </ion-item>\n        <div *ngIf="row_terminator.errors && row_terminator.touched " class="error-message">\n          列結尾符號不能為空白\n        </div>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>內文格式</ion-label>\n          <ion-input type="text" maxlength=10 [disabled]="CanEditBatch==false " name="file_format_key" #file_format_key="ngModel" [(ngModel)]="item.file_format_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectFileFormat()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="file_format_key.errors && file_format_key.touched " class="error-message">\n          內文格式不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>內文格式</ion-label>\n          <ion-input type="text" [disabled]=true name="file_format" #file_format="ngModel" [(ngModel)]="item.file_format" required></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>匯出模式</ion-label>\n          <ion-input type="text" maxlength=10 [disabled]="CanEditBatch==false " name="export_mode_key" #export_mode_key="ngModel" [(ngModel)]="item.export_mode_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectExportMode()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="export_mode_key.errors && export_mode_key.touched " class="error-message">\n          匯出模式不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>匯出模式</ion-label>\n          <ion-input type="text" [disabled]=true name="export_mode" #export_mode="ngModel" [(ngModel)]="item.export_mode" required></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>最後資料欄位類型</ion-label>\n          <ion-input type="text" maxlength=10 [disabled]="CanEditBatch==false " name="last_data_type_key" #last_data_type_key="ngModel"\n            [(ngModel)]="item.last_data_type_key" required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectLastDataType()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="last_data_type_key.errors && last_data_type_key.touched " class="error-message">\n          最後資料欄位類型不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>最後資料欄位類型</ion-label>\n          <ion-input type="text" [disabled]=true name="last_data_type" #last_data_type="ngModel" [(ngModel)]="item.last_data_type"\n            required></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="item.last_data_type_key!=\'009|ALL\' && item.last_data_type_key>\'\' ">\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>最後資料欄位名稱</ion-label>\n          <ion-input type="text" maxlength="30" [disabled]="CanEditBatch==false" name="last_data_column_name" #last_data_column_name="ngModel"\n            [(ngModel)]="item.last_data_column_name"></ion-input>\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small title="確認" [disabled]="CanEditBatch==false" ion-button color="dark" [disabled]="!Form.form.valid" icon-left\n            (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n          <button small title="變數說明" [disabled]="CanEditBatch==false" ion-button color="dark" icon-left (click)="Help()">\n            <ion-icon name="help"></ion-icon>\n          </button>\n          <button small title="參數群組" ion-button color="dark" icon-left (click)="openNavParameterColumnPage(item)">\n            <ion-icon name="outlet"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\file-export-script-table-add-edit-modal\file-export-script-table-add-edit-modal.html"*/
+            selector: "page-file-export-tsql-table-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\file-export-tsql-table-add-edit-modal\file-export-tsql-table-add-edit-modal.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <ion-title>{{title}}</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n  <ion-content padding>\n    <form #Form="ngForm">\n\n\n\n      <ion-row>\n          <ion-col col-12 col-sm-4>\n            <ion-item>\n              <ion-label stacked>結構描述</ion-label>\n              <ion-input type="text"  [disabled]="CanEditBatch==false  || mode==\'PUT\'" name="schemaname" #schemaname="ngModel" [(ngModel)]="item.schemaname"\n                 maxlength="30"></ion-input>\n            </ion-item>\n\n          </ion-col>\n          <ion-col col-12 col-sm-8>\n            <ion-item>\n              <ion-label stacked>資料表名稱</ion-label>\n              <ion-input type="text"  [disabled]="CanEditBatch==false || mode==\'PUT\'" name="tablename" #tablename="ngModel" [(ngModel)]="item.tablename"\n                required maxlength="50"></ion-input>\n              <button ion-button outline item-end icon-right *ngIf="CanEditBatch==true && mode==\'POST\'" (click)="SelectTable()">\n                <ion-icon name="arrow-dropdown"></ion-icon>\n              </button>\n            </ion-item>\n            <div *ngIf="tablename.errors && tablename.touched" class="error-message">\n              資料表名稱不能為空白\n            </div>\n\n          </ion-col>\n        </ion-row>\n        <ion-row>\n            <ion-col >\n              <ion-item>\n                <ion-label stacked>篩選條件</ion-label>\n                <ion-input type="text" title="不需含where關鍵字" maxlength="255" [disabled]="CanEditBatch==false" name="where_condition" #where_condition="ngModel" [(ngModel)]="item.where_condition"\n                  ></ion-input>\n              </ion-item>\n\n            </ion-col>\n          </ion-row>\n        <ion-row>\n            <ion-col col-6>\n                <ion-item>\n                  <ion-label stacked>執行順序</ion-label>\n                  <ion-input type="number" [disabled]="CanEditBatch==false" name="exec_seq" #exec_seq="ngModel" [(ngModel)]="item.exec_seq"\n                    required></ion-input>\n                  <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="get_max_exec_seq()">\n                    <ion-icon name="arrow-dropdown"></ion-icon>\n                  </button>\n                </ion-item>\n                <div *ngIf="exec_seq.errors && exec_seq.touched" class="error-message">\n                  執行順序不能為空白\n                </div>\n              </ion-col>\n              <ion-col col-6>\n                  <ion-item>\n                    <ion-label stacked>連線編號</ion-label>\n                    <ion-input type="text" readonly=true [disabled]="CanEditBatch==false || mode==\'PUT\'" name="db_conn_id" #db_conn_id="ngModel" [(ngModel)]="item.db_conn_id"\n                      required maxlength="20"></ion-input>\n\n                    <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="SelectConn()">\n                      <ion-icon name="arrow-dropdown"></ion-icon>\n                    </button>\n                  </ion-item>\n\n                  <div *ngIf="db_conn_id.errors && db_conn_id.touched " class="error-message">\n                    連線編號不能為空白\n                  </div>\n                </ion-col>\n        </ion-row>\n        <ion-row>\n            <ion-col col-12>\n              <ion-item>\n                <ion-label stacked>連線字串</ion-label>\n                <ion-textarea rows=4 [disabled]=true name="db_conn_string" #db_conn_string="ngModel" [(ngModel)]="item.db_conn_string" required></ion-textarea>\n\n              </ion-item>\n\n            </ion-col>\n\n          </ion-row>\n      <ion-row>\n          <ion-col col-12 col-sm-4 >\n              <ion-item>\n                <ion-label stacked>參數群組</ion-label>\n                <ion-input type="text" readonly=true [disabled]="CanEditBatch==false || mode==\'PUT\'" name="parameter_column_group" #parameter_column_group="ngModel"\n                  [(ngModel)]="item.parameter_column_group" required maxlength="3"></ion-input>\n\n                <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="SelectParameterGroup()">\n                  <ion-icon name="arrow-dropdown"></ion-icon>\n                </button>\n              </ion-item>\n\n              <div *ngIf="parameter_column_group.errors && parameter_column_group.touched " class="error-message">\n                參數群組不能為空白\n              </div>\n            </ion-col>\n\n        <ion-col col-12 col-sm-8 >\n          <ion-item>\n            <ion-label stacked>檔案名稱</ion-label>\n            <ion-input type="text" [disabled]="CanEditBatch==false" name="filename" #filename="ngModel" [(ngModel)]="item.filename" required\n              maxlength="50"></ion-input>\n          </ion-item>\n          <div *ngIf="filename.errors && filename.touched" class="error-message">\n            檔案名稱不能為空白\n          </div>\n        </ion-col>\n\n      </ion-row>\n\n      <ion-row>\n\n\n        <ion-col>\n          <ion-item>\n            <ion-label stacked>啟用</ion-label>\n            <ion-checkbox [disabled]="CanEditBatch==false" name="is_active" #is_active="ngModel" [(ngModel)]="item.is_active"></ion-checkbox>\n          </ion-item>\n\n        </ion-col>\n        <ion-col>\n            <ion-item>\n              <ion-label stacked>刪除空檔</ion-label>\n              <ion-checkbox [disabled]="CanEditBatch==false" name="del_empty_file" #del_empty_file="ngModel" [(ngModel)]="item.del_empty_file"></ion-checkbox>\n            </ion-item>\n\n          </ion-col>\n      </ion-row>\n      <ion-row>\n          <ion-col col-12 col-sm-4>\n            <ion-item>\n              <ion-label stacked>內文格式</ion-label>\n              <ion-input type="text" maxlength=10  readonly=true [disabled]="CanEditBatch==false " name="file_format_key" #file_format_key="ngModel" [(ngModel)]="item.file_format_key"\n                required></ion-input>\n\n              <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectFileFormat()">\n                <ion-icon name="arrow-dropdown"></ion-icon>\n              </button>\n            </ion-item>\n\n            <div *ngIf="file_format_key.errors && file_format_key.touched " class="error-message">\n                內文格式不能為空白\n            </div>\n          </ion-col>\n          <ion-col col-12 col-sm-8>\n            <ion-item>\n              <ion-label stacked>內文格式</ion-label>\n              <ion-input type="text" [disabled]=true name="file_format" #file_format="ngModel" [(ngModel)]="item.file_format"\n                required></ion-input>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n            <ion-col col-12 col-sm-4>\n              <ion-item>\n                <ion-label stacked>匯出模式</ion-label>\n                <ion-input type="text" maxlength=10 readonly=true [disabled]="CanEditBatch==false " name="export_mode_key" #export_mode_key="ngModel" [(ngModel)]="item.export_mode_key"\n                  required></ion-input>\n\n                <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectExportMode()">\n                  <ion-icon name="arrow-dropdown"></ion-icon>\n                </button>\n              </ion-item>\n\n              <div *ngIf="export_mode_key.errors && export_mode_key.touched " class="error-message">\n                  匯出模式不能為空白\n              </div>\n            </ion-col>\n            <ion-col col-12 col-sm-8>\n              <ion-item>\n                <ion-label stacked>匯出模式</ion-label>\n                <ion-input type="text" [disabled]=true name="export_mode" #export_mode="ngModel" [(ngModel)]="item.export_mode"\n                  required></ion-input>\n              </ion-item>\n            </ion-col>\n          </ion-row>\n        <ion-row>\n            <ion-col col-6>\n              <ion-item>\n                <ion-label stacked>欄位分隔符號</ion-label>\n                <ion-input type="text" title="f:表固定長度,\\t:tab,\\b:char(8),\\0:char(0),f|:固定長度後加上|" maxlength="2" [disabled]="CanEditBatch==false" name="field_terminator" #field_terminator="ngModel" [(ngModel)]="item.field_terminator"\n                  required></ion-input>\n              </ion-item>\n              <div *ngIf="field_terminator.errors && field_terminator.touched " class="error-message">\n                  欄位分隔符號不能為空白\n              </div>\n            </ion-col>\n            <ion-col col-6>\n                <ion-item>\n                  <ion-label stacked>列結尾符號</ion-label>\n                  <ion-input type="text"  maxlength="5" [disabled]="CanEditBatch==false" name="row_terminator" #row_terminator="ngModel" [(ngModel)]="item.row_terminator"\n                    required></ion-input>\n                </ion-item>\n                <div *ngIf="row_terminator.errors && row_terminator.touched " class="error-message">\n                    列結尾符號不能為空白\n                </div>\n              </ion-col>\n          </ion-row>\n          <ion-row>\n              <ion-col col-12 col-sm-4>\n                <ion-item>\n                  <ion-label stacked>最後資料欄位類型</ion-label>\n                  <ion-input type="text" readonly=true maxlength=10 [disabled]="CanEditBatch==false " name="last_data_type_key" #last_data_type_key="ngModel" [(ngModel)]="item.last_data_type_key"\n                    required></ion-input>\n\n                  <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectLastDataType()">\n                    <ion-icon name="arrow-dropdown"></ion-icon>\n                  </button>\n                </ion-item>\n\n                <div *ngIf="last_data_type_key.errors && last_data_type_key.touched " class="error-message">\n                    最後資料欄位類型不能為空白\n                </div>\n              </ion-col>\n              <ion-col col-12 col-sm-8>\n                <ion-item>\n                  <ion-label stacked>最後資料欄位類型</ion-label>\n                  <ion-input type="text" [disabled]=true name="last_data_type" #last_data_type="ngModel" [(ngModel)]="item.last_data_type"\n                    required></ion-input>\n                </ion-item>\n              </ion-col>\n            </ion-row>\n            <ion-row *ngIf="item.last_data_type_key!=\'009|ALL\' && item.last_data_type_key>\'\' " >\n                <ion-col >\n                  <ion-item>\n                    <ion-label stacked>最後資料欄位名稱</ion-label>\n                    <ion-input type="text" maxlength="30" [disabled]="CanEditBatch==false" name="last_data_column_name" #last_data_column_name="ngModel" [(ngModel)]="item.last_data_column_name"\n                    ></ion-input>\n                  </ion-item>\n\n                </ion-col>\n              </ion-row>\n              <ion-row>\n                  <ion-col>\n                    <ion-item>\n                      <ion-label stacked>Sql Statement</ion-label>\n                      <ion-textarea [disabled]="CanEditBatch==false" rows=10 name="sql_statement" #sql_statement="ngModel" [(ngModel)]="item.sql_statement"\n                        required></ion-textarea>\n                    </ion-item>\n                    <div *ngIf="sql_statement.errors && sql_statement.touched " class="error-message">\n                      Sql Statement不能為空白\n                    </div>\n                  </ion-col>\n                </ion-row>\n    </form>\n\n  </ion-content>\n  <ion-footer>\n    <ion-toolbar>\n      <ion-row>\n        <ion-col>\n          <div [ngClass]="[\'command\']">\n            <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n              <ion-icon name="backspace"></ion-icon>\n            </button>\n            <button small title="確認" [disabled]="CanEditBatch==false" ion-button color="dark" [disabled]="!Form.form.valid" icon-left\n              (click)="Save()">\n              <ion-icon name="checkmark-circle"></ion-icon>\n            </button>\n            <button small title="複製SQL語法" ion-button color="dark" icon-left (click)="global.copyTextToClipboard(item.sql_statement)">\n              <ion-icon name="copy"></ion-icon>\n            </button>\n            <button small title="變數說明" [disabled]="CanEditBatch==false" ion-button color="dark"  icon-left\n            (click)="Help()">\n            <ion-icon name="help"></ion-icon>\n          </button>\n          <button small title="參數群組" ion-button color="dark" icon-left (click)="openNavParameterColumnPage(item)">\n            <ion-icon name="outlet"></ion-icon>\n          </button>\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-toolbar>\n  </ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\file-export-tsql-table-add-edit-modal\file-export-tsql-table-add-edit-modal.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["p" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_0__providers_file_export_script_table_services_file_export_script_table_services__["a" /* FileExportScriptTableServicesProvider */],
+            __WEBPACK_IMPORTED_MODULE_0__providers_file_export_tsql_table_services_file_export_tsql_table_services__["a" /* FileExportTsqlTableServicesProvider */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_1__components_global_global__["a" /* GlobalComponent */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_6__providers_conn_services_conn_services__["a" /* ConnServicesProvider */]])
-    ], FileExportScriptTableAddEditModalPage);
-    return FileExportScriptTableAddEditModalPage;
+    ], FileExportTsqlTableAddEditModalPage);
+    return FileExportTsqlTableAddEditModalPage;
 }());
 
-//# sourceMappingURL=file-export-script-table-add-edit-modal.js.map
+//# sourceMappingURL=file-export-tsql-table-add-edit-modal.js.map
 
 /***/ }),
 
-/***/ 531:
+/***/ 546:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileExportScriptTableAddEditModalPageModule", function() { return FileExportScriptTableAddEditModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileExportTsqlTableAddEditModalPageModule", function() { return FileExportTsqlTableAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_export_script_table_add_edit_modal__ = __webpack_require__(1389);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_file_export_script_table_services_file_export_script_table_services__ = __webpack_require__(1027);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_export_tsql_table_add_edit_modal__ = __webpack_require__(1408);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_file_export_tsql_table_services_file_export_tsql_table_services__ = __webpack_require__(1041);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -616,40 +600,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FileExportScriptTableAddEditModalPageModule = /** @class */ (function () {
-    function FileExportScriptTableAddEditModalPageModule() {
+var FileExportTsqlTableAddEditModalPageModule = /** @class */ (function () {
+    function FileExportTsqlTableAddEditModalPageModule() {
     }
-    FileExportScriptTableAddEditModalPageModule = __decorate([
+    FileExportTsqlTableAddEditModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__file_export_script_table_add_edit_modal__["a" /* FileExportScriptTableAddEditModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__file_export_tsql_table_add_edit_modal__["a" /* FileExportTsqlTableAddEditModalPage */],
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_file_export_script_table_services_file_export_script_table_services__["a" /* FileExportScriptTableServicesProvider */],
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_file_export_tsql_table_services_file_export_tsql_table_services__["a" /* FileExportTsqlTableServicesProvider */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__file_export_script_table_add_edit_modal__["a" /* FileExportScriptTableAddEditModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__file_export_tsql_table_add_edit_modal__["a" /* FileExportTsqlTableAddEditModalPage */]),
             ],
         })
-    ], FileExportScriptTableAddEditModalPageModule);
-    return FileExportScriptTableAddEditModalPageModule;
+    ], FileExportTsqlTableAddEditModalPageModule);
+    return FileExportTsqlTableAddEditModalPageModule;
 }());
 
-//# sourceMappingURL=file-export-script-table-add-edit-modal.module.js.map
+//# sourceMappingURL=file-export-tsql-table-add-edit-modal.module.js.map
 
 /***/ }),
 
-/***/ 955:
+/***/ 969:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileExportScriptTableViewModel; });
-var FileExportScriptTableViewModel = /** @class */ (function () {
-    function FileExportScriptTableViewModel() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileExportTsqlTableViewModel; });
+var FileExportTsqlTableViewModel = /** @class */ (function () {
+    function FileExportTsqlTableViewModel() {
     }
-    return FileExportScriptTableViewModel;
+    return FileExportTsqlTableViewModel;
 }());
 
-//# sourceMappingURL=FileExportScriptTableViewModel.js.map
+//# sourceMappingURL=FileExportTsqlTableViewModel.js.map
 
 /***/ })
 

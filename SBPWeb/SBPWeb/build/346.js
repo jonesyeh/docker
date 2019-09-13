@@ -1,14 +1,14 @@
 webpackJsonp([346],{
 
-/***/ 1273:
+/***/ 1318:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BatchProgramAddEditModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ConnHttpAddEditModalPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_global_global__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_ProgramViewModel__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_global_global__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_ViewModel_ConnHttpViewModel__ = __webpack_require__(275);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,115 +22,77 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the programModalPage page.
+ * Generated class for the ConnModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var BatchProgramAddEditModalPage = /** @class */ (function () {
-    function BatchProgramAddEditModalPage(navCtrl, navParams, viewCtrl, modalCtrl, global) {
+var ConnHttpAddEditModalPage = /** @class */ (function () {
+    function ConnHttpAddEditModalPage(navCtrl, navParams, viewCtrl, loadingCtrl, global) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
-        this.modalCtrl = modalCtrl;
+        this.loadingCtrl = loadingCtrl;
         this.global = global;
-        this.sql_help = "\n  \u7570\u5E38\u8B8A\u6578\u8AAA\u660E\uFF1A\n  {batch_log_seq}=\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {parent_batch_log_seq}=\u4E0A\u5C64\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {exec_log_seq}=\u8F49\u6A94\u5E8F\u865F,\n  {job_step_log_seq}=\u57F7\u884C\u4F5C\u696D\u6B65\u9A5F\u7D00\u9304\u5E8F\u865F,\n  {filename}=\u6A94\u540D,\n  {schema}=\u7D50\u69CB\u63CF\u8FF0,\n  {tablename}=\u532F\u5165\u8CC7\u6599\u8868\u540D\u7A31,\n  {ext_column}=\u7570\u5E38\u95DC\u9375\u5B57\u6B04\u4F4D,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n  \u8B66\u8A0A\u8B8A\u6578\u8AAA\u660E\uFF1A\n  {batch_log_seq}=\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {parent_batch_log_seq}=\u4E0A\u5C64\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {exec_log_seq}=\u8F49\u6A94\u5E8F\u865F,\n  {job_step_log_seq}=\u57F7\u884C\u4F5C\u696D\u6B65\u9A5F\u7D00\u9304\u5E8F\u865F,\n  {filename}=\u6A94\u540D,\n  {schema}=\u7D50\u69CB\u63CF\u8FF0,\n  {tablename}=\u532F\u5165\u8CC7\u6599\u8868\u540D\u7A31,\n  {ext_column}=\u7570\u5E38\u95DC\u9375\u5B57\u6B04\u4F4D,\n  {src_path_file}=\u4F86\u6E90\u8DEF\u5F91\u6A94\u540D,\n  {src_file_path}=\u4F86\u6E90\u6A94\u6848\u8DEF\u5F91,\n  {bk_path_file}=\u5099\u4EFD\u8DEF\u5F91\u6A94\u540D,\n  {bk_file_path}=\u5099\u4EFD\u6A94\u6848\u8DEF\u5F91,\n  {file_size}=\u6A94\u6848\u5927\u5C0F,\n  {file_ext}=\u9644\u6A94\u540D,\n  @bindarydata=\u4E8C\u9032\u4F4D\u6A94\u6848\u5167\u5BB9,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n  ";
         this.mode = navParams.data.mode;
-        this.title = "批次SQL程式";
-        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_ProgramViewModel__["a" /* ProgramViewModel */]();
-        if (navParams.data.change_mode === "c")
-            this.item.program_no = "auto";
-        else
-            this.item.program_no = navParams.data.item.program_no;
-        this.item.program_desc = navParams.data.item.program_desc;
-        this.item.program_name = navParams.data.item.program_name;
-        this.item.bus_type_key = navParams.data.item.bus_type_key;
-        this.item.bus_type = navParams.data.item.bus_type;
-        this.item.program_type_key = navParams.data.item.program_type_key;
-        this.item.program_type_seq = navParams.data.item.program_type_seq;
-        this.item.program_path_key = navParams.data.item.program_path_key;
-        this.item.master_program_no = navParams.data.item.master_program_no;
-        this.item.parent_program_no = navParams.data.item.parent_program_no;
-        this.item.menu_key = navParams.data.item.menu_key;
-        this.item.audit_flag = navParams.data.item.audit_flag;
+        this.change_mode = navParams.data.change_mode;
+        this.item = new __WEBPACK_IMPORTED_MODULE_3__Model_ViewModel_ConnHttpViewModel__["a" /* ConnHttpViewModel */]();
+        this.item.remote_conn_id = navParams.data.item.remote_conn_id;
+        this.item.user_name = navParams.data.item.user_name;
+        this.item.conn_string = navParams.data.item.conn_string;
+        this.item.pwd = navParams.data.item.pwd;
         this.item.creator = navParams.data.item.creator;
         this.item.create_time = navParams.data.item.create_time;
         this.item.modifier = navParams.data.item.modifier;
         this.item.last_update_time = navParams.data.item.last_update_time;
-        this.item.is_active = navParams.data.item.is_active;
-        this.item.sql_statement = navParams.data.item.sql_statement;
-        this.CanEditBatch = navParams.data.CanEditBatch;
-        console.log(this.CanEditBatch);
+        this.item.conn_type_key = navParams.data.item.conn_type_key;
+        this.item.conn_type = navParams.data.item.conn_type;
+        if (this.change_mode === "c")
+            this.item.remote_conn_id = this.item.remote_conn_id + "_copy";
+        this.CanEditConn = navParams.data.CanEditConn;
+        this.title = "Http連線";
     }
-    BatchProgramAddEditModalPage.prototype.SelectBusType = function () {
-        var _this = this;
-        var modal = this.modalCtrl.create("CodeSelectModalPage", {
-            select_key: this.item.bus_type_key,
-            code_type: "022"
-        });
-        modal.onDidDismiss(function (select_data) {
-            if (select_data == null)
-                return;
-            _this.item.bus_type_key = select_data.code_key;
-            _this.item.bus_type = select_data.code_desc;
-        });
-        modal.present();
-    };
-    BatchProgramAddEditModalPage.prototype.Help = function () {
-        var _this = this;
-        this.global.createLoader();
-        this.global.loading.present().then(function () {
-            _this.global.showMessage("SQL語法說明", _this.sql_help);
-        });
-    };
-    // SelectProgram() {
-    //   let modal = this.modalCtrl.create("BatchProgramSelectModalPage", {
-    //     select_item: this.item.program_no,
-    //   });
-    //   modal.onDidDismiss(select_data => {
-    //     if (select_data == null) return;
-    //     this.item.program_no = select_data.program_no;
-    //     this.item.program_desc = select_data.program_desc;
-    //   });
-    //   modal.present();
-    // }
-    BatchProgramAddEditModalPage.prototype.Save = function () {
-        this.item.program_name = this.item.program_desc;
+    ConnHttpAddEditModalPage.prototype.Save = function () {
+        if (this.item.pwd > "" && this.confirm_pwd != this.item.pwd) {
+            this.global.showPopup("密碼錯誤", "確認密碼不一致");
+            return;
+        }
         this.viewCtrl.dismiss(this.item);
     };
-    BatchProgramAddEditModalPage.prototype.close = function () {
+    ConnHttpAddEditModalPage.prototype.close = function () {
         this.viewCtrl.dismiss();
     };
-    BatchProgramAddEditModalPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad ProgramModalPage");
+    ConnHttpAddEditModalPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad ConnModalPage");
     };
-    BatchProgramAddEditModalPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: "page-batch-program-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\batch-program-add-edit-modal\batch-program-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content  padding>\n    <form #Form="ngForm">\n\n        <ion-row>\n          <ion-col>\n            <ion-item>\n              <ion-label stacked >程式編號</ion-label>\n              <ion-input type="text" disabled=true name="program_no" #program_no="ngModel" [(ngModel)]="item.program_no"\n                required></ion-input>\n                <!-- <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectProgram()">\n                  <ion-icon name="arrow-dropdown"></ion-icon>\n                </button> -->\n            </ion-item>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col>\n            <ion-item>\n                <ion-label stacked >程式說明</ion-label>\n              <ion-input type="text" [disabled]="CanEditBatch==false" name="program_desc" #program_desc="ngModel" [(ngModel)]="item.program_desc"\n                required></ion-input>\n            </ion-item>\n            <div *ngIf="program_desc.errors && program_desc.touched" class="error-message">\n              程式說明不能為空白\n            </div>\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col col-12 col-sm-4>\n            <ion-item>\n              <ion-label stacked>業務別</ion-label>\n              <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="bus_type_key" #bus_type_key="ngModel" [(ngModel)]="item.bus_type_key"\n                required></ion-input>\n\n              <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectBusType()">\n                <ion-icon name="arrow-dropdown"></ion-icon>\n              </button>\n            </ion-item>\n\n            <div *ngIf="bus_type_key.errors && bus_type_key.touched " class="error-message">\n              業務別不能為空白\n            </div>\n          </ion-col>\n          <ion-col col-12 col-sm-8>\n            <ion-item>\n              <ion-label stacked>業務別</ion-label>\n              <ion-input type="text" [disabled]=true name="bus_type" #bus_type="ngModel" [(ngModel)]="item.bus_type" required></ion-input>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked>啟用</ion-label>\n            <ion-checkbox [disabled]="CanEditBatch==false" name="is_active" #is_active="ngModel" [(ngModel)]="item.is_active"></ion-checkbox>\n          </ion-item>\n\n        </ion-col>\n      </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-item>\n              <ion-label stacked>SQL</ion-label>\n              <ion-textarea rows=20 [disabled]="CanEditBatch==false" name="sql_statement" #note="ngModel" [(ngModel)]="item.sql_statement"></ion-textarea>\n            </ion-item>\n          </ion-col>\n        </ion-row>\n      </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small title="確認" [disabled]="CanEditBatch==false"  ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n          <button small title="複製SQL語法" ion-button color="dark" icon-left (click)="global.copyTextToClipboard(item.sql_statement)">\n            <ion-icon name="copy"></ion-icon>\n          </button>\n          <button small title="變數說明" [disabled]="CanEditBatch==false" ion-button color="dark"  icon-left\n            (click)="Help()">\n            <ion-icon name="help"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\batch-program-add-edit-modal\batch-program-add-edit-modal.html"*/
+    ConnHttpAddEditModalPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["Component"])({
+            selector: "page-conn-http-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\conn-http-add-edit-modal\conn-http-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm">\n\n\n    <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>遠端連線編號</ion-label>\n          <ion-input type="text" [disabled]="CanEditConn==false || mode==\'PUT\'" name="remote_conn_id" #remote_conn_id="ngModel" [(ngModel)]="item.remote_conn_id"\n            required maxlength="20"></ion-input>\n\n        </ion-item>\n        <div *ngIf="remote_conn_id.errors && remote_conn_id.touched" class="error-message">\n          遠端連線編號不能為空白\n        </div>\n\n      </ion-col>\n    </ion-row>\n\n\n    <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>連線字串</ion-label>\n          <ion-textarea type="text" Rows="5"  required [disabled]="CanEditConn==false" name="conn_string" #conn_string="ngModel" [(ngModel)]="item.conn_string"\n            maxlength="250"></ion-textarea>\n          <!-- <ion-input type="text"  required [disabled]="CanEditConn==false" name="conn_string" #conn_string="ngModel" [(ngModel)]="item.conn_string"\n            maxlength="250"></ion-input> -->\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>帳號</ion-label>\n          <ion-input type="text" [disabled]="CanEditConn==false" name="user_name" #user_name="ngModel" [(ngModel)]="item.user_name"\n            maxlength="50"></ion-input>\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="change_mode==\'password\' || change_mode==\'c\' ">\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>密碼</ion-label>\n          <ion-input type="password"  [disabled]="CanEditConn==false" name="pwd" #pwd="ngModel" [(ngModel)]="item.pwd"></ion-input>\n\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="change_mode==\'password\' || change_mode==\'c\' " >\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>確認密碼</ion-label>\n          <ion-input type="password"  [disabled]="CanEditConn==false" name="confirm_pwd" #confirmpwd="ngModel" [(ngModel)]="confirm_pwd"></ion-input>\n\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small title="確認" [disabled]="CanEditConn==false" ion-button color="dark" [disabled]="!Form.form.valid" icon-left\n            (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\conn-http-add-edit-modal\conn-http-add-edit-modal.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_3__components_global_global__["a" /* GlobalComponent */]])
-    ], BatchProgramAddEditModalPage);
-    return BatchProgramAddEditModalPage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_0__components_global_global__["a" /* GlobalComponent */]])
+    ], ConnHttpAddEditModalPage);
+    return ConnHttpAddEditModalPage;
 }());
 
-//# sourceMappingURL=batch-program-add-edit-modal.js.map
+//# sourceMappingURL=conn-http-add-edit-modal.js.map
 
 /***/ }),
 
-/***/ 438:
+/***/ 475:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BatchProgramAddEditModalPageModule", function() { return BatchProgramAddEditModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConnHttpAddEditModalPageModule", function() { return ConnHttpAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__batch_program_add_edit_modal__ = __webpack_require__(1273);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__conn_http_add_edit_modal__ = __webpack_require__(1318);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -140,23 +102,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var BatchProgramAddEditModalPageModule = /** @class */ (function () {
-    function BatchProgramAddEditModalPageModule() {
+var ConnHttpAddEditModalPageModule = /** @class */ (function () {
+    function ConnHttpAddEditModalPageModule() {
     }
-    BatchProgramAddEditModalPageModule = __decorate([
+    ConnHttpAddEditModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__batch_program_add_edit_modal__["a" /* BatchProgramAddEditModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__conn_http_add_edit_modal__["a" /* ConnHttpAddEditModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__batch_program_add_edit_modal__["a" /* BatchProgramAddEditModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__conn_http_add_edit_modal__["a" /* ConnHttpAddEditModalPage */]),
             ],
         })
-    ], BatchProgramAddEditModalPageModule);
-    return BatchProgramAddEditModalPageModule;
+    ], ConnHttpAddEditModalPageModule);
+    return ConnHttpAddEditModalPageModule;
 }());
 
-//# sourceMappingURL=batch-program-add-edit-modal.module.js.map
+//# sourceMappingURL=conn-http-add-edit-modal.module.js.map
 
 /***/ })
 

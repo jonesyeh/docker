@@ -20,6 +20,7 @@ services:
     volumes:
       - c:\lic:c:\lic
       - c:\log:c:\log
+      - C:\ibs:c:\ibs
     hostname: sbpwebapi
     networks:
       nd-net:

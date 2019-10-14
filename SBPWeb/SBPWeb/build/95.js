@@ -324,7 +324,7 @@ var FileExportHKTableResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1397:
+/***/ 1396:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -392,6 +392,7 @@ var FileExportHkTablePage = /** @class */ (function () {
         this.title = "資料保留匯出進階";
         this.exec_file_seq = 0;
         this.show_select = false;
+        this.parent_page = null;
         this.table_detail_page = "TableDetailPage";
         this.Loop_page = "FileLoopPage";
         this.detail_page = "FileDetailByFilePage";
@@ -400,6 +401,7 @@ var FileExportHkTablePage = /** @class */ (function () {
         this.innerWidth = window.innerWidth;
         this.innerHeight = window.innerHeight;
         this.exec_file_seq = navParams.data.item.exec_file_seq;
+        this.parent_page = navParams.data.parent_page;
         this.subject = __WEBPACK_IMPORTED_MODULE_5__Model_String__["a" /* String */].Format("{0}", this.exec_file_seq);
     }
     FileExportHkTablePage.prototype.openNavTablePage = function (tablefullname) {
@@ -548,6 +550,7 @@ var FileExportHkTablePage = /** @class */ (function () {
                 _this.FileExportHKTableServices.PostPutAsync(select_data, _this.mode).subscribe(function (data) {
                     if (data.DidError === false) {
                         _this.LoadData(true);
+                        _this.parent_page.LoadData(true);
                         _this.global.dismissLoading();
                         _this.global.showPopup("檔案匯出", data.Message);
                     }
@@ -681,7 +684,7 @@ var FileExportHkTablePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 535:
+/***/ 534:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -689,7 +692,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileExportHkTablePageModule", function() { return FileExportHkTablePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_export_hk_table__ = __webpack_require__(1397);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_export_hk_table__ = __webpack_require__(1396);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(808);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_export_hk_table_services_file_export_hk_table_services__ = __webpack_require__(1036);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

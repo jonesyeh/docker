@@ -24,7 +24,7 @@ var FileImportBeforeSqlViewModel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileImportBeforeSqlResponse__ = __webpack_require__(1451);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileImportBeforeSqlResponse__ = __webpack_require__(1452);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -126,7 +126,7 @@ var FileImportBeforeSqlServicesProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1450:
+/***/ 1451:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -170,7 +170,7 @@ var FileImportBeforeSqlAddEditPage = /** @class */ (function () {
         this.authServices = authServices;
         this.FileImportBeforeSqlServices = FileImportBeforeSqlServices;
         this.alertCtrl = alertCtrl;
-        this.sql_help = "\n  \u8B8A\u6578\u8AAA\u660E\uFF1A\n  {batch_log_seq}=\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {parent_batch_log_seq}=\u4E0A\u5C64\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {exec_log_seq}=\u8F49\u6A94\u5E8F\u865F,\n  {job_step_log_seq}=\u57F7\u884C\u4F5C\u696D\u6B65\u9A5F\u7D00\u9304\u5E8F\u865F,\n  {filename}=\u6A94\u540D,\n  {schema}=\u7D50\u69CB\u63CF\u8FF0,\n  {tablename}=\u532F\u5165\u8CC7\u6599\u8868\u540D\u7A31,\n  {ext_column}=\u7570\u5E38\u95DC\u9375\u5B57\u6B04\u4F4D,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n  ";
+        this.sql_help = "\n  \u8B8A\u6578\u8AAA\u660E\uFF1A\n  {batch_log_seq}=\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {parent_batch_log_seq}=\u4E0A\u5C64\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {exec_log_seq}=\u8F49\u6A94\u5E8F\u865F,\n  {job_step_log_seq}=\u57F7\u884C\u4F5C\u696D\u6B65\u9A5F\u7D00\u9304\u5E8F\u865F,\n  {filename}=\u6A94\u540D,\n  {schema}=\u7D50\u69CB\u63CF\u8FF0,\n  {tablename}=\u532F\u5165\u8CC7\u6599\u8868\u540D\u7A31,\n  {ext_column}=\u7570\u5E38\u95DC\u9375\u5B57\u6B04\u4F4D,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n\n  \u6A94\u6848\u532F\u5165\u524D\u7522\u751F\u7684\u66AB\u5B58\u8CC7\u6599\u8868sql\u8A9E\u6CD5:\n  declare @schemaname varchar(30)='{0}',@tablename varchar(50)='{1}'\nSELECT [comm].[fn_gen_temp_sql] (\n@schemaname,@tablename)\n\n\u95DC\u806F\u6AA2\u6838\u7BC4\u4F8B1:\ndeclare @column_id int,@columnname varchar(50)='code_desc'\nset @column_id=[comm].[fn_get_column_id] ('{0}','{1}',@columnname)\n      delete  #{1}\n    OUTPUT   \n         deleted.exec_log_seq\n    ,deleted.line_no\n    ,@column_id --column_id\n    ,@columnname  --columnname\n    ,deleted.code_desc +'<>\u4EE3\u78BC\u63CF\u8FF0:'+ TB1.code_desc --err_content\n    ,'003|6'  --err_key \u5916\u90E8\u7D22\u5F15\u9375\u6AA2\u6838\u7570\u5E38\n    ,'{1}' --tablename\n    ,'code_key' --ext_column\n    ,deleted.code_key --ext_column_value\n    into comm.tb_err_log (exec_log_seq,line_no,column_id,columnname,err_content,err_key,tablename,ext_column,ext_column_value)\n     from #{1} as TP \n     INNER JOIN  comm.tb_code TB1\n    ON TP.code_key=TB1.code_key\n    where TP.code_desc<>TB1.code_desc\n  \n\u95DC\u806F\u6AA2\u6838\u7BC4\u4F8B2:\ndeclare @column_id int,@columnname varchar(50)='code_desc'\nset @column_id=[comm].[fn_get_column_id] ('{schema}','{tablename}',@columnname)\n      delete  #{tablename}\n    OUTPUT   \n         deleted.exec_log_seq\n    ,deleted.line_no\n    ,@column_id --column_id\n    ,@columnname  --columnname\n    ,deleted.code_desc +'<>\u4EE3\u78BC\u63CF\u8FF0:'+ TB1.code_desc --err_content\n    ,'003|6'  --err_key \u5916\u90E8\u7D22\u5F15\u9375\u6AA2\u6838\u7570\u5E38\n    ,'{tablename}' --tablename\n    ,'{ext_column}' --ext_column\n    ,deleted.{ext_column} --ext_column_value\n    into comm.tb_err_log (exec_log_seq,line_no,column_id,columnname,err_content,err_key,tablename,ext_column,ext_column_value)\n     from #{tablename} as TP \n     INNER JOIN  comm.tb_code TB1\n    ON TP.code_key=TB1.code_key\n    where TP.code_desc<>TB1.code_desc\n\n  ";
         this.sql_page = "SqlPage";
         this.exec_file_seq = navParams.data.item.exec_file_seq;
         this.schemaname = navParams.data.item.schemaname;
@@ -178,6 +178,7 @@ var FileImportBeforeSqlAddEditPage = /** @class */ (function () {
         this.db_conn_id = navParams.data.item.db_conn_id;
         this.parameter_column_group = navParams.data.item.parameter_column_group;
         this.subject = __WEBPACK_IMPORTED_MODULE_2__Model_String__["a" /* String */].Format("{0}", this.exec_file_seq);
+        this.sql_help = __WEBPACK_IMPORTED_MODULE_2__Model_String__["a" /* String */].Format(this.sql_help, this.schemaname, this.tablename);
         this.tablefullname = navParams.data.item.tablefullname;
         this.item = new __WEBPACK_IMPORTED_MODULE_3__Model_ViewModel_FileImportBeforeSqlViewModel__["a" /* FileImportBeforeSqlViewModel */]();
         if (this.authServices.authenticated() === true) {
@@ -329,7 +330,7 @@ var FileImportBeforeSqlAddEditPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1451:
+/***/ 1452:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -380,7 +381,7 @@ var FileImportBeforeSqlResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 580:
+/***/ 581:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -388,7 +389,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileImportBeforeSqlAddEditPageModule", function() { return FileImportBeforeSqlAddEditPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_import_before_sql_add_edit__ = __webpack_require__(1450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_import_before_sql_add_edit__ = __webpack_require__(1451);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(808);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_import_before_sql_services_file_import_before_sql_services__ = __webpack_require__(1228);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

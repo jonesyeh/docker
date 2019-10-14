@@ -15,7 +15,7 @@ var FileImportAfterViewModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1444:
+/***/ 1445:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54,7 +54,7 @@ var FileImportAfterAddEditModalPage = /** @class */ (function () {
         this.loadingCtrl = loadingCtrl;
         this.modalCtrl = modalCtrl;
         this.global = global;
-        this.sql_help = "\n  \u8B8A\u6578\u8AAA\u660E\uFF1A\n  {batch_log_seq}=\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {parent_batch_log_seq}=\u4E0A\u5C64\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {exec_log_seq}=\u8F49\u6A94\u5E8F\u865F,\n  {job_step_log_seq}=\u57F7\u884C\u4F5C\u696D\u6B65\u9A5F\u7D00\u9304\u5E8F\u865F,\n  {filename}=\u6A94\u540D,\n  {schema}=\u7D50\u69CB\u63CF\u8FF0,\n  {tablename}=\u532F\u5165\u8CC7\u6599\u8868\u540D\u7A31,\n  {ext_column}=\u7570\u5E38\u95DC\u9375\u5B57\u6B04\u4F4D,\n  {src_path_file}=\u4F86\u6E90\u8DEF\u5F91\u6A94\u540D,\n  {src_file_path}=\u4F86\u6E90\u6A94\u6848\u8DEF\u5F91,\n  {bk_path_file}=\u5099\u4EFD\u8DEF\u5F91\u6A94\u540D,\n  {bk_file_path}=\u5099\u4EFD\u6A94\u6848\u8DEF\u5F91,\n  {file_size}=\u6A94\u6848\u5927\u5C0F,\n  {file_ext}=\u9644\u6A94\u540D,\n  @bindarydata=\u4E8C\u9032\u4F4D\u6A94\u6848\u5167\u5BB9,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n  ";
+        this.sql_help = "\n  \u8B8A\u6578\u8AAA\u660E\uFF1A\n  {batch_log_seq}=\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {parent_batch_log_seq}=\u4E0A\u5C64\u6279\u6B21\u7D00\u9304\u5E8F\u865F,\n  {exec_log_seq}=\u8F49\u6A94\u5E8F\u865F,\n  {job_step_log_seq}=\u57F7\u884C\u4F5C\u696D\u6B65\u9A5F\u7D00\u9304\u5E8F\u865F,\n  {filename}=\u6A94\u540D,\n  {schema}=\u7D50\u69CB\u63CF\u8FF0,\n  {tablename}=\u532F\u5165\u8CC7\u6599\u8868\u540D\u7A31,\n  {ext_column}=\u7570\u5E38\u95DC\u9375\u5B57\u6B04\u4F4D,\n  {src_path_file}=\u4F86\u6E90\u8DEF\u5F91\u6A94\u540D,\n  {src_file_path}=\u4F86\u6E90\u6A94\u6848\u8DEF\u5F91,\n  {bk_path_file}=\u5099\u4EFD\u8DEF\u5F91\u6A94\u540D,\n  {bk_file_path}=\u5099\u4EFD\u6A94\u6848\u8DEF\u5F91,\n  {file_size}=\u6A94\u6848\u5927\u5C0F,\n  {file_ext}=\u9644\u6A94\u540D,\n  @bindarydata=\u4E8C\u9032\u4F4D\u6A94\u6848\u5167\u5BB9,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578, \n\n  \n  \u8B66\u8A0A\u6AA2\u6838\u7BC4\u4F8B1:\n    declare @exec_log_seq bigint={exec_log_seq} \n    declare @column_id int,@columnname varchar(50)='code_desc'\n    set @column_id=[comm].[fn_get_column_id] ('{0}','{1}',@columnname)\n  \tinsert into comm.tb_err_log (exec_log_seq,line_no,column_id,columnname,err_content,err_key,tablename,ext_column,ext_column_value)\t\n\tselect TP.file_bat_seq exec_log_seq\n\t,TP.line_no\n\t,@column_id --column_id\n\t,@columnname  --columnname\n\t,TP.code_desc +'<>\u5171\u7528\u4EE3\u78BC\u6A94:'+ TB1.code_desc --err_content\n\t,'044|A03'  --err_key \u5206\u884C\u4EE3\u865F\u8207\u4FDD\u55AE\u4E3B\u6A94\u5167\u5BB9\u4E0D\u7B26\n\t,'{1}' --tablename\n\t,'code_key' --ext_column\n\t,TP.code_key --ext_column_value\n\t from {0}.{1} as TP \n\t INNER JOIN comm.tb_code TB1\n\tON TP.code_key=TB1.code_key\n  where TP.file_bat_seq=@exec_log_seq and TP.code_desc<>TB1.code_desc\n  \n  \u8B66\u8A0A\u6AA2\u6838\u7BC4\u4F8B2:\n    declare @exec_log_seq bigint={exec_log_seq} \n    declare @column_id int,@columnname varchar(50)='code_desc'\n    set @column_id=[comm].[fn_get_column_id] ('{schema}','{tablename}',@columnname)\n  \tinsert into comm.tb_err_log (exec_log_seq,line_no,column_id,columnname,err_content,err_key,tablename,ext_column,ext_column_value)\t\n\tselect TP.file_bat_seq exec_log_seq\n\t,TP.line_no\n\t,@column_id --column_id\n\t,@columnname  --columnname\n\t,TP.code_desc +'<>\u5171\u7528\u4EE3\u78BC\u6A94:'+ TB1.code_desc --err_content\n\t,'044|A03'  --err_key \u5206\u884C\u4EE3\u865F\u8207\u4FDD\u55AE\u4E3B\u6A94\u5167\u5BB9\u4E0D\u7B26\n\t,'{tablename}' --tablename\n\t,'code_key' --ext_column\n\t,TP.code_key --ext_column_value\n\t from {schema}.{tablename} as TP \n\t INNER JOIN comm.tb_code TB1\n\tON TP.code_key=TB1.code_key\n\twhere TP.file_bat_seq=@exec_log_seq and TP.code_desc<>TB1.code_desc\n  ";
         this.mode = navParams.data.mode;
         this.change_mode = navParams.data.change_mode;
         this.file_type_key = navParams.data.file_type_key;
@@ -147,7 +147,7 @@ var FileImportAfterAddEditModalPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 576:
+/***/ 577:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -155,7 +155,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileImportAfterAddEditModalPageModule", function() { return FileImportAfterAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_import_after_add_edit_modal__ = __webpack_require__(1444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_import_after_add_edit_modal__ = __webpack_require__(1445);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

@@ -260,7 +260,7 @@ var FileSqlResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1487:
+/***/ 1489:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -312,7 +312,7 @@ var FileSqlAddEditModalPage = /** @class */ (function () {
         this.func_key = "014|" + this.func_no;
         this.min_exec_file_seq = 110000;
         this.max_exec_file_seq = this.min_exec_file_seq + 9999;
-        this.sql_help = "\n  \u8B8A\u6578\u8AAA\u660E\uFF1A\n\n  {src_path_file}=\u4F86\u6E90\u8DEF\u5F91\u6A94\u540D,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n\n  \u52D5\u614B\u57F7\u884C\u53E6\u4E00\u4F5C\u696D\u65B9\u6CD5\n  \u7CFB\u7D71\u6703\u57F7\u884Ccreate table #job( ssis_job_no varchar(30) not null,job01 varchar(50) null,job02 varchar(50) null,job03 varchar(50) null)\uFF0C\n  \u53EF\u4EE5\u5C07\u8CC7\u6599\u5BEB\u5165\u5230#job\u9032\u884C\u547C\u53EB\u4F5C\u696D\u57F7\u884C\u3002\n  \u7BC4\u4F8B1\uFF1A\u547C\u53EBs1_daily_job\n  insert into #job(ssis_job_no)\n  values ('s1_daily_job')\n\n  \u7BC4\u4F8B2\uFF1A\u547C\u53EBs1_daily_job \u5177\u6709 F \u7684JOB01\u53C3\u6578\n  insert into #job(ssis_job_no,job01)\n  values ('s1_daily_job','F')\n  ";
+        this.sql_help = "\n  \u8B8A\u6578\u8AAA\u660E\uFF1A\n\n  {src_path_file}=\u4F86\u6E90\u8DEF\u5F91\u6A94\u540D,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n\n  \u52D5\u614B\u57F7\u884C\u53E6\u4E00\u4F5C\u696D\u65B9\u6CD5\uFF0C\u9700\u7B49\u5F85\u4F5C\u696D\u7D50\u675F\u624D\u6703\u7E7C\u7E8C\u57F7\u884C\u4E0B\u4E00\u6B65\u9A5F\n  \u7CFB\u7D71\u6703\u57F7\u884Ccreate table #job( ssis_job_no varchar(30) not null,job01 varchar(50) null,job02 varchar(50) null,job03 varchar(50) null)\uFF0C\n  \u53EF\u4EE5\u5C07\u8CC7\u6599\u5BEB\u5165\u5230#job\u9032\u884C\u547C\u53EB\u4F5C\u696D\u57F7\u884C\u3002\n  --\u7BC4\u4F8B1\uFF1A\u547C\u53EBs1_daily_job\n  insert into #job(ssis_job_no)\n  values ('s1_daily_job')\n\n  --\u7BC4\u4F8B2\uFF1A\u547C\u53EBs1_daily_job \u5177\u6709 F \u7684JOB01\u53C3\u6578\n  insert into #job(ssis_job_no,job01)\n  values ('s1_daily_job','F')\n\n  --\u7BC4\u4F8B3:\u80CC\u666F\u57F7\u884C\u4F5C\u696D\nINSERT INTO [comm].[tb_ssis_job_loop_event]\n           ([ssis_job_no]\n           )\n     VALUES\n           ('s1_daily_job'\n           )\n--\u7BC4\u4F8B4:\u80CC\u666F\u57F7\u884C\u5177\u6709\u4F5C\u696D\u8FF4\u5708\u8B8A\u6578\nINSERT INTO [comm].[tb_ssis_job_loop_event]\n           ([ssis_job_no]\n           ,[job01]\n           )\n     VALUES\n           ('s1_daily_job'\n           ,'F'\n           )\n\n--\u7BC4\u4F8B5:\u7576step=0\u5247\u505C\u6B62\u5F8C\u9762\u6240\u6709\u4F5C\u696D\u6B65\u9A5F\nINSERT INTO [comm].[tb_ssis_job_step_go]\n          ([job_step_id]\n          ,[step])\n    VALUES\n          ('s1_daily_job_01',0)\n\n--\u7BC4\u4F8B6:\u7ACB\u5373\u8DF3\u5230\u6B65\u9A5F2\u57F7\u884C\nINSERT INTO [comm].[tb_ssis_job_step_go]\n            ([job_step_id]\n            ,[step])\n      VALUES\n            ('s1_daily_job_01',2)\n\n--\u7BC4\u4F8B7:\u8DF3\u904E\u8A72\u6B65\u9A5F\uFF0C\u7E7C\u7E8C\u5F80\u4E0B\u4E00\u6B65\u9A5F\u57F7\u884C\nINSERT INTO [comm].[tb_ssis_job_step_skip]\n            ([job_step_id])\n      VALUES\n            ('s1_daily_job_02')\n  ";
         this.range_exec_file_seq = __WEBPACK_IMPORTED_MODULE_4__Model_String__["a" /* String */].Format("{0}-{1}", this.min_exec_file_seq, this.max_exec_file_seq);
         this.mode = navParams.data.mode;
         this.change_mode = navParams.data.change_mode;
@@ -571,7 +571,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileSqlAddEditModalPageModule", function() { return FileSqlAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_sql_add_edit_modal__ = __webpack_require__(1487);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_sql_add_edit_modal__ = __webpack_require__(1489);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_file_sql_services_file_sql_services__ = __webpack_require__(1059);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;

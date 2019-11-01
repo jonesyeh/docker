@@ -15,7 +15,7 @@ var SchWeekTimeViewModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1252:
+/***/ 1253:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -23,8 +23,8 @@ var SchWeekTimeViewModel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_SchWeekTimeListResponse__ = __webpack_require__(1645);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_SchWeekTimeResponse__ = __webpack_require__(1646);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_SchWeekTimeListResponse__ = __webpack_require__(1648);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_SchWeekTimeResponse__ = __webpack_require__(1649);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__sch_services_sch_services__ = __webpack_require__(271);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -150,7 +150,7 @@ var SchWeekTimeServicesProvider = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1644:
+/***/ 1647:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -159,7 +159,7 @@ var SchWeekTimeServicesProvider = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_global_global__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_services_auth_services__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_sch_week_time_services_sch_week_time_services__ = __webpack_require__(1252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_sch_week_time_services_sch_week_time_services__ = __webpack_require__(1253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Model_ViewModel_SchWeekTimeViewModel__ = __webpack_require__(1088);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_sch_services_sch_services__ = __webpack_require__(271);
@@ -433,7 +433,7 @@ var SchWeekTimePage = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1645:
+/***/ 1648:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -531,7 +531,7 @@ var SchWeekTimeListResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1646:
+/***/ 1649:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -604,7 +604,7 @@ var SchWeekTimeResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 731:
+/***/ 732:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -612,9 +612,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SchWeekTimePageModule", function() { return SchWeekTimePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sch_week_time__ = __webpack_require__(1644);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sch_week_time__ = __webpack_require__(1647);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(808);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_sch_week_time_services_sch_week_time_services__ = __webpack_require__(1252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_sch_week_time_services_sch_week_time_services__ = __webpack_require__(1253);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

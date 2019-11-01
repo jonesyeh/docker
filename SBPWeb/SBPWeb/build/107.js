@@ -333,7 +333,7 @@ var DelTableResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1331:
+/***/ 1332:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -686,7 +686,7 @@ var DelTablePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 488:
+/***/ 489:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -694,7 +694,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DelTablePageModule", function() { return DelTablePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__del_table__ = __webpack_require__(1331);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__del_table__ = __webpack_require__(1332);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(808);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_del_table_services_del_table_services__ = __webpack_require__(1020);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

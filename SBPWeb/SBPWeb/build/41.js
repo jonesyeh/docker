@@ -1,6 +1,6 @@
 webpackJsonp([41],{
 
-/***/ 1044:
+/***/ 1045:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ webpackJsonp([41],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileFtpDownListResponse__ = __webpack_require__(1144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileFtpDownResponse__ = __webpack_require__(1145);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileFtpDownListResponse__ = __webpack_require__(1146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileFtpDownResponse__ = __webpack_require__(1147);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__file_services_file_services__ = __webpack_require__(127);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -106,12 +106,12 @@ var FileFtpDownServicesProvider = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1144:
+/***/ 1146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpDownListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileFtpDownViewModel__ = __webpack_require__(971);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileFtpDownViewModel__ = __webpack_require__(972);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ViewModel_FtpRemoteViewModel__ = __webpack_require__(922);
 var __extends = (this && this.__extends) || (function () {
@@ -218,13 +218,13 @@ var FileFtpDownListResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1145:
+/***/ 1147:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpDownResponse; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileFtpDownViewModel__ = __webpack_require__(971);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileFtpDownViewModel__ = __webpack_require__(972);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ViewModel_FtpRemoteViewModel__ = __webpack_require__(922);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -315,7 +315,7 @@ var FileFtpDownResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1422:
+/***/ 1423:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -324,10 +324,10 @@ var FileFtpDownResponse = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_global_global__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_auth_services_auth_services__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_ftp_down_services_file_ftp_down_services__ = __webpack_require__(1044);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_ftp_down_services_file_ftp_down_services__ = __webpack_require__(1045);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Model_String__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Model_ViewModel_FileFtpDownViewModel__ = __webpack_require__(971);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Model_ViewModel_FileFtpDownViewModel__ = __webpack_require__(972);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_run_job_services_run_job_services__ = __webpack_require__(269);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Model_MyAppSharedSettings__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -681,7 +681,7 @@ var FileFtpDownPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 556:
+/***/ 557:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -689,9 +689,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileFtpDownPageModule", function() { return FileFtpDownPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_ftp_down__ = __webpack_require__(1422);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_ftp_down__ = __webpack_require__(1423);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(808);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_ftp_down_services_file_ftp_down_services__ = __webpack_require__(1044);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_ftp_down_services_file_ftp_down_services__ = __webpack_require__(1045);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19773,7 +19773,7 @@ var FtpRemoteViewModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 971:
+/***/ 972:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

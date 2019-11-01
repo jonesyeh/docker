@@ -1,3 +1,4 @@
+Add-LocalGroupMember -Group "Performance Monitor Users" -Member SBP_WIN_USER
 
 # update the connection strings:
 Stop-Service W3SVC

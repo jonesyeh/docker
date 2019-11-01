@@ -1,6 +1,6 @@
 webpackJsonp([134],{
 
-/***/ 1234:
+/***/ 1235:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15,7 +15,7 @@ var FileProcessedSqlViewModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1235:
+/***/ 1236:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24,7 +24,7 @@ var FileProcessedSqlViewModel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileProcessedSqlResponse__ = __webpack_require__(1480);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileProcessedSqlResponse__ = __webpack_require__(1482);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -121,7 +121,7 @@ var FileProcessedSqlServicesProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1479:
+/***/ 1481:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -129,10 +129,10 @@ var FileProcessedSqlServicesProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_String__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_ViewModel_FileProcessedSqlViewModel__ = __webpack_require__(1234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_ViewModel_FileProcessedSqlViewModel__ = __webpack_require__(1235);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_global_global__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_auth_services_auth_services__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_file_processed_sql_services_file_processed_sql_services__ = __webpack_require__(1235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_file_processed_sql_services_file_processed_sql_services__ = __webpack_require__(1236);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -165,7 +165,7 @@ var FileProcessedSqlAddEditPage = /** @class */ (function () {
         this.authServices = authServices;
         this.FileProcessedSqlServices = FileProcessedSqlServices;
         this.alertCtrl = alertCtrl;
-        this.sql_help = "\n  \u8B8A\u6578\u8AAA\u660E\uFF1A\n  {exec_log_seq}=\u8F49\u6A94\u5E8F\u865F,\n  {job_step_log_seq}=\u57F7\u884C\u4F5C\u696D\u6B65\u9A5F\u7D00\u9304\u5E8F\u865F,\n  {filename}=\u6A94\u540D,\n  {unzip_filename}=\u89E3\u58D3\u7E2E\u5F8C\u6A94\u540D,\n  {src_filename}=\u58D3\u7E2E\u4F86\u6E90\u6A94\u540D,\n  {zip_filename}=\u58D3\u7E2E\u6A94\u540D,\n  {tablename}=\u532F\u5165\u8CC7\u6599\u8868\u540D\u7A31,\n  {src_path_file}=\u4F86\u6E90\u8DEF\u5F91\u6A94\u540D,\n  {src_file_path}=\u4F86\u6E90\u6A94\u6848\u8DEF\u5F91,\n  {bk_path_file}=\u5099\u4EFD\u8DEF\u5F91\u6A94\u540D,\n  {bk_file_path}=\u5099\u4EFD\u6A94\u6848\u8DEF\u5F91,\n  {file_size}=\u6A94\u6848\u5927\u5C0F,\n  {file_ext}=\u9644\u6A94\u540D,\n  {res}=Rest\u7528\u6236\u7AEF\u56DE\u61C9\u5167\u5BB9,\n  @bindarydata=\u4E8C\u9032\u4F4D\u6A94\u6848\u5167\u5BB9,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n  {cmd_out}=\u547D\u4EE4\u5217\u6A19\u6E96\u8F38\u51FA,\n  \u52D5\u614B\u57F7\u884C\u53E6\u4E00\u4F5C\u696D\u65B9\u6CD5\n  \u7CFB\u7D71\u6703\u57F7\u884Ccreate table #job( ssis_job_no varchar(30) not null,job01 varchar(50) null,job02 varchar(50) null,job03 varchar(50) null)\uFF0C\n  \u53EF\u4EE5\u5C07\u8CC7\u6599\u5BEB\u5165\u5230#job\u9032\u884C\u547C\u53EB\u4F5C\u696D\u57F7\u884C\u3002\n  \u7BC4\u4F8B1\uFF1A\u547C\u53EBs1_daily_job\n  insert into #job(ssis_job_no)\n  values ('s1_daily_job')\n\n  \u7BC4\u4F8B2\uFF1A\u547C\u53EBs1_daily_job \u5177\u6709 F \u7684JOB01\u53C3\u6578\n  insert into #job(ssis_job_no,job01)\n  values ('s1_daily_job','F')\n\n  \u5C07\u6A94\u6848\u5167\u5BB9\u532F\u5165\u5230\u8CC7\u6599\u8868\u5167\n  \u7BC4\u4F8B1:\u5C07\u6293\u5230\u7684\u6A94\u6848\u5BEB\u5165\u5230comm.tb_file_content_log\u8CC7\u6599\u8868\u5167\uFF0C\u5167\u5BB9\u5B58\u653E\u5728binarydata\u6B04\u4F4D\n  INSERT INTO comm.tb_file_content_log with(tablock)\n  (exec_log_seq,filename,file_ext,file_size,binarydata,file_path,fullpath_file)\n  values({exec_log_seq},'{filename}','{file_ext}',{file_size},@binarydata,'{bk_file_path}','{bk_path_file}')\n  ";
+        this.sql_help = "\n  \u8B8A\u6578\u8AAA\u660E\uFF1A\n  {exec_log_seq}=\u8F49\u6A94\u5E8F\u865F,\n  {job_step_log_seq}=\u57F7\u884C\u4F5C\u696D\u6B65\u9A5F\u7D00\u9304\u5E8F\u865F,\n  {filename}=\u6A94\u540D,\n  {unzip_filename}=\u89E3\u58D3\u7E2E\u5F8C\u6A94\u540D,\n  {src_filename}=\u58D3\u7E2E\u4F86\u6E90\u6A94\u540D,\n  {zip_filename}=\u58D3\u7E2E\u6A94\u540D,\n  {tablename}=\u532F\u5165\u8CC7\u6599\u8868\u540D\u7A31,\n  {src_path_file}=\u4F86\u6E90\u8DEF\u5F91\u6A94\u540D,\n  {src_file_path}=\u4F86\u6E90\u6A94\u6848\u8DEF\u5F91,\n  {bk_path_file}=\u5099\u4EFD\u8DEF\u5F91\u6A94\u540D,\n  {bk_file_path}=\u5099\u4EFD\u6A94\u6848\u8DEF\u5F91,\n  {file_size}=\u6A94\u6848\u5927\u5C0F,\n  {file_ext}=\u9644\u6A94\u540D,\n  {res}=Rest\u7528\u6236\u7AEF\u56DE\u61C9\u5167\u5BB9,\n  @bindarydata=\u4E8C\u9032\u4F4D\u6A94\u6848\u5167\u5BB9,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n  {cmd_out}=\u547D\u4EE4\u5217\u6A19\u6E96\u8F38\u51FA,\n  \u52D5\u614B\u57F7\u884C\u53E6\u4E00\u4F5C\u696D\u65B9\u6CD5\uFF0C\u9700\u7B49\u5F85\u4F5C\u696D\u7D50\u675F\u624D\u6703\u7E7C\u7E8C\u57F7\u884C\n  \u7CFB\u7D71\u6703\u57F7\u884Ccreate table #job( ssis_job_no varchar(30) not null,job01 varchar(50) null,job02 varchar(50) null,job03 varchar(50) null)\uFF0C\n  \u53EF\u4EE5\u5C07\u8CC7\u6599\u5BEB\u5165\u5230#job\u9032\u884C\u547C\u53EB\u4F5C\u696D\u57F7\u884C\u3002\n  --\u7BC4\u4F8B1\uFF1A\u547C\u53EBs1_daily_job\n  insert into #job(ssis_job_no)\n  values ('s1_daily_job')\n\n  --\u7BC4\u4F8B2\uFF1A\u547C\u53EBs1_daily_job \u5177\u6709 F \u7684JOB01\u53C3\u6578\n  insert into #job(ssis_job_no,job01)\n  values ('s1_daily_job','F')\n  --\u7BC4\u4F8B3:\u80CC\u666F\u57F7\u884C\u4F5C\u696D\n  INSERT INTO [comm].[tb_ssis_job_loop_event]\n             ([ssis_job_no]\n             )\n       VALUES\n             ('s1_daily_job'\n             )\n  --\u7BC4\u4F8B4:\u80CC\u666F\u57F7\u884C\u5177\u6709\u4F5C\u696D\u8FF4\u5708\u8B8A\u6578\n  INSERT INTO [comm].[tb_ssis_job_loop_event]\n             ([ssis_job_no]\n             ,[job01]\n             )\n       VALUES\n             ('s1_daily_job'\n             ,'F'\n             )\n  \u5C07\u6A94\u6848\u5167\u5BB9\u532F\u5165\u5230\u8CC7\u6599\u8868\u5167\n  \u7BC4\u4F8B1:\u5C07\u6293\u5230\u7684\u6A94\u6848\u5BEB\u5165\u5230comm.tb_file_content_log\u8CC7\u6599\u8868\u5167\uFF0C\u5167\u5BB9\u5B58\u653E\u5728binarydata\u6B04\u4F4D\n  INSERT INTO comm.tb_file_content_log with(tablock)\n  (exec_log_seq,filename,file_ext,file_size,binarydata,file_path,fullpath_file)\n  values({exec_log_seq},'{filename}','{file_ext}',{file_size},@binarydata,'{bk_file_path}','{bk_path_file}')\n  ";
         this.sql_page = "SqlPage";
         this.exec_file_seq = navParams.data.item.exec_file_seq;
         this.parent_page = navParams.data.parent_page;
@@ -327,13 +327,13 @@ var FileProcessedSqlAddEditPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1480:
+/***/ 1482:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileProcessedSqlResponse; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileProcessedSqlViewModel__ = __webpack_require__(1234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileProcessedSqlViewModel__ = __webpack_require__(1235);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -382,9 +382,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileProcessedSqlAddEditPageModule", function() { return FileProcessedSqlAddEditPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_processed_sql_add_edit__ = __webpack_require__(1479);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_processed_sql_add_edit__ = __webpack_require__(1481);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(808);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_processed_sql_services_file_processed_sql_services__ = __webpack_require__(1235);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_processed_sql_services_file_processed_sql_services__ = __webpack_require__(1236);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

@@ -1,6 +1,6 @@
 webpackJsonp([73],{
 
-/***/ 1175:
+/***/ 1177:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -29,7 +29,7 @@ var FileManagementAllViewModel = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1237:
+/***/ 1238:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -37,8 +37,8 @@ var FileManagementAllViewModel = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileManagementAllListResponse__ = __webpack_require__(1489);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileManagementAllResponse__ = __webpack_require__(1490);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileManagementAllListResponse__ = __webpack_require__(1494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileManagementAllResponse__ = __webpack_require__(1495);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__file_services_file_services__ = __webpack_require__(127);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -135,7 +135,7 @@ var FileManagementAllServicesProvider = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1488:
+/***/ 1493:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -143,10 +143,10 @@ var FileManagementAllServicesProvider = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_global__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_services_auth_services__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_file_management_all_services_file_management_all_services__ = __webpack_require__(1237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_file_management_all_services_file_management_all_services__ = __webpack_require__(1238);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_String__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Model_ViewModel_FileManagementAllViewModel__ = __webpack_require__(1175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Model_ViewModel_FileManagementAllViewModel__ = __webpack_require__(1177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_table_services_table_services__ = __webpack_require__(266);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Model_MyAppSharedSettings__ = __webpack_require__(47);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -488,12 +488,12 @@ var FileManagementAllPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1489:
+/***/ 1494:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileManagementAllListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileManagementAllViewModel__ = __webpack_require__(1175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileManagementAllViewModel__ = __webpack_require__(1177);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -618,13 +618,13 @@ var FileManagementAllListResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1490:
+/***/ 1495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileManagementAllResponse; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileManagementAllViewModel__ = __webpack_require__(1175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileManagementAllViewModel__ = __webpack_require__(1177);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -735,7 +735,7 @@ var FileManagementAllResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 607:
+/***/ 610:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -743,9 +743,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileManagementAllPageModule", function() { return FileManagementAllPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_management_all__ = __webpack_require__(1488);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_management_all__ = __webpack_require__(1493);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(808);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_management_all_services_file_management_all_services__ = __webpack_require__(1237);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_management_all_services_file_management_all_services__ = __webpack_require__(1238);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

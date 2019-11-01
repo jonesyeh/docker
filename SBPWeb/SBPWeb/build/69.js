@@ -260,7 +260,7 @@ var FileSqlResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1494:
+/***/ 1490:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -606,7 +606,7 @@ var FileSqlPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 609:
+/***/ 607:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -614,7 +614,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileSqlPageModule", function() { return FileSqlPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_sql__ = __webpack_require__(1494);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_sql__ = __webpack_require__(1490);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(808);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_sql_services_file_sql_services__ = __webpack_require__(1059);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

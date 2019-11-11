@@ -1,10 +1,10 @@
 webpackJsonp([322],{
 
-/***/ 1667:
+/***/ 1672:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableDetailAddEditModalPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableDetailEditModalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_TableDetailViewModel__ = __webpack_require__(133);
@@ -26,8 +26,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var TableDetailAddEditModalPage = /** @class */ (function () {
-    function TableDetailAddEditModalPage(navCtrl, navParams, viewCtrl, modalCtrl) {
+var TableDetailEditModalPage = /** @class */ (function () {
+    function TableDetailEditModalPage(navCtrl, navParams, viewCtrl, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
@@ -38,10 +38,7 @@ var TableDetailAddEditModalPage = /** @class */ (function () {
         this.item.tablecname = navParams.data.item.tablecname;
         this.item.columncname = navParams.data.item.columncname;
         this.item.column_id = navParams.data.item.column_id;
-        if (this.mode === "POST")
-            this.item.col_index = this.item.column_id;
-        else
-            this.item.col_index = navParams.data.item.col_index;
+        this.item.col_index = navParams.data.item.col_index;
         this.item.columnname = navParams.data.item.columnname;
         this.item.data_type = navParams.data.item.data_type;
         this.item.is_pk = navParams.data.item.is_pk;
@@ -52,67 +49,68 @@ var TableDetailAddEditModalPage = /** @class */ (function () {
         this.item.is_identity = navParams.data.item.is_identity;
         this.item.memo = navParams.data.item.memo;
         this.item.computecolumn = navParams.data.item.computecolumn;
-        this.item.history_column_flag = navParams.data.item.history_column_flag;
         this.item.column_type_key = navParams.data.item.column_type_key;
         this.item.column_type = navParams.data.item.column_type;
+        this.item.is_sign = navParams.data.item.is_sign;
+        this.item.id_check = navParams.data.item.id_check;
         this.item.date_convert_format = navParams.data.item.date_convert_format;
+        this.item.col_start_loc = navParams.data.item.col_start_loc;
+        this.item.col_length = navParams.data.item.col_length;
+        this.item.del_flag = navParams.data.item.del_flag;
         this.mode = navParams.data.mode;
         this.CanEditTable = navParams.data.CanEditTable;
-        if (this.mode === "POST")
-            this.title = "新增";
-        else
-            this.title = "更新";
+        this.title = this.item.columnname;
     }
-    TableDetailAddEditModalPage.prototype.SelectColumn = function () {
+    TableDetailEditModalPage.prototype.SelectColumnType = function () {
         var _this = this;
-        var modal = this.modalCtrl.create("GlossarySelectModalPage", {
-            eng_name: this.item.columnname,
+        var modal = this.modalCtrl.create("CodeSelectModalPage", {
+            select_key: this.item.column_type_key,
+            code_type: "010",
+            code_key: "",
+            title: "欄位類型"
         });
         modal.onDidDismiss(function (select_data) {
             if (select_data == null)
                 return;
-            _this.item.columnname = select_data.eng_name;
-            _this.item.columncname = select_data.cht_name;
-            _this.item.data_type = select_data.data_type;
-            if (_this.item.memo === "")
-                _this.item.memo = select_data.cht_name;
+            _this.item.column_type_key = select_data.code_key;
+            _this.item.column_type = select_data.code_desc;
         });
         modal.present();
     };
-    TableDetailAddEditModalPage.prototype.Save = function () {
+    TableDetailEditModalPage.prototype.Save = function () {
         this.viewCtrl.dismiss(this.item);
     };
-    TableDetailAddEditModalPage.prototype.close = function () {
+    TableDetailEditModalPage.prototype.close = function () {
         this.viewCtrl.dismiss();
     };
-    TableDetailAddEditModalPage.prototype.ionViewDidLoad = function () {
+    TableDetailEditModalPage.prototype.ionViewDidLoad = function () {
         console.log("ionViewDidLoad TableDetailModalPage");
     };
-    TableDetailAddEditModalPage = __decorate([
+    TableDetailEditModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: "page table-detail-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\table-detail-add-edit-modal\table-detail-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm" >\n\n    <ion-row>\n\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>欄位名稱</ion-label>\n          <ion-input type="text" disabled="true" name="columnname" #columnname="ngModel" [(ngModel)]="item.columnname" required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditTable==true && mode==\'POST\'"  icon-right (click)="SelectColumn()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="columnname.errors && columnname.touched" class="error-message">\n          欄位名稱不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12  col-sm-6 >\n          <ion-item>\n            <ion-label stacked>欄位說明</ion-label>\n            <ion-input type="text" [disabled]="true" name="columncname" #columncname="ngModel" [(ngModel)]="item.columncname" required></ion-input>\n          </ion-item>\n        </ion-col>\n    </ion-row>\n    <ion-row>\n\n      <ion-col col-6 col-sm-6 >\n        <ion-item>\n          <ion-label stacked>資料型態</ion-label>\n          <ion-input type="text" disabled="true" name="data_type" #data_type="ngModel" [(ngModel)]="item.data_type" required></ion-input>\n        </ion-item>\n\n      </ion-col>\n      <ion-col col-6 col-sm-6 >\n          <ion-item>\n            <ion-label stacked>編號</ion-label>\n            <ion-input type="number" [disabled]="CanEditTable==false" name="column_id" #column_id="ngModel" [(ngModel)]="item.column_id" required></ion-input>\n          </ion-item>\n          <div *ngIf="column_id.errors && column_id.touched" class="error-message">\n            編號不能為空白\n          </div>\n        </ion-col>\n\n    </ion-row>\n    <ion-row>\n\n      <ion-col col-6  col-sm-6>\n          <ion-item>\n            <ion-label  stacked>主鍵</ion-label>\n            <ion-input title="0:無、負：遞減" type="number" [disabled]="CanEditTable==false" name="is_pk" #is_pk="ngModel" [(ngModel)]="item.is_pk" required></ion-input>\n          </ion-item>\n        </ion-col>\n        <ion-col col-6  col-sm-6 >\n          <ion-item>\n            <ion-label stacked>空值</ion-label>\n            <ion-checkbox  [disabled]="CanEditTable==false" name="is_nullable" #is_nullable="ngModel" [(ngModel)]="item.is_nullable"></ion-checkbox>\n          </ion-item>\n        </ion-col>\n    </ion-row>\n    <ion-row *ngIf="CanEditTable==true && mode==\'PUT\'"  >\n\n        <ion-col col-6  col-sm-6>\n            <ion-item>\n              <ion-label  stacked>叢集唯一</ion-label>\n              <ion-input title="0:無、負：遞減" type="number" [disabled]="CanEditTable==false" name="is_uni_cluster" #is_uni_cluster="ngModel" [(ngModel)]="item.is_uni_cluster" required></ion-input>\n            </ion-item>\n          </ion-col>\n          <ion-col col-6  col-sm-6 >\n              <ion-item>\n                  <ion-label  stacked>叢集非唯一</ion-label>\n                  <ion-input title="0:無、負：遞減" type="number" [disabled]="CanEditTable==false" name="is_cluster" #is_cluster="ngModel" [(ngModel)]="item.is_cluster" required></ion-input>\n                </ion-item>\n          </ion-col>\n      </ion-row>\n    <ion-row>\n\n      <ion-col col-12  col-sm-6>\n          <ion-item>\n            <ion-label stacked>預設值</ion-label>\n            <ion-input type="text" [disabled]="CanEditTable==false" name="default_value" #default_value="ngModel" [(ngModel)]="item.default_value"></ion-input>\n          </ion-item>\n\n        </ion-col>\n        <ion-col col-12  col-sm-6>\n          <ion-item>\n            <ion-label stacked>計算欄位</ion-label>\n            <ion-input type="text" [disabled]="CanEditTable==false" name="computecolumn" #computecolumn="ngModel" [(ngModel)]="item.computecolumn"></ion-input>\n          </ion-item>\n\n        </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12  col-sm-6 >\n        <ion-item>\n          <ion-label stacked>自動累加</ion-label>\n          <ion-checkbox  [disabled]="CanEditTable==false" name="is_identity" #is_identity="ngModel" [(ngModel)]="item.is_identity"></ion-checkbox>\n        </ion-item>\n      </ion-col>\n      <ion-col col-12  col-sm-6>\n          <ion-item>\n            <ion-label stacked>備註說明</ion-label>\n            <ion-input type="text" [disabled]="CanEditTable==false" name="memo" #memo="ngModel" [(ngModel)]="item.memo"></ion-input>\n          </ion-item>\n\n        </ion-col>\n    </ion-row>\n\n\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small [disabled]="CanEditTable==false" title="確認" ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\table-detail-add-edit-modal\table-detail-add-edit-modal.html"*/
+            selector: "page table-detail-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\table-detail-edit-modal\table-detail-edit-modal.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <ion-title>{{title}}</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n  <ion-content padding>\n    <form #Form="ngForm" >\n\n      <ion-row>\n          <ion-col col-6  >\n              <ion-item>\n                <ion-label stacked>欄編</ion-label>\n                <ion-input type="number" [disabled]="CanEditTable==false" name="column_id" #column_id="ngModel" [(ngModel)]="item.column_id" required></ion-input>\n              </ion-item>\n              <div *ngIf="column_id.errors && column_id.touched" class="error-message">\n                  欄編不能為空白\n              </div>\n            </ion-col>\n            <ion-col col-6 >\n                <ion-item>\n                  <ion-label stacked>檔編</ion-label>\n                  <ion-input type="number" [disabled]="CanEditTable==false" name="col_index" #col_index="ngModel" [(ngModel)]="item.col_index" required></ion-input>\n                </ion-item>\n                <div *ngIf="col_index.errors && col_index.touched" class="error-message">\n                    檔編不能為空白\n                </div>\n              </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col col-12 col-sm-6 >\n          <ion-item>\n            <ion-label stacked>欄位類型</ion-label>\n            <ion-input type="text" [disabled]="CanEditTable==false" name="column_type_key" #column_type_key="ngModel" [(ngModel)]="item.column_type_key"></ion-input>\n            <button ion-button outline item-end icon-right (click)="SelectColumnType()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n          </ion-item>\n\n        </ion-col>\n        <ion-col col-12  col-sm-6 >\n          <ion-item>\n            <ion-label stacked>欄位類型</ion-label>\n            <ion-input type="text" [disabled]="true" name="column_type" #column_type="ngModel" [(ngModel)]="item.column_type"></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n\n        <ion-col col-6>\n            <ion-item>\n              <ion-label  stacked>固定長度(位置)</ion-label>\n              <ion-input  type="number" [disabled]="CanEditTable==false" name="col_start_loc" #col_start_loc="ngModel" [(ngModel)]="item.col_start_loc" required></ion-input>\n            </ion-item>\n          </ion-col>\n          <ion-col col-6>\n              <ion-item>\n                <ion-label  stacked>固定長度(長度)</ion-label>\n                <ion-input  type="number" [disabled]="CanEditTable==false" name="col_length" #col_length="ngModel" [(ngModel)]="item.col_length" required></ion-input>\n              </ion-item>\n            </ion-col>\n      </ion-row>\n      <ion-row>\n\n        <ion-col col-6  col-sm-6>\n            <ion-item>\n              <ion-label stacked>日期格式</ion-label>\n              <ion-input type="text" [disabled]="CanEditTable==false" name="date_convert_format" #date_convert_format="ngModel" [(ngModel)]="item.date_convert_format"></ion-input>\n            </ion-item>\n\n          </ion-col>\n          <ion-col col-6  col-sm-6 >\n              <ion-item>\n                <ion-label stacked>id檢核</ion-label>\n                <ion-checkbox  [disabled]="CanEditTable==false" name="id_check" #id_check="ngModel" [(ngModel)]="item.id_check"></ion-checkbox>\n              </ion-item>\n            </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col col-6  col-sm-6 >\n          <ion-item>\n            <ion-label stacked>正負</ion-label>\n            <ion-checkbox  [disabled]="CanEditTable==false" name="is_sign" #is_sign="ngModel" [(ngModel)]="item.is_sign"></ion-checkbox>\n          </ion-item>\n        </ion-col>\n        <ion-col col-6  col-sm-6 >\n            <ion-item>\n              <ion-label stacked>刪除</ion-label>\n              <ion-checkbox  [disabled]="CanEditTable==false" name="del_flag" #is_sign="ngModel" [(ngModel)]="item.del_flag"></ion-checkbox>\n            </ion-item>\n          </ion-col>\n      </ion-row>\n\n\n    </form>\n\n  </ion-content>\n  <ion-footer>\n    <ion-toolbar>\n      <ion-row>\n        <ion-col>\n          <div [ngClass]="[\'command\']">\n            <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n              <ion-icon name="backspace"></ion-icon>\n            </button>\n            <button small [disabled]="CanEditTable==false" title="確認" ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n              <ion-icon name="checkmark-circle"></ion-icon>\n            </button>\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-toolbar>\n  </ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\table-detail-edit-modal\table-detail-edit-modal.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */]])
-    ], TableDetailAddEditModalPage);
-    return TableDetailAddEditModalPage;
+    ], TableDetailEditModalPage);
+    return TableDetailEditModalPage;
 }());
 
-//# sourceMappingURL=table-detail-add-edit-modal.js.map
+//# sourceMappingURL=table-detail-edit-modal.js.map
 
 /***/ }),
 
-/***/ 747:
+/***/ 751:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableDetailAddEditModalPageModule", function() { return TableDetailAddEditModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableDetailEditModalPageModule", function() { return TableDetailEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__table_detail_add_edit_modal__ = __webpack_require__(1667);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__table_detail_edit_modal__ = __webpack_require__(1672);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -122,23 +120,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TableDetailAddEditModalPageModule = /** @class */ (function () {
-    function TableDetailAddEditModalPageModule() {
+var TableDetailEditModalPageModule = /** @class */ (function () {
+    function TableDetailEditModalPageModule() {
     }
-    TableDetailAddEditModalPageModule = __decorate([
+    TableDetailEditModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__table_detail_add_edit_modal__["a" /* TableDetailAddEditModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__table_detail_edit_modal__["a" /* TableDetailEditModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__table_detail_add_edit_modal__["a" /* TableDetailAddEditModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__table_detail_edit_modal__["a" /* TableDetailEditModalPage */]),
             ],
         })
-    ], TableDetailAddEditModalPageModule);
-    return TableDetailAddEditModalPageModule;
+    ], TableDetailEditModalPageModule);
+    return TableDetailEditModalPageModule;
 }());
 
-//# sourceMappingURL=table-detail-add-edit-modal.module.js.map
+//# sourceMappingURL=table-detail-edit-modal.module.js.map
 
 /***/ })
 

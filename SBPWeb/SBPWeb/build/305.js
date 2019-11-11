@@ -1,28 +1,28 @@
 webpackJsonp([305],{
 
-/***/ 1052:
+/***/ 1055:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileImportDataLookupViewModel; });
-var FileImportDataLookupViewModel = /** @class */ (function () {
-    function FileImportDataLookupViewModel() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileImportDataSearchReplaceViewModel; });
+var FileImportDataSearchReplaceViewModel = /** @class */ (function () {
+    function FileImportDataSearchReplaceViewModel() {
     }
-    return FileImportDataLookupViewModel;
+    return FileImportDataSearchReplaceViewModel;
 }());
 
-//# sourceMappingURL=FileImportDataLookupViewModel.js.map
+//# sourceMappingURL=FileImportDataSearchReplaceViewModel.js.map
 
 /***/ }),
 
-/***/ 1459:
+/***/ 1462:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileImportDataLookupAddEditModalPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileImportDataSearchReplaceAddEditModalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_FileImportDataLookupViewModel__ = __webpack_require__(1052);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_FileImportDataSearchReplaceViewModel__ = __webpack_require__(1055);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -36,23 +36,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the FileImportDataLookupModalPage page.
+ * Generated class for the FileImportDataSearchReplaceModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var FileImportDataLookupAddEditModalPage = /** @class */ (function () {
-    function FileImportDataLookupAddEditModalPage(navCtrl, navParams, viewCtrl, modalCtrl) {
+var FileImportDataSearchReplaceAddEditModalPage = /** @class */ (function () {
+    function FileImportDataSearchReplaceAddEditModalPage(navCtrl, navParams, viewCtrl, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
         this.modalCtrl = modalCtrl;
-        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_FileImportDataLookupViewModel__["a" /* FileImportDataLookupViewModel */]();
+        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_FileImportDataSearchReplaceViewModel__["a" /* FileImportDataSearchReplaceViewModel */]();
         this.item.schemaname = navParams.data.item.schemaname;
         this.item.tablename = navParams.data.item.tablename;
         this.item.columnname = navParams.data.item.columnname;
-        this.item.lookup_src = navParams.data.item.lookup_src;
-        this.item.lookup_result = navParams.data.item.lookup_result;
+        this.item.search_value = navParams.data.item.search_value;
+        this.item.replace_value = navParams.data.item.replace_value;
         this.item.creator = navParams.data.item.creator;
         this.item.create_time = navParams.data.item.create_time;
         this.item.modifier = navParams.data.item.modifier;
@@ -64,40 +64,40 @@ var FileImportDataLookupAddEditModalPage = /** @class */ (function () {
         else
             this.title = "更新";
     }
-    FileImportDataLookupAddEditModalPage.prototype.Save = function () {
+    FileImportDataSearchReplaceAddEditModalPage.prototype.Save = function () {
         this.viewCtrl.dismiss(this.item);
     };
-    FileImportDataLookupAddEditModalPage.prototype.close = function () {
+    FileImportDataSearchReplaceAddEditModalPage.prototype.close = function () {
         this.viewCtrl.dismiss();
     };
-    FileImportDataLookupAddEditModalPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad FileImportDataLookupModalPage");
+    FileImportDataSearchReplaceAddEditModalPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad FileImportDataSearchReplaceModalPage");
     };
-    FileImportDataLookupAddEditModalPage = __decorate([
+    FileImportDataSearchReplaceAddEditModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: "page-file-import-data-lookup-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\file-import-data-lookup-add-edit-modal\file-import-data-lookup-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm">\n\n\n\n    <ion-row >\n\n      <ion-col >\n        <ion-item>\n          <ion-label stacked>查閱來源</ion-label>\n          <ion-input type="text" required [disabled]="CanEditBatch==false || mode==\'PUT\'"  name="lookup_src" #lookup_src="ngModel" [(ngModel)]="item.lookup_src"></ion-input>\n\n\n        </ion-item>\n\n        <div *ngIf="lookup_src.errors && lookup_src.touched" class="error-message">\n          查閱來源不能為空白\n        </div>\n      </ion-col>\n\n    </ion-row>\n    <ion-row >\n\n      <ion-col >\n        <ion-item>\n          <ion-label stacked>查閱結果</ion-label>\n          <ion-input type="text" required [disabled]="CanEditBatch==false"  name="lookup_result" #lookup_result="ngModel" [(ngModel)]="item.lookup_result"></ion-input>\n\n\n        </ion-item>\n\n        <div *ngIf="lookup_result.errors && lookup_result.touched" class="error-message">\n          查閱結果不能為空白\n        </div>\n      </ion-col>\n\n    </ion-row>\n\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small [disabled]="CanEditBatch==false" title="確認" ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\file-import-data-lookup-add-edit-modal\file-import-data-lookup-add-edit-modal.html"*/
+            selector: "page-file-import-data-search-replace-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\file-import-data-search-replace-add-edit-modal\file-import-data-search-replace-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm">\n\n\n\n    <ion-row >\n\n      <ion-col >\n        <ion-item>\n          <ion-label stacked>關鍵搜尋內容</ion-label>\n          <ion-input type="text" required [disabled]="CanEditBatch==false || mode==\'PUT\'"  name="search_value" #search_value="ngModel" [(ngModel)]="item.search_value"></ion-input>\n\n\n        </ion-item>\n\n        <div *ngIf="search_value.errors && search_value.touched" class="error-message">\n          關鍵搜尋內容不能為空白\n        </div>\n      </ion-col>\n\n    </ion-row>\n    <ion-row >\n\n      <ion-col >\n        <ion-item>\n          <ion-label stacked>取代內容</ion-label>\n          <ion-input type="text" required [disabled]="CanEditBatch==false"  name="replace_value" #replace_value="ngModel" [(ngModel)]="item.replace_value"></ion-input>\n\n\n        </ion-item>\n\n        <div *ngIf="replace_value.errors && replace_value.touched" class="error-message">\n          取代內容不能為空白\n        </div>\n      </ion-col>\n\n    </ion-row>\n\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small [disabled]="CanEditBatch==false" title="確認" ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\file-import-data-search-replace-add-edit-modal\file-import-data-search-replace-add-edit-modal.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */]])
-    ], FileImportDataLookupAddEditModalPage);
-    return FileImportDataLookupAddEditModalPage;
+    ], FileImportDataSearchReplaceAddEditModalPage);
+    return FileImportDataSearchReplaceAddEditModalPage;
 }());
 
-//# sourceMappingURL=file-import-data-lookup-add-edit-modal.js.map
+//# sourceMappingURL=file-import-data-search-replace-add-edit-modal.js.map
 
 /***/ }),
 
-/***/ 585:
+/***/ 587:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileImportDataLookupAddEditModalPageModule", function() { return FileImportDataLookupAddEditModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileImportDataSearchReplaceAddEditModalPageModule", function() { return FileImportDataSearchReplaceAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_import_data_lookup_add_edit_modal__ = __webpack_require__(1459);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_import_data_search_replace_add_edit_modal__ = __webpack_require__(1462);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -107,23 +107,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FileImportDataLookupAddEditModalPageModule = /** @class */ (function () {
-    function FileImportDataLookupAddEditModalPageModule() {
+var FileImportDataSearchReplaceAddEditModalPageModule = /** @class */ (function () {
+    function FileImportDataSearchReplaceAddEditModalPageModule() {
     }
-    FileImportDataLookupAddEditModalPageModule = __decorate([
+    FileImportDataSearchReplaceAddEditModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__file_import_data_lookup_add_edit_modal__["a" /* FileImportDataLookupAddEditModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__file_import_data_search_replace_add_edit_modal__["a" /* FileImportDataSearchReplaceAddEditModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__file_import_data_lookup_add_edit_modal__["a" /* FileImportDataLookupAddEditModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__file_import_data_search_replace_add_edit_modal__["a" /* FileImportDataSearchReplaceAddEditModalPage */]),
             ],
         })
-    ], FileImportDataLookupAddEditModalPageModule);
-    return FileImportDataLookupAddEditModalPageModule;
+    ], FileImportDataSearchReplaceAddEditModalPageModule);
+    return FileImportDataSearchReplaceAddEditModalPageModule;
 }());
 
-//# sourceMappingURL=file-import-data-lookup-add-edit-modal.module.js.map
+//# sourceMappingURL=file-import-data-search-replace-add-edit-modal.module.js.map
 
 /***/ })
 

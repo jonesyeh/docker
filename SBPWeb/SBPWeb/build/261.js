@@ -1,15 +1,15 @@
 webpackJsonp([261],{
 
-/***/ 1046:
+/***/ 1049:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileHttpDownFileServicesProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileHttpH2CServicesProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileHttpDownFileListResponse__ = __webpack_require__(1149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileHttpDownFileResponse__ = __webpack_require__(1150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileHttpH2CListResponse__ = __webpack_require__(1157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileHttpH2CResponse__ = __webpack_require__(1158);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__file_services_file_services__ = __webpack_require__(127);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -37,33 +37,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /*
-  Generated class for the FileHttpDownFileServiceProvider provider.
+  Generated class for the FileHttpH2CServiceProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-var FileHttpDownFileServicesProvider = /** @class */ (function (_super) {
-    __extends(FileHttpDownFileServicesProvider, _super);
-    function FileHttpDownFileServicesProvider(Services) {
+var FileHttpH2CServicesProvider = /** @class */ (function (_super) {
+    __extends(FileHttpH2CServicesProvider, _super);
+    function FileHttpH2CServicesProvider(Services) {
         var _this = _super.call(this, Services) || this;
         _this.Services = Services;
-        _this.ctl = "FileHttpDownFile";
-        console.log("Hello FileHttpDownFileServiceProvider Provider");
+        _this.ctl = "FileHttpH2C";
+        console.log("Hello FileHttpH2CServiceProvider Provider");
         return _this;
     }
-    FileHttpDownFileServicesProvider.prototype.GetListsByAsync = function (PageSize, PageNumber, keyword, exec_group, exec_file_seq, order_type) {
+    FileHttpH2CServicesProvider.prototype.GetListsByAsync = function (PageSize, PageNumber, keyword, exec_group, exec_file_seq, order_type) {
         var _this = this;
         var sub_url;
         if (exec_file_seq === 0) {
-            sub_url = "FileHttpDownFile?PageSize={1}&PageNumber={2}&keyword={3}&exec_group={4}&order_type={5}";
+            sub_url = "FileHttpH2C?PageSize={1}&PageNumber={2}&keyword={3}&exec_group={4}&order_type={5}";
             sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, PageSize, PageNumber, keyword, exec_group, order_type);
         }
         else {
-            sub_url = "FileHttpDownFile/Select?PageSize={1}&PageNumber={2}&keyword={3}&exec_group={4}&exec_file_seq={5}&order_type={6}";
+            sub_url = "FileHttpH2C/Select?PageSize={1}&PageNumber={2}&keyword={3}&exec_group={4}&exec_file_seq={5}&order_type={6}";
             sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, PageSize, PageNumber, keyword, exec_group, exec_file_seq, order_type);
         }
         return this.Services.GetAsync(sub_url, this.ctl, true).map(function (item) {
-            _this.FileHttpDownFiles = new __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileHttpDownFileListResponse__["a" /* FileHttpDownFileListResponse */]({
+            _this.FileHttpH2Cs = new __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileHttpH2CListResponse__["a" /* FileHttpH2CListResponse */]({
                 Message: item.Message,
                 DidError: item.DidError,
                 ErrorMessage: item.ErrorMessage,
@@ -74,44 +74,44 @@ var FileHttpDownFileServicesProvider = /** @class */ (function (_super) {
                 TotalPages: item.TotalPages,
                 Model: item.Model
             });
-            return _this.FileHttpDownFiles;
+            return _this.FileHttpH2Cs;
         });
     };
-    FileHttpDownFileServicesProvider.prototype.PostPutAsync = function (FileHttpDownFileViewModel, mode) {
+    FileHttpH2CServicesProvider.prototype.PostPutAsync = function (FileHttpH2CViewModel, mode) {
         var _this = this;
         var sub_url;
         if (mode === "POST")
-            sub_url = "FileHttpDownFile";
+            sub_url = "FileHttpH2C";
         else
-            sub_url = "FileHttpDownFile/{1}";
-        sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, FileHttpDownFileViewModel.exec_file_seq);
-        return this.Services.PostPutAsync(sub_url, this.ctl, true, FileHttpDownFileViewModel, mode).map(function (item) {
-            _this.FileHttpDownFile = new __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileHttpDownFileResponse__["a" /* FileHttpDownFileResponse */]({
+            sub_url = "FileHttpH2C/{1}";
+        sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, FileHttpH2CViewModel.exec_file_seq);
+        return this.Services.PostPutAsync(sub_url, this.ctl, true, FileHttpH2CViewModel, mode).map(function (item) {
+            _this.FileHttpH2C = new __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileHttpH2CResponse__["a" /* FileHttpH2CResponse */]({
                 Message: item.Message,
                 DidError: item.DidError,
                 ErrorMessage: item.ErrorMessage,
                 Model: item.Model
             });
-            return _this.FileHttpDownFile;
+            return _this.FileHttpH2C;
         });
     };
-    FileHttpDownFileServicesProvider = __decorate([
+    FileHttpH2CServicesProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_services__["a" /* ServicesProvider */]])
-    ], FileHttpDownFileServicesProvider);
-    return FileHttpDownFileServicesProvider;
+    ], FileHttpH2CServicesProvider);
+    return FileHttpH2CServicesProvider;
 }(__WEBPACK_IMPORTED_MODULE_5__file_services_file_services__["a" /* FileServicesProvider */]));
 
-//# sourceMappingURL=file-http-down-file-services.js.map
+//# sourceMappingURL=file-http-h2-c-services.js.map
 
 /***/ }),
 
-/***/ 1149:
+/***/ 1157:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileHttpDownFileListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileHttpDownFileViewModel__ = __webpack_require__(973);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileHttpH2CListResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileHttpH2CViewModel__ = __webpack_require__(976);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -125,9 +125,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 
 
-var FileHttpDownFileListResponse = /** @class */ (function (_super) {
-    __extends(FileHttpDownFileListResponse, _super);
-    function FileHttpDownFileListResponse(obj) {
+var FileHttpH2CListResponse = /** @class */ (function (_super) {
+    __extends(FileHttpH2CListResponse, _super);
+    function FileHttpH2CListResponse(obj) {
         var _this = _super.call(this, obj) || this;
         _this.Model = [];
         _this.Message = obj.Messag;
@@ -140,7 +140,7 @@ var FileHttpDownFileListResponse = /** @class */ (function (_super) {
         _this.TotalRows = obj.TotalRows;
         if (_this.DidError === false) {
             obj.Model.forEach(function (data) {
-                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileHttpDownFileViewModel__["a" /* FileHttpDownFileViewModel */]();
+                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileHttpH2CViewModel__["a" /* FileHttpH2CViewModel */]();
                 item.export_seq = data.export_seq;
                 item.exec_file_seq = data.exec_file_seq;
                 item.exec_group = data.exec_group;
@@ -174,10 +174,12 @@ var FileHttpDownFileListResponse = /** @class */ (function (_super) {
                 item.filename = data.filename;
                 item.down_type_key = data.down_type_key;
                 item.down_type = data.down_type;
-                item.file_format_key = data.file_format_key;
-                item.file_format = data.file_format;
                 item.is_fail_stop = data.is_fail_stop;
                 item.url = data.url;
+                item.file_format_key = data.file_format_key;
+                item.file_format = data.file_format;
+                item.field_terminator = data.field_terminator;
+                item.row_terminator = data.row_terminator;
                 item.xpath = (data && data.xpath) || null;
                 item.cookie = data.cookie;
                 item.is_processed_sql = data.is_processed_sql;
@@ -191,20 +193,20 @@ var FileHttpDownFileListResponse = /** @class */ (function (_super) {
         }
         return _this;
     }
-    return FileHttpDownFileListResponse;
+    return FileHttpH2CListResponse;
 }(__WEBPACK_IMPORTED_MODULE_1__ListModelResponse__["a" /* ListModelResponse */]));
 
-//# sourceMappingURL=FileHttpDownFileListResponse.js.map
+//# sourceMappingURL=FileHttpH2CListResponse.js.map
 
 /***/ }),
 
-/***/ 1150:
+/***/ 1158:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileHttpDownFileResponse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileHttpH2CResponse; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileHttpDownFileViewModel__ = __webpack_require__(973);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileHttpH2CViewModel__ = __webpack_require__(976);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -217,15 +219,15 @@ var __extends = (this && this.__extends) || (function () {
 })();
 
 
-var FileHttpDownFileResponse = /** @class */ (function (_super) {
-    __extends(FileHttpDownFileResponse, _super);
-    function FileHttpDownFileResponse(obj) {
+var FileHttpH2CResponse = /** @class */ (function (_super) {
+    __extends(FileHttpH2CResponse, _super);
+    function FileHttpH2CResponse(obj) {
         var _this = _super.call(this, obj) || this;
         _this.Message = obj.Message;
         _this.DidError = obj.DidError;
         _this.ErrorMessage = obj.ErrorMessage;
         if (_this.DidError === false) {
-            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileHttpDownFileViewModel__["a" /* FileHttpDownFileViewModel */]();
+            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileHttpH2CViewModel__["a" /* FileHttpH2CViewModel */]();
             _this.Model.exec_file_seq = obj.Model.exec_file_seq;
             _this.Model.exec_group = obj.Model.exec_group;
             _this.Model.is_active = obj.Model.is_active;
@@ -255,33 +257,35 @@ var FileHttpDownFileResponse = /** @class */ (function (_super) {
             _this.Model.filename = obj.Model.filename;
             _this.Model.down_type_key = obj.Model.down_type_key;
             _this.Model.down_type = obj.Model.down_type;
-            _this.Model.file_format_key = (obj && obj.Model.file_format_key) || null;
-            _this.Model.file_format = (obj && obj.Model.file_format) || null;
             _this.Model.url = obj.Model.url;
             _this.Model.is_fail_stop = obj.Model.is_fail_stop;
+            _this.Model.file_format_key = (obj && obj.Model.file_format_key) || null;
+            _this.Model.file_format = (obj && obj.Model.file_format) || null;
+            _this.Model.field_terminator = (obj && obj.Model.field_terminator) || null;
+            _this.Model.row_terminator = (obj && obj.Model.row_terminator) || null;
             _this.Model.xpath = obj.Model.xpath;
             _this.Model.cookie = obj.Model.cookie;
         }
         return _this;
     }
-    return FileHttpDownFileResponse;
+    return FileHttpH2CResponse;
 }(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
 
-//# sourceMappingURL=FileHttpDownFileResponse.js.map
+//# sourceMappingURL=FileHttpH2CResponse.js.map
 
 /***/ }),
 
-/***/ 1429:
+/***/ 1434:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileHttpDownFileAddEditModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_file_http_down_file_services_file_http_down_file_services__ = __webpack_require__(1046);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileHttpH2CAddEditModalPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_file_http_h2_c_services_file_http_h2_c_services__ = __webpack_require__(1049);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_global__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_String__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileHttpDownFileViewModel__ = __webpack_require__(973);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileHttpH2CViewModel__ = __webpack_require__(976);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_file_path_services_file_path_services__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_conn_services_conn_services__ = __webpack_require__(267);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -303,17 +307,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the FileHttpDownFileModalPage page.
+ * Generated class for the FileHttpH2CModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
-    function FileHttpDownFileAddEditModalPage(navCtrl, navParams, viewCtrl, FileHttpDownFileServices, FilePathServices, loadingCtrl, global, modalCtrl, ConnServices) {
+var FileHttpH2CAddEditModalPage = /** @class */ (function () {
+    function FileHttpH2CAddEditModalPage(navCtrl, navParams, viewCtrl, FileHttpH2CServices, FilePathServices, loadingCtrl, global, modalCtrl, ConnServices) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
-        this.FileHttpDownFileServices = FileHttpDownFileServices;
+        this.FileHttpH2CServices = FileHttpH2CServices;
         this.FilePathServices = FilePathServices;
         this.loadingCtrl = loadingCtrl;
         this.global = global;
@@ -323,11 +327,11 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
         this.func_key = "014|" + this.func_no;
         this.min_exec_file_seq = 100000;
         this.max_exec_file_seq = this.min_exec_file_seq + 9999;
-        this.help = "\n  \u683C\u5F0F\u53EF\u652F\u63F4tab\u8207\u9017\u865F\u5169\u7A2E\uFF0C\u5171\u56DB\u500B\u6B04\u4F4D\uFF0C\u683C\u5F0F\u5982\u4E0B\u6240\u793A\nurl\t\u6A94\u6848\u540D\u7A31\tXPath(\u9078\u9805)\t\u6A94\u6848\u4E0B\u8F09\u985E\u578B\n\u6216url,\u6A94\u6848\u540D\u7A31,XPath(\u9078\u9805[\u82E5xpath\u6709\u5305\u542B\u9017\u865F\uFF0C\u8ACB\u6539\u7528tab\u683C\u5F0F]),\u6A94\u6848\u4E0B\u8F09\u985E\u578B(061|1:\u6A94\u6848\u4E0B\u8F09,061|2:JSON\u8F49CSV,061|3:URL\u6A94\u6848\u6E05\u55AE\u4E0B\u8F09,061|4:html table\u56DE\u50B3<td>\u6B04\u4F4D\u5167\u5BB9\u4EE5\u5206\u9694\u7B26\u865F\u7522\u51FA,061|5:html \u56DE\u50B3url,\u8AAA\u660E\u683C\u5F0F\u4EE5\u5206\u9694\u7B26\u865F\u7522\u51FA,061|6:html \u5167\u6587\u7684URL\u81EA\u52D5\u4E0B\u8F09\u6A94\u6848(\u6A94\u540D\u53D6\u81EAURL),061|7:html \u5167\u6587\u7684URL\u81EA\u52D5\u4E0B\u8F09\u6A94\u6848(\u6A94\u540D\u53D6\u81EA\u986F\u793A\u5167\u5BB9))\n(\u4EE5\u4E0A\u6A94\u6848\u5167\u6587\u4E0D\u8981\u63D0\u4F9B\u6A19\u984C)\n\n\u7BC4\u4F8B\u5982\u4E0B\u6240\u793A\uFF1A(\u5C07\u7DB2\u9801\u5167\u5BB9\u4E0B\u8F09\u5B58\u6210jonesyeh.html)\nhttps://jonesyeh.wordpress.com/,jonesyeh.html,,061|1\n  ";
+        this.help = "";
         this.range_exec_file_seq = __WEBPACK_IMPORTED_MODULE_4__Model_String__["a" /* String */].Format("{0}-{1}", this.min_exec_file_seq, this.max_exec_file_seq);
         this.mode = navParams.data.mode;
         this.change_mode = navParams.data.change_mode;
-        this.item = new __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileHttpDownFileViewModel__["a" /* FileHttpDownFileViewModel */]();
+        this.item = new __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileHttpH2CViewModel__["a" /* FileHttpH2CViewModel */]();
         this.item.export_seq = navParams.data.item.export_seq;
         this.item.exec_file_seq = navParams.data.item.exec_file_seq;
         this.item.exec_group = navParams.data.item.exec_group;
@@ -352,9 +356,11 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
         this.item.filename = navParams.data.item.filename;
         this.item.down_type_key = navParams.data.item.down_type_key;
         this.item.down_type = navParams.data.item.down_type;
+        this.item.url = navParams.data.item.url;
         this.item.file_format_key = navParams.data.item.file_format_key;
         this.item.file_format = navParams.data.item.file_format;
-        this.item.url = navParams.data.item.url;
+        this.item.field_terminator = navParams.data.item.field_terminator;
+        this.item.row_terminator = navParams.data.item.row_terminator;
         this.item.xpath = navParams.data.item.xpath;
         this.item.cookie = navParams.data.item.cookie;
         if (this.change_mode === "n") {
@@ -366,9 +372,36 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
         }
         this.CanEditBatch = navParams.data.CanEditBatch;
         this.CanFileBrowser = navParams.data.CanFileBrowser;
-        this.title = "Http下載檔案";
+        this.title = "下載Html轉CSV";
     }
-    FileHttpDownFileAddEditModalPage.prototype.get_conn_string = function (remote_conn_id) {
+    FileHttpH2CAddEditModalPage.prototype.openNavPage = function (parent_path) {
+        var _this = this;
+        var page;
+        if (parent_path.indexOf("\\") >= 0)
+            page = "DirectoryBrowserPage";
+        if (parent_path.indexOf("/") >= 0)
+            page = "FtpDirectoryBrowserPage";
+        this.global.createLoader("連線中...");
+        this.global.loading.present().then(function () {
+            _this.navCtrl.push(page, { parent_path: parent_path, parent_page: _this, is_modal: true });
+        });
+        this.global.dismissLoading();
+    };
+    FileHttpH2CAddEditModalPage.prototype.SelectFileFormat = function () {
+        var _this = this;
+        var modal = this.modalCtrl.create("CodeSelectModalPage", {
+            select_key: this.item.file_format_key,
+            code_key: "011|C,011|CB,011|UTF16,011|UTF32,011|UTF7,011|UTF8,011|UTF8B,011|W,011|B,011|W,011|WB"
+        });
+        modal.onDidDismiss(function (select_data) {
+            if (select_data == null)
+                return;
+            _this.item.file_format_key = select_data.code_key;
+            _this.item.file_format = select_data.code_desc;
+        });
+        modal.present();
+    };
+    FileHttpH2CAddEditModalPage.prototype.get_conn_string = function (remote_conn_id) {
         var _this = this;
         this.global.createLoader("取得連線字串中...");
         this.global.loading.present().then(function () {
@@ -388,24 +421,11 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
             });
         });
     };
-    FileHttpDownFileAddEditModalPage.prototype.openNavPage = function (parent_path) {
-        var _this = this;
-        var page;
-        if (parent_path.indexOf("\\") >= 0)
-            page = "DirectoryBrowserPage";
-        if (parent_path.indexOf("/") >= 0)
-            page = "FtpDirectoryBrowserPage";
-        this.global.createLoader("連線中...");
-        this.global.loading.present().then(function () {
-            _this.navCtrl.push(page, { parent_path: parent_path, parent_page: _this, is_modal: true });
-        });
-        this.global.dismissLoading();
-    };
-    FileHttpDownFileAddEditModalPage.prototype.SelectDownType = function () {
+    FileHttpH2CAddEditModalPage.prototype.SelectDownType = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
             select_key: this.item.down_type_key,
-            code_key: "061|1,061|3,061|6,061|7"
+            code_key: "061|4,061|5"
         });
         modal.onDidDismiss(function (select_data) {
             if (select_data == null)
@@ -416,21 +436,7 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileHttpDownFileAddEditModalPage.prototype.SelectFileFormat = function () {
-        var _this = this;
-        var modal = this.modalCtrl.create("CodeSelectModalPage", {
-            select_key: this.item.file_format_key,
-            code_key: "011|C,011|CB,011|UTF16,011|UTF32,011|UTF7,011|UTF8,011|UTF8B,011|W,011|B,011|W,011|WB"
-        });
-        modal.onDidDismiss(function (select_data) {
-            if (select_data == null)
-                return;
-            _this.item.file_format_key = select_data.code_key;
-            _this.item.file_format = select_data.code_desc;
-        });
-        modal.present();
-    };
-    FileHttpDownFileAddEditModalPage.prototype.SelectConn = function () {
+    FileHttpH2CAddEditModalPage.prototype.SelectConn = function () {
         var _this = this;
         var modal = this.modalCtrl.create("ConnSelectModalPage", {
             select_remote_conn_id: this.item.remote_conn_id,
@@ -445,10 +451,10 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileHttpDownFileAddEditModalPage.prototype.change_url = function () {
-        this.item.url = this.item.conn_string + (this.item.down_type_key === "061|3" ? "" : this.item.function_name);
+    FileHttpH2CAddEditModalPage.prototype.change_url = function () {
+        this.item.url = this.item.conn_string + this.item.function_name;
     };
-    FileHttpDownFileAddEditModalPage.prototype.SelectParameterGroup = function () {
+    FileHttpH2CAddEditModalPage.prototype.SelectParameterGroup = function () {
         var _this = this;
         var modal = this.modalCtrl.create("ParameterGroupSelectModelPage", {
             select_parameter_column_group: this.item.parameter_column_group
@@ -460,7 +466,7 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileHttpDownFileAddEditModalPage.prototype.SelectOutFilePath = function () {
+    FileHttpH2CAddEditModalPage.prototype.SelectOutFilePath = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
             select_key: this.item.out_file_path_key,
@@ -474,11 +480,11 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileHttpDownFileAddEditModalPage.prototype.get_max_exec_file_seq = function () {
+    FileHttpH2CAddEditModalPage.prototype.get_max_exec_file_seq = function () {
         var _this = this;
         this.global.createLoader("取得最大值中...");
         this.global.loading.present().then(function () {
-            _this.FileHttpDownFileServices.GetMaxRangeExecFileSeqAsync(_this.func_no, _this.item.exec_group, _this.min_exec_file_seq, _this.max_exec_file_seq).subscribe(function (data) {
+            _this.FileHttpH2CServices.GetMaxRangeExecFileSeqAsync(_this.func_no, _this.item.exec_group, _this.min_exec_file_seq, _this.max_exec_file_seq).subscribe(function (data) {
                 if (data.DidError === true) {
                     _this.global.dismissLoading();
                     _this.global.showError(data.ErrorMessage);
@@ -493,7 +499,7 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
             });
         });
     };
-    FileHttpDownFileAddEditModalPage.prototype.get_default_path = function () {
+    FileHttpH2CAddEditModalPage.prototype.get_default_path = function () {
         var _this = this;
         this.global.createLoader("取得預設資料夾中...");
         this.global.loading.present().then(function () {
@@ -515,11 +521,11 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
             });
         });
     };
-    FileHttpDownFileAddEditModalPage.prototype.get_max_exec_seq = function () {
+    FileHttpH2CAddEditModalPage.prototype.get_max_exec_seq = function () {
         var _this = this;
         this.global.createLoader("取得最大值中...");
         this.global.loading.present().then(function () {
-            _this.FileHttpDownFileServices.GetMaxExecSeqAsync(_this.func_no, _this.item.exec_group).subscribe(function (data) {
+            _this.FileHttpH2CServices.GetMaxExecSeqAsync(_this.func_no, _this.item.exec_group).subscribe(function (data) {
                 if (data.DidError === true) {
                     _this.global.dismissLoading();
                     _this.global.showError(data.ErrorMessage);
@@ -534,20 +540,13 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
             });
         });
     };
-    FileHttpDownFileAddEditModalPage.prototype.Save = function () {
+    FileHttpH2CAddEditModalPage.prototype.Save = function () {
         this.viewCtrl.dismiss(this.item);
     };
-    FileHttpDownFileAddEditModalPage.prototype.close = function () {
+    FileHttpH2CAddEditModalPage.prototype.close = function () {
         this.viewCtrl.dismiss();
     };
-    FileHttpDownFileAddEditModalPage.prototype.Help = function () {
-        var _this = this;
-        this.global.createLoader();
-        this.global.loading.present().then(function () {
-            _this.global.showMessage("檔案清單格式說明", _this.help);
-        });
-    };
-    FileHttpDownFileAddEditModalPage.prototype.openNavParameterColumnPage = function (item) {
+    FileHttpH2CAddEditModalPage.prototype.openNavParameterColumnPage = function (item) {
         var _this = this;
         this.global.createLoader("連線中...");
         this.global.loading.present().then(function () {
@@ -555,40 +554,40 @@ var FileHttpDownFileAddEditModalPage = /** @class */ (function () {
         });
         this.global.dismissLoading();
     };
-    FileHttpDownFileAddEditModalPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad FileHttpDownFileModalPage");
+    FileHttpH2CAddEditModalPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad FileHttpH2CModalPage");
     };
-    FileHttpDownFileAddEditModalPage = __decorate([
+    FileHttpH2CAddEditModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
-            selector: "page-file-http-down-file-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\file-http-down-file-add-edit-modal\file-http-down-file-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm">\n\n\n    <ion-row>\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>轉檔群組</ion-label>\n          <ion-input type="text" [disabled]="CanEditBatch==false" name="exec_group" #exec_group="ngModel" [(ngModel)]="item.exec_group"\n            required maxlength="30"></ion-input>\n        </ion-item>\n        <div *ngIf="exec_group.errors && exec_group.touched" class="error-message">\n          轉檔群組不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>轉檔序號:{{range_exec_file_seq}}</ion-label>\n          <ion-input type="number" [disabled]="CanEditBatch==false || mode==\'PUT\'" name="exec_file_seq" #exec_file_seq="ngModel" [(ngModel)]="item.exec_file_seq"\n            required></ion-input>\n          <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="get_max_exec_file_seq()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n        <div *ngIf="exec_file_seq.errors && exec_file_seq.touched" class="error-message">\n          轉檔序號不能為空白\n        </div>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>下載類型</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="down_type_key" #down_type_key="ngModel" [(ngModel)]="item.down_type_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectDownType()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="down_type_key.errors && down_type_key.touched " class="error-message">\n          下載類型不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>下載類型</ion-label>\n          <ion-input type="text" [disabled]=true name="down_type" #down_type="ngModel" [(ngModel)]="item.down_type" required></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col col-4>\n        <ion-item>\n          <ion-label stacked>執行順序</ion-label>\n          <ion-input type="number" [disabled]="CanEditBatch==false" name="exec_seq" #exec_seq="ngModel" [(ngModel)]="item.exec_seq"\n            required></ion-input>\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="get_max_exec_seq()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n        <div *ngIf="exec_seq.errors && exec_seq.touched" class="error-message">\n          執行順序不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-8>\n        <ion-item>\n          <ion-label stacked>連線編號</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="remote_conn_id" #remote_conn_id="ngModel" [(ngModel)]="item.remote_conn_id"\n            required maxlength="20"></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true " icon-right (click)="SelectConn()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="remote_conn_id.errors && remote_conn_id.touched " class="error-message">\n          連線編號不能為空白\n        </div>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 *ngIf="item.down_type_key!=\'061|3\'">\n        <ion-item>\n          <ion-label stacked>功能別</ion-label>\n          <ion-input type="text"  [disabled]="CanEditBatch==false " name="function_name" #function_name="ngModel" (change)="change_url()"\n            [(ngModel)]="item.function_name" maxlength="255"></ion-input>\n        </ion-item>\n      </ion-col>\n      <ion-col col-12 *ngIf="item.down_type_key==\'061|3\'">\n        <ion-item>\n          <ion-label stacked>清單路徑</ion-label>\n          <ion-input type="text" [disabled]="CanEditBatch==false " name="function_name" #function_name="ngModel" [(ngModel)]="item.function_name"\n            maxlength="255" require></ion-input>\n\n        </ion-item>\n        <div *ngIf="function_name.errors && function_name.touched" class="error-message">\n          清單路徑不能為空白\n        </div>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12>\n        <ion-item>\n          <ion-label stacked>Url</ion-label>\n          <ion-textarea rows=4 [disabled]=true name="Url" #Url="ngModel" [(ngModel)]="item.url" required></ion-textarea>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>參數群組</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="parameter_column_group" #parameter_column_group="ngModel" [(ngModel)]="item.parameter_column_group"\n            required maxlength="3"></ion-input>\n          <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="SelectParameterGroup()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="parameter_column_group.errors && parameter_column_group.touched " class="error-message">\n          參數群組不能為空白\n        </div>\n      </ion-col>\n\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>檔案名稱</ion-label>\n          <ion-input type="text" [disabled]="CanEditBatch==false" name="filename" #filename="ngModel" [(ngModel)]="item.filename" required\n            maxlength="50"></ion-input>\n        </ion-item>\n        <div *ngIf="filename.errors && filename.touched" class="error-message">\n          檔案名稱不能為空白\n        </div>\n      </ion-col>\n\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>內文格式</ion-label>\n          <ion-input type="text" readonly=true maxlength=10 [disabled]="CanEditBatch==false " name="file_format_key" #file_format_key="ngModel" [(ngModel)]="item.file_format_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectFileFormat()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="file_format_key.errors && file_format_key.touched " class="error-message">\n          內文格式不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>內文格式</ion-label>\n          <ion-input type="text" [disabled]=true name="file_format" #file_format="ngModel" [(ngModel)]="item.file_format" required></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>失敗停止</ion-label>\n          <ion-checkbox [disabled]="CanEditBatch==false" name="is_fail_stop" #is_fail_stop="ngModel" [(ngModel)]="item.is_fail_stop"></ion-checkbox>\n        </ion-item>\n\n      </ion-col>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>啟用</ion-label>\n          <ion-checkbox [disabled]="CanEditBatch==false" name="is_active" #is_active="ngModel" [(ngModel)]="item.is_active"></ion-checkbox>\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>重複</ion-label>\n          <ion-checkbox [disabled]="CanEditBatch==false" name="can_rerun" #can_rerun="ngModel" [(ngModel)]="item.can_rerun"></ion-checkbox>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>下載檔案路徑</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="out_file_path_key" #out_file_path_key="ngModel" [(ngModel)]="item.out_file_path_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectOutFilePath()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="out_file_path_key.errors && out_file_path_key.touched " class="error-message">\n          下載檔案路徑不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n            <button ion-button clear=true [disabled]="CanFileBrowser==false" (click)="openNavPage(item.out_file_path)">\n                {{item.out_file_path}}\n              </button>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>備註</ion-label>\n          <ion-textarea [disabled]="CanEditBatch==false" name="note" #note="ngModel" [(ngModel)]="item.note" maxlength="255" required></ion-textarea>\n        </ion-item>\n        <div *ngIf="note.errors && note.touched " class="error-message">\n          備註不能為空白\n        </div>\n      </ion-col>\n    </ion-row>\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small title="確認" [disabled]="CanEditBatch==false" ion-button color="dark" [disabled]="!Form.form.valid" icon-left\n            (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n          <button *ngIf="item.down_type_key==\'061|3\'" small title="檔案清單格式說明" [disabled]="CanEditBatch==false" ion-button color="dark"  icon-left\n          (click)="Help()">\n          <ion-icon name="help"></ion-icon>\n        </button>\n        <button small title="參數群組" ion-button color="dark" icon-left (click)="openNavParameterColumnPage(item)">\n          <ion-icon name="outlet"></ion-icon>\n        </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\file-http-down-file-add-edit-modal\file-http-down-file-add-edit-modal.html"*/
+            selector: "page-file-http-h2-c-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\file-http-h2-c-add-edit-modal\file-http-h2-c-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm">\n\n\n    <ion-row>\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>轉檔群組</ion-label>\n          <ion-input type="text" [disabled]="CanEditBatch==false" name="exec_group" #exec_group="ngModel" [(ngModel)]="item.exec_group"\n            required maxlength="30"></ion-input>\n        </ion-item>\n        <div *ngIf="exec_group.errors && exec_group.touched" class="error-message">\n          轉檔群組不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>轉檔序號:{{range_exec_file_seq}}</ion-label>\n          <ion-input type="number" [disabled]="CanEditBatch==false || mode==\'PUT\'" name="exec_file_seq" #exec_file_seq="ngModel" [(ngModel)]="item.exec_file_seq"\n            required></ion-input>\n          <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="get_max_exec_file_seq()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n        <div *ngIf="exec_file_seq.errors && exec_file_seq.touched" class="error-message">\n          轉檔序號不能為空白\n        </div>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>下載類型</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="down_type_key" #down_type_key="ngModel" [(ngModel)]="item.down_type_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectDownType()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="down_type_key.errors && down_type_key.touched " class="error-message">\n          下載類型不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>下載類型</ion-label>\n          <ion-input type="text" [disabled]=true name="down_type" #down_type="ngModel" [(ngModel)]="item.down_type" required></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n      <ion-col col-4>\n        <ion-item>\n          <ion-label stacked>執行順序</ion-label>\n          <ion-input type="number" [disabled]="CanEditBatch==false" name="exec_seq" #exec_seq="ngModel" [(ngModel)]="item.exec_seq"\n            required></ion-input>\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="get_max_exec_seq()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n        <div *ngIf="exec_seq.errors && exec_seq.touched" class="error-message">\n          執行順序不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-8>\n        <ion-item>\n          <ion-label stacked>連線編號</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="remote_conn_id" #remote_conn_id="ngModel" [(ngModel)]="item.remote_conn_id"\n            required maxlength="20"></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true " icon-right (click)="SelectConn()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="remote_conn_id.errors && remote_conn_id.touched " class="error-message">\n          連線編號不能為空白\n        </div>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12>\n        <ion-item>\n          <ion-label stacked>功能別</ion-label>\n          <ion-input type="text" [disabled]="CanEditBatch==false " name="function_name" #function_name="ngModel" (change)="change_url()"\n            [(ngModel)]="item.function_name" maxlength="255"></ion-input>\n        </ion-item>\n      </ion-col>\n\n    </ion-row>\n    <ion-row>\n      <ion-col col-12>\n        <ion-item>\n          <ion-label stacked>Url</ion-label>\n          <ion-textarea rows=4 [disabled]=true name="Url" #Url="ngModel" [(ngModel)]="item.url" required></ion-textarea>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>參數群組</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="parameter_column_group" #parameter_column_group="ngModel" [(ngModel)]="item.parameter_column_group"\n            required maxlength="3"></ion-input>\n          <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="SelectParameterGroup()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="parameter_column_group.errors && parameter_column_group.touched " class="error-message">\n          參數群組不能為空白\n        </div>\n      </ion-col>\n\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>檔案名稱</ion-label>\n          <ion-input type="text" [disabled]="CanEditBatch==false" name="filename" #filename="ngModel" [(ngModel)]="item.filename" required\n            maxlength="50"></ion-input>\n        </ion-item>\n        <div *ngIf="filename.errors && filename.touched" class="error-message">\n          檔案名稱不能為空白\n        </div>\n      </ion-col>\n\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>失敗停止</ion-label>\n          <ion-checkbox [disabled]="CanEditBatch==false" name="is_fail_stop" #is_fail_stop="ngModel" [(ngModel)]="item.is_fail_stop"></ion-checkbox>\n        </ion-item>\n\n      </ion-col>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>啟用</ion-label>\n          <ion-checkbox [disabled]="CanEditBatch==false" name="is_active" #is_active="ngModel" [(ngModel)]="item.is_active"></ion-checkbox>\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>重複</ion-label>\n          <ion-checkbox [disabled]="CanEditBatch==false" name="can_rerun" #can_rerun="ngModel" [(ngModel)]="item.can_rerun"></ion-checkbox>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-6>\n        <ion-item>\n          <ion-label stacked>欄位分隔符號</ion-label>\n          <ion-input type="text" title="f:表固定長度,\t:tab,\b:char(8),\0:char(0),f|:固定長度後加上|" maxlength="2" [disabled]="CanEditBatch==false"\n            name="field_terminator" #field_terminator="ngModel" [(ngModel)]="item.field_terminator" required></ion-input>\n        </ion-item>\n        <div *ngIf="field_terminator.errors && field_terminator.touched " class="error-message">\n          欄位分隔符號不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-6>\n        <ion-item>\n          <ion-label stacked>列結尾符號</ion-label>\n          <ion-input type="text" maxlength="5" [disabled]="CanEditBatch==false" name="row_terminator" #row_terminator="ngModel" [(ngModel)]="item.row_terminator"\n            required></ion-input>\n        </ion-item>\n        <div *ngIf="row_terminator.errors && row_terminator.touched " class="error-message">\n          列結尾符號不能為空白\n        </div>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>內文格式</ion-label>\n          <ion-input type="text" readonly=true maxlength=10 [disabled]="CanEditBatch==false " name="file_format_key" #file_format_key="ngModel" [(ngModel)]="item.file_format_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectFileFormat()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="file_format_key.errors && file_format_key.touched " class="error-message">\n          內文格式不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>內文格式</ion-label>\n          <ion-input type="text" [disabled]=true name="file_format" #file_format="ngModel" [(ngModel)]="item.file_format" required></ion-input>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>下載檔案路徑</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="out_file_path_key" #out_file_path_key="ngModel" [(ngModel)]="item.out_file_path_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectOutFilePath()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="out_file_path_key.errors && out_file_path_key.touched " class="error-message">\n          下載檔案路徑不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n            <button ion-button clear=true [disabled]="CanFileBrowser==false" (click)="openNavPage(item.out_file_path)">\n                {{item.out_file_path}}\n              </button>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>備註</ion-label>\n          <ion-textarea [disabled]="CanEditBatch==false" name="note" #note="ngModel" [(ngModel)]="item.note" maxlength="255" required></ion-textarea>\n        </ion-item>\n        <div *ngIf="note.errors && note.touched " class="error-message">\n          備註不能為空白\n        </div>\n      </ion-col>\n    </ion-row>\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small title="確認" [disabled]="CanEditBatch==false" ion-button color="dark" [disabled]="!Form.form.valid" icon-left\n            (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n\n          <button small title="參數群組" ion-button color="dark" icon-left (click)="openNavParameterColumnPage(item)">\n            <ion-icon name="outlet"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\file-http-h2-c-add-edit-modal\file-http-h2-c-add-edit-modal.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["p" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_0__providers_file_http_down_file_services_file_http_down_file_services__["a" /* FileHttpDownFileServicesProvider */],
+            __WEBPACK_IMPORTED_MODULE_0__providers_file_http_h2_c_services_file_http_h2_c_services__["a" /* FileHttpH2CServicesProvider */],
             __WEBPACK_IMPORTED_MODULE_6__providers_file_path_services_file_path_services__["a" /* FilePathServicesProvider */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_1__components_global_global__["a" /* GlobalComponent */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_7__providers_conn_services_conn_services__["a" /* ConnServicesProvider */]])
-    ], FileHttpDownFileAddEditModalPage);
-    return FileHttpDownFileAddEditModalPage;
+    ], FileHttpH2CAddEditModalPage);
+    return FileHttpH2CAddEditModalPage;
 }());
 
-//# sourceMappingURL=file-http-down-file-add-edit-modal.js.map
+//# sourceMappingURL=file-http-h2-c-add-edit-modal.js.map
 
 /***/ }),
 
-/***/ 561:
+/***/ 565:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileHttpDownFileAddEditModalPageModule", function() { return FileHttpDownFileAddEditModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileHttpH2CAddEditModalPageModule", function() { return FileHttpH2CAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_http_down_file_add_edit_modal__ = __webpack_require__(1429);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_file_http_down_file_services_file_http_down_file_services__ = __webpack_require__(1046);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_http_h2_c_add_edit_modal__ = __webpack_require__(1434);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_file_http_h2_c_services_file_http_h2_c_services__ = __webpack_require__(1049);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -599,40 +598,40 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FileHttpDownFileAddEditModalPageModule = /** @class */ (function () {
-    function FileHttpDownFileAddEditModalPageModule() {
+var FileHttpH2CAddEditModalPageModule = /** @class */ (function () {
+    function FileHttpH2CAddEditModalPageModule() {
     }
-    FileHttpDownFileAddEditModalPageModule = __decorate([
+    FileHttpH2CAddEditModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__file_http_down_file_add_edit_modal__["a" /* FileHttpDownFileAddEditModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__file_http_h2_c_add_edit_modal__["a" /* FileHttpH2CAddEditModalPage */],
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_file_http_down_file_services_file_http_down_file_services__["a" /* FileHttpDownFileServicesProvider */],
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_file_http_h2_c_services_file_http_h2_c_services__["a" /* FileHttpH2CServicesProvider */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__file_http_down_file_add_edit_modal__["a" /* FileHttpDownFileAddEditModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__file_http_h2_c_add_edit_modal__["a" /* FileHttpH2CAddEditModalPage */]),
             ],
         })
-    ], FileHttpDownFileAddEditModalPageModule);
-    return FileHttpDownFileAddEditModalPageModule;
+    ], FileHttpH2CAddEditModalPageModule);
+    return FileHttpH2CAddEditModalPageModule;
 }());
 
-//# sourceMappingURL=file-http-down-file-add-edit-modal.module.js.map
+//# sourceMappingURL=file-http-h2-c-add-edit-modal.module.js.map
 
 /***/ }),
 
-/***/ 973:
+/***/ 976:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileHttpDownFileViewModel; });
-var FileHttpDownFileViewModel = /** @class */ (function () {
-    function FileHttpDownFileViewModel() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileHttpH2CViewModel; });
+var FileHttpH2CViewModel = /** @class */ (function () {
+    function FileHttpH2CViewModel() {
     }
-    return FileHttpDownFileViewModel;
+    return FileHttpH2CViewModel;
 }());
 
-//# sourceMappingURL=FileHttpDownFileViewModel.js.map
+//# sourceMappingURL=FileHttpH2CViewModel.js.map
 
 /***/ })
 

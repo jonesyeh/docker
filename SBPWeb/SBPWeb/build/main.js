@@ -1,4 +1,4 @@
-webpackJsonp([352],[
+webpackJsonp([353],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -1550,6 +1550,16 @@ var GlobalComponent = /** @class */ (function () {
         console.log("Hello GlobalComponent Component");
         // this.text = 'Hello World';
     }
+    GlobalComponent.prototype.ConvertDate = function (b) {
+        var s1 = b.toLocaleDateString();
+        var s2 = b.toISOString();
+        var b1 = Number(s1.split(/\D+/)[2]);
+        var b2 = Number(s2.split(/\D+/)[2]);
+        if (b1 === b2)
+            return b;
+        else
+            return new Date(b.getTime() - b.getTimezoneOffset() * 60000);
+    };
     GlobalComponent.prototype.adjust = function (element) {
         var textArea = element.nativeElement.getElementsByTagName("textarea")[0];
         textArea.style.overflow = "hidden";
@@ -2097,20 +2107,6 @@ var MaskColumnViewModel = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuoteColumnViewModel; });
-var QuoteColumnViewModel = /** @class */ (function () {
-    function QuoteColumnViewModel() {
-    }
-    return QuoteColumnViewModel;
-}());
-
-//# sourceMappingURL=QuoteColumnViewModel.js.map
-
-/***/ }),
-/* 144 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RolePermissionViewModel; });
 var RolePermissionViewModel = /** @class */ (function () {
     function RolePermissionViewModel() {
@@ -2119,6 +2115,20 @@ var RolePermissionViewModel = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=RolePermissionViewModel.js.map
+
+/***/ }),
+/* 144 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuoteColumnViewModel; });
+var QuoteColumnViewModel = /** @class */ (function () {
+    function QuoteColumnViewModel() {
+    }
+    return QuoteColumnViewModel;
+}());
+
+//# sourceMappingURL=QuoteColumnViewModel.js.map
 
 /***/ }),
 /* 145 */
@@ -2230,27 +2240,27 @@ webpackEmptyAsyncContext.id = 150;
 var map = {
 	"../pages/api-url-add-edit-modal/api-url-add-edit-modal.module": [
 		430,
-		351
+		352
 	],
 	"../pages/api-url/api-url.module": [
 		431,
 		112
 	],
 	"../pages/audit-logger-detail/audit-logger-detail.module": [
-		432,
-		233
+		434,
+		234
 	],
 	"../pages/audit-logger/audit-logger.module": [
-		433,
-		146
+		432,
+		147
 	],
 	"../pages/audit-table-add-edit-modal/audit-table-add-edit-modal.module": [
-		434,
-		318
+		433,
+		319
 	],
 	"../pages/audit-table-detail-add-edit-modal/audit-table-detail-add-edit-modal.module": [
 		435,
-		319
+		320
 	],
 	"../pages/audit-table-detail/audit-table-detail.module": [
 		436,
@@ -2262,446 +2272,450 @@ var map = {
 	],
 	"../pages/auth-management/auth-management.module": [
 		438,
-		232
+		233
 	],
 	"../pages/batch-bus-type/batch-bus-type.module": [
-		439,
+		440,
 		23
 	],
 	"../pages/batch-exec-program-add-edit-modal/batch-exec-program-add-edit-modal.module": [
 		441,
-		310
+		311
 	],
 	"../pages/batch-exec-program-select-modal/batch-exec-program-select-modal.module": [
-		440,
+		439,
 		5
 	],
 	"../pages/batch-exec-program/batch-exec-program.module": [
-		442,
+		443,
 		4
 	],
 	"../pages/batch-management/batch-management.module": [
-		443,
-		231
+		442,
+		232
 	],
 	"../pages/batch-program-add-edit-modal/batch-program-add-edit-modal.module": [
-		444,
-		350
+		445,
+		351
 	],
 	"../pages/batch-program-check-add-edit-modal/batch-program-check-add-edit-modal.module": [
-		445,
-		292
+		444,
+		293
 	],
 	"../pages/batch-program-check-pk-edit-modal/batch-program-check-pk-edit-modal.module": [
-		446,
-		293
+		452,
+		294
 	],
 	"../pages/batch-program-check-pk/batch-program-check-pk.module": [
 		447,
 		55
 	],
 	"../pages/batch-program-check-select-modal/batch-program-check-select-modal.module": [
-		449,
+		450,
 		10
 	],
 	"../pages/batch-program-check/batch-program-check.module": [
-		448,
+		446,
 		9
 	],
 	"../pages/batch-program-management/batch-program-management.module": [
-		450,
-		230
+		449,
+		231
 	],
 	"../pages/batch-program-select-modal/batch-program-select-modal.module": [
-		451,
-		159
+		453,
+		160
 	],
 	"../pages/batch-program/batch-program.module": [
-		452,
-		158
+		448,
+		159
 	],
 	"../pages/batch-variable/batch-variable.module": [
-		453,
+		456,
 		22
 	],
 	"../pages/change-password/change-password.module": [
-		455,
-		229
+		451,
+		230
 	],
 	"../pages/check-code-column-select-modal/check-code-column-select-modal.module": [
 		454,
-		228
+		229
 	],
 	"../pages/check-type-select-modal/check-type-select-modal.module": [
-		456,
-		227
+		463,
+		228
 	],
 	"../pages/cmd-log/cmd-log.module": [
-		457,
-		226
+		458,
+		227
 	],
 	"../pages/code-add-edit-modal/code-add-edit-modal.module": [
-		458,
-		281
+		455,
+		282
 	],
 	"../pages/code-check-add-edit-modal/code-check-add-edit-modal.module": [
-		459,
-		349
+		466,
+		350
 	],
 	"../pages/code-check-type-detail-modal/code-check-type-detail-modal.module": [
-		460,
-		157
+		462,
+		158
 	],
 	"../pages/code-check-type-detail/code-check-type-detail.module": [
-		461,
-		156
+		457,
+		157
 	],
 	"../pages/code-check/code-check.module": [
-		462,
-		155
+		460,
+		156
 	],
 	"../pages/code-select-modal/code-select-modal.module": [
-		463,
+		459,
 		21
 	],
 	"../pages/code/code.module": [
-		464,
+		461,
 		20
 	],
 	"../pages/column-mapping-add-edit-modal/column-mapping-add-edit-modal.module": [
-		478,
-		317
+		465,
+		318
 	],
 	"../pages/column-mapping-add-table-modal/column-mapping-add-table-modal.module": [
-		465,
-		316
+		464,
+		317
 	],
 	"../pages/column-mapping/column-mapping.module": [
-		466,
+		467,
 		43
 	],
 	"../pages/column-type-mapping-add-edit-modal/column-type-mapping-add-edit-modal.module": [
-		490,
-		315
+		468,
+		316
 	],
 	"../pages/column-type-mapping/column-type-mapping.module": [
-		467,
+		470,
 		109
 	],
 	"../pages/common-management/common-management.module": [
-		468,
-		225
+		469,
+		226
 	],
 	"../pages/config-col-index-loop-add-edit-modal/config-col-index-loop-add-edit-modal.module": [
-		469,
-		278
+		471,
+		279
 	],
 	"../pages/config-col-index-loop/config-col-index-loop.module": [
-		470,
+		472,
 		108
 	],
 	"../pages/conn-db-add-edit-modal/conn-db-add-edit-modal.module": [
-		471,
-		348
+		474,
+		349
 	],
 	"../pages/conn-db/conn-db.module": [
-		472,
-		154
+		476,
+		155
 	],
 	"../pages/conn-ftp-add-edit-modal/conn-ftp-add-edit-modal.module": [
 		473,
-		347
+		348
 	],
 	"../pages/conn-ftp/conn-ftp.module": [
-		474,
-		153
+		475,
+		154
 	],
 	"../pages/conn-http-add-edit-modal/conn-http-add-edit-modal.module": [
-		475,
-		346
+		478,
+		347
 	],
 	"../pages/conn-http/conn-http.module": [
-		476,
-		152
+		477,
+		153
 	],
 	"../pages/conn-management/conn-management.module": [
-		477,
-		224
+		480,
+		225
 	],
 	"../pages/conn-sbp-add-edit-modal/conn-sbp-add-edit-modal.module": [
-		479,
-		345
+		483,
+		346
 	],
 	"../pages/conn-sbp/conn-sbp.module": [
-		480,
-		151
+		481,
+		152
 	],
 	"../pages/conn-select-modal/conn-select-modal.module": [
-		481,
-		150
+		479,
+		151
 	],
 	"../pages/conn-smtp-add-edit-modal/conn-smtp-add-edit-modal.module": [
-		482,
-		344
+		484,
+		345
 	],
 	"../pages/conn-smtp/conn-smtp.module": [
-		483,
-		149
+		485,
+		150
 	],
 	"../pages/conn-ssis/conn-ssis.module": [
-		484,
-		148
+		482,
+		149
 	],
 	"../pages/database-management/database-management.module": [
-		485,
-		223
+		486,
+		224
 	],
 	"../pages/del-table-add-edit-modal/del-table-add-edit-modal.module": [
-		486,
-		277
+		489,
+		278
 	],
 	"../pages/del-table/del-table.module": [
-		489,
+		491,
 		107
 	],
 	"../pages/directory-browser-add-edit-modal/directory-browser-add-edit-modal.module": [
-		487,
-		343
+		488,
+		344
 	],
 	"../pages/directory-browser-select-modal/directory-browser-select-modal.module": [
-		488,
+		487,
 		8
 	],
 	"../pages/directory-browser/directory-browser.module": [
-		491,
+		490,
 		7
 	],
 	"../pages/email-add-edit-modal/email-add-edit-modal.module": [
-		492,
-		311
+		503,
+		312
 	],
 	"../pages/email-attach-add-edit-modal/email-attach-add-edit-modal.module": [
-		493,
-		313
+		492,
+		314
 	],
 	"../pages/email-attach/email-attach.module": [
-		495,
+		496,
 		106
 	],
 	"../pages/email-management/email-management.module": [
 		494,
-		222
+		223
 	],
 	"../pages/email-send-log/email-send-log.module": [
-		496,
-		145
+		501,
+		146
 	],
 	"../pages/email-user-add-edit-modal/email-user-add-edit-modal.module": [
-		497,
-		312
+		493,
+		313
 	],
 	"../pages/email-user-select-model/email-user-select-model.module": [
-		498,
+		495,
 		16
 	],
 	"../pages/email-user/email-user.module": [
-		508,
+		499,
 		15
 	],
 	"../pages/email/email.module": [
-		499,
+		507,
 		105
 	],
 	"../pages/err-data-log-detail/err-data-log-detail.module": [
-		500,
-		221
+		497,
+		222
 	],
 	"../pages/err-data-log/err-data-log.module": [
-		501,
-		144
+		498,
+		145
 	],
 	"../pages/err-data-src/err-data-src.module": [
-		502,
-		143
+		500,
+		144
 	],
 	"../pages/err-msg-log-detail/err-msg-log-detail.module": [
-		503,
-		220
+		502,
+		221
 	],
 	"../pages/err-msg-log/err-msg-log.module": [
-		505,
-		142
+		504,
+		143
 	],
 	"../pages/export-sql/export-sql.module": [
-		504,
-		219
+		508,
+		220
 	],
 	"../pages/file-backup-management-add-edit-modal/file-backup-management-add-edit-modal.module": [
-		506,
-		342
+		505,
+		343
 	],
 	"../pages/file-backup-management/file-backup-management.module": [
-		507,
-		218
+		506,
+		219
 	],
 	"../pages/file-browser-copy-edit-modal/file-browser-copy-edit-modal.module": [
 		509,
-		341
+		342
 	],
 	"../pages/file-browser-management/file-browser-management.module": [
 		510,
-		217
+		218
 	],
 	"../pages/file-browser/file-browser.module": [
 		511,
 		6
 	],
 	"../pages/file-cmd-add-edit-modal/file-cmd-add-edit-modal.module": [
-		512,
-		276
+		513,
+		277
 	],
 	"../pages/file-cmd/file-cmd.module": [
-		513,
+		512,
 		104
 	],
 	"../pages/file-code-add-edit-modal/file-code-add-edit-modal.module": [
-		521,
-		275
+		514,
+		276
 	],
 	"../pages/file-code/file-code.module": [
-		514,
+		516,
 		103
 	],
 	"../pages/file-copy-add-edit-modal/file-copy-add-edit-modal.module": [
-		515,
-		274
+		517,
+		275
 	],
 	"../pages/file-copy/file-copy.module": [
-		516,
+		519,
 		102
 	],
-	"../pages/file-date-filter-add-edit/file-date-filter-add-edit.module": [
-		517,
+	"../pages/file-date-exec-log/file-date-exec-log.module": [
+		515,
 		141
 	],
-	"../pages/file-depend-add-edit-modal/file-depend-add-edit-modal.module": [
+	"../pages/file-date-filter-add-edit/file-date-filter-add-edit.module": [
 		518,
-		309
+		142
+	],
+	"../pages/file-depend-add-edit-modal/file-depend-add-edit-modal.module": [
+		520,
+		310
 	],
 	"../pages/file-depend/file-depend.module": [
-		519,
+		521,
 		101
 	],
 	"../pages/file-directory-add-edit-modal/file-directory-add-edit-modal.module": [
-		520,
-		340
+		526,
+		341
 	],
 	"../pages/file-directory/file-directory.module": [
-		522,
-		216
+		528,
+		217
 	],
 	"../pages/file-email-attach-add-edit-modal/file-email-attach-add-edit-modal.module": [
-		523,
-		273
+		525,
+		274
 	],
 	"../pages/file-email-attach/file-email-attach.module": [
 		524,
 		100
 	],
 	"../pages/file-exec-log-detail/file-exec-log-detail.module": [
-		525,
-		215
+		522,
+		216
 	],
 	"../pages/file-exec-log/file-exec-log.module": [
-		526,
+		523,
 		140
 	],
 	"../pages/file-export-add-edit-modal/file-export-add-edit-modal.module": [
 		527,
-		268
+		269
 	],
 	"../pages/file-export-all/file-export-all.module": [
-		528,
+		529,
 		99
 	],
 	"../pages/file-export-blob-add-edit-modal/file-export-blob-add-edit-modal.module": [
-		538,
-		272
+		531,
+		273
 	],
 	"../pages/file-export-blob-table-add-edit-modal/file-export-blob-table-add-edit-modal.module": [
-		529,
-		271
+		530,
+		272
 	],
 	"../pages/file-export-blob-table/file-export-blob-table.module": [
-		530,
+		535,
 		97
 	],
 	"../pages/file-export-blob/file-export-blob.module": [
-		531,
+		533,
 		98
 	],
 	"../pages/file-export-hk-add-edit-modal/file-export-hk-add-edit-modal.module": [
 		532,
-		270
+		271
 	],
 	"../pages/file-export-hk-table-add-edit-modal/file-export-hk-table-add-edit-modal.module": [
-		533,
-		269
+		534,
+		270
 	],
 	"../pages/file-export-hk-table/file-export-hk-table.module": [
-		534,
+		536,
 		95
 	],
 	"../pages/file-export-hk/file-export-hk.module": [
-		535,
+		537,
 		96
 	],
 	"../pages/file-export-management/file-export-management.module": [
-		536,
-		214
+		540,
+		215
 	],
 	"../pages/file-export-script-add-edit-modal/file-export-script-add-edit-modal.module": [
-		537,
-		267
+		539,
+		268
 	],
 	"../pages/file-export-script-table-add-edit-modal/file-export-script-table-add-edit-modal.module": [
-		544,
-		266
+		538,
+		267
 	],
 	"../pages/file-export-script-table/file-export-script-table.module": [
-		539,
+		541,
 		92
 	],
 	"../pages/file-export-script/file-export-script.module": [
-		540,
+		542,
 		93
 	],
 	"../pages/file-export-table-add-edit-modal/file-export-table-add-edit-modal.module": [
-		541,
-		265
+		546,
+		266
 	],
 	"../pages/file-export-table/file-export-table.module": [
 		543,
 		91
 	],
 	"../pages/file-export-tsql-add-edit-modal/file-export-tsql-add-edit-modal.module": [
-		542,
-		264
+		545,
+		265
 	],
 	"../pages/file-export-tsql-table-add-edit-modal/file-export-tsql-table-add-edit-modal.module": [
-		545,
-		263
+		544,
+		264
 	],
 	"../pages/file-export-tsql-table/file-export-tsql-table.module": [
-		546,
+		547,
 		89
 	],
 	"../pages/file-export-tsql/file-export-tsql.module": [
-		551,
+		549,
 		90
 	],
 	"../pages/file-export/file-export.module": [
-		547,
+		551,
 		94
 	],
 	"../pages/file-exported-header-add-edit/file-exported-header-add-edit.module": [
@@ -2709,36 +2723,36 @@ var map = {
 		139
 	],
 	"../pages/file-exported-sql-add-edit/file-exported-sql-add-edit.module": [
-		549,
+		553,
 		138
 	],
 	"../pages/file-filter-add-edit-modal/file-filter-add-edit-modal.module": [
 		550,
-		262
+		263
 	],
 	"../pages/file-filter-item-add-edit-modal/file-filter-item-add-edit-modal.module": [
 		552,
-		308
+		309
 	],
 	"../pages/file-filter-item/file-filter-item.module": [
-		554,
+		557,
 		88
 	],
 	"../pages/file-filter/file-filter.module": [
-		553,
+		554,
 		87
 	],
 	"../pages/file-ftp-down-add-edit-modal/file-ftp-down-add-edit-modal.module": [
-		556,
-		235
+		555,
+		236
 	],
 	"../pages/file-ftp-down/file-ftp-down.module": [
-		557,
+		556,
 		41
 	],
 	"../pages/file-ftp-up-add-edit-modal/file-ftp-up-add-edit-modal.module": [
-		555,
-		234
+		559,
+		235
 	],
 	"../pages/file-ftp-up/file-ftp-up.module": [
 		560,
@@ -2750,94 +2764,94 @@ var map = {
 	],
 	"../pages/file-http-down-file-add-edit-modal/file-http-down-file-add-edit-modal.module": [
 		561,
-		261
+		262
 	],
 	"../pages/file-http-down-file/file-http-down-file.module": [
-		559,
+		562,
 		85
 	],
 	"../pages/file-http-down-management/file-http-down-management.module": [
-		562,
-		213
+		563,
+		214
 	],
 	"../pages/file-http-h2-c-add-edit-modal/file-http-h2-c-add-edit-modal.module": [
-		564,
-		260
+		565,
+		261
 	],
 	"../pages/file-http-h2-c/file-http-h2-c.module": [
-		563,
+		571,
 		84
 	],
 	"../pages/file-http-html-down-file-add-edit-modal/file-http-html-down-file-add-edit-modal.module": [
-		579,
-		258
+		566,
+		259
 	],
 	"../pages/file-http-html-down-file/file-http-html-down-file.module": [
-		568,
+		564,
 		82
 	],
 	"../pages/file-http-html2-csv-add-edit-modal/file-http-html2-csv-add-edit-modal.module": [
-		565,
-		259
+		567,
+		260
 	],
 	"../pages/file-http-html2-csv/file-http-html2-csv.module": [
-		567,
+		570,
 		83
 	],
 	"../pages/file-http-j2-c-add-edit-modal/file-http-j2-c-add-edit-modal.module": [
-		566,
-		257
+		568,
+		258
 	],
 	"../pages/file-http-j2-c/file-http-j2-c.module": [
 		569,
 		81
 	],
 	"../pages/file-http-json2-csv-add-edit-modal/file-http-json2-csv-add-edit-modal.module": [
-		570,
-		256
+		577,
+		257
 	],
 	"../pages/file-http-json2-csv/file-http-json2-csv.module": [
-		581,
+		572,
 		80
 	],
 	"../pages/file-http-up-add-edit-modal/file-http-up-add-edit-modal.module": [
-		571,
-		255
+		573,
+		256
 	],
 	"../pages/file-http-up/file-http-up.module": [
-		572,
+		574,
 		79
 	],
 	"../pages/file-image-add-edit-modal/file-image-add-edit-modal.module": [
-		573,
-		254
+		575,
+		255
 	],
 	"../pages/file-image/file-image.module": [
-		574,
+		576,
 		78
 	],
 	"../pages/file-import-add-edit-modal/file-import-add-edit-modal.module": [
-		575,
-		253
+		578,
+		254
 	],
 	"../pages/file-import-after-add-edit-modal/file-import-after-add-edit-modal.module": [
-		576,
-		307
+		579,
+		308
 	],
 	"../pages/file-import-after/file-import-after.module": [
-		577,
+		580,
 		2
 	],
 	"../pages/file-import-before-add-edit-modal/file-import-before-add-edit-modal.module": [
-		578,
-		306
+		581,
+		307
 	],
 	"../pages/file-import-before-check-add-edit-modal/file-import-before-check-add-edit-modal.module": [
-		580,
-		236
+		582,
+		237
 	],
 	"../pages/file-import-before-sql-add-edit/file-import-before-sql-add-edit.module": [
-		582,
+		584,
 		137
 	],
 	"../pages/file-import-before/file-import-before.module": [
@@ -2845,116 +2859,116 @@ var map = {
 		1
 	],
 	"../pages/file-import-data-expression-add-edit/file-import-data-expression-add-edit.module": [
-		584,
+		586,
 		136
 	],
 	"../pages/file-import-data-lookup-add-edit-modal/file-import-data-lookup-add-edit-modal.module": [
 		585,
-		305
+		306
 	],
 	"../pages/file-import-data-lookup/file-import-data-lookup.module": [
-		586,
+		591,
 		77
 	],
 	"../pages/file-import-data-search-replace-add-edit-modal/file-import-data-search-replace-add-edit-modal.module": [
 		587,
-		304
+		305
 	],
 	"../pages/file-import-data-search-replace/file-import-data-search-replace.module": [
-		588,
+		589,
 		76
 	],
 	"../pages/file-import-select-modal/file-import-select-modal.module": [
-		589,
+		588,
 		14
 	],
 	"../pages/file-import-table-add-edit-modal/file-import-table-add-edit-modal.module": [
 		590,
-		252
+		253
 	],
 	"../pages/file-import-table/file-import-table.module": [
-		591,
+		598,
 		75
 	],
 	"../pages/file-import/file-import.module": [
-		592,
+		595,
 		13
 	],
 	"../pages/file-in-management/file-in-management.module": [
-		593,
-		212
+		592,
+		213
 	],
 	"../pages/file-loop-add-edit-modal/file-loop-add-edit-modal.module": [
-		596,
-		251
+		593,
+		252
 	],
 	"../pages/file-loop/file-loop.module": [
 		594,
 		74
 	],
 	"../pages/file-management-all/file-management-all.module": [
-		610,
+		596,
 		73
 	],
 	"../pages/file-management/file-management.module": [
-		608,
-		211
+		597,
+		212
 	],
 	"../pages/file-out-management/file-out-management.module": [
-		595,
-		210
+		610,
+		211
 	],
 	"../pages/file-path/file-path.module": [
-		597,
+		599,
 		19
 	],
 	"../pages/file-pdf2-image-add-edit-modal/file-pdf2-image-add-edit-modal.module": [
-		598,
-		250
+		600,
+		251
 	],
 	"../pages/file-pdf2-image/file-pdf2-image.module": [
-		599,
+		601,
 		72
 	],
 	"../pages/file-processed-exec-group-add-edit/file-processed-exec-group-add-edit.module": [
-		600,
+		605,
 		135
 	],
 	"../pages/file-processed-sql-add-edit/file-processed-sql-add-edit.module": [
-		601,
+		602,
 		134
 	],
 	"../pages/file-replace-data-add-edit-modal/file-replace-data-add-edit-modal.module": [
-		604,
-		249
+		603,
+		250
 	],
 	"../pages/file-replace-data-item-add-edit-modal/file-replace-data-item-add-edit-modal.module": [
-		602,
-		303
+		604,
+		304
 	],
 	"../pages/file-replace-data-item/file-replace-data-item.module": [
-		603,
+		606,
 		71
 	],
 	"../pages/file-replace-data/file-replace-data.module": [
-		605,
+		607,
 		70
 	],
 	"../pages/file-sql-add-edit-modal/file-sql-add-edit-modal.module": [
-		606,
-		248
+		608,
+		249
 	],
 	"../pages/file-sql/file-sql.module": [
-		607,
+		609,
 		69
 	],
 	"../pages/file-ssis-add-edit-modal/file-ssis-add-edit-modal.module": [
-		609,
-		237
+		614,
+		238
 	],
 	"../pages/file-ssis-conn-parm-add-edit-modal/file-ssis-conn-parm-add-edit-modal.module": [
 		611,
-		302
+		303
 	],
 	"../pages/file-ssis-conn-parm/file-ssis-conn-parm.module": [
 		612,
@@ -2962,10 +2976,10 @@ var map = {
 	],
 	"../pages/file-ssis-parm-add-edit-modal/file-ssis-parm-add-edit-modal.module": [
 		613,
-		301
+		302
 	],
 	"../pages/file-ssis-parm/file-ssis-parm.module": [
-		614,
+		616,
 		67
 	],
 	"../pages/file-ssis/file-ssis.module": [
@@ -2973,227 +2987,227 @@ var map = {
 		39
 	],
 	"../pages/file-un-zip-add-edit-modal/file-un-zip-add-edit-modal.module": [
-		616,
-		247
+		617,
+		248
 	],
 	"../pages/file-un-zip/file-un-zip.module": [
-		617,
+		619,
 		66
 	],
 	"../pages/file-zip-list-add-edit-modal/file-zip-list-add-edit-modal.module": [
-		618,
-		246
+		621,
+		247
 	],
 	"../pages/file-zip-list/file-zip-list.module": [
-		619,
+		620,
 		65
 	],
 	"../pages/file-zip-management/file-zip-management.module": [
-		620,
-		209
+		618,
+		210
 	],
 	"../pages/file-zip-set-add-edit-modal/file-zip-set-add-edit-modal.module": [
-		621,
-		300
+		622,
+		301
 	],
 	"../pages/file-zip-set/file-zip-set.module": [
-		622,
+		623,
 		64
 	],
 	"../pages/file-zip-src-add-edit-modal/file-zip-src-add-edit-modal.module": [
-		623,
-		245
+		625,
+		246
 	],
 	"../pages/file-zip-src/file-zip-src.module": [
 		624,
 		63
 	],
 	"../pages/for-add-edit-modal/for-add-edit-modal.module": [
-		625,
-		244
+		626,
+		245
 	],
 	"../pages/for/for.module": [
-		626,
+		627,
 		62
 	],
 	"../pages/ford-add-edit-modal/ford-add-edit-modal.module": [
-		627,
-		243
+		629,
+		244
 	],
 	"../pages/ford/ford.module": [
 		628,
 		61
 	],
 	"../pages/fors-add-edit-modal/fors-add-edit-modal.module": [
-		638,
-		242
+		630,
+		243
 	],
 	"../pages/fors/fors.module": [
-		629,
+		631,
 		60
 	],
 	"../pages/ftp-directory-browser-add-edit-modal/ftp-directory-browser-add-edit-modal.module": [
-		630,
-		299
+		634,
+		300
 	],
 	"../pages/ftp-directory-browser-select-modal/ftp-directory-browser-select-modal.module": [
-		631,
+		632,
 		33
 	],
 	"../pages/ftp-directory-browser/ftp-directory-browser.module": [
-		632,
+		635,
 		32
 	],
 	"../pages/ftp-file-browser-download/ftp-file-browser-download.module": [
-		633,
-		163
+		637,
+		164
 	],
 	"../pages/ftp-file-browser-edit-modal/ftp-file-browser-edit-modal.module": [
-		634,
-		298
+		636,
+		299
 	],
 	"../pages/ftp-file-browser-upload/ftp-file-browser-upload.module": [
-		635,
-		160
+		633,
+		161
 	],
 	"../pages/ftp-file-browser/ftp-file-browser.module": [
-		636,
+		644,
 		31
 	],
 	"../pages/glossary-add-edit-modal/glossary-add-edit-modal.module": [
-		637,
-		339
+		639,
+		340
 	],
 	"../pages/glossary-select-modal/glossary-select-modal.module": [
-		639,
+		638,
 		30
 	],
 	"../pages/glossary/glossary.module": [
-		640,
+		641,
 		29
 	],
 	"../pages/home/home.module": [
-		641,
-		208
+		640,
+		209
 	],
 	"../pages/insert-value-sql/insert-value-sql.module": [
 		642,
-		207
+		208
 	],
 	"../pages/ionic-program-add-edit-modal/ionic-program-add-edit-modal.module": [
-		648,
-		338
+		643,
+		339
 	],
 	"../pages/ionic-program-detail-add-edit-modal/ionic-program-detail-add-edit-modal.module": [
-		643,
-		337
+		646,
+		338
 	],
 	"../pages/ionic-program-detail/ionic-program-detail.module": [
-		644,
-		206
+		645,
+		207
 	],
 	"../pages/ionic-program-permission-select-modal/ionic-program-permission-select-modal.module": [
-		645,
+		647,
 		126
 	],
 	"../pages/ionic-program-permission/ionic-program-permission.module": [
-		646,
+		653,
 		54
 	],
 	"../pages/ionic-program/ionic-program.module": [
-		647,
-		205
+		674,
+		206
 	],
 	"../pages/job-add-edit-modal/job-add-edit-modal.module": [
-		654,
-		336
+		650,
+		337
 	],
 	"../pages/job-by-sch-select-modal/job-by-sch-select-modal.module": [
-		649,
+		648,
 		59
 	],
 	"../pages/job-by-sch/job-by-sch.module": [
-		650,
-		204
+		649,
+		205
 	],
 	"../pages/job-detail/job-detail.module": [
+		652,
+		204
+	],
+	"../pages/job-exec-log-detail/job-exec-log-detail.module": [
 		651,
 		203
 	],
-	"../pages/job-exec-log-detail/job-exec-log-detail.module": [
-		652,
-		202
-	],
 	"../pages/job-exec-log/job-exec-log.module": [
-		653,
+		654,
 		133
 	],
 	"../pages/job-loop-add-edit-modal/job-loop-add-edit-modal.module": [
 		655,
-		241
+		242
 	],
 	"../pages/job-loop-add-pwd-modal/job-loop-add-pwd-modal.module": [
 		656,
-		297
+		298
 	],
 	"../pages/job-loop-detail/job-loop-detail.module": [
 		657,
-		201
+		202
 	],
 	"../pages/job-loop-event-add-edit-modal/job-loop-event-add-edit-modal.module": [
 		658,
-		335
+		336
 	],
 	"../pages/job-loop-event/job-loop-event.module": [
 		659,
-		200
+		201
 	],
 	"../pages/job-loop/job-loop.module": [
-		671,
+		660,
 		58
 	],
 	"../pages/job-processed-sql-add-edit-modal/job-processed-sql-add-edit-modal.module": [
-		660,
-		334
+		661,
+		335
 	],
 	"../pages/job-processed-sql/job-processed-sql.module": [
-		661,
-		199
+		662,
+		200
 	],
 	"../pages/job-sch-exec-log/job-sch-exec-log.module": [
-		662,
+		663,
 		131
 	],
 	"../pages/job-sch-management/job-sch-management.module": [
-		663,
-		198
+		664,
+		199
 	],
 	"../pages/job-step-add-edit-modal/job-step-add-edit-modal.module": [
-		664,
-		295
+		665,
+		296
 	],
 	"../pages/job-step-detail/job-step-detail.module": [
-		665,
-		197
+		667,
+		198
 	],
 	"../pages/job-step-exec-log-detail/job-step-exec-log-detail.module": [
-		666,
-		196
+		668,
+		197
 	],
 	"../pages/job-step-exec-log/job-step-exec-log.module": [
-		667,
+		666,
 		130
 	],
 	"../pages/job-step-loop-add-edit-modal/job-step-loop-add-edit-modal.module": [
-		668,
-		296
+		669,
+		297
 	],
 	"../pages/job-step-loop/job-step-loop.module": [
-		669,
+		670,
 		56
 	],
 	"../pages/job-step/job-step.module": [
-		670,
+		671,
 		57
 	],
 	"../pages/job/job.module": [
@@ -3201,119 +3215,119 @@ var map = {
 		132
 	],
 	"../pages/line-add-edit-modal/line-add-edit-modal.module": [
-		673,
-		283
+		676,
+		284
 	],
 	"../pages/line-message-add-edit-modal/line-message-add-edit-modal.module": [
-		674,
-		333
+		673,
+		334
 	],
 	"../pages/line-message-log/line-message-log.module": [
-		690,
-		195
+		675,
+		196
 	],
 	"../pages/line-message/line-message.module": [
-		675,
-		194
+		681,
+		195
 	],
 	"../pages/line/line.module": [
-		676,
-		147
+		678,
+		148
 	],
 	"../pages/login-log/login-log.module": [
-		677,
+		682,
 		129
 	],
 	"../pages/login/login.module": [
-		678,
-		332
+		679,
+		333
 	],
 	"../pages/main-code-add-edit-modal/main-code-add-edit-modal.module": [
-		680,
-		280
+		677,
+		281
 	],
 	"../pages/main-code-copy-modal/main-code-copy-modal.module": [
-		679,
-		279
+		683,
+		280
 	],
 	"../pages/main-code/main-code.module": [
-		681,
+		680,
 		18
 	],
 	"../pages/mask-column-add-edit-modal/mask-column-add-edit-modal.module": [
-		682,
-		331
+		684,
+		332
 	],
 	"../pages/mask-column/mask-column.module": [
-		683,
-		193
+		686,
+		194
 	],
 	"../pages/menu-add-edit-modal/menu-add-edit-modal.module": [
-		684,
-		330
+		685,
+		331
 	],
 	"../pages/menu-by-program-detail-select-modal/menu-by-program-detail-select-modal.module": [
-		685,
+		688,
 		128
 	],
 	"../pages/menu-by-program-detail/menu-by-program-detail.module": [
-		686,
-		192
+		687,
+		193
 	],
 	"../pages/menu-detail-edit-modal/menu-detail-edit-modal.module": [
-		687,
-		329
+		689,
+		330
 	],
 	"../pages/menu-detail-select-modal/menu-detail-select-modal.module": [
-		688,
-		191
+		691,
+		192
 	],
 	"../pages/menu-detail/menu-detail.module": [
-		689,
-		190
+		690,
+		191
 	],
 	"../pages/menu/menu.module": [
-		691,
+		692,
 		127
 	],
 	"../pages/merge-sql/merge-sql.module": [
-		692,
-		189
+		693,
+		190
 	],
 	"../pages/parameter-column-add-edit-modal/parameter-column-add-edit-modal.module": [
-		693,
-		294
+		694,
+		295
 	],
 	"../pages/parameter-column/parameter-column.module": [
-		694,
+		695,
 		0
 	],
 	"../pages/parameter-group-add-edit-modal/parameter-group-add-edit-modal.module": [
-		695,
-		240
+		697,
+		241
 	],
 	"../pages/parameter-group-select-model/parameter-group-select-model.module": [
-		696,
+		702,
 		12
 	],
 	"../pages/parameter-group/parameter-group.module": [
-		697,
+		707,
 		11
 	],
 	"../pages/permission-add-edit-modal/permission-add-edit-modal.module": [
-		698,
-		328
+		696,
+		329
 	],
 	"../pages/permission-management/permission-management.module": [
+		698,
+		189
+	],
+	"../pages/permission-program-select-modal/permission-program-select-modal.module": [
 		700,
 		188
 	],
-	"../pages/permission-program-select-modal/permission-program-select-modal.module": [
-		699,
-		187
-	],
 	"../pages/permission-program/permission-program.module": [
-		702,
+		699,
 		53
 	],
 	"../pages/permission-role-select-modal/permission-role-select-modal.module": [
@@ -3321,96 +3335,96 @@ var map = {
 		52
 	],
 	"../pages/permission-role/permission-role.module": [
-		714,
-		186
+		703,
+		187
 	],
 	"../pages/permission-user/permission-user.module": [
-		715,
+		704,
 		125
 	],
 	"../pages/permission/permission.module": [
-		703,
+		710,
 		124
 	],
 	"../pages/prog/prog.module": [
-		704,
-		185
+		706,
+		186
 	],
 	"../pages/program-detail-add-edit-modal/program-detail-add-edit-modal.module": [
 		705,
-		327
+		328
 	],
 	"../pages/program-detail-by-ionic-program/program-detail-by-ionic-program.module": [
-		706,
-		184
+		708,
+		185
 	],
 	"../pages/program-detail-select-modal/program-detail-select-modal.module": [
-		707,
-		183
+		709,
+		184
 	],
 	"../pages/program-detail/program-detail.module": [
-		708,
-		182
+		712,
+		183
 	],
 	"../pages/program-set-select-modal/program-set-select-modal.module": [
-		709,
+		714,
 		3
 	],
 	"../pages/quote-column-add-edit-modal/quote-column-add-edit-modal.module": [
-		710,
-		326
+		713,
+		327
 	],
 	"../pages/quote-column/quote-column.module": [
-		711,
-		181
+		715,
+		182
 	],
 	"../pages/register/register.module": [
-		712,
-		282
+		711,
+		283
 	],
 	"../pages/role-permission-select-modal/role-permission-select-modal.module": [
-		713,
+		717,
 		123
 	],
 	"../pages/role-permission/role-permission.module": [
 		716,
-		180
+		181
 	],
 	"../pages/role-user-select-modal/role-user-select-modal.module": [
-		717,
-		179
+		718,
+		180
 	],
 	"../pages/role-user/role-user.module": [
-		718,
-		178
+		734,
+		179
 	],
 	"../pages/role/role.module": [
-		719,
+		723,
 		51
 	],
 	"../pages/sch-by-job-select-modal/sch-by-job-select-modal.module": [
-		720,
-		162
+		719,
+		163
 	],
 	"../pages/sch-by-job/sch-by-job.module": [
-		721,
-		177
+		720,
+		178
 	],
 	"../pages/sch-day-time-add-edit-modal/sch-day-time-add-edit-modal.module": [
-		722,
-		291
+		721,
+		292
 	],
 	"../pages/sch-day-time/sch-day-time.module": [
-		723,
+		722,
 		38
 	],
 	"../pages/sch-management/sch-management.module": [
 		724,
-		176
+		177
 	],
 	"../pages/sch-month-lastday-time-add-edit-modal/sch-month-lastday-time-add-edit-modal.module": [
 		725,
-		290
+		291
 	],
 	"../pages/sch-month-lastday-time/sch-month-lastday-time.module": [
 		726,
@@ -3418,7 +3432,7 @@ var map = {
 	],
 	"../pages/sch-month-time-add-edit-modal/sch-month-time-add-edit-modal.module": [
 		727,
-		289
+		290
 	],
 	"../pages/sch-month-time/sch-month-time.module": [
 		728,
@@ -3426,7 +3440,7 @@ var map = {
 	],
 	"../pages/sch-one-day-time-add-edit-modal/sch-one-day-time-add-edit-modal.module": [
 		729,
-		288
+		289
 	],
 	"../pages/sch-one-day-time/sch-one-day-time.module": [
 		730,
@@ -3434,7 +3448,7 @@ var map = {
 	],
 	"../pages/sch-week-time-add-edit-modal/sch-week-time-add-edit-modal.module": [
 		731,
-		287
+		288
 	],
 	"../pages/sch-week-time/sch-week-time.module": [
 		732,
@@ -3442,23 +3456,23 @@ var map = {
 	],
 	"../pages/sch/sch.module": [
 		733,
-		325
+		326
 	],
 	"../pages/security-management/security-management.module": [
-		734,
-		175
+		737,
+		176
 	],
 	"../pages/select-value-sql/select-value-sql.module": [
-		735,
+		736,
 		42
 	],
 	"../pages/show-message/show-message.module": [
-		736,
-		174
+		735,
+		175
 	],
 	"../pages/sp-add-edit-modal/sp-add-edit-modal.module": [
-		737,
-		239
+		739,
+		240
 	],
 	"../pages/sp/sp.module": [
 		738,
@@ -3469,55 +3483,55 @@ var map = {
 		48
 	],
 	"../pages/sql-management/sql-management.module": [
-		739,
-		173
+		741,
+		174
 	],
 	"../pages/sql-set-add-edit-modal/sql-set-add-edit-modal.module": [
-		761,
-		324
+		742,
+		325
 	],
 	"../pages/sql-set/sql-set.module": [
-		741,
-		172
+		743,
+		173
 	],
 	"../pages/sql/sql.module": [
-		742,
-		161
+		744,
+		162
 	],
 	"../pages/table-add-edit-modal/table-add-edit-modal.module": [
-		743,
-		323
+		745,
+		324
 	],
 	"../pages/table-by-column/table-by-column.module": [
-		744,
+		746,
 		28
 	],
 	"../pages/table-column-ext-select-modal/table-column-ext-select-modal.module": [
-		745,
-		171
+		748,
+		172
 	],
 	"../pages/table-copy-modal/table-copy-modal.module": [
-		746,
-		314
+		747,
+		315
 	],
 	"../pages/table-detail-add-edit-modal/table-detail-add-edit-modal.module": [
-		747,
-		322
+		749,
+		323
 	],
 	"../pages/table-detail-detail/table-detail-detail.module": [
-		748,
-		170
+		750,
+		171
 	],
 	"../pages/table-detail-edit-modal/table-detail-edit-modal.module": [
-		749,
-		321
+		751,
+		322
 	],
 	"../pages/table-detail-ext-detail/table-detail-ext-detail.module": [
-		750,
+		753,
 		119
 	],
 	"../pages/table-detail-ext-select-modal/table-detail-ext-select-modal.module": [
-		751,
+		755,
 		118
 	],
 	"../pages/table-detail-ext/table-detail-ext.module": [
@@ -3525,115 +3539,115 @@ var map = {
 		117
 	],
 	"../pages/table-detail-fk/table-detail-fk.module": [
-		753,
+		754,
 		116
 	],
 	"../pages/table-detail-select-modal/table-detail-select-modal.module": [
-		754,
+		756,
 		27
 	],
 	"../pages/table-detail/table-detail.module": [
-		755,
+		759,
 		26
 	],
 	"../pages/table-exec-log-detail/table-exec-log-detail.module": [
-		756,
-		169
+		758,
+		170
 	],
 	"../pages/table-exec-log/table-exec-log.module": [
 		757,
 		122
 	],
 	"../pages/table-ext-select-modal/table-ext-select-modal.module": [
-		759,
+		762,
 		115
 	],
 	"../pages/table-ext/table-ext.module": [
-		758,
+		760,
 		114
 	],
 	"../pages/table-fk/table-fk.module": [
-		760,
+		764,
 		113
 	],
 	"../pages/table-select-modal/table-select-modal.module": [
-		764,
+		763,
 		25
 	],
 	"../pages/table/table.module": [
-		762,
+		761,
 		24
 	],
 	"../pages/table2-table-add-edit-modal/table2-table-add-edit-modal.module": [
-		771,
-		238
+		766,
+		239
 	],
 	"../pages/table2-table/table2-table.module": [
 		765,
 		47
 	],
 	"../pages/un-zip-file-loop-pwd-add-edit-modal/un-zip-file-loop-pwd-add-edit-modal.module": [
-		763,
-		286
+		767,
+		287
 	],
 	"../pages/un-zip-file-loop-pwd/un-zip-file-loop-pwd.module": [
-		768,
+		769,
 		46
 	],
 	"../pages/un-zip-file-pwd-add-edit/un-zip-file-pwd-add-edit.module": [
-		766,
+		768,
 		121
 	],
 	"../pages/update-value-sql/update-value-sql.module": [
-		767,
-		168
+		770,
+		169
 	],
 	"../pages/url-management/url-management.module": [
-		769,
-		167
+		771,
+		168
 	],
 	"../pages/user-add-edit-modal/user-add-edit-modal.module": [
-		780,
-		320
+		772,
+		321
 	],
 	"../pages/user-permission/user-permission.module": [
-		770,
-		166
+		773,
+		167
 	],
 	"../pages/user-role-modal/user-role-modal.module": [
-		772,
+		774,
 		50
 	],
 	"../pages/user-role/user-role.module": [
-		773,
-		165
+		775,
+		166
 	],
 	"../pages/user/user.module": [
-		774,
-		164
+		776,
+		165
 	],
 	"../pages/warning-check-add-edit-modal/warning-check-add-edit-modal.module": [
-		775,
-		285
+		777,
+		286
 	],
 	"../pages/warning-check-select-modal/warning-check-select-modal.module": [
-		776,
+		778,
 		17
 	],
 	"../pages/warning-check/warning-check.module": [
-		777,
+		781,
 		45
 	],
 	"../pages/zip-file-loop-pwd-add-edit-modal/zip-file-loop-pwd-add-edit-modal.module": [
-		778,
-		284
+		779,
+		285
 	],
 	"../pages/zip-file-loop-pwd/zip-file-loop-pwd.module": [
-		779,
+		780,
 		44
 	],
 	"../pages/zip-file-pwd-add-edit/zip-file-pwd-add-edit.module": [
-		781,
+		782,
 		120
 	]
 };
@@ -5323,7 +5337,7 @@ var TableDetailServicesProvider = /** @class */ (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchServicesProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_Response_SchListResponse__ = __webpack_require__(408);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_Response_SchListResponse__ = __webpack_require__(406);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_services__ = __webpack_require__(6);
@@ -5544,12 +5558,12 @@ var TableDetailExtServicesProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_TableExtListResponse__ = __webpack_require__(371);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_TableExtResponse__ = __webpack_require__(372);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_Response_TableCreateExtResponse__ = __webpack_require__(373);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_TableExtListResponse__ = __webpack_require__(373);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_TableExtResponse__ = __webpack_require__(374);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_Response_TableCreateExtResponse__ = __webpack_require__(375);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Model_Response_StringResponse__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Model_Response_TableFKListResponse__ = __webpack_require__(375);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Model_Response_TableDetailFKListResponse__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Model_Response_TableFKListResponse__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Model_Response_TableDetailFKListResponse__ = __webpack_require__(379);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5928,7 +5942,7 @@ var ProgServicesProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_UserListResponse__ = __webpack_require__(389);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_UserListResponse__ = __webpack_require__(391);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_UserResponse__ = __webpack_require__(195);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -6807,8 +6821,8 @@ var FtpFileBrowserServicesProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileManagementListResponse__ = __webpack_require__(379);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileManagementResponse__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileManagementListResponse__ = __webpack_require__(371);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileManagementResponse__ = __webpack_require__(372);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__file_services_file_services__ = __webpack_require__(127);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -7841,8 +7855,8 @@ var SqlServicesProvider = /** @class */ (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_JobSchListResponse__ = __webpack_require__(390);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_JobSchResponse__ = __webpack_require__(391);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_JobSchListResponse__ = __webpack_require__(389);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_JobSchResponse__ = __webpack_require__(390);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8233,8 +8247,8 @@ var ProgramPageMenuServicesProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_RolePermissionListResponse__ = __webpack_require__(404);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_RolePermissionResponse__ = __webpack_require__(405);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_RolePermissionListResponse__ = __webpack_require__(402);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_RolePermissionResponse__ = __webpack_require__(403);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8376,8 +8390,8 @@ var RolePermissionServicesProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_UserRoleListResponse__ = __webpack_require__(406);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_UserRoleResponse__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_UserRoleListResponse__ = __webpack_require__(407);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_UserRoleResponse__ = __webpack_require__(408);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8910,8 +8924,8 @@ var MaskColumnServicesProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_QuoteColumnListResponse__ = __webpack_require__(402);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_Response_QuoteColumnResponse__ = __webpack_require__(403);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_QuoteColumnListResponse__ = __webpack_require__(404);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_Response_QuoteColumnResponse__ = __webpack_require__(405);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -9156,298 +9170,298 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/api-url-add-edit-modal/api-url-add-edit-modal.module#ApiUrlAddEditModalPageModule', name: 'ApiUrlAddEditModalPage', segment: 'api-url-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/api-url/api-url.module#ApiUrlPageModule', name: 'ApiUrlPage', segment: 'api-url', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/audit-logger-detail/audit-logger-detail.module#AuditLoggerDetailPageModule', name: 'AuditLoggerDetailPage', segment: 'audit-logger-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/audit-logger/audit-logger.module#AuditLoggerPageModule', name: 'AuditLoggerPage', segment: 'audit-logger', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/audit-table-add-edit-modal/audit-table-add-edit-modal.module#AuditTableAddEditModalPageModule', name: 'AuditTableAddEditModalPage', segment: 'audit-table-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/audit-logger-detail/audit-logger-detail.module#AuditLoggerDetailPageModule', name: 'AuditLoggerDetailPage', segment: 'audit-logger-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/audit-table-detail-add-edit-modal/audit-table-detail-add-edit-modal.module#AuditTableDetailAddEditModalPageModule', name: 'AuditTableDetailAddEditModalPage', segment: 'audit-table-detail-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/audit-table-detail/audit-table-detail.module#AuditTableDetailPageModule', name: 'AuditTableDetailPage', segment: 'audit-table-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/audit-table/audit-table.module#AuditTablePageModule', name: 'AuditTablePage', segment: 'audit-table', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/auth-management/auth-management.module#AuthManagementPageModule', name: 'AuthManagementPage', segment: 'auth-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/batch-bus-type/batch-bus-type.module#BatchBusTypePageModule', name: 'BatchBusTypePage', segment: 'batch-bus-type', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/batch-exec-program-select-modal/batch-exec-program-select-modal.module#BatchExecProgramSelectModalPageModule', name: 'BatchExecProgramSelectModalPage', segment: 'batch-exec-program-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/batch-bus-type/batch-bus-type.module#BatchBusTypePageModule', name: 'BatchBusTypePage', segment: 'batch-bus-type', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/batch-exec-program-add-edit-modal/batch-exec-program-add-edit-modal.module#BatchExecProgramAddEditModalPageModule', name: 'BatchExecProgramAddEditModalPage', segment: 'batch-exec-program-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/batch-exec-program/batch-exec-program.module#BatchExecProgramPageModule', name: 'BatchExecProgramPage', segment: 'batch-exec-program', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/batch-management/batch-management.module#BatchManagementPageModule', name: 'BatchManagementPage', segment: 'batch-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/batch-program-add-edit-modal/batch-program-add-edit-modal.module#BatchProgramAddEditModalPageModule', name: 'BatchProgramAddEditModalPage', segment: 'batch-program-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/batch-exec-program/batch-exec-program.module#BatchExecProgramPageModule', name: 'BatchExecProgramPage', segment: 'batch-exec-program', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/batch-program-check-add-edit-modal/batch-program-check-add-edit-modal.module#BatchProgramCheckAddEditModalPageModule', name: 'BatchProgramCheckAddEditModalPage', segment: 'batch-program-check-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/batch-program-check-pk-edit-modal/batch-program-check-pk-edit-modal.module#BatchProgramCheckPkEditModalPageModule', name: 'BatchProgramCheckPkEditModalPage', segment: 'batch-program-check-pk-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/batch-program-check-pk/batch-program-check-pk.module#BatchProgramCheckPkPageModule', name: 'BatchProgramCheckPkPage', segment: 'batch-program-check-pk', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/batch-program-add-edit-modal/batch-program-add-edit-modal.module#BatchProgramAddEditModalPageModule', name: 'BatchProgramAddEditModalPage', segment: 'batch-program-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/batch-program-check/batch-program-check.module#BatchProgramCheckPageModule', name: 'BatchProgramCheckPage', segment: 'batch-program-check', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/batch-program-check-select-modal/batch-program-check-select-modal.module#BatchProgramCheckSelectModalPageModule', name: 'BatchProgramCheckSelectModalPage', segment: 'batch-program-check-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/batch-program-management/batch-program-management.module#BatchProgramManagementPageModule', name: 'BatchProgramManagementPage', segment: 'batch-program-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/batch-program-select-modal/batch-program-select-modal.module#BatchProgramSelectModalPageModule', name: 'BatchProgramSelectModalPage', segment: 'batch-program-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/batch-program-check-pk/batch-program-check-pk.module#BatchProgramCheckPkPageModule', name: 'BatchProgramCheckPkPage', segment: 'batch-program-check-pk', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/batch-program/batch-program.module#BatchProgramPageModule', name: 'BatchProgramPage', segment: 'batch-program', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/batch-variable/batch-variable.module#BatchVariablePageModule', name: 'BatchVariablePage', segment: 'batch-variable', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/check-code-column-select-modal/check-code-column-select-modal.module#CheckCodeColumnSelectModalPageModule', name: 'CheckCodeColumnSelectModalPage', segment: 'check-code-column-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/batch-program-management/batch-program-management.module#BatchProgramManagementPageModule', name: 'BatchProgramManagementPage', segment: 'batch-program-management', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/batch-program-check-select-modal/batch-program-check-select-modal.module#BatchProgramCheckSelectModalPageModule', name: 'BatchProgramCheckSelectModalPage', segment: 'batch-program-check-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/change-password/change-password.module#ChangePasswordPageModule', name: 'ChangePasswordPage', segment: 'change-password', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/check-type-select-modal/check-type-select-modal.module#CheckTypeSelectModalPageModule', name: 'CheckTypeSelectModalPage', segment: 'check-type-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cmd-log/cmd-log.module#CmdLogPageModule', name: 'CmdLogPage', segment: 'cmd-log', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/batch-program-check-pk-edit-modal/batch-program-check-pk-edit-modal.module#BatchProgramCheckPkEditModalPageModule', name: 'BatchProgramCheckPkEditModalPage', segment: 'batch-program-check-pk-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/batch-program-select-modal/batch-program-select-modal.module#BatchProgramSelectModalPageModule', name: 'BatchProgramSelectModalPage', segment: 'batch-program-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/check-code-column-select-modal/check-code-column-select-modal.module#CheckCodeColumnSelectModalPageModule', name: 'CheckCodeColumnSelectModalPage', segment: 'check-code-column-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/code-add-edit-modal/code-add-edit-modal.module#CodeAddEditModalPageModule', name: 'CodeAddEditModalPage', segment: 'code-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/code-check-add-edit-modal/code-check-add-edit-modal.module#CodeCheckAddEditModalPageModule', name: 'CodeCheckAddEditModalPage', segment: 'code-check-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/code-check-type-detail-modal/code-check-type-detail-modal.module#CodeCheckTypeDetailModalPageModule', name: 'CodeCheckTypeDetailModalPage', segment: 'code-check-type-detail-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/batch-variable/batch-variable.module#BatchVariablePageModule', name: 'BatchVariablePage', segment: 'batch-variable', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/code-check-type-detail/code-check-type-detail.module#CodeCheckTypeDetailPageModule', name: 'CodeCheckTypeDetailPage', segment: 'code-check-type-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/code-check/code-check.module#CodeCheckPageModule', name: 'CodeCheckPage', segment: 'code-check', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/cmd-log/cmd-log.module#CmdLogPageModule', name: 'CmdLogPage', segment: 'cmd-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/code-select-modal/code-select-modal.module#CodeSelectModalPageModule', name: 'CodeSelectModalPage', segment: 'code-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/code-check/code-check.module#CodeCheckPageModule', name: 'CodeCheckPage', segment: 'code-check', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/code/code.module#CodePageModule', name: 'CodePage', segment: 'code', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/code-check-type-detail-modal/code-check-type-detail-modal.module#CodeCheckTypeDetailModalPageModule', name: 'CodeCheckTypeDetailModalPage', segment: 'code-check-type-detail-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/check-type-select-modal/check-type-select-modal.module#CheckTypeSelectModalPageModule', name: 'CheckTypeSelectModalPage', segment: 'check-type-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/column-mapping-add-table-modal/column-mapping-add-table-modal.module#ColumnMappingAddTableModalPageModule', name: 'ColumnMappingAddTableModalPage', segment: 'column-mapping-add-table-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/column-mapping-add-edit-modal/column-mapping-add-edit-modal.module#ColumnMappingAddEditModalPageModule', name: 'ColumnMappingAddEditModalPage', segment: 'column-mapping-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/code-check-add-edit-modal/code-check-add-edit-modal.module#CodeCheckAddEditModalPageModule', name: 'CodeCheckAddEditModalPage', segment: 'code-check-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/column-mapping/column-mapping.module#ColumnMappingPageModule', name: 'ColumnMappingPage', segment: 'column-mapping', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/column-type-mapping/column-type-mapping.module#ColumnTypeMappingPageModule', name: 'ColumnTypeMappingPage', segment: 'column-type-mapping', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/column-type-mapping-add-edit-modal/column-type-mapping-add-edit-modal.module#ColumnTypeMappingAddEditModalPageModule', name: 'ColumnTypeMappingAddEditModalPage', segment: 'column-type-mapping-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/common-management/common-management.module#CommonManagementPageModule', name: 'CommonManagementPage', segment: 'common-management', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/column-type-mapping/column-type-mapping.module#ColumnTypeMappingPageModule', name: 'ColumnTypeMappingPage', segment: 'column-type-mapping', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/config-col-index-loop-add-edit-modal/config-col-index-loop-add-edit-modal.module#ConfigColIndexLoopAddEditModalPageModule', name: 'ConfigColIndexLoopAddEditModalPage', segment: 'config-col-index-loop-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/config-col-index-loop/config-col-index-loop.module#ConfigColIndexLoopPageModule', name: 'ConfigColIndexLoopPage', segment: 'config-col-index-loop', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/conn-db-add-edit-modal/conn-db-add-edit-modal.module#ConnDbAddEditModalPageModule', name: 'ConnDbAddEditModalPage', segment: 'conn-db-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/conn-db/conn-db.module#ConnDbPageModule', name: 'ConnDbPage', segment: 'conn-db', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/conn-ftp-add-edit-modal/conn-ftp-add-edit-modal.module#ConnFtpAddEditModalPageModule', name: 'ConnFtpAddEditModalPage', segment: 'conn-ftp-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/conn-db-add-edit-modal/conn-db-add-edit-modal.module#ConnDbAddEditModalPageModule', name: 'ConnDbAddEditModalPage', segment: 'conn-db-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/conn-ftp/conn-ftp.module#ConnFtpPageModule', name: 'ConnFtpPage', segment: 'conn-ftp', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/conn-http-add-edit-modal/conn-http-add-edit-modal.module#ConnHttpAddEditModalPageModule', name: 'ConnHttpAddEditModalPage', segment: 'conn-http-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/conn-db/conn-db.module#ConnDbPageModule', name: 'ConnDbPage', segment: 'conn-db', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/conn-http/conn-http.module#ConnHttpPageModule', name: 'ConnHttpPage', segment: 'conn-http', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/conn-management/conn-management.module#ConnManagementPageModule', name: 'ConnManagementPage', segment: 'conn-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/column-mapping-add-edit-modal/column-mapping-add-edit-modal.module#ColumnMappingAddEditModalPageModule', name: 'ColumnMappingAddEditModalPage', segment: 'column-mapping-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/conn-sbp-add-edit-modal/conn-sbp-add-edit-modal.module#ConnSbpAddEditModalPageModule', name: 'ConnSbpAddEditModalPage', segment: 'conn-sbp-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/conn-sbp/conn-sbp.module#ConnSbpPageModule', name: 'ConnSbpPage', segment: 'conn-sbp', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/conn-http-add-edit-modal/conn-http-add-edit-modal.module#ConnHttpAddEditModalPageModule', name: 'ConnHttpAddEditModalPage', segment: 'conn-http-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/conn-select-modal/conn-select-modal.module#ConnSelectModalPageModule', name: 'ConnSelectModalPage', segment: 'conn-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/conn-management/conn-management.module#ConnManagementPageModule', name: 'ConnManagementPage', segment: 'conn-management', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/conn-sbp/conn-sbp.module#ConnSbpPageModule', name: 'ConnSbpPage', segment: 'conn-sbp', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/conn-ssis/conn-ssis.module#ConnSsisPageModule', name: 'ConnSsisPage', segment: 'conn-ssis', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/conn-sbp-add-edit-modal/conn-sbp-add-edit-modal.module#ConnSbpAddEditModalPageModule', name: 'ConnSbpAddEditModalPage', segment: 'conn-sbp-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/conn-smtp-add-edit-modal/conn-smtp-add-edit-modal.module#ConnSmtpAddEditModalPageModule', name: 'ConnSmtpAddEditModalPage', segment: 'conn-smtp-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/conn-smtp/conn-smtp.module#ConnSmtpPageModule', name: 'ConnSmtpPage', segment: 'conn-smtp', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/conn-ssis/conn-ssis.module#ConnSsisPageModule', name: 'ConnSsisPage', segment: 'conn-ssis', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/database-management/database-management.module#DatabaseManagementPageModule', name: 'DatabaseManagementPage', segment: 'database-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/del-table-add-edit-modal/del-table-add-edit-modal.module#DelTableAddEditModalPageModule', name: 'DelTableAddEditModalPage', segment: 'del-table-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/directory-browser-add-edit-modal/directory-browser-add-edit-modal.module#DirectoryBrowserAddEditModalPageModule', name: 'DirectoryBrowserAddEditModalPage', segment: 'directory-browser-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/directory-browser-select-modal/directory-browser-select-modal.module#DirectoryBrowserSelectModalPageModule', name: 'DirectoryBrowserSelectModalPage', segment: 'directory-browser-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/del-table/del-table.module#DelTablePageModule', name: 'DelTablePage', segment: 'del-table', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/column-type-mapping-add-edit-modal/column-type-mapping-add-edit-modal.module#ColumnTypeMappingAddEditModalPageModule', name: 'ColumnTypeMappingAddEditModalPage', segment: 'column-type-mapping-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/directory-browser-add-edit-modal/directory-browser-add-edit-modal.module#DirectoryBrowserAddEditModalPageModule', name: 'DirectoryBrowserAddEditModalPage', segment: 'directory-browser-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/del-table-add-edit-modal/del-table-add-edit-modal.module#DelTableAddEditModalPageModule', name: 'DelTableAddEditModalPage', segment: 'del-table-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/directory-browser/directory-browser.module#DirectoryBrowserPageModule', name: 'DirectoryBrowserPage', segment: 'directory-browser', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/email-add-edit-modal/email-add-edit-modal.module#EmailAddEditModalPageModule', name: 'EmailAddEditModalPage', segment: 'email-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/del-table/del-table.module#DelTablePageModule', name: 'DelTablePage', segment: 'del-table', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/email-attach-add-edit-modal/email-attach-add-edit-modal.module#EmailAttachAddEditModalPageModule', name: 'EmailAttachAddEditModalPage', segment: 'email-attach-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/email-management/email-management.module#EmailManagementPageModule', name: 'EmailManagementPage', segment: 'email-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/email-attach/email-attach.module#EmailAttachPageModule', name: 'EmailAttachPage', segment: 'email-attach', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/email-send-log/email-send-log.module#EmailSendLogPageModule', name: 'EmailSendLogPage', segment: 'email-send-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/email-user-add-edit-modal/email-user-add-edit-modal.module#EmailUserAddEditModalPageModule', name: 'EmailUserAddEditModalPage', segment: 'email-user-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/email-management/email-management.module#EmailManagementPageModule', name: 'EmailManagementPage', segment: 'email-management', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/email-user-select-model/email-user-select-model.module#EmailUserSelectModelPageModule', name: 'EmailUserSelectModelPage', segment: 'email-user-select-model', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/email/email.module#EmailPageModule', name: 'EmailPage', segment: 'email', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/email-attach/email-attach.module#EmailAttachPageModule', name: 'EmailAttachPage', segment: 'email-attach', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/err-data-log-detail/err-data-log-detail.module#ErrDataLogDetailPageModule', name: 'ErrDataLogDetailPage', segment: 'err-data-log-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/err-data-log/err-data-log.module#ErrDataLogPageModule', name: 'ErrDataLogPage', segment: 'err-data-log', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/email-user/email-user.module#EmailUserPageModule', name: 'EmailUserPage', segment: 'email-user', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/err-data-src/err-data-src.module#ErrDataSrcPageModule', name: 'ErrDataSrcPage', segment: 'err-data-src', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/email-send-log/email-send-log.module#EmailSendLogPageModule', name: 'EmailSendLogPage', segment: 'email-send-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/err-msg-log-detail/err-msg-log-detail.module#ErrMsgLogDetailPageModule', name: 'ErrMsgLogDetailPage', segment: 'err-msg-log-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/export-sql/export-sql.module#ExportSqlPageModule', name: 'ExportSqlPage', segment: 'export-sql', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/email-add-edit-modal/email-add-edit-modal.module#EmailAddEditModalPageModule', name: 'EmailAddEditModalPage', segment: 'email-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/err-msg-log/err-msg-log.module#ErrMsgLogPageModule', name: 'ErrMsgLogPage', segment: 'err-msg-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-backup-management-add-edit-modal/file-backup-management-add-edit-modal.module#FileBackupManagementAddEditModalPageModule', name: 'FileBackupManagementAddEditModalPage', segment: 'file-backup-management-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-backup-management/file-backup-management.module#FileBackupManagementPageModule', name: 'FileBackupManagementPage', segment: 'file-backup-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/email-user/email-user.module#EmailUserPageModule', name: 'EmailUserPage', segment: 'email-user', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/email/email.module#EmailPageModule', name: 'EmailPage', segment: 'email', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/export-sql/export-sql.module#ExportSqlPageModule', name: 'ExportSqlPage', segment: 'export-sql', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-browser-copy-edit-modal/file-browser-copy-edit-modal.module#FileBrowserCopyEditModalPageModule', name: 'FileBrowserCopyEditModalPage', segment: 'file-browser-copy-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-browser-management/file-browser-management.module#FileBrowserManagementPageModule', name: 'FileBrowserManagementPage', segment: 'file-browser-management', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-browser/file-browser.module#FileBrowserPageModule', name: 'FileBrowserPage', segment: 'file-browser', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-cmd-add-edit-modal/file-cmd-add-edit-modal.module#FileCmdAddEditModalPageModule', name: 'FileCmdAddEditModalPage', segment: 'file-cmd-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-cmd/file-cmd.module#FileCmdPageModule', name: 'FileCmdPage', segment: 'file-cmd', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-cmd-add-edit-modal/file-cmd-add-edit-modal.module#FileCmdAddEditModalPageModule', name: 'FileCmdAddEditModalPage', segment: 'file-cmd-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-code-add-edit-modal/file-code-add-edit-modal.module#FileCodeAddEditModalPageModule', name: 'FileCodeAddEditModalPage', segment: 'file-code-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-date-exec-log/file-date-exec-log.module#FileDateExecLogPageModule', name: 'FileDateExecLogPage', segment: 'file-date-exec-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-code/file-code.module#FileCodePageModule', name: 'FileCodePage', segment: 'file-code', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-copy-add-edit-modal/file-copy-add-edit-modal.module#FileCopyAddEditModalPageModule', name: 'FileCopyAddEditModalPage', segment: 'file-copy-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-copy/file-copy.module#FileCopyPageModule', name: 'FileCopyPage', segment: 'file-copy', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-date-filter-add-edit/file-date-filter-add-edit.module#FileDateFilterAddEditPageModule', name: 'FileDateFilterAddEditPage', segment: 'file-date-filter-add-edit', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-copy/file-copy.module#FileCopyPageModule', name: 'FileCopyPage', segment: 'file-copy', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-depend-add-edit-modal/file-depend-add-edit-modal.module#FileDependAddEditModalPageModule', name: 'FileDependAddEditModalPage', segment: 'file-depend-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-depend/file-depend.module#FileDependPageModule', name: 'FileDependPage', segment: 'file-depend', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-directory-add-edit-modal/file-directory-add-edit-modal.module#FileDirectoryAddEditModalPageModule', name: 'FileDirectoryAddEditModalPage', segment: 'file-directory-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-code-add-edit-modal/file-code-add-edit-modal.module#FileCodeAddEditModalPageModule', name: 'FileCodeAddEditModalPage', segment: 'file-code-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-directory/file-directory.module#FileDirectoryPageModule', name: 'FileDirectoryPage', segment: 'file-directory', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-email-attach-add-edit-modal/file-email-attach-add-edit-modal.module#FileEmailAttachAddEditModalPageModule', name: 'FileEmailAttachAddEditModalPage', segment: 'file-email-attach-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-email-attach/file-email-attach.module#FileEmailAttachPageModule', name: 'FileEmailAttachPage', segment: 'file-email-attach', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-exec-log-detail/file-exec-log-detail.module#FileExecLogDetailPageModule', name: 'FileExecLogDetailPage', segment: 'file-exec-log-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-exec-log/file-exec-log.module#FileExecLogPageModule', name: 'FileExecLogPage', segment: 'file-exec-log', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-email-attach/file-email-attach.module#FileEmailAttachPageModule', name: 'FileEmailAttachPage', segment: 'file-email-attach', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-email-attach-add-edit-modal/file-email-attach-add-edit-modal.module#FileEmailAttachAddEditModalPageModule', name: 'FileEmailAttachAddEditModalPage', segment: 'file-email-attach-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-directory-add-edit-modal/file-directory-add-edit-modal.module#FileDirectoryAddEditModalPageModule', name: 'FileDirectoryAddEditModalPage', segment: 'file-directory-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-add-edit-modal/file-export-add-edit-modal.module#FileExportAddEditModalPageModule', name: 'FileExportAddEditModalPage', segment: 'file-export-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-directory/file-directory.module#FileDirectoryPageModule', name: 'FileDirectoryPage', segment: 'file-directory', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-all/file-export-all.module#FileExportAllPageModule', name: 'FileExportAllPage', segment: 'file-export-all', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-blob-table-add-edit-modal/file-export-blob-table-add-edit-modal.module#FileExportBlobTableAddEditModalPageModule', name: 'FileExportBlobTableAddEditModalPage', segment: 'file-export-blob-table-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-export-blob-table/file-export-blob-table.module#FileExportBlobTablePageModule', name: 'FileExportBlobTablePage', segment: 'file-export-blob-table', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-export-blob/file-export-blob.module#FileExportBlobPageModule', name: 'FileExportBlobPage', segment: 'file-export-blob', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-export-blob-add-edit-modal/file-export-blob-add-edit-modal.module#FileExportBlobAddEditModalPageModule', name: 'FileExportBlobAddEditModalPage', segment: 'file-export-blob-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-hk-add-edit-modal/file-export-hk-add-edit-modal.module#FileExportHkAddEditModalPageModule', name: 'FileExportHkAddEditModalPage', segment: 'file-export-hk-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-export-blob/file-export-blob.module#FileExportBlobPageModule', name: 'FileExportBlobPage', segment: 'file-export-blob', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-hk-table-add-edit-modal/file-export-hk-table-add-edit-modal.module#FileExportHkTableAddEditModalPageModule', name: 'FileExportHkTableAddEditModalPage', segment: 'file-export-hk-table-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-export-blob-table/file-export-blob-table.module#FileExportBlobTablePageModule', name: 'FileExportBlobTablePage', segment: 'file-export-blob-table', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-hk-table/file-export-hk-table.module#FileExportHkTablePageModule', name: 'FileExportHkTablePage', segment: 'file-export-hk-table', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-hk/file-export-hk.module#FileExportHkPageModule', name: 'FileExportHkPage', segment: 'file-export-hk', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-export-management/file-export-management.module#FileExportManagementPageModule', name: 'FileExportManagementPage', segment: 'file-export-management', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-export-script-table-add-edit-modal/file-export-script-table-add-edit-modal.module#FileExportScriptTableAddEditModalPageModule', name: 'FileExportScriptTableAddEditModalPage', segment: 'file-export-script-table-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-script-add-edit-modal/file-export-script-add-edit-modal.module#FileExportScriptAddEditModalPageModule', name: 'FileExportScriptAddEditModalPage', segment: 'file-export-script-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-export-blob-add-edit-modal/file-export-blob-add-edit-modal.module#FileExportBlobAddEditModalPageModule', name: 'FileExportBlobAddEditModalPage', segment: 'file-export-blob-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-export-management/file-export-management.module#FileExportManagementPageModule', name: 'FileExportManagementPage', segment: 'file-export-management', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-script-table/file-export-script-table.module#FileExportScriptTablePageModule', name: 'FileExportScriptTablePage', segment: 'file-export-script-table', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-script/file-export-script.module#FileExportScriptPageModule', name: 'FileExportScriptPage', segment: 'file-export-script', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-export-table-add-edit-modal/file-export-table-add-edit-modal.module#FileExportTableAddEditModalPageModule', name: 'FileExportTableAddEditModalPage', segment: 'file-export-table-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-export-tsql-add-edit-modal/file-export-tsql-add-edit-modal.module#FileExportTsqlAddEditModalPageModule', name: 'FileExportTsqlAddEditModalPage', segment: 'file-export-tsql-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-table/file-export-table.module#FileExportTablePageModule', name: 'FileExportTablePage', segment: 'file-export-table', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-export-script-table-add-edit-modal/file-export-script-table-add-edit-modal.module#FileExportScriptTableAddEditModalPageModule', name: 'FileExportScriptTableAddEditModalPage', segment: 'file-export-script-table-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-tsql-table-add-edit-modal/file-export-tsql-table-add-edit-modal.module#FileExportTsqlTableAddEditModalPageModule', name: 'FileExportTsqlTableAddEditModalPage', segment: 'file-export-tsql-table-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-export-tsql-add-edit-modal/file-export-tsql-add-edit-modal.module#FileExportTsqlAddEditModalPageModule', name: 'FileExportTsqlAddEditModalPage', segment: 'file-export-tsql-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-export-table-add-edit-modal/file-export-table-add-edit-modal.module#FileExportTableAddEditModalPageModule', name: 'FileExportTableAddEditModalPage', segment: 'file-export-table-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-tsql-table/file-export-tsql-table.module#FileExportTsqlTablePageModule', name: 'FileExportTsqlTablePage', segment: 'file-export-tsql-table', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-export/file-export.module#FileExportPageModule', name: 'FileExportPage', segment: 'file-export', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-exported-header-add-edit/file-exported-header-add-edit.module#FileExportedHeaderAddEditPageModule', name: 'FileExportedHeaderAddEditPage', segment: 'file-exported-header-add-edit', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-exported-sql-add-edit/file-exported-sql-add-edit.module#FileExportedSqlAddEditPageModule', name: 'FileExportedSqlAddEditPage', segment: 'file-exported-sql-add-edit', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-filter-add-edit-modal/file-filter-add-edit-modal.module#FileFilterAddEditModalPageModule', name: 'FileFilterAddEditModalPage', segment: 'file-filter-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-export-tsql/file-export-tsql.module#FileExportTsqlPageModule', name: 'FileExportTsqlPage', segment: 'file-export-tsql', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-filter-add-edit-modal/file-filter-add-edit-modal.module#FileFilterAddEditModalPageModule', name: 'FileFilterAddEditModalPage', segment: 'file-filter-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-export/file-export.module#FileExportPageModule', name: 'FileExportPage', segment: 'file-export', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-filter-item-add-edit-modal/file-filter-item-add-edit-modal.module#FileFilterItemAddEditModalPageModule', name: 'FileFilterItemAddEditModalPage', segment: 'file-filter-item-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-exported-sql-add-edit/file-exported-sql-add-edit.module#FileExportedSqlAddEditPageModule', name: 'FileExportedSqlAddEditPage', segment: 'file-exported-sql-add-edit', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-filter/file-filter.module#FileFilterPageModule', name: 'FileFilterPage', segment: 'file-filter', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-filter-item/file-filter-item.module#FileFilterItemPageModule', name: 'FileFilterItemPage', segment: 'file-filter-item', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-ftp-up-add-edit-modal/file-ftp-up-add-edit-modal.module#FileFtpUpAddEditModalPageModule', name: 'FileFtpUpAddEditModalPage', segment: 'file-ftp-up-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-ftp-down-add-edit-modal/file-ftp-down-add-edit-modal.module#FileFtpDownAddEditModalPageModule', name: 'FileFtpDownAddEditModalPage', segment: 'file-ftp-down-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-ftp-down/file-ftp-down.module#FileFtpDownPageModule', name: 'FileFtpDownPage', segment: 'file-ftp-down', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-filter-item/file-filter-item.module#FileFilterItemPageModule', name: 'FileFilterItemPage', segment: 'file-filter-item', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-http-down-all/file-http-down-all.module#FileHttpDownAllPageModule', name: 'FileHttpDownAllPage', segment: 'file-http-down-all', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-http-down-file/file-http-down-file.module#FileHttpDownFilePageModule', name: 'FileHttpDownFilePage', segment: 'file-http-down-file', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-ftp-up-add-edit-modal/file-ftp-up-add-edit-modal.module#FileFtpUpAddEditModalPageModule', name: 'FileFtpUpAddEditModalPage', segment: 'file-ftp-up-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-ftp-up/file-ftp-up.module#FileFtpUpPageModule', name: 'FileFtpUpPage', segment: 'file-ftp-up', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-http-down-file-add-edit-modal/file-http-down-file-add-edit-modal.module#FileHttpDownFileAddEditModalPageModule', name: 'FileHttpDownFileAddEditModalPage', segment: 'file-http-down-file-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-http-down-file/file-http-down-file.module#FileHttpDownFilePageModule', name: 'FileHttpDownFilePage', segment: 'file-http-down-file', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-http-down-management/file-http-down-management.module#FileHttpDownManagementPageModule', name: 'FileHttpDownManagementPage', segment: 'file-http-down-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-http-h2-c/file-http-h2-c.module#FileHttpH2CPageModule', name: 'FileHttpH2CPage', segment: 'file-http-h2-c', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-http-html-down-file/file-http-html-down-file.module#FileHttpHtmlDownFilePageModule', name: 'FileHttpHtmlDownFilePage', segment: 'file-http-html-down-file', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-http-h2-c-add-edit-modal/file-http-h2-c-add-edit-modal.module#FileHttpH2CAddEditModalPageModule', name: 'FileHttpH2CAddEditModalPage', segment: 'file-http-h2-c-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-http-html-down-file-add-edit-modal/file-http-html-down-file-add-edit-modal.module#FileHttpHtmlDownFileAddEditModalPageModule', name: 'FileHttpHtmlDownFileAddEditModalPage', segment: 'file-http-html-down-file-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-http-html2-csv-add-edit-modal/file-http-html2-csv-add-edit-modal.module#FileHttpHtml2CsvAddEditModalPageModule', name: 'FileHttpHtml2CsvAddEditModalPage', segment: 'file-http-html2-csv-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-http-j2-c-add-edit-modal/file-http-j2-c-add-edit-modal.module#FileHttpJ2CAddEditModalPageModule', name: 'FileHttpJ2CAddEditModalPage', segment: 'file-http-j2-c-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-http-html2-csv/file-http-html2-csv.module#FileHttpHtml2CsvPageModule', name: 'FileHttpHtml2CsvPage', segment: 'file-http-html2-csv', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-http-html-down-file/file-http-html-down-file.module#FileHttpHtmlDownFilePageModule', name: 'FileHttpHtmlDownFilePage', segment: 'file-http-html-down-file', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-http-j2-c/file-http-j2-c.module#FileHttpJ2CPageModule', name: 'FileHttpJ2CPage', segment: 'file-http-j2-c', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-http-json2-csv-add-edit-modal/file-http-json2-csv-add-edit-modal.module#FileHttpJson2CsvAddEditModalPageModule', name: 'FileHttpJson2CsvAddEditModalPage', segment: 'file-http-json2-csv-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-http-html2-csv/file-http-html2-csv.module#FileHttpHtml2CsvPageModule', name: 'FileHttpHtml2CsvPage', segment: 'file-http-html2-csv', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-http-h2-c/file-http-h2-c.module#FileHttpH2CPageModule', name: 'FileHttpH2CPage', segment: 'file-http-h2-c', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-http-json2-csv/file-http-json2-csv.module#FileHttpJson2CsvPageModule', name: 'FileHttpJson2CsvPage', segment: 'file-http-json2-csv', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-http-up-add-edit-modal/file-http-up-add-edit-modal.module#FileHttpUpAddEditModalPageModule', name: 'FileHttpUpAddEditModalPage', segment: 'file-http-up-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-http-up/file-http-up.module#FileHttpUpPageModule', name: 'FileHttpUpPage', segment: 'file-http-up', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-image-add-edit-modal/file-image-add-edit-modal.module#FileImageAddEditModalPageModule', name: 'FileImageAddEditModalPage', segment: 'file-image-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-image/file-image.module#FileImagePageModule', name: 'FileImagePage', segment: 'file-image', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-http-json2-csv-add-edit-modal/file-http-json2-csv-add-edit-modal.module#FileHttpJson2CsvAddEditModalPageModule', name: 'FileHttpJson2CsvAddEditModalPage', segment: 'file-http-json2-csv-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-import-add-edit-modal/file-import-add-edit-modal.module#FileImportAddEditModalPageModule', name: 'FileImportAddEditModalPage', segment: 'file-import-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-import-after-add-edit-modal/file-import-after-add-edit-modal.module#FileImportAfterAddEditModalPageModule', name: 'FileImportAfterAddEditModalPage', segment: 'file-import-after-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-import-after/file-import-after.module#FileImportAfterPageModule', name: 'FileImportAfterPage', segment: 'file-import-after', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-import-before-add-edit-modal/file-import-before-add-edit-modal.module#FileImportBeforeAddEditModalPageModule', name: 'FileImportBeforeAddEditModalPage', segment: 'file-import-before-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-http-html-down-file-add-edit-modal/file-http-html-down-file-add-edit-modal.module#FileHttpHtmlDownFileAddEditModalPageModule', name: 'FileHttpHtmlDownFileAddEditModalPage', segment: 'file-http-html-down-file-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-import-before-check-add-edit-modal/file-import-before-check-add-edit-modal.module#FileImportBeforeCheckAddEditModalPageModule', name: 'FileImportBeforeCheckAddEditModalPage', segment: 'file-import-before-check-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-http-json2-csv/file-http-json2-csv.module#FileHttpJson2CsvPageModule', name: 'FileHttpJson2CsvPage', segment: 'file-http-json2-csv', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-import-before-sql-add-edit/file-import-before-sql-add-edit.module#FileImportBeforeSqlAddEditPageModule', name: 'FileImportBeforeSqlAddEditPage', segment: 'file-import-before-sql-add-edit', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-import-before/file-import-before.module#FileImportBeforePageModule', name: 'FileImportBeforePage', segment: 'file-import-before', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-import-data-expression-add-edit/file-import-data-expression-add-edit.module#FileImportDataExpressionAddEditPageModule', name: 'FileImportDataExpressionAddEditPage', segment: 'file-import-data-expression-add-edit', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-import-before-sql-add-edit/file-import-before-sql-add-edit.module#FileImportBeforeSqlAddEditPageModule', name: 'FileImportBeforeSqlAddEditPage', segment: 'file-import-before-sql-add-edit', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-import-data-lookup-add-edit-modal/file-import-data-lookup-add-edit-modal.module#FileImportDataLookupAddEditModalPageModule', name: 'FileImportDataLookupAddEditModalPage', segment: 'file-import-data-lookup-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-import-data-lookup/file-import-data-lookup.module#FileImportDataLookupPageModule', name: 'FileImportDataLookupPage', segment: 'file-import-data-lookup', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-import-data-expression-add-edit/file-import-data-expression-add-edit.module#FileImportDataExpressionAddEditPageModule', name: 'FileImportDataExpressionAddEditPage', segment: 'file-import-data-expression-add-edit', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-import-data-search-replace-add-edit-modal/file-import-data-search-replace-add-edit-modal.module#FileImportDataSearchReplaceAddEditModalPageModule', name: 'FileImportDataSearchReplaceAddEditModalPage', segment: 'file-import-data-search-replace-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-import-data-search-replace/file-import-data-search-replace.module#FileImportDataSearchReplacePageModule', name: 'FileImportDataSearchReplacePage', segment: 'file-import-data-search-replace', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-import-select-modal/file-import-select-modal.module#FileImportSelectModalPageModule', name: 'FileImportSelectModalPage', segment: 'file-import-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-import-data-search-replace/file-import-data-search-replace.module#FileImportDataSearchReplacePageModule', name: 'FileImportDataSearchReplacePage', segment: 'file-import-data-search-replace', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-import-table-add-edit-modal/file-import-table-add-edit-modal.module#FileImportTableAddEditModalPageModule', name: 'FileImportTableAddEditModalPage', segment: 'file-import-table-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-import-table/file-import-table.module#FileImportTablePageModule', name: 'FileImportTablePage', segment: 'file-import-table', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-import/file-import.module#FileImportPageModule', name: 'FileImportPage', segment: 'file-import', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-import-data-lookup/file-import-data-lookup.module#FileImportDataLookupPageModule', name: 'FileImportDataLookupPage', segment: 'file-import-data-lookup', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-in-management/file-in-management.module#FileInManagementPageModule', name: 'FileInManagementPage', segment: 'file-in-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-loop/file-loop.module#FileLoopPageModule', name: 'FileLoopPage', segment: 'file-loop', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-out-management/file-out-management.module#FileOutManagementPageModule', name: 'FileOutManagementPage', segment: 'file-out-management', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-loop-add-edit-modal/file-loop-add-edit-modal.module#FileLoopAddEditModalPageModule', name: 'FileLoopAddEditModalPage', segment: 'file-loop-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-loop/file-loop.module#FileLoopPageModule', name: 'FileLoopPage', segment: 'file-loop', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-import/file-import.module#FileImportPageModule', name: 'FileImportPage', segment: 'file-import', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-management-all/file-management-all.module#FileManagementAllPageModule', name: 'FileManagementAllPage', segment: 'file-management-all', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-management/file-management.module#FileManagementPageModule', name: 'FileManagementPage', segment: 'file-management', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-import-table/file-import-table.module#FileImportTablePageModule', name: 'FileImportTablePage', segment: 'file-import-table', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-path/file-path.module#FilePathPageModule', name: 'FilePathPage', segment: 'file-path', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-pdf2-image-add-edit-modal/file-pdf2-image-add-edit-modal.module#FilePdf2ImageAddEditModalPageModule', name: 'FilePdf2ImageAddEditModalPage', segment: 'file-pdf2-image-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-pdf2-image/file-pdf2-image.module#FilePdf2ImagePageModule', name: 'FilePdf2ImagePage', segment: 'file-pdf2-image', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-processed-exec-group-add-edit/file-processed-exec-group-add-edit.module#FileProcessedExecGroupAddEditPageModule', name: 'FileProcessedExecGroupAddEditPage', segment: 'file-processed-exec-group-add-edit', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-processed-sql-add-edit/file-processed-sql-add-edit.module#FileProcessedSqlAddEditPageModule', name: 'FileProcessedSqlAddEditPage', segment: 'file-processed-sql-add-edit', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-replace-data-item-add-edit-modal/file-replace-data-item-add-edit-modal.module#FileReplaceDataItemAddEditModalPageModule', name: 'FileReplaceDataItemAddEditModalPage', segment: 'file-replace-data-item-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-replace-data-item/file-replace-data-item.module#FileReplaceDataItemPageModule', name: 'FileReplaceDataItemPage', segment: 'file-replace-data-item', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-replace-data-add-edit-modal/file-replace-data-add-edit-modal.module#FileReplaceDataAddEditModalPageModule', name: 'FileReplaceDataAddEditModalPage', segment: 'file-replace-data-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-replace-data-item-add-edit-modal/file-replace-data-item-add-edit-modal.module#FileReplaceDataItemAddEditModalPageModule', name: 'FileReplaceDataItemAddEditModalPage', segment: 'file-replace-data-item-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-processed-exec-group-add-edit/file-processed-exec-group-add-edit.module#FileProcessedExecGroupAddEditPageModule', name: 'FileProcessedExecGroupAddEditPage', segment: 'file-processed-exec-group-add-edit', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-replace-data-item/file-replace-data-item.module#FileReplaceDataItemPageModule', name: 'FileReplaceDataItemPage', segment: 'file-replace-data-item', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-replace-data/file-replace-data.module#FileReplaceDataPageModule', name: 'FileReplaceDataPage', segment: 'file-replace-data', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-sql-add-edit-modal/file-sql-add-edit-modal.module#FileSqlAddEditModalPageModule', name: 'FileSqlAddEditModalPage', segment: 'file-sql-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-sql/file-sql.module#FileSqlPageModule', name: 'FileSqlPage', segment: 'file-sql', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-management/file-management.module#FileManagementPageModule', name: 'FileManagementPage', segment: 'file-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-ssis-add-edit-modal/file-ssis-add-edit-modal.module#FileSsisAddEditModalPageModule', name: 'FileSsisAddEditModalPage', segment: 'file-ssis-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-management-all/file-management-all.module#FileManagementAllPageModule', name: 'FileManagementAllPage', segment: 'file-management-all', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-out-management/file-out-management.module#FileOutManagementPageModule', name: 'FileOutManagementPage', segment: 'file-out-management', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-ssis-conn-parm-add-edit-modal/file-ssis-conn-parm-add-edit-modal.module#FileSsisConnParmAddEditModalPageModule', name: 'FileSsisConnParmAddEditModalPage', segment: 'file-ssis-conn-parm-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-ssis-conn-parm/file-ssis-conn-parm.module#FileSsisConnParmPageModule', name: 'FileSsisConnParmPage', segment: 'file-ssis-conn-parm', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-ssis-parm-add-edit-modal/file-ssis-parm-add-edit-modal.module#FileSsisParmAddEditModalPageModule', name: 'FileSsisParmAddEditModalPage', segment: 'file-ssis-parm-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-ssis-parm/file-ssis-parm.module#FileSsisParmPageModule', name: 'FileSsisParmPage', segment: 'file-ssis-parm', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-ssis-add-edit-modal/file-ssis-add-edit-modal.module#FileSsisAddEditModalPageModule', name: 'FileSsisAddEditModalPage', segment: 'file-ssis-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-ssis/file-ssis.module#FileSsisPageModule', name: 'FileSsisPage', segment: 'file-ssis', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-ssis-parm/file-ssis-parm.module#FileSsisParmPageModule', name: 'FileSsisParmPage', segment: 'file-ssis-parm', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-un-zip-add-edit-modal/file-un-zip-add-edit-modal.module#FileUnZipAddEditModalPageModule', name: 'FileUnZipAddEditModalPage', segment: 'file-un-zip-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-un-zip/file-un-zip.module#FileUnZipPageModule', name: 'FileUnZipPage', segment: 'file-un-zip', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-zip-list-add-edit-modal/file-zip-list-add-edit-modal.module#FileZipListAddEditModalPageModule', name: 'FileZipListAddEditModalPage', segment: 'file-zip-list-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-zip-list/file-zip-list.module#FileZipListPageModule', name: 'FileZipListPage', segment: 'file-zip-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-zip-management/file-zip-management.module#FileZipManagementPageModule', name: 'FileZipManagementPage', segment: 'file-zip-management', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-un-zip/file-un-zip.module#FileUnZipPageModule', name: 'FileUnZipPage', segment: 'file-un-zip', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-zip-list/file-zip-list.module#FileZipListPageModule', name: 'FileZipListPage', segment: 'file-zip-list', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-zip-list-add-edit-modal/file-zip-list-add-edit-modal.module#FileZipListAddEditModalPageModule', name: 'FileZipListAddEditModalPage', segment: 'file-zip-list-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-zip-set-add-edit-modal/file-zip-set-add-edit-modal.module#FileZipSetAddEditModalPageModule', name: 'FileZipSetAddEditModalPage', segment: 'file-zip-set-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-zip-set/file-zip-set.module#FileZipSetPageModule', name: 'FileZipSetPage', segment: 'file-zip-set', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/file-zip-src-add-edit-modal/file-zip-src-add-edit-modal.module#FileZipSrcAddEditModalPageModule', name: 'FileZipSrcAddEditModalPage', segment: 'file-zip-src-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-zip-src/file-zip-src.module#FileZipSrcPageModule', name: 'FileZipSrcPage', segment: 'file-zip-src', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/file-zip-src-add-edit-modal/file-zip-src-add-edit-modal.module#FileZipSrcAddEditModalPageModule', name: 'FileZipSrcAddEditModalPage', segment: 'file-zip-src-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/for-add-edit-modal/for-add-edit-modal.module#ForAddEditModalPageModule', name: 'ForAddEditModalPage', segment: 'for-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/for/for.module#ForPageModule', name: 'ForPage', segment: 'for', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ford-add-edit-modal/ford-add-edit-modal.module#FordAddEditModalPageModule', name: 'FordAddEditModalPage', segment: 'ford-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/ford/ford.module#FordPageModule', name: 'FordPage', segment: 'ford', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/fors/fors.module#ForsPageModule', name: 'ForsPage', segment: 'fors', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ftp-directory-browser-add-edit-modal/ftp-directory-browser-add-edit-modal.module#FtpDirectoryBrowserAddEditModelPageModule', name: 'FtpDirectoryBrowserAddEditModalPage', segment: 'ftp-directory-browser-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ftp-directory-browser-select-modal/ftp-directory-browser-select-modal.module#FtpDirectoryBrowserSelectModalPageModule', name: 'FtpDirectoryBrowserSelectModalPage', segment: 'ftp-directory-browser-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ftp-directory-browser/ftp-directory-browser.module#FtpDirectoryBrowserPageModule', name: 'FtpDirectoryBrowserPage', segment: 'ftp-directory-browser', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ftp-file-browser-download/ftp-file-browser-download.module#FtpFileBrowserDownloadPageModule', name: 'FtpFileBrowserDownloadPage', segment: 'ftp-file-browser-download', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ftp-file-browser-edit-modal/ftp-file-browser-edit-modal.module#FtpFileBrowserEditModalPageModule', name: 'FtpFileBrowserEditModalPage', segment: 'ftp-file-browser-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ftp-file-browser-upload/ftp-file-browser-upload.module#FtpFileBrowserUploadPageModule', name: 'FtpFileBrowserUploadPage', segment: 'ftp-file-browser-upload', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ftp-file-browser/ftp-file-browser.module#FtpFileBrowserPageModule', name: 'FtpFileBrowserPage', segment: 'ftp-file-browser', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/glossary-add-edit-modal/glossary-add-edit-modal.module#GlossaryAddEditModalPageModule', name: 'GlossaryAddEditModalPage', segment: 'glossary-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ford-add-edit-modal/ford-add-edit-modal.module#FordAddEditModalPageModule', name: 'FordAddEditModalPage', segment: 'ford-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/fors-add-edit-modal/fors-add-edit-modal.module#ForsAddEditModalPageModule', name: 'ForsAddEditModalPage', segment: 'fors-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/fors/fors.module#ForsPageModule', name: 'ForsPage', segment: 'fors', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ftp-directory-browser-select-modal/ftp-directory-browser-select-modal.module#FtpDirectoryBrowserSelectModalPageModule', name: 'FtpDirectoryBrowserSelectModalPage', segment: 'ftp-directory-browser-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ftp-file-browser-upload/ftp-file-browser-upload.module#FtpFileBrowserUploadPageModule', name: 'FtpFileBrowserUploadPage', segment: 'ftp-file-browser-upload', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ftp-directory-browser-add-edit-modal/ftp-directory-browser-add-edit-modal.module#FtpDirectoryBrowserAddEditModelPageModule', name: 'FtpDirectoryBrowserAddEditModalPage', segment: 'ftp-directory-browser-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ftp-directory-browser/ftp-directory-browser.module#FtpDirectoryBrowserPageModule', name: 'FtpDirectoryBrowserPage', segment: 'ftp-directory-browser', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ftp-file-browser-edit-modal/ftp-file-browser-edit-modal.module#FtpFileBrowserEditModalPageModule', name: 'FtpFileBrowserEditModalPage', segment: 'ftp-file-browser-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ftp-file-browser-download/ftp-file-browser-download.module#FtpFileBrowserDownloadPageModule', name: 'FtpFileBrowserDownloadPage', segment: 'ftp-file-browser-download', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/glossary-select-modal/glossary-select-modal.module#GlossarySelectModalPageModule', name: 'GlossarySelectModalPage', segment: 'glossary-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/glossary/glossary.module#GlossaryPageModule', name: 'GlossaryPage', segment: 'glossary', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/glossary-add-edit-modal/glossary-add-edit-modal.module#GlossaryAddEditModalPageModule', name: 'GlossaryAddEditModalPage', segment: 'glossary-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/glossary/glossary.module#GlossaryPageModule', name: 'GlossaryPage', segment: 'glossary', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/insert-value-sql/insert-value-sql.module#InsertValueSqlPageModule', name: 'InsertValueSqlPage', segment: 'insert-value-sql', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ionic-program-detail-add-edit-modal/ionic-program-detail-add-edit-modal.module#IonicProgramDetailAddEditModalPageModule', name: 'IonicProgramDetailAddEditModalPage', segment: 'ionic-program-detail-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ionic-program-detail/ionic-program-detail.module#IonicProgramDetailPageModule', name: 'IonicProgramDetailPage', segment: 'ionic-program-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ionic-program-permission-select-modal/ionic-program-permission-select-modal.module#IonicProgramPermissionSelectModalPageModule', name: 'IonicProgramPermissionSelectModalPage', segment: 'ionic-program-permission-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ionic-program-permission/ionic-program-permission.module#IonicProgramPermissionPageModule', name: 'IonicProgramPermissionPage', segment: 'ionic-program-permission', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/ionic-program/ionic-program.module#IonicProgramPageModule', name: 'IonicProgramPage', segment: 'ionic-program', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/ionic-program-add-edit-modal/ionic-program-add-edit-modal.module#IonicProgramAddEditModalPageModule', name: 'IonicProgramAddEditModalPage', segment: 'ionic-program-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ftp-file-browser/ftp-file-browser.module#FtpFileBrowserPageModule', name: 'FtpFileBrowserPage', segment: 'ftp-file-browser', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ionic-program-detail/ionic-program-detail.module#IonicProgramDetailPageModule', name: 'IonicProgramDetailPage', segment: 'ionic-program-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ionic-program-detail-add-edit-modal/ionic-program-detail-add-edit-modal.module#IonicProgramDetailAddEditModalPageModule', name: 'IonicProgramDetailAddEditModalPage', segment: 'ionic-program-detail-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ionic-program-permission-select-modal/ionic-program-permission-select-modal.module#IonicProgramPermissionSelectModalPageModule', name: 'IonicProgramPermissionSelectModalPage', segment: 'ionic-program-permission-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-by-sch-select-modal/job-by-sch-select-modal.module#JobBySchSelectModalPageModule', name: 'JobBySchSelectModalPage', segment: 'job-by-sch-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-by-sch/job-by-sch.module#JobBySchPageModule', name: 'JobBySchPage', segment: 'job-by-sch', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/job-detail/job-detail.module#JobDetailPageModule', name: 'JobDetailPage', segment: 'job-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/job-exec-log-detail/job-exec-log-detail.module#JobExecLogDetailPageModule', name: 'JobExecLogDetailPage', segment: 'job-exec-log-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/job-exec-log/job-exec-log.module#JobExecLogPageModule', name: 'JobExecLogPage', segment: 'job-exec-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-add-edit-modal/job-add-edit-modal.module#JobAddEditModalPageModule', name: 'JobAddEditModalPage', segment: 'job-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/job-exec-log-detail/job-exec-log-detail.module#JobExecLogDetailPageModule', name: 'JobExecLogDetailPage', segment: 'job-exec-log-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/job-detail/job-detail.module#JobDetailPageModule', name: 'JobDetailPage', segment: 'job-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ionic-program-permission/ionic-program-permission.module#IonicProgramPermissionPageModule', name: 'IonicProgramPermissionPage', segment: 'ionic-program-permission', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/job-exec-log/job-exec-log.module#JobExecLogPageModule', name: 'JobExecLogPage', segment: 'job-exec-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-loop-add-edit-modal/job-loop-add-edit-modal.module#JobLoopAddEditModalPageModule', name: 'JobLoopAddEditModalPage', segment: 'job-loop-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-loop-add-pwd-modal/job-loop-add-pwd-modal.module#JobLoopAddPwdModalPageModule', name: 'JobLoopAddPwdModalPage', segment: 'job-loop-add-pwd-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-loop-detail/job-loop-detail.module#JobLoopDetailPageModule', name: 'JobLoopDetailPage', segment: 'job-loop-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-loop-event-add-edit-modal/job-loop-event-add-edit-modal.module#JobLoopEventAddEditModalPageModule', name: 'JobLoopEventAddEditModalPage', segment: 'job-loop-event-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-loop-event/job-loop-event.module#JobLoopEventPageModule', name: 'JobLoopEventPage', segment: 'job-loop-event', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/job-loop/job-loop.module#JobLoopPageModule', name: 'JobLoopPage', segment: 'job-loop', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-processed-sql-add-edit-modal/job-processed-sql-add-edit-modal.module#JobProcessedSqlAddEditModalPageModule', name: 'JobProcessedSqlAddEditModalPage', segment: 'job-processed-sql-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-processed-sql/job-processed-sql.module#JobProcessedSqlPageModule', name: 'JobProcessedSqlPage', segment: 'job-processed-sql', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-sch-exec-log/job-sch-exec-log.module#JobSchExecLogPageModule', name: 'JobSchExecLogPage', segment: 'job-sch-exec-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-sch-management/job-sch-management.module#JobSchManagementPageModule', name: 'JobSchManagementPage', segment: 'job-sch-management', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-step-add-edit-modal/job-step-add-edit-modal.module#JobStepAddEditModalPageModule', name: 'JobStepAddEditModalPage', segment: 'job-step-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/job-step-exec-log/job-step-exec-log.module#JobStepExecLogPageModule', name: 'JobStepExecLogPage', segment: 'job-step-exec-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-step-detail/job-step-detail.module#JobStepDetailPageModule', name: 'JobStepDetailPage', segment: 'job-step-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-step-exec-log-detail/job-step-exec-log-detail.module#JobStepExecLogDetailPageModule', name: 'JobStepExecLogDetailPage', segment: 'job-step-exec-log-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/job-step-exec-log/job-step-exec-log.module#JobStepExecLogPageModule', name: 'JobStepExecLogPage', segment: 'job-step-exec-log', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-step-loop-add-edit-modal/job-step-loop-add-edit-modal.module#JobStepLoopAddEditModalPageModule', name: 'JobStepLoopAddEditModalPage', segment: 'job-step-loop-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-step-loop/job-step-loop.module#JobStepLoopPageModule', name: 'JobStepLoopPage', segment: 'job-step-loop', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job-step/job-step.module#JobStepPageModule', name: 'JobStepPage', segment: 'job-step', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/job-loop/job-loop.module#JobLoopPageModule', name: 'JobLoopPage', segment: 'job-loop', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/job/job.module#JobPageModule', name: 'JobPage', segment: 'job', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/line-add-edit-modal/line-add-edit-modal.module#LineAddEditModalPageModule', name: 'LineAddEditModalPage', segment: 'line-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/line-message-add-edit-modal/line-message-add-edit-modal.module#LineMessageAddEditModalPageModule', name: 'LineMessageAddEditModalPage', segment: 'line-message-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/line-message/line-message.module#LineMessagePageModule', name: 'LineMessagePage', segment: 'line-message', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/line/line.module#LinePageModule', name: 'LinePage', segment: 'line', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login-log/login-log.module#LoginLogPageModule', name: 'LoginLogPage', segment: 'login-log', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/main-code-copy-modal/main-code-copy-modal.module#MainCodeCopyModalPageModule', name: 'MainCodeCopyModalPage', segment: 'main-code-copy-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/main-code-add-edit-modal/main-code-add-edit-modal.module#MainCodeAddEditModalPageModule', name: 'MainCodeAddEditModalPage', segment: 'main-code-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/main-code/main-code.module#MainCodePageModule', name: 'MainCodePage', segment: 'main-code', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/mask-column-add-edit-modal/mask-column-add-edit-modal.module#MaskColumnAddEditModalPageModule', name: 'MaskColumnAddEditModalPage', segment: 'mask-column-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/mask-column/mask-column.module#MaskColumnPageModule', name: 'MaskColumnPage', segment: 'mask-column', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu-add-edit-modal/menu-add-edit-modal.module#MenuAddEditModalPageModule', name: 'MenuAddEditModalPage', segment: 'menu-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu-by-program-detail-select-modal/menu-by-program-detail-select-modal.module#MenuByProgramDetailSelectModalPageModule', name: 'MenuByProgramDetailSelectModalPage', segment: 'menu-by-program-detail-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu-by-program-detail/menu-by-program-detail.module#MenuByProgramDetailPageModule', name: 'MenuByProgramDetailPage', segment: 'menu-by-program-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu-detail-edit-modal/menu-detail-edit-modal.module#MenuDetailEditModalPageModule', name: 'MenuDetailEditModalPage', segment: 'menu-detail-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu-detail-select-modal/menu-detail-select-modal.module#MenuDetailSelectModalPageModule', name: 'MenuDetailSelectModalPage', segment: 'menu-detail-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu-detail/menu-detail.module#MenuDetailPageModule', name: 'MenuDetailPage', segment: 'menu-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/ionic-program/ionic-program.module#IonicProgramPageModule', name: 'IonicProgramPage', segment: 'ionic-program', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/line-message-log/line-message-log.module#LineMessageLogPageModule', name: 'LineMessageLogPage', segment: 'line-message-log', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/line-add-edit-modal/line-add-edit-modal.module#LineAddEditModalPageModule', name: 'LineAddEditModalPage', segment: 'line-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/main-code-add-edit-modal/main-code-add-edit-modal.module#MainCodeAddEditModalPageModule', name: 'MainCodeAddEditModalPage', segment: 'main-code-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/line/line.module#LinePageModule', name: 'LinePage', segment: 'line', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/main-code/main-code.module#MainCodePageModule', name: 'MainCodePage', segment: 'main-code', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/line-message/line-message.module#LineMessagePageModule', name: 'LineMessagePage', segment: 'line-message', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login-log/login-log.module#LoginLogPageModule', name: 'LoginLogPage', segment: 'login-log', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/main-code-copy-modal/main-code-copy-modal.module#MainCodeCopyModalPageModule', name: 'MainCodeCopyModalPage', segment: 'main-code-copy-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/mask-column-add-edit-modal/mask-column-add-edit-modal.module#MaskColumnAddEditModalPageModule', name: 'MaskColumnAddEditModalPage', segment: 'mask-column-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/menu-add-edit-modal/menu-add-edit-modal.module#MenuAddEditModalPageModule', name: 'MenuAddEditModalPage', segment: 'menu-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/mask-column/mask-column.module#MaskColumnPageModule', name: 'MaskColumnPage', segment: 'mask-column', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/menu-by-program-detail/menu-by-program-detail.module#MenuByProgramDetailPageModule', name: 'MenuByProgramDetailPage', segment: 'menu-by-program-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/menu-by-program-detail-select-modal/menu-by-program-detail-select-modal.module#MenuByProgramDetailSelectModalPageModule', name: 'MenuByProgramDetailSelectModalPage', segment: 'menu-by-program-detail-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/menu-detail-edit-modal/menu-detail-edit-modal.module#MenuDetailEditModalPageModule', name: 'MenuDetailEditModalPage', segment: 'menu-detail-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/menu-detail/menu-detail.module#MenuDetailPageModule', name: 'MenuDetailPage', segment: 'menu-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/menu-detail-select-modal/menu-detail-select-modal.module#MenuDetailSelectModalPageModule', name: 'MenuDetailSelectModalPage', segment: 'menu-detail-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/merge-sql/merge-sql.module#MergeSqlPageModule', name: 'MergeSqlPage', segment: 'merge-sql', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/parameter-column-add-edit-modal/parameter-column-add-edit-modal.module#ParameterColumnAddEditModalPageModule', name: 'ParameterColumnAddEditModalPage', segment: 'parameter-column-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/parameter-column/parameter-column.module#ParameterColumnPageModule', name: 'ParameterColumnPage', segment: 'parameter-column', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/parameter-group-add-edit-modal/parameter-group-add-edit-modal.module#ParameterGroupAddEditModalPageModule', name: 'ParameterGroupAddEditModalPage', segment: 'parameter-group-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/parameter-group-select-model/parameter-group-select-model.module#ParameterGroupSelectModelPageModule', name: 'ParameterGroupSelectModelPage', segment: 'parameter-group-select-model', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/parameter-group/parameter-group.module#ParameterGroupPageModule', name: 'ParameterGroupPage', segment: 'parameter-group', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/permission-add-edit-modal/permission-add-edit-modal.module#PermissionAddEditModalPageModule', name: 'PermissionAddEditModalPage', segment: 'permission-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/permission-program-select-modal/permission-program-select-modal.module#PermissionProgramSelectModalPageModule', name: 'PermissionProgramSelectModalPage', segment: 'permission-program-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/parameter-group-add-edit-modal/parameter-group-add-edit-modal.module#ParameterGroupAddEditModalPageModule', name: 'ParameterGroupAddEditModalPage', segment: 'parameter-group-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/permission-management/permission-management.module#PermissionManagementPageModule', name: 'PermissionManagementPage', segment: 'permission-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/permission-role-select-modal/permission-role-select-modal.module#PermissionRoleSelectModalPageModule', name: 'PermissionRoleSelectModalPage', segment: 'permission-role-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/permission-program/permission-program.module#PermissionProgramPageModule', name: 'PermissionProgramPage', segment: 'permission-program', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/permission/permission.module#PermissionPageModule', name: 'PermissionPage', segment: 'permission', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/prog/prog.module#ProgPageModule', name: 'ProgPage', segment: 'prog', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/program-detail-add-edit-modal/program-detail-add-edit-modal.module#ProgramDetailAddEditModalPageModule', name: 'ProgramDetailAddEditModalPage', segment: 'program-detail-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/program-detail-by-ionic-program/program-detail-by-ionic-program.module#ProgramDetailByIonicProgramPageModule', name: 'ProgramDetailByIonicProgramPage', segment: 'program-detail-by-ionic-program', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/program-detail-select-modal/program-detail-select-modal.module#ProgramDetailSelectModalPageModule', name: 'ProgramDetailSelectModalPage', segment: 'program-detail-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/program-detail/program-detail.module#ProgramDetailPageModule', name: 'ProgramDetailPage', segment: 'program-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/program-set-select-modal/program-set-select-modal.module#ProgramSetSelectModalPageModule', name: 'ProgramSetSelectModalPage', segment: 'program-set-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/quote-column-add-edit-modal/quote-column-add-edit-modal.module#QuoteColumnAddEditModalPageModule', name: 'QuoteColumnAddEditModalPage', segment: 'quote-column-add-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/quote-column/quote-column.module#QuoteColumnPageModule', name: 'QuoteColumnPage', segment: 'quote-column', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/role-permission-select-modal/role-permission-select-modal.module#RolePermissionSelectModalPageModule', name: 'RolePermissionSelectModalPage', segment: 'role-permission-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/permission-program-select-modal/permission-program-select-modal.module#PermissionProgramSelectModalPageModule', name: 'PermissionProgramSelectModalPage', segment: 'permission-program-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/permission-role-select-modal/permission-role-select-modal.module#PermissionRoleSelectModalPageModule', name: 'PermissionRoleSelectModalPage', segment: 'permission-role-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/parameter-group-select-model/parameter-group-select-model.module#ParameterGroupSelectModelPageModule', name: 'ParameterGroupSelectModelPage', segment: 'parameter-group-select-model', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/permission-role/permission-role.module#PermissionRolePageModule', name: 'PermissionRolePage', segment: 'permission-role', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/permission-user/permission-user.module#PermissionUserPageModule', name: 'PermissionUserPage', segment: 'permission-user', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/program-detail-add-edit-modal/program-detail-add-edit-modal.module#ProgramDetailAddEditModalPageModule', name: 'ProgramDetailAddEditModalPage', segment: 'program-detail-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/prog/prog.module#ProgPageModule', name: 'ProgPage', segment: 'prog', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/parameter-group/parameter-group.module#ParameterGroupPageModule', name: 'ParameterGroupPage', segment: 'parameter-group', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/program-detail-by-ionic-program/program-detail-by-ionic-program.module#ProgramDetailByIonicProgramPageModule', name: 'ProgramDetailByIonicProgramPage', segment: 'program-detail-by-ionic-program', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/program-detail-select-modal/program-detail-select-modal.module#ProgramDetailSelectModalPageModule', name: 'ProgramDetailSelectModalPage', segment: 'program-detail-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/permission/permission.module#PermissionPageModule', name: 'PermissionPage', segment: 'permission', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/register/register.module#RegisterPageModule', name: 'RegisterPage', segment: 'register', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/program-detail/program-detail.module#ProgramDetailPageModule', name: 'ProgramDetailPage', segment: 'program-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/quote-column-add-edit-modal/quote-column-add-edit-modal.module#QuoteColumnAddEditModalPageModule', name: 'QuoteColumnAddEditModalPage', segment: 'quote-column-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/program-set-select-modal/program-set-select-modal.module#ProgramSetSelectModalPageModule', name: 'ProgramSetSelectModalPage', segment: 'program-set-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/quote-column/quote-column.module#QuoteColumnPageModule', name: 'QuoteColumnPage', segment: 'quote-column', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/role-permission/role-permission.module#RolePermissionPageModule', name: 'RolePermissionPage', segment: 'role-permission', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/role-permission-select-modal/role-permission-select-modal.module#RolePermissionSelectModalPageModule', name: 'RolePermissionSelectModalPage', segment: 'role-permission-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/role-user-select-modal/role-user-select-modal.module#RoleUserSelectModalPageModule', name: 'RoleUserSelectModalPage', segment: 'role-user-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/role-user/role-user.module#RoleUserPageModule', name: 'RoleUserPage', segment: 'role-user', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/role/role.module#RolePageModule', name: 'RolePage', segment: 'role', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sch-by-job-select-modal/sch-by-job-select-modal.module#SchByJobSelectModalPageModule', name: 'SchByJobSelectModalPage', segment: 'sch-by-job-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sch-by-job/sch-by-job.module#SchByJobPageModule', name: 'SchByJobPage', segment: 'sch-by-job', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sch-day-time-add-edit-modal/sch-day-time-add-edit-modal.module#SchDayTimeAddEditModalPageModule', name: 'SchDayTimeAddEditModalPage', segment: 'sch-day-time-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sch-day-time/sch-day-time.module#SchDayTimePageModule', name: 'SchDayTimePage', segment: 'sch-day-time', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/role/role.module#RolePageModule', name: 'RolePage', segment: 'role', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sch-management/sch-management.module#SchManagementPageModule', name: 'SchManagementPage', segment: 'sch-management', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sch-month-lastday-time-add-edit-modal/sch-month-lastday-time-add-edit-modal.module#SchMonthLastdayTimeAddEditModalPageModule', name: 'SchMonthLastdayTimeAddEditModalPage', segment: 'sch-month-lastday-time-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sch-month-lastday-time/sch-month-lastday-time.module#SchMonthLastdayTimePageModule', name: 'SchMonthLastdayTimePage', segment: 'sch-month-lastday-time', priority: 'low', defaultHistory: [] },
@@ -9458,53 +9472,54 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/sch-week-time-add-edit-modal/sch-week-time-add-edit-modal.module#SchWeekTimeAddEditModalPageModule', name: 'SchWeekTimeAddEditModalPage', segment: 'sch-week-time-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sch-week-time/sch-week-time.module#SchWeekTimePageModule', name: 'SchWeekTimePage', segment: 'sch-week-time', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sch/sch.module#SchPageModule', name: 'SchPage', segment: 'sch', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/security-management/security-management.module#SecurityManagementPageModule', name: 'SecurityManagementPage', segment: 'security-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/select-value-sql/select-value-sql.module#SelectValueSqlPageModule', name: 'SelectValueSqlPage', segment: 'select-value-sql', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/role-user/role-user.module#RoleUserPageModule', name: 'RoleUserPage', segment: 'role-user', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/show-message/show-message.module#ShowMessagePageModule', name: 'ShowMessagePage', segment: 'show-message', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/sp-add-edit-modal/sp-add-edit-modal.module#SpAddEditModalPageModule', name: 'SpAddEditModalPage', segment: 'sp-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/select-value-sql/select-value-sql.module#SelectValueSqlPageModule', name: 'SelectValueSqlPage', segment: 'select-value-sql', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/security-management/security-management.module#SecurityManagementPageModule', name: 'SecurityManagementPage', segment: 'security-management', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sp/sp.module#SpPageModule', name: 'SpPage', segment: 'sp', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/sql-management/sql-management.module#SqlManagementPageModule', name: 'SqlManagementPage', segment: 'sql-management', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/sp-add-edit-modal/sp-add-edit-modal.module#SpAddEditModalPageModule', name: 'SpAddEditModalPage', segment: 'sp-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sql-all/sql-all.module#SqlAllPageModule', name: 'SqlAllPage', segment: 'sql-all', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/sql-management/sql-management.module#SqlManagementPageModule', name: 'SqlManagementPage', segment: 'sql-management', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/sql-set-add-edit-modal/sql-set-add-edit-modal.module#SqlSetAddEditModalPageModule', name: 'SqlSetAddEditModalPage', segment: 'sql-set-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sql-set/sql-set.module#SqlSetPageModule', name: 'SqlSetPage', segment: 'sql-set', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/sql/sql.module#SqlPageModule', name: 'SqlPage', segment: 'sql', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-add-edit-modal/table-add-edit-modal.module#TableAddEditModalPageModule', name: 'TableAddEditModalPage', segment: 'table-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-by-column/table-by-column.module#TableByColumnPageModule', name: 'TableByColumnPage', segment: 'table-by-column', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/table-column-ext-select-modal/table-column-ext-select-modal.module#TableColumnExtSelectModalPageModule', name: 'TableColumnExtSelectModalPage', segment: 'table-column-ext-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-copy-modal/table-copy-modal.module#TableCopyModalPageModule', name: 'TableCopyModalPage', segment: 'table-copy-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/table-column-ext-select-modal/table-column-ext-select-modal.module#TableColumnExtSelectModalPageModule', name: 'TableColumnExtSelectModalPage', segment: 'table-column-ext-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-detail-add-edit-modal/table-detail-add-edit-modal.module#TableDetailAddEditModalPageModule', name: 'TableDetailAddEditModalPage', segment: 'table-detail-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-detail-detail/table-detail-detail.module#TableDetailDetailPageModule', name: 'TableDetailDetailPage', segment: 'table-detail-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-detail-edit-modal/table-detail-edit-modal.module#TableDetailEditModalPageModule', name: 'TableDetailEditModalPage', segment: 'table-detail-edit-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/table-detail-ext-detail/table-detail-ext-detail.module#TableDetailExtDetailPageModule', name: 'TableDetailExtDetailPage', segment: 'table-detail-ext-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/table-detail-ext-select-modal/table-detail-ext-select-modal.module#TableDetailExtSelectModalPageModule', name: 'TableDetailExtSelectModalPage', segment: 'table-detail-ext-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-detail-ext/table-detail-ext.module#TableDetailExtPageModule', name: 'TableDetailExtPage', segment: 'table-detail-ext', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/table-detail-ext-detail/table-detail-ext-detail.module#TableDetailExtDetailPageModule', name: 'TableDetailExtDetailPage', segment: 'table-detail-ext-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-detail-fk/table-detail-fk.module#TableDetailFkPageModule', name: 'TableDetailFkPage', segment: 'table-detail-fk', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/table-detail-ext-select-modal/table-detail-ext-select-modal.module#TableDetailExtSelectModalPageModule', name: 'TableDetailExtSelectModalPage', segment: 'table-detail-ext-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-detail-select-modal/table-detail-select-modal.module#TableDetailSelectModalPageModule', name: 'TableDetailSelectModalPage', segment: 'table-detail-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/table-detail/table-detail.module#TableDetailPageModule', name: 'TableDetailPage', segment: 'table-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/table-exec-log-detail/table-exec-log-detail.module#TableExecLogDetailPageModule', name: 'TableExecLogDetailPage', segment: 'table-exec-log-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-exec-log/table-exec-log.module#TableExecLogPageModule', name: 'TableExecLogPage', segment: 'table-exec-log', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/table-exec-log-detail/table-exec-log-detail.module#TableExecLogDetailPageModule', name: 'TableExecLogDetailPage', segment: 'table-exec-log-detail', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/table-detail/table-detail.module#TableDetailPageModule', name: 'TableDetailPage', segment: 'table-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-ext/table-ext.module#TableExtPageModule', name: 'TableExtPage', segment: 'table-ext', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/table-ext-select-modal/table-ext-select-modal.module#TableExtSelectModalPageModule', name: 'TableExtSelectModalPage', segment: 'table-ext-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/table-fk/table-fk.module#TableFkPageModule', name: 'TableFkPage', segment: 'table-fk', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/sql-set-add-edit-modal/sql-set-add-edit-modal.module#SqlSetAddEditModalPageModule', name: 'SqlSetAddEditModalPage', segment: 'sql-set-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table/table.module#TablePageModule', name: 'TablePage', segment: 'table', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/un-zip-file-loop-pwd-add-edit-modal/un-zip-file-loop-pwd-add-edit-modal.module#UnZipFileLoopPwdAddEditModalPageModule', name: 'UnZipFileLoopPwdAddEditModalPage', segment: 'un-zip-file-loop-pwd-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/table-ext-select-modal/table-ext-select-modal.module#TableExtSelectModalPageModule', name: 'TableExtSelectModalPage', segment: 'table-ext-select-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table-select-modal/table-select-modal.module#TableSelectModalPageModule', name: 'TableSelectModalPage', segment: 'table-select-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/table-fk/table-fk.module#TableFkPageModule', name: 'TableFkPage', segment: 'table-fk', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table2-table/table2-table.module#Table2TablePageModule', name: 'Table2TablePage', segment: 'table2-table', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/un-zip-file-pwd-add-edit/un-zip-file-pwd-add-edit.module#UnZipFilePwdAddEditPageModule', name: 'UnZipFilePwdAddEditPage', segment: 'un-zip-file-pwd-add-edit', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/update-value-sql/update-value-sql.module#UpdateValueSqlPageModule', name: 'UpdateValueSqlPage', segment: 'update-value-sql', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/un-zip-file-loop-pwd/un-zip-file-loop-pwd.module#UnZipFileLoopPwdPageModule', name: 'UnZipFileLoopPwdPage', segment: 'un-zip-file-loop-pwd', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/url-management/url-management.module#UrlManagementPageModule', name: 'UrlManagementPage', segment: 'url-management', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/user-permission/user-permission.module#UserPermissionPageModule', name: 'UserPermissionPage', segment: 'user-permission', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/table2-table-add-edit-modal/table2-table-add-edit-modal.module#Table2TableAddEditModalPageModule', name: 'Table2TableAddEditModalPage', segment: 'table2-table-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/un-zip-file-loop-pwd-add-edit-modal/un-zip-file-loop-pwd-add-edit-modal.module#UnZipFileLoopPwdAddEditModalPageModule', name: 'UnZipFileLoopPwdAddEditModalPage', segment: 'un-zip-file-loop-pwd-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/un-zip-file-pwd-add-edit/un-zip-file-pwd-add-edit.module#UnZipFilePwdAddEditPageModule', name: 'UnZipFilePwdAddEditPage', segment: 'un-zip-file-pwd-add-edit', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/un-zip-file-loop-pwd/un-zip-file-loop-pwd.module#UnZipFileLoopPwdPageModule', name: 'UnZipFileLoopPwdPage', segment: 'un-zip-file-loop-pwd', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/update-value-sql/update-value-sql.module#UpdateValueSqlPageModule', name: 'UpdateValueSqlPage', segment: 'update-value-sql', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/url-management/url-management.module#UrlManagementPageModule', name: 'UrlManagementPage', segment: 'url-management', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/user-add-edit-modal/user-add-edit-modal.module#UserAddEditModalPageModule', name: 'UserAddEditModalPage', segment: 'user-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/user-permission/user-permission.module#UserPermissionPageModule', name: 'UserPermissionPage', segment: 'user-permission', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user-role-modal/user-role-modal.module#UserRoleModalPageModule', name: 'UserRoleModalPage', segment: 'user-role-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user-role/user-role.module#UserRolePageModule', name: 'UserRolePage', segment: 'user-role', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user/user.module#UserPageModule', name: 'UserPage', segment: 'user', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/warning-check-add-edit-modal/warning-check-add-edit-modal.module#WarningCheckAddEditModalPageModule', name: 'WarningCheckAddEditModalPage', segment: 'warning-check-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/warning-check-select-modal/warning-check-select-modal.module#WarningCheckSelectModalPageModule', name: 'WarningCheckSelectModalPage', segment: 'warning-check-select-modal', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/warning-check/warning-check.module#WarningCheckPageModule', name: 'WarningCheckPage', segment: 'warning-check', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/zip-file-loop-pwd-add-edit-modal/zip-file-loop-pwd-add-edit-modal.module#ZipFileLoopPwdAddEditModalPageModule', name: 'ZipFileLoopPwdAddEditModalPage', segment: 'zip-file-loop-pwd-add-edit-modal', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/zip-file-loop-pwd/zip-file-loop-pwd.module#ZipFileLoopPwdPageModule', name: 'ZipFileLoopPwdPage', segment: 'zip-file-loop-pwd', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/user-add-edit-modal/user-add-edit-modal.module#UserAddEditModalPageModule', name: 'UserAddEditModalPage', segment: 'user-add-edit-modal', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/warning-check/warning-check.module#WarningCheckPageModule', name: 'WarningCheckPage', segment: 'warning-check', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/zip-file-pwd-add-edit/zip-file-pwd-add-edit.module#ZipFilePwdAddEditPageModule', name: 'ZipFilePwdAddEditPage', segment: 'zip-file-pwd-add-edit', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -11021,330 +11036,6 @@ var RunJobResponse = /** @class */ (function (_super) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableExtListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableExtViewModel__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var TableExtListResponse = /** @class */ (function (_super) {
-    __extends(TableExtListResponse, _super);
-    function TableExtListResponse(obj) {
-        var _this = _super.call(this, obj) || this;
-        _this.Model = [];
-        _this.Message = obj.Messag;
-        _this.DidError = obj.DidError;
-        _this.ErrorMessage = (obj && obj.ErrorMessage) || null;
-        _this.PageNumber = obj.PageNumber;
-        _this.PageSize = obj.PageSize;
-        _this.PageRows = obj.PageRows;
-        _this.TotalPages = obj.TotalPages;
-        _this.TotalRows = obj.TotalRows;
-        if (_this.DidError === false) {
-            obj.Model.forEach(function (data) {
-                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableExtViewModel__["a" /* TableExtViewModel */]();
-                item.schemaname = data.schemaname;
-                item.tablename = data.tablename;
-                item.tablefullname = data.schemaname + '.' + data.tablename;
-                item.tablecname = (data && data.tablecname) || null;
-                item.category = (data && data.category) || null;
-                item.tablecname_flag = (data && data.tablecname_flag) || null;
-                item.category_flag = (data && data.category_flag) || null;
-                item.tablecname_glossary = (data && data.tablecname_glossary) || null;
-                item.ttype = data.ttype;
-                item.tablecname_sql = (data && data.tablecname_sql) || null;
-                item.category_sql = (data && data.category_sql) || null;
-                item.table_set_sql = (data && data.table_set_sql) || null;
-                item.copy_table_set_sql = (data && data.copy_table_set_sql) || null;
-                item.quote_column_cnt = data.quote_column_cnt;
-                if (item.quote_column_cnt > 0)
-                    item.quote_column_color = "danger";
-                else
-                    item.quote_column_color = "light";
-                item.mask_column_cnt = data.mask_column_cnt;
-                if (item.mask_column_cnt > 0)
-                    item.mask_column_color = "danger";
-                else
-                    item.mask_column_color = "light";
-                _this.Model.push(item);
-            }) || null;
-        }
-        return _this;
-    }
-    return TableExtListResponse;
-}(__WEBPACK_IMPORTED_MODULE_1__ListModelResponse__["a" /* ListModelResponse */]));
-
-//# sourceMappingURL=TableExtListResponse.js.map
-
-/***/ }),
-/* 372 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableExtResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_TableExtViewModel__ = __webpack_require__(205);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var TableExtResponse = /** @class */ (function (_super) {
-    __extends(TableExtResponse, _super);
-    function TableExtResponse(obj) {
-        var _this = _super.call(this, obj) || this;
-        _this.Message = obj.Message;
-        _this.DidError = obj.DidError;
-        _this.ErrorMessage = obj.ErrorMessage;
-        if (_this.DidError === false) {
-            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_TableExtViewModel__["a" /* TableExtViewModel */]();
-            _this.Model.schemaname = obj.Model.schemaname;
-            _this.Model.tablename = obj.Model.tablename;
-            _this.Model.tablefullname = obj.Model.schemaname + '.' + obj.Model.tablename;
-            _this.Model.tablecname = obj && obj.Model.tablecname || null;
-            _this.Model.category = obj && obj.Model.category || null;
-            _this.Model.tablecname_flag = obj && obj.Model.tablecname_flag || null;
-            _this.Model.category_flag = obj && obj.Model.category_flag || null;
-            _this.Model.tablecname_glossary = obj && obj.Model.tablecname_glossary || null;
-            _this.Model.ttype = obj.Model.ttype;
-            _this.Model.tablecname_sql = obj && obj.Model.tablecname_sql || null;
-            _this.Model.category_sql = obj && obj.Model.category_sql || null;
-            _this.Model.table_set_sql = obj && obj.Model.table_set_sql || null;
-            _this.Model.copy_table_set_sql = obj && obj.Model.copy_table_set_sql || null;
-        }
-        return _this;
-    }
-    return TableExtResponse;
-}(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
-
-//# sourceMappingURL=TableExtResponse.js.map
-
-/***/ }),
-/* 373 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableCreateExtResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_TableCreateExtViewModel__ = __webpack_require__(374);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var TableCreateExtResponse = /** @class */ (function (_super) {
-    __extends(TableCreateExtResponse, _super);
-    function TableCreateExtResponse(obj) {
-        var _this = _super.call(this, obj) || this;
-        _this.Message = obj.Message;
-        _this.DidError = obj.DidError;
-        _this.ErrorMessage = obj.ErrorMessage;
-        if (_this.DidError === false) {
-            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_TableCreateExtViewModel__["a" /* TableCreateExtViewModel */]();
-            _this.Model.schemaname = obj.Model.schemaname; //結構描述
-            _this.Model.tablename = obj.Model.tablename; //資料表
-            _this.Model.create_sql = (obj && obj.Model.create_sql) || null; //create_sql
-            _this.Model.create_fk_sql = (obj && obj.Model.create_fk_sql) || null; //create_fk_sql
-            _this.Model.create_depend_fk_sql =
-                (obj && obj.Model.create_depend_fk_sql) || null; //create_depend_fk_sql
-            _this.Model.drop_depend_fk_sql =
-                (obj && obj.Model.drop_depend_fk_sql) || null; //drop_depend_fk_sql
-            _this.Model.create_index_sql =
-                (obj && obj.Model.create_index_sql) || null; //drop_depend_fk_sql
-            _this.Model.create_date = (obj && obj.Model.create_date) || null; //建立日期
-            _this.Model.modify_date = (obj && obj.Model.modify_date) || null; //modify_date
-        }
-        return _this;
-    }
-    return TableCreateExtResponse;
-}(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
-
-//# sourceMappingURL=TableCreateExtResponse.js.map
-
-/***/ }),
-/* 374 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableCreateExtViewModel; });
-var TableCreateExtViewModel = /** @class */ (function () {
-    function TableCreateExtViewModel() {
-    }
-    return TableCreateExtViewModel;
-}());
-
-//# sourceMappingURL=TableCreateExtViewModel.js.map
-
-/***/ }),
-/* 375 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableFKListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableFKViewModel__ = __webpack_require__(376);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var TableFKListResponse = /** @class */ (function (_super) {
-    __extends(TableFKListResponse, _super);
-    function TableFKListResponse(obj) {
-        var _this = _super.call(this, obj) || this;
-        _this.Model = [];
-        _this.Message = obj.Messag;
-        _this.DidError = obj.DidError;
-        _this.ErrorMessage = (obj && obj.ErrorMessage) || null;
-        _this.PageNumber = obj.PageNumber;
-        _this.PageSize = obj.PageSize;
-        _this.PageRows = obj.PageRows;
-        _this.TotalPages = obj.TotalPages;
-        _this.TotalRows = obj.TotalRows;
-        if (_this.DidError === false) {
-            obj.Model.forEach(function (data) {
-                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableFKViewModel__["a" /* TableFKViewModel */]();
-                item.fk_cons = data.fk_cons; //相依關聯限制
-                item.schemaname = data.schemaname; //結構描述
-                item.tablename = data && data.tablename || null; //資料表
-                item.fk_schemaname = data.fk_schemaname; //相依結構描述
-                item.fk_tablename = data.fk_tablename; //相依資料表
-                item.delete_action = data && data.delete_action || null; //刪除動作
-                item.update_action = data && data.update_action || null; //更新動作
-                item.relation = data && data.relation || null; //資料表相依關係
-                item.tablefullname = data && data.schemaname + "." + data.tablename; //資料表全名
-                item.fk_tablefullname = data && data.fk_schemaname + "." + data.fk_tablename; //相依資料表全名
-                _this.Model.push(item);
-            }) || null;
-        }
-        return _this;
-    }
-    return TableFKListResponse;
-}(__WEBPACK_IMPORTED_MODULE_1__ListModelResponse__["a" /* ListModelResponse */]));
-
-//# sourceMappingURL=TableFKListResponse.js.map
-
-/***/ }),
-/* 376 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableFKViewModel; });
-var TableFKViewModel = /** @class */ (function () {
-    function TableFKViewModel() {
-    }
-    return TableFKViewModel;
-}());
-
-//# sourceMappingURL=TableFKViewModel.js.map
-
-/***/ }),
-/* 377 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableDetailFKListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableDetailFKViewModel__ = __webpack_require__(378);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var TableDetailFKListResponse = /** @class */ (function (_super) {
-    __extends(TableDetailFKListResponse, _super);
-    function TableDetailFKListResponse(obj) {
-        var _this = _super.call(this, obj) || this;
-        _this.Model = [];
-        _this.Message = obj.Messag;
-        _this.DidError = obj.DidError;
-        _this.ErrorMessage = (obj && obj.ErrorMessage) || null;
-        _this.PageNumber = obj.PageNumber;
-        _this.PageSize = obj.PageSize;
-        _this.PageRows = obj.PageRows;
-        _this.TotalPages = obj.TotalPages;
-        _this.TotalRows = obj.TotalRows;
-        if (_this.DidError === false) {
-            obj.Model.forEach(function (data) {
-                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableDetailFKViewModel__["a" /* TableDetailFKViewModel */]();
-                item.fk_cons = data.fk_cons; //相依關聯限制
-                item.constraint_column_id = data.constraint_column_id; //相依欄位編號
-                item.schemaname = data.schemaname; //結構描述
-                item.tablename = data.tablename; //資料表
-                item.columnname = (data && data.columnname) || null; //欄位名稱
-                item.fk_schemaname = data.fk_schemaname; //相依結構描述
-                item.fk_tablename = data.fk_tablename; //相依資料表
-                item.fk_columnname = (data && data.fk_columnname) || null; //相依欄位
-                item.relation = (data && data.relation) || null; //資料表相依關係
-                item.tablefullname = data && data.schemaname + "." + data.tablename; //資料表全名
-                item.fk_tablefullname =
-                    data && data.fk_schemaname + "." + data.fk_tablename; //相依資料表全名
-                _this.Model.push(item);
-            }) || null;
-        }
-        return _this;
-    }
-    return TableDetailFKListResponse;
-}(__WEBPACK_IMPORTED_MODULE_1__ListModelResponse__["a" /* ListModelResponse */]));
-
-//# sourceMappingURL=TableDetailFKListResponse.js.map
-
-/***/ }),
-/* 378 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableDetailFKViewModel; });
-var TableDetailFKViewModel = /** @class */ (function () {
-    function TableDetailFKViewModel() {
-    }
-    return TableDetailFKViewModel;
-}());
-
-//# sourceMappingURL=TableDetailFKViewModel.js.map
-
-/***/ }),
-/* 379 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileManagementListResponse; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileManagementViewModel__ = __webpack_require__(129);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
@@ -11454,7 +11145,7 @@ var FileManagementListResponse = /** @class */ (function (_super) {
 //# sourceMappingURL=FileManagementListResponse.js.map
 
 /***/ }),
-/* 380 */
+/* 372 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -11553,6 +11244,330 @@ var FileManagementResponse = /** @class */ (function (_super) {
 }(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
 
 //# sourceMappingURL=FileManagementResponse.js.map
+
+/***/ }),
+/* 373 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableExtListResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableExtViewModel__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var TableExtListResponse = /** @class */ (function (_super) {
+    __extends(TableExtListResponse, _super);
+    function TableExtListResponse(obj) {
+        var _this = _super.call(this, obj) || this;
+        _this.Model = [];
+        _this.Message = obj.Messag;
+        _this.DidError = obj.DidError;
+        _this.ErrorMessage = (obj && obj.ErrorMessage) || null;
+        _this.PageNumber = obj.PageNumber;
+        _this.PageSize = obj.PageSize;
+        _this.PageRows = obj.PageRows;
+        _this.TotalPages = obj.TotalPages;
+        _this.TotalRows = obj.TotalRows;
+        if (_this.DidError === false) {
+            obj.Model.forEach(function (data) {
+                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableExtViewModel__["a" /* TableExtViewModel */]();
+                item.schemaname = data.schemaname;
+                item.tablename = data.tablename;
+                item.tablefullname = data.schemaname + '.' + data.tablename;
+                item.tablecname = (data && data.tablecname) || null;
+                item.category = (data && data.category) || null;
+                item.tablecname_flag = (data && data.tablecname_flag) || null;
+                item.category_flag = (data && data.category_flag) || null;
+                item.tablecname_glossary = (data && data.tablecname_glossary) || null;
+                item.ttype = data.ttype;
+                item.tablecname_sql = (data && data.tablecname_sql) || null;
+                item.category_sql = (data && data.category_sql) || null;
+                item.table_set_sql = (data && data.table_set_sql) || null;
+                item.copy_table_set_sql = (data && data.copy_table_set_sql) || null;
+                item.quote_column_cnt = data.quote_column_cnt;
+                if (item.quote_column_cnt > 0)
+                    item.quote_column_color = "danger";
+                else
+                    item.quote_column_color = "light";
+                item.mask_column_cnt = data.mask_column_cnt;
+                if (item.mask_column_cnt > 0)
+                    item.mask_column_color = "danger";
+                else
+                    item.mask_column_color = "light";
+                _this.Model.push(item);
+            }) || null;
+        }
+        return _this;
+    }
+    return TableExtListResponse;
+}(__WEBPACK_IMPORTED_MODULE_1__ListModelResponse__["a" /* ListModelResponse */]));
+
+//# sourceMappingURL=TableExtListResponse.js.map
+
+/***/ }),
+/* 374 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableExtResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_TableExtViewModel__ = __webpack_require__(205);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var TableExtResponse = /** @class */ (function (_super) {
+    __extends(TableExtResponse, _super);
+    function TableExtResponse(obj) {
+        var _this = _super.call(this, obj) || this;
+        _this.Message = obj.Message;
+        _this.DidError = obj.DidError;
+        _this.ErrorMessage = obj.ErrorMessage;
+        if (_this.DidError === false) {
+            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_TableExtViewModel__["a" /* TableExtViewModel */]();
+            _this.Model.schemaname = obj.Model.schemaname;
+            _this.Model.tablename = obj.Model.tablename;
+            _this.Model.tablefullname = obj.Model.schemaname + '.' + obj.Model.tablename;
+            _this.Model.tablecname = obj && obj.Model.tablecname || null;
+            _this.Model.category = obj && obj.Model.category || null;
+            _this.Model.tablecname_flag = obj && obj.Model.tablecname_flag || null;
+            _this.Model.category_flag = obj && obj.Model.category_flag || null;
+            _this.Model.tablecname_glossary = obj && obj.Model.tablecname_glossary || null;
+            _this.Model.ttype = obj.Model.ttype;
+            _this.Model.tablecname_sql = obj && obj.Model.tablecname_sql || null;
+            _this.Model.category_sql = obj && obj.Model.category_sql || null;
+            _this.Model.table_set_sql = obj && obj.Model.table_set_sql || null;
+            _this.Model.copy_table_set_sql = obj && obj.Model.copy_table_set_sql || null;
+        }
+        return _this;
+    }
+    return TableExtResponse;
+}(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
+
+//# sourceMappingURL=TableExtResponse.js.map
+
+/***/ }),
+/* 375 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableCreateExtResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_TableCreateExtViewModel__ = __webpack_require__(376);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var TableCreateExtResponse = /** @class */ (function (_super) {
+    __extends(TableCreateExtResponse, _super);
+    function TableCreateExtResponse(obj) {
+        var _this = _super.call(this, obj) || this;
+        _this.Message = obj.Message;
+        _this.DidError = obj.DidError;
+        _this.ErrorMessage = obj.ErrorMessage;
+        if (_this.DidError === false) {
+            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_TableCreateExtViewModel__["a" /* TableCreateExtViewModel */]();
+            _this.Model.schemaname = obj.Model.schemaname; //結構描述
+            _this.Model.tablename = obj.Model.tablename; //資料表
+            _this.Model.create_sql = (obj && obj.Model.create_sql) || null; //create_sql
+            _this.Model.create_fk_sql = (obj && obj.Model.create_fk_sql) || null; //create_fk_sql
+            _this.Model.create_depend_fk_sql =
+                (obj && obj.Model.create_depend_fk_sql) || null; //create_depend_fk_sql
+            _this.Model.drop_depend_fk_sql =
+                (obj && obj.Model.drop_depend_fk_sql) || null; //drop_depend_fk_sql
+            _this.Model.create_index_sql =
+                (obj && obj.Model.create_index_sql) || null; //drop_depend_fk_sql
+            _this.Model.create_date = (obj && obj.Model.create_date) || null; //建立日期
+            _this.Model.modify_date = (obj && obj.Model.modify_date) || null; //modify_date
+        }
+        return _this;
+    }
+    return TableCreateExtResponse;
+}(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
+
+//# sourceMappingURL=TableCreateExtResponse.js.map
+
+/***/ }),
+/* 376 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableCreateExtViewModel; });
+var TableCreateExtViewModel = /** @class */ (function () {
+    function TableCreateExtViewModel() {
+    }
+    return TableCreateExtViewModel;
+}());
+
+//# sourceMappingURL=TableCreateExtViewModel.js.map
+
+/***/ }),
+/* 377 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableFKListResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableFKViewModel__ = __webpack_require__(378);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var TableFKListResponse = /** @class */ (function (_super) {
+    __extends(TableFKListResponse, _super);
+    function TableFKListResponse(obj) {
+        var _this = _super.call(this, obj) || this;
+        _this.Model = [];
+        _this.Message = obj.Messag;
+        _this.DidError = obj.DidError;
+        _this.ErrorMessage = (obj && obj.ErrorMessage) || null;
+        _this.PageNumber = obj.PageNumber;
+        _this.PageSize = obj.PageSize;
+        _this.PageRows = obj.PageRows;
+        _this.TotalPages = obj.TotalPages;
+        _this.TotalRows = obj.TotalRows;
+        if (_this.DidError === false) {
+            obj.Model.forEach(function (data) {
+                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableFKViewModel__["a" /* TableFKViewModel */]();
+                item.fk_cons = data.fk_cons; //相依關聯限制
+                item.schemaname = data.schemaname; //結構描述
+                item.tablename = data && data.tablename || null; //資料表
+                item.fk_schemaname = data.fk_schemaname; //相依結構描述
+                item.fk_tablename = data.fk_tablename; //相依資料表
+                item.delete_action = data && data.delete_action || null; //刪除動作
+                item.update_action = data && data.update_action || null; //更新動作
+                item.relation = data && data.relation || null; //資料表相依關係
+                item.tablefullname = data && data.schemaname + "." + data.tablename; //資料表全名
+                item.fk_tablefullname = data && data.fk_schemaname + "." + data.fk_tablename; //相依資料表全名
+                _this.Model.push(item);
+            }) || null;
+        }
+        return _this;
+    }
+    return TableFKListResponse;
+}(__WEBPACK_IMPORTED_MODULE_1__ListModelResponse__["a" /* ListModelResponse */]));
+
+//# sourceMappingURL=TableFKListResponse.js.map
+
+/***/ }),
+/* 378 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableFKViewModel; });
+var TableFKViewModel = /** @class */ (function () {
+    function TableFKViewModel() {
+    }
+    return TableFKViewModel;
+}());
+
+//# sourceMappingURL=TableFKViewModel.js.map
+
+/***/ }),
+/* 379 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableDetailFKListResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableDetailFKViewModel__ = __webpack_require__(380);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var TableDetailFKListResponse = /** @class */ (function (_super) {
+    __extends(TableDetailFKListResponse, _super);
+    function TableDetailFKListResponse(obj) {
+        var _this = _super.call(this, obj) || this;
+        _this.Model = [];
+        _this.Message = obj.Messag;
+        _this.DidError = obj.DidError;
+        _this.ErrorMessage = (obj && obj.ErrorMessage) || null;
+        _this.PageNumber = obj.PageNumber;
+        _this.PageSize = obj.PageSize;
+        _this.PageRows = obj.PageRows;
+        _this.TotalPages = obj.TotalPages;
+        _this.TotalRows = obj.TotalRows;
+        if (_this.DidError === false) {
+            obj.Model.forEach(function (data) {
+                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_TableDetailFKViewModel__["a" /* TableDetailFKViewModel */]();
+                item.fk_cons = data.fk_cons; //相依關聯限制
+                item.constraint_column_id = data.constraint_column_id; //相依欄位編號
+                item.schemaname = data.schemaname; //結構描述
+                item.tablename = data.tablename; //資料表
+                item.columnname = (data && data.columnname) || null; //欄位名稱
+                item.fk_schemaname = data.fk_schemaname; //相依結構描述
+                item.fk_tablename = data.fk_tablename; //相依資料表
+                item.fk_columnname = (data && data.fk_columnname) || null; //相依欄位
+                item.relation = (data && data.relation) || null; //資料表相依關係
+                item.tablefullname = data && data.schemaname + "." + data.tablename; //資料表全名
+                item.fk_tablefullname =
+                    data && data.fk_schemaname + "." + data.fk_tablename; //相依資料表全名
+                _this.Model.push(item);
+            }) || null;
+        }
+        return _this;
+    }
+    return TableDetailFKListResponse;
+}(__WEBPACK_IMPORTED_MODULE_1__ListModelResponse__["a" /* ListModelResponse */]));
+
+//# sourceMappingURL=TableDetailFKListResponse.js.map
+
+/***/ }),
+/* 380 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableDetailFKViewModel; });
+var TableDetailFKViewModel = /** @class */ (function () {
+    function TableDetailFKViewModel() {
+    }
+    return TableDetailFKViewModel;
+}());
+
+//# sourceMappingURL=TableDetailFKViewModel.js.map
 
 /***/ }),
 /* 381 */
@@ -12056,76 +12071,6 @@ var ProgramPageResponse = /** @class */ (function (_super) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ListModelResponse__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserViewModel__ = __webpack_require__(50);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-/**
- * 回傳IQueryable物件內容及訊息
- *
- * @public
- * @class ListModelResponse
- * @implements  IListModelResponse
- * @param   {Function}    [name]
- */
-var UserListResponse = /** @class */ (function (_super) {
-    __extends(UserListResponse, _super);
-    function UserListResponse(obj) {
-        var _this = _super.call(this, obj) || this;
-        _this.Model = [];
-        _this.Message = obj.Messag;
-        _this.DidError = obj.DidError;
-        _this.ErrorMessage = (obj && obj.ErrorMessage) || null;
-        _this.PageNumber = obj.PageNumber;
-        _this.PageSize = obj.PageSize;
-        _this.PageRows = obj.PageRows;
-        _this.TotalPages = obj.TotalPages;
-        _this.TotalRows = obj.TotalRows;
-        if (obj.DidError === false) {
-            obj.Model.forEach(function (data) {
-                var item = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserViewModel__["a" /* UserViewModel */]();
-                item.userName = data.userName;
-                item.roleName = [];
-                // item.PermissionViewModel=[];
-                if (data.roleName != null) {
-                    data.roleName.forEach(function (element) {
-                        item.roleName.push(element);
-                    });
-                }
-                // if(data.permission_no!=null)
-                // {
-                //   data.permission_no.forEach(element => {
-                //     item.permission_no.push(element);
-                //   });
-                // }
-                item.Email = data.Email;
-                item.password = data.password;
-                _this.Model.push(item);
-            }) || null;
-        }
-        return _this;
-    }
-    return UserListResponse;
-}(__WEBPACK_IMPORTED_MODULE_0__ListModelResponse__["a" /* ListModelResponse */]));
-
-//# sourceMappingURL=UserListResponse.js.map
-
-/***/ }),
-/* 390 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JobSchListResponse; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_JobSchViewModel__ = __webpack_require__(293);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
@@ -12203,7 +12148,7 @@ var JobSchListResponse = /** @class */ (function (_super) {
 //# sourceMappingURL=JobSchListResponse.js.map
 
 /***/ }),
-/* 391 */
+/* 390 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -12257,6 +12202,76 @@ var JobSchResponse = /** @class */ (function (_super) {
 }(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
 
 //# sourceMappingURL=JobSchResponse.js.map
+
+/***/ }),
+/* 391 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserListResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ListModelResponse__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserViewModel__ = __webpack_require__(50);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+/**
+ * 回傳IQueryable物件內容及訊息
+ *
+ * @public
+ * @class ListModelResponse
+ * @implements  IListModelResponse
+ * @param   {Function}    [name]
+ */
+var UserListResponse = /** @class */ (function (_super) {
+    __extends(UserListResponse, _super);
+    function UserListResponse(obj) {
+        var _this = _super.call(this, obj) || this;
+        _this.Model = [];
+        _this.Message = obj.Messag;
+        _this.DidError = obj.DidError;
+        _this.ErrorMessage = (obj && obj.ErrorMessage) || null;
+        _this.PageNumber = obj.PageNumber;
+        _this.PageSize = obj.PageSize;
+        _this.PageRows = obj.PageRows;
+        _this.TotalPages = obj.TotalPages;
+        _this.TotalRows = obj.TotalRows;
+        if (obj.DidError === false) {
+            obj.Model.forEach(function (data) {
+                var item = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserViewModel__["a" /* UserViewModel */]();
+                item.userName = data.userName;
+                item.roleName = [];
+                // item.PermissionViewModel=[];
+                if (data.roleName != null) {
+                    data.roleName.forEach(function (element) {
+                        item.roleName.push(element);
+                    });
+                }
+                // if(data.permission_no!=null)
+                // {
+                //   data.permission_no.forEach(element => {
+                //     item.permission_no.push(element);
+                //   });
+                // }
+                item.Email = data.Email;
+                item.password = data.password;
+                _this.Model.push(item);
+            }) || null;
+        }
+        return _this;
+    }
+    return UserListResponse;
+}(__WEBPACK_IMPORTED_MODULE_0__ListModelResponse__["a" /* ListModelResponse */]));
+
+//# sourceMappingURL=UserListResponse.js.map
 
 /***/ }),
 /* 392 */
@@ -12871,106 +12886,9 @@ var ProgramPageMenuResponse = /** @class */ (function (_super) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuoteColumnListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_QuoteColumnViewModel__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var QuoteColumnListResponse = /** @class */ (function (_super) {
-    __extends(QuoteColumnListResponse, _super);
-    function QuoteColumnListResponse(obj) {
-        var _this = _super.call(this, obj) || this;
-        _this.Model = [];
-        _this.Message = obj.Messag;
-        _this.DidError = obj.DidError;
-        _this.ErrorMessage = (obj && obj.ErrorMessage) || null;
-        _this.PageNumber = obj.PageNumber;
-        _this.PageSize = obj.PageSize;
-        _this.PageRows = obj.PageRows;
-        _this.TotalPages = obj.TotalPages;
-        _this.TotalRows = obj.TotalRows;
-        if (_this.DidError === false) {
-            obj.Model.forEach(function (data) {
-                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_QuoteColumnViewModel__["a" /* QuoteColumnViewModel */]();
-                item.schemaname = data.schemaname;
-                item.tablename = data.tablename;
-                item.columnname = data.columnname;
-                item.creator = data.creator;
-                item.create_time = data.create_time;
-                item.modifier = data.modifier;
-                item.last_update_time = data.last_update_time;
-                _this.Model.push(item);
-            }) || null;
-        }
-        return _this;
-    }
-    return QuoteColumnListResponse;
-}(__WEBPACK_IMPORTED_MODULE_1__ListModelResponse__["a" /* ListModelResponse */]));
-
-//# sourceMappingURL=QuoteColumnListResponse.js.map
-
-/***/ }),
-/* 403 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuoteColumnResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_QuoteColumnViewModel__ = __webpack_require__(143);
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-
-
-var QuoteColumnResponse = /** @class */ (function (_super) {
-    __extends(QuoteColumnResponse, _super);
-    function QuoteColumnResponse(obj) {
-        var _this = _super.call(this, obj) || this;
-        _this.Message = obj.Message;
-        _this.DidError = obj.DidError;
-        _this.ErrorMessage = obj.ErrorMessage;
-        if (_this.DidError === false) {
-            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_QuoteColumnViewModel__["a" /* QuoteColumnViewModel */]();
-            _this.Model.schemaname = obj.Model.schemaname;
-            _this.Model.tablename = obj.Model.tablename;
-            _this.Model.columnname = obj.Model.columnname;
-            _this.Model.creator = obj.Model.creator;
-            _this.Model.create_time = obj.Model.create_time;
-            _this.Model.modifier = obj.Model.modifier;
-            _this.Model.last_update_time = obj.Model.last_update_time;
-        }
-        return _this;
-    }
-    return QuoteColumnResponse;
-}(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
-
-//# sourceMappingURL=QuoteColumnResponse.js.map
-
-/***/ }),
-/* 404 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RolePermissionListResponse; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ListModelResponse__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_RolePermissionViewModel__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_RolePermissionViewModel__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ViewModel_PermissionViewModel__ = __webpack_require__(66);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -13035,13 +12953,13 @@ var RolePermissionListResponse = /** @class */ (function (_super) {
 //# sourceMappingURL=RolePermissionListResponse.js.map
 
 /***/ }),
-/* 405 */
+/* 403 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RolePermissionResponse; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_RolePermissionViewModel__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_RolePermissionViewModel__ = __webpack_require__(143);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -13078,13 +12996,13 @@ var RolePermissionResponse = /** @class */ (function (_super) {
 //# sourceMappingURL=RolePermissionResponse.js.map
 
 /***/ }),
-/* 406 */
+/* 404 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserRoleListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ListModelResponse__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserRoleViewModel__ = __webpack_require__(137);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuoteColumnListResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_QuoteColumnViewModel__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -13097,17 +13015,9 @@ var __extends = (this && this.__extends) || (function () {
 })();
 
 
-/**
- * 回傳IQueryable物件內容及訊息
- *
- * @public
- * @class ListModelResponse
- * @implements  IListModelResponse
- * @param   {Function}    [name]
- */
-var UserRoleListResponse = /** @class */ (function (_super) {
-    __extends(UserRoleListResponse, _super);
-    function UserRoleListResponse(obj) {
+var QuoteColumnListResponse = /** @class */ (function (_super) {
+    __extends(QuoteColumnListResponse, _super);
+    function QuoteColumnListResponse(obj) {
         var _this = _super.call(this, obj) || this;
         _this.Model = [];
         _this.Message = obj.Messag;
@@ -13118,29 +13028,34 @@ var UserRoleListResponse = /** @class */ (function (_super) {
         _this.PageRows = obj.PageRows;
         _this.TotalPages = obj.TotalPages;
         _this.TotalRows = obj.TotalRows;
-        if (obj.DidError === false) {
+        if (_this.DidError === false) {
             obj.Model.forEach(function (data) {
-                var item = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserRoleViewModel__["a" /* UserRoleViewModel */]();
-                item.userName = data.userName;
-                item.roleName = data.roleName;
+                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_QuoteColumnViewModel__["a" /* QuoteColumnViewModel */]();
+                item.schemaname = data.schemaname;
+                item.tablename = data.tablename;
+                item.columnname = data.columnname;
+                item.creator = data.creator;
+                item.create_time = data.create_time;
+                item.modifier = data.modifier;
+                item.last_update_time = data.last_update_time;
                 _this.Model.push(item);
             }) || null;
         }
         return _this;
     }
-    return UserRoleListResponse;
-}(__WEBPACK_IMPORTED_MODULE_0__ListModelResponse__["a" /* ListModelResponse */]));
+    return QuoteColumnListResponse;
+}(__WEBPACK_IMPORTED_MODULE_1__ListModelResponse__["a" /* ListModelResponse */]));
 
-//# sourceMappingURL=UserRoleListResponse.js.map
+//# sourceMappingURL=QuoteColumnListResponse.js.map
 
 /***/ }),
-/* 407 */
+/* 405 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserRoleResponse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuoteColumnResponse; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserRoleViewModel__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_QuoteColumnViewModel__ = __webpack_require__(144);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -13153,27 +13068,32 @@ var __extends = (this && this.__extends) || (function () {
 })();
 
 
-var UserRoleResponse = /** @class */ (function (_super) {
-    __extends(UserRoleResponse, _super);
-    function UserRoleResponse(obj) {
+var QuoteColumnResponse = /** @class */ (function (_super) {
+    __extends(QuoteColumnResponse, _super);
+    function QuoteColumnResponse(obj) {
         var _this = _super.call(this, obj) || this;
         _this.Message = obj.Message;
         _this.DidError = obj.DidError;
         _this.ErrorMessage = obj.ErrorMessage;
         if (_this.DidError === false) {
-            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserRoleViewModel__["a" /* UserRoleViewModel */]();
-            _this.Model.userName = obj.Model.userName;
-            _this.Model.roleName = obj.Model.roleName;
+            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_QuoteColumnViewModel__["a" /* QuoteColumnViewModel */]();
+            _this.Model.schemaname = obj.Model.schemaname;
+            _this.Model.tablename = obj.Model.tablename;
+            _this.Model.columnname = obj.Model.columnname;
+            _this.Model.creator = obj.Model.creator;
+            _this.Model.create_time = obj.Model.create_time;
+            _this.Model.modifier = obj.Model.modifier;
+            _this.Model.last_update_time = obj.Model.last_update_time;
         }
         return _this;
     }
-    return UserRoleResponse;
+    return QuoteColumnResponse;
 }(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
 
-//# sourceMappingURL=UserRoleResponse.js.map
+//# sourceMappingURL=QuoteColumnResponse.js.map
 
 /***/ }),
-/* 408 */
+/* 406 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -13229,6 +13149,101 @@ var SchListResponse = /** @class */ (function (_super) {
 }(__WEBPACK_IMPORTED_MODULE_0__ListModelResponse__["a" /* ListModelResponse */]));
 
 //# sourceMappingURL=SchListResponse.js.map
+
+/***/ }),
+/* 407 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserRoleListResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ListModelResponse__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserRoleViewModel__ = __webpack_require__(137);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+/**
+ * 回傳IQueryable物件內容及訊息
+ *
+ * @public
+ * @class ListModelResponse
+ * @implements  IListModelResponse
+ * @param   {Function}    [name]
+ */
+var UserRoleListResponse = /** @class */ (function (_super) {
+    __extends(UserRoleListResponse, _super);
+    function UserRoleListResponse(obj) {
+        var _this = _super.call(this, obj) || this;
+        _this.Model = [];
+        _this.Message = obj.Messag;
+        _this.DidError = obj.DidError;
+        _this.ErrorMessage = (obj && obj.ErrorMessage) || null;
+        _this.PageNumber = obj.PageNumber;
+        _this.PageSize = obj.PageSize;
+        _this.PageRows = obj.PageRows;
+        _this.TotalPages = obj.TotalPages;
+        _this.TotalRows = obj.TotalRows;
+        if (obj.DidError === false) {
+            obj.Model.forEach(function (data) {
+                var item = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserRoleViewModel__["a" /* UserRoleViewModel */]();
+                item.userName = data.userName;
+                item.roleName = data.roleName;
+                _this.Model.push(item);
+            }) || null;
+        }
+        return _this;
+    }
+    return UserRoleListResponse;
+}(__WEBPACK_IMPORTED_MODULE_0__ListModelResponse__["a" /* ListModelResponse */]));
+
+//# sourceMappingURL=UserRoleListResponse.js.map
+
+/***/ }),
+/* 408 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserRoleResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserRoleViewModel__ = __webpack_require__(137);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var UserRoleResponse = /** @class */ (function (_super) {
+    __extends(UserRoleResponse, _super);
+    function UserRoleResponse(obj) {
+        var _this = _super.call(this, obj) || this;
+        _this.Message = obj.Message;
+        _this.DidError = obj.DidError;
+        _this.ErrorMessage = obj.ErrorMessage;
+        if (_this.DidError === false) {
+            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_UserRoleViewModel__["a" /* UserRoleViewModel */]();
+            _this.Model.userName = obj.Model.userName;
+            _this.Model.roleName = obj.Model.roleName;
+        }
+        return _this;
+    }
+    return UserRoleResponse;
+}(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
+
+//# sourceMappingURL=UserRoleResponse.js.map
 
 /***/ }),
 /* 409 */

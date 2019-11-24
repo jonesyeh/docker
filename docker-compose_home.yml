@@ -1,0 +1,42 @@
+version: '3.3'
+
+services:
+  
+  sbpdb:
+    image: jonesyeh/mssql-2017-dev-sqlfile
+    env_file:
+      - db_lab.env
+    volumes:
+      - c:\database\sbp:c:\mssql
+    hostname: sbpdb
+    networks:
+       docker:
+            #ipv4_address: 192.168.0.23
+      
+  sbpwebapi:
+    image: jonesyeh/sbpwebapi
+    env_file:
+      - webapi.env
+    volumes:
+      - c:\lic:c:\lic
+      - c:\log:c:\log
+      - C:\ibs:c:\ibs
+    hostname: sbpwebapi
+    depends_on:
+      - sbpdb
+    networks:
+      docker:
+            #ipv4_address: 192.168.0.22
+      
+  sbpweb:
+    image: jonesyeh/sbpweb
+    hostname: sbpweb
+    depends_on:
+      - sbpwebapi
+    networks:
+      docker:
+            #ipv4_address: 192.168.0.21
+networks:
+  docker:
+    external:
+        name: docker           

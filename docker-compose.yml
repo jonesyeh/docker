@@ -22,6 +22,8 @@ services:
       - c:\log:c:\log
       - C:\ibs:c:\ibs
     hostname: sbpwebapi
+    depends_on:
+      - sbpdb
     networks:
       nd-net:
         ipv4_address: 172.18.0.22
@@ -29,6 +31,8 @@ services:
   sbpweb:
     image: jonesyeh/sbpweb
     hostname: sbpweb
+    depends_on:
+      - sbpwebapi
     networks:
       nd-net:
         ipv4_address: 172.18.0.21

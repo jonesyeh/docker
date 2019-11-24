@@ -2,10 +2,10 @@ Add-LocalGroupMember -Group "Performance Monitor Users" -Member SBP_WIN_USER
 
 # update the connection strings:
 Stop-Service W3SVC
-$SBPBatchSettingEntitiesconnectionString = "metadata=res://*/Models.SBPBatchSettingModel.csdl|res://*/Models.SBPBatchSettingModel.ssdl|res://*/Models.SBPBatchSettingModel.msl;provider=System.Data.SqlClient;provider connection string=""data source=$($env:db_server);initial catalog=SBP;user id=sbp_user;password=$($env:sbp_user_pwd);MultipleActiveResultSets=True;App=EntityFramework"""
-$SBPDMEntitiesconnectionString = "metadata=res://*/Models.SBPDMModel.csdl|res://*/Models.SBPDMModel.ssdl|res://*/Models.SBPDMModel.msl;provider=System.Data.SqlClient;provider connection string=""data source=$($env:db_server);initial catalog=SBP;user id=sbp_user;password=$($env:sbp_user_pwd);MultipleActiveResultSets=True;App=EntityFramework"""
-$DefaultConnectionconnectionString = "Data Source=$($env:db_server);Initial Catalog=SBP;Integrated Security=False;User id=sbp_user;password=$($env:sbp_user_pwd)"
-$SBPEntitiesconnectionString = "metadata=res://*/SBPModel.csdl|res://*/SBPModel.ssdl|res://*/SBPModel.msl;provider=System.Data.SqlClient;provider connection string=""data source=$($env:db_server);initial catalog=SBP;user id=sbp_user;password=$($env:sbp_user_pwd);MultipleActiveResultSets=True;App=EntityFramework"""
+$SBPBatchSettingEntitiesconnectionString = "metadata=res://*/Models.SBPBatchSettingModel.csdl|res://*/Models.SBPBatchSettingModel.ssdl|res://*/Models.SBPBatchSettingModel.msl;provider=System.Data.SqlClient;provider connection string=""data source=$($env:db_server);initial catalog=$($env:db);user id=sbp_user;password=$($env:sbp_user_pwd);MultipleActiveResultSets=True;App=EntityFramework"""
+$SBPDMEntitiesconnectionString = "metadata=res://*/Models.SBPDMModel.csdl|res://*/Models.SBPDMModel.ssdl|res://*/Models.SBPDMModel.msl;provider=System.Data.SqlClient;provider connection string=""data source=$($env:db_server);initial catalog=$($env:db);user id=sbp_user;password=$($env:sbp_user_pwd);MultipleActiveResultSets=True;App=EntityFramework"""
+$DefaultConnectionconnectionString = "Data Source=$($env:db_server);Initial Catalog=$($env:db);Integrated Security=False;User id=sbp_user;password=$($env:sbp_user_pwd)"
+$SBPEntitiesconnectionString = "metadata=res://*/SBPModel.csdl|res://*/SBPModel.ssdl|res://*/SBPModel.msl;provider=System.Data.SqlClient;provider connection string=""data source=$($env:db_server);initial catalog=$($env:db);user id=sbp_user;password=$($env:sbp_user_pwd);MultipleActiveResultSets=True;App=EntityFramework"""
 
 $file = 'C:\SRC\SBPWEBAPI\Web.config' 
 [xml]$config = Get-Content $file;

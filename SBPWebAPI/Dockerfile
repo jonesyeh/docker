@@ -14,7 +14,8 @@ RUN Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Par
 
 ENV sbp_user_pwd="p@ssw0rd" `
     SBP_WIN_USER_PWD="p@ssw0rd" `
-	db_server=""
+	db_server="" `
+	db="SBP"
 	
 VOLUME C:\LIC
 VOLUME C:\LOG
@@ -32,6 +33,9 @@ WORKDIR C:\SRC\SBPScheduleService
 RUN .\install.BAT
 
 
+
+COPY bootstrap.ps1 C:\
+ENTRYPOINT ["powershell", "C:\\bootstrap.ps1"]
 HEALTHCHECK --interval=5s `
  CMD powershell -command `
     try { `
@@ -39,6 +43,3 @@ HEALTHCHECK --interval=5s `
      if ($response.StatusCode -eq 200) { return 0} `
      else {return 1}; `
     } catch { return 1 }
-
-COPY bootstrap.ps1 C:\
-ENTRYPOINT ["powershell", "C:\\bootstrap.ps1"]

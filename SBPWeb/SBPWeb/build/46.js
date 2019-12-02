@@ -15,7 +15,7 @@ var UnZipFileLoopPwdViewModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1261:
+/***/ 1259:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24,8 +24,8 @@ var UnZipFileLoopPwdViewModel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_UnZipFileLoopPwdListResponse__ = __webpack_require__(1694);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_Response_UnZipFileLoopPwdResponse__ = __webpack_require__(1695);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_UnZipFileLoopPwdListResponse__ = __webpack_require__(1692);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_Response_UnZipFileLoopPwdResponse__ = __webpack_require__(1693);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Model_Response_NumberResponse__ = __webpack_require__(128);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -145,7 +145,7 @@ var UnZipFileLoopPwdServicesProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1693:
+/***/ 1691:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -153,7 +153,7 @@ var UnZipFileLoopPwdServicesProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_global__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_auth_services_auth_services__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_un_zip_file_loop_pwd_services_un_zip_file_loop_pwd_services__ = __webpack_require__(1261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_un_zip_file_loop_pwd_services_un_zip_file_loop_pwd_services__ = __webpack_require__(1259);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Model_ViewModel_UnZipFileLoopPwdViewModel__ = __webpack_require__(1093);
@@ -211,11 +211,14 @@ var UnZipFileLoopPwdPage = /** @class */ (function () {
         this.file_type_key = "";
         this.show_select_add = false;
         this.show_select = false;
+        this.file_func_proc_key = "";
         this.sql_page = "SqlPage";
         this.order_type = true;
         this.innerWidth = window.innerWidth;
         this.innerHeight = window.innerHeight;
         this.exec_file_seq = navParams.data.item.exec_file_seq;
+        if (navParams.data.file_func_proc_key)
+            this.file_func_proc_key = navParams.data.file_func_proc_key;
         this.subject = __WEBPACK_IMPORTED_MODULE_5__Model_String__["a" /* String */].Format("{0}", this.exec_file_seq);
         if (this.authServices.authenticated() === true) {
             this.can_auth = this.authServices.CanAuth();
@@ -317,6 +320,14 @@ var UnZipFileLoopPwdPage = /** @class */ (function () {
             item.job01 = "";
             item.job02 = "";
             item.job03 = "";
+            if (this.file_func_proc_key === "060|ENC" || this.file_func_proc_key === "060|DEC") {
+                item.enc_type = "AES256";
+                item.enc_type_desc = "AES 256bit";
+                item.CliperMode = "4";
+                item.CliperMode_Desc = "ECB";
+            }
+            else
+                item.enc_type = "";
             item.file_loop_seq = this.exec_file_seq * 100 + this.totalRows + 1;
         }
         else {
@@ -330,7 +341,8 @@ var UnZipFileLoopPwdPage = /** @class */ (function () {
             mode: this.mode,
             item: item,
             change_mode: change_mode,
-            CanEditBatch: this.CanEditBatch
+            CanEditBatch: this.CanEditBatch,
+            file_func_proc_key: this.file_func_proc_key,
         });
         modal.onDidDismiss(function (select_data) {
             if (select_data == null)
@@ -416,7 +428,7 @@ var UnZipFileLoopPwdPage = /** @class */ (function () {
     };
     UnZipFileLoopPwdPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: "page-un-zip-file-loop-pwd",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\un-zip-file-loop-pwd\un-zip-file-loop-pwd.html"*/'<ion-header>\n  <headerComponent [title]="\'回圈密碼\'" [permission_id]="\'CanBatch\'" [show_table_select]=true></headerComponent>\n</ion-header>\n\n<ion-content (window:resize)="onResize($event)">\n  <ion-row>\n    <ion-col>\n\n      <ion-searchbar [ngClass]="[\'search\']" (keyup.enter)="LoadData(true)" placeholder="關鍵字(JOB01,JOB02,JOB03,LC01,LC02,LC03)" [(ngModel)]="keyword">\n      </ion-searchbar>\n    </ion-col>\n  </ion-row>\n  <ion-grid *ngIf="subject>\'\'">\n    <ion-row>\n      <ion-col col-12 col-sm-2 col-md-3>\n      </ion-col>\n      <ion-col col-12 col-sm-8 col-md-6>\n\n        <ion-grid [ngClass]="[\'subject\']">\n          <ion-row>\n            <ion-col>\n\n              <b>{{subject}}</b>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n      </ion-col>\n      <ion-col col-12 col-sm-2 col-md-3>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-grid *ngIf="conf.mobile_mode==false && selectedItem!=null" [ngClass]="\'bordered\'">\n    <ion-row>\n      <ion-col>\n        <button small title="編輯" ion-button color="light" icon-left (click)="ShowModal(selectedItem,\'e\')">\n          <ion-icon name="create"></ion-icon>\n        </button>\n        <button *ngIf="CanEditBatch==true" small title="複製" ion-button color="light" icon-left (click)="ShowModal(selectedItem,\'c\')">\n          <ion-icon name="copy"></ion-icon>\n        </button>\n        <button *ngIf="CanEditBatch==true" small title="刪除" ion-button color="dark" icon-left (click)="Delete(selectedItem)">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n\n      </ion-col>\n      <ion-col>\n        <button small title="產生Insert SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(selectedItem,\'insert\')">\n          Ins\n        </button>\n        <button small title="產生Update SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(selectedItem,\'update\')">\n          Upd\n        </button>\n\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ngx-datatable NgxResizeWatcher class="bootstrap" *ngIf="totalRows>0 && conf.mobile_mode==false" [selected]="selected" [selectionType]="\'single\'"\n      (select)=\'onRowSelect($event)\' [rows]="data_list" [columnMode]="\'flex\'" [headerHeight]="40" [rowHeight]="\'auto\'" [footerHeight]="40"\n      [reorderable]=false [limit]="limit" [count]="totalRows" [offset]="offset" (page)=\'setPage($event)\'>\n\n      <ngx-datatable-column prop="file_loop_seq" name="迴圈序號" [flexGrow]="1" [frozenLeft]="true">\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="job01" name="JOB01" [flexGrow]="2">\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="job02" name="JOB02" [flexGrow]="2">\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="job03" name="JOB03" [flexGrow]="2" >\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="lc01" name="LC01" [flexGrow]="2">\n        </ngx-datatable-column>\n        <ngx-datatable-column prop="lc02" name="LC02" [flexGrow]="2" *ngIf="innerWidth>=1024">\n        </ngx-datatable-column>\n        <ngx-datatable-column prop="lc03" name="LC03" [flexGrow]="2" *ngIf="innerWidth>=1024">\n        </ngx-datatable-column>\n      <ngx-datatable-column prop="creator" name="建立者" [flexGrow]="1" *ngIf="innerWidth>=1024">\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="modifier" name="更新者" [flexGrow]="1">\n      </ngx-datatable-column>\n\n\n\n      <ngx-datatable-column prop="create_time" name="建立時間" [flexGrow]="2" *ngIf="innerWidth>=1024">\n        <ng-template let-value="value" ngx-datatable-cell-template>\n          <div *ngIf="platform.is(\'ios\')==true">\n            {{value | date:\'y/MM/dd HH:mm:ss \'}}\n          </div>\n          <div *ngIf="platform.is(\'ios\')!=true">\n            {{value | date:\'y/MM/dd HH:mm:ss\'}}\n          </div>\n        </ng-template>\n\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="last_update_time" name="更新時間" [flexGrow]="2">\n        <ng-template let-value="value" ngx-datatable-cell-template>\n          <div *ngIf="platform.is(\'ios\')==true">\n            {{value | date:\'y/MM/dd HH:mm:ss \'}}\n          </div>\n          <div *ngIf="platform.is(\'ios\')!=true">\n            {{value | date:\'y/MM/dd HH:mm:ss\'}}\n          </div>\n        </ng-template>\n\n      </ngx-datatable-column>\n\n    </ngx-datatable>\n  <div *ngIf="totalRows>0 && conf.mobile_mode==true">\n    <ion-row>\n\n      <ion-col col-lg-4 col-md-6 col-sm-6 col-12 *ngFor="let item of data_list">\n\n        <ion-grid [ngClass]="\'bordered\'">\n          <ion-row>\n            <ion-col>\n              <button small title="編輯" ion-button color="light" icon-left (click)="ShowModal(item,\'e\')">\n                <ion-icon name="create"></ion-icon>\n              </button>\n              <button *ngIf="CanEditBatch==true" small title="複製" ion-button color="light" icon-left (click)="ShowModal(item,\'c\')">\n                <ion-icon name="copy"></ion-icon>\n              </button>\n              <button *ngIf="CanEditBatch==true" small title="刪除" ion-button color="dark" icon-left (click)="Delete(item)">\n                <ion-icon name="trash"></ion-icon>\n              </button>\n\n\n            </ion-col>\n          </ion-row>\n\n          <ion-row>\n            <ion-col>\n              <button small title="產生Insert SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(item,\'insert\')">\n                Ins\n              </button>\n              <button small title="產生Update SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(item,\'update\')">\n                Upd\n              </button>\n\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              迴圈序號:{{item.file_loop_seq}}\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12 col-md-4>\n              JOB01:{{item.job01}}\n            </ion-col>\n            <ion-col col-12 col-md-4>\n              JOB02:{{item.job02}}\n            </ion-col>\n            <ion-col col-12 col-md-4>\n              JOB03:{{item.job03}}\n            </ion-col>\n          </ion-row>\n          <ion-row *ngIf="item.lc01>\' \'">\n            <ion-col col-12 col-md-4>\n              LC01:{{item.lc01}}\n            </ion-col>\n            <ion-col col-12 col-md-4>\n              LC02:{{item.lc02}}\n            </ion-col>\n            <ion-col col-12 col-md-4>\n              LC03:{{item.lc03}}\n            </ion-col>\n          </ion-row>\n\n\n        </ion-grid>\n      </ion-col>\n\n    </ion-row>\n  </div>\n  <ion-infinite-scroll *ngIf="pageNumber < totalPages && conf.mobile_mode==true" (ionInfinite)="$event.waitFor(doInfinite())">\n    <ion-infinite-scroll-content loadingSpinner="bubbles">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="重新整理" ion-button color="dark" icon-left (click)="LoadData(true)">\n            <ion-checkbox name="order_type" title="遞增/遞減" color="dark" [(ngModel)]="order_type" (ionChange)="LoadData(true)"></ion-checkbox>\n            <ion-icon name="refresh"></ion-icon>\n          </button>\n          <button *ngIf="CanEditBatch==true" small title="新增" ion-button color="dark" icon-left (click)="ShowModal(null,\'n\')">\n            <ion-icon name="add"></ion-icon>\n          </button>\n\n\n        </div>\n        <StatusComponent [pageNumber]="pageNumber" [totalPages]="totalPages" [totalRows]="totalRows"></StatusComponent>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\un-zip-file-loop-pwd\un-zip-file-loop-pwd.html"*/
+            selector: "page-un-zip-file-loop-pwd",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\un-zip-file-loop-pwd\un-zip-file-loop-pwd.html"*/'<ion-header>\n  <headerComponent [title]="\'回圈密碼\'" [permission_id]="\'CanBatch\'" [show_table_select]=true></headerComponent>\n</ion-header>\n\n<ion-content (window:resize)="onResize($event)">\n  <ion-row>\n    <ion-col>\n\n      <ion-searchbar [ngClass]="[\'search\']" (keyup.enter)="LoadData(true)" placeholder="關鍵字(JOB01,JOB02,JOB03,LC01,LC02,LC03)" [(ngModel)]="keyword">\n      </ion-searchbar>\n    </ion-col>\n  </ion-row>\n  <ion-grid *ngIf="subject>\'\'">\n    <ion-row>\n      <ion-col col-12 col-sm-2 col-md-3>\n      </ion-col>\n      <ion-col col-12 col-sm-8 col-md-6>\n\n        <ion-grid [ngClass]="[\'subject\']">\n          <ion-row>\n            <ion-col>\n\n              <b>{{subject}}</b>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n      </ion-col>\n      <ion-col col-12 col-sm-2 col-md-3>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ion-grid *ngIf="conf.mobile_mode==false && selectedItem!=null" [ngClass]="\'bordered\'">\n    <ion-row>\n      <ion-col>\n        <button small title="編輯" ion-button color="light" icon-left (click)="ShowModal(selectedItem,\'e\')">\n          <ion-icon name="create"></ion-icon>\n        </button>\n        <button *ngIf="CanEditBatch==true" small title="複製" ion-button color="light" icon-left (click)="ShowModal(selectedItem,\'c\')">\n          <ion-icon name="copy"></ion-icon>\n        </button>\n        <button *ngIf="CanEditBatch==true" small title="刪除" ion-button color="dark" icon-left (click)="Delete(selectedItem)">\n          <ion-icon name="trash"></ion-icon>\n        </button>\n\n      </ion-col>\n      <ion-col>\n        <button small title="產生Insert SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(selectedItem,\'insert\')">\n          Ins\n        </button>\n        <button small title="產生Update SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(selectedItem,\'update\')">\n          Upd\n        </button>\n\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n  <ngx-datatable NgxResizeWatcher class="bootstrap" *ngIf="totalRows>0 && conf.mobile_mode==false" [selected]="selected" [selectionType]="\'single\'"\n      (select)=\'onRowSelect($event)\' [rows]="data_list" [columnMode]="\'flex\'" [headerHeight]="40" [rowHeight]="\'auto\'" [footerHeight]="40"\n      [reorderable]=false [limit]="limit" [count]="totalRows" [offset]="offset" (page)=\'setPage($event)\'>\n\n      <ngx-datatable-column prop="file_loop_seq" name="迴圈序號" [flexGrow]="1" [frozenLeft]="true">\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="enc_type" name="內文壓密" [flexGrow]="1">\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="job01" name="JOB01" [flexGrow]="2">\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="job02" name="JOB02" [flexGrow]="2">\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="job03" name="JOB03" [flexGrow]="2" >\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="lc01" name="LC01" [flexGrow]="2">\n        </ngx-datatable-column>\n        <ngx-datatable-column prop="lc02" name="LC02" [flexGrow]="2" *ngIf="innerWidth>=1024">\n        </ngx-datatable-column>\n        <ngx-datatable-column prop="lc03" name="LC03" [flexGrow]="2" *ngIf="innerWidth>=1024">\n        </ngx-datatable-column>\n      <ngx-datatable-column prop="creator" name="建立者" [flexGrow]="1" *ngIf="innerWidth>=1024">\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="modifier" name="更新者" [flexGrow]="1">\n      </ngx-datatable-column>\n\n\n\n      <ngx-datatable-column prop="create_time" name="建立時間" [flexGrow]="2" *ngIf="innerWidth>=1024">\n        <ng-template let-value="value" ngx-datatable-cell-template>\n          <div *ngIf="platform.is(\'ios\')==true">\n            {{value | date:\'y/MM/dd HH:mm:ss \'}}\n          </div>\n          <div *ngIf="platform.is(\'ios\')!=true">\n            {{value | date:\'y/MM/dd HH:mm:ss\'}}\n          </div>\n        </ng-template>\n\n      </ngx-datatable-column>\n      <ngx-datatable-column prop="last_update_time" name="更新時間" [flexGrow]="2">\n        <ng-template let-value="value" ngx-datatable-cell-template>\n          <div *ngIf="platform.is(\'ios\')==true">\n            {{value | date:\'y/MM/dd HH:mm:ss \'}}\n          </div>\n          <div *ngIf="platform.is(\'ios\')!=true">\n            {{value | date:\'y/MM/dd HH:mm:ss\'}}\n          </div>\n        </ng-template>\n\n      </ngx-datatable-column>\n\n    </ngx-datatable>\n  <div *ngIf="totalRows>0 && conf.mobile_mode==true">\n    <ion-row>\n\n      <ion-col col-lg-4 col-md-6 col-sm-6 col-12 *ngFor="let item of data_list">\n\n        <ion-grid [ngClass]="\'bordered\'">\n          <ion-row>\n            <ion-col>\n              <button small title="編輯" ion-button color="light" icon-left (click)="ShowModal(item,\'e\')">\n                <ion-icon name="create"></ion-icon>\n              </button>\n              <button *ngIf="CanEditBatch==true" small title="複製" ion-button color="light" icon-left (click)="ShowModal(item,\'c\')">\n                <ion-icon name="copy"></ion-icon>\n              </button>\n              <button *ngIf="CanEditBatch==true" small title="刪除" ion-button color="dark" icon-left (click)="Delete(item)">\n                <ion-icon name="trash"></ion-icon>\n              </button>\n\n\n            </ion-col>\n          </ion-row>\n\n          <ion-row>\n            <ion-col>\n              <button small title="產生Insert SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(item,\'insert\')">\n                Ins\n              </button>\n              <button small title="產生Update SQL語法" ion-button color="light" icon-left (click)="openNavSqlPage(item,\'update\')">\n                Upd\n              </button>\n\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              迴圈序號:{{item.file_loop_seq}}\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col col-12 col-md-4>\n              JOB01:{{item.job01}}\n            </ion-col>\n            <ion-col col-12 col-md-4>\n              JOB02:{{item.job02}}\n            </ion-col>\n            <ion-col col-12 col-md-4>\n              JOB03:{{item.job03}}\n            </ion-col>\n          </ion-row>\n          <ion-row *ngIf="item.lc01>\' \'">\n            <ion-col col-12 col-md-4>\n              LC01:{{item.lc01}}\n            </ion-col>\n            <ion-col col-12 col-md-4>\n              LC02:{{item.lc02}}\n            </ion-col>\n            <ion-col col-12 col-md-4>\n              LC03:{{item.lc03}}\n            </ion-col>\n          </ion-row>\n\n\n        </ion-grid>\n      </ion-col>\n\n    </ion-row>\n  </div>\n  <ion-infinite-scroll *ngIf="pageNumber < totalPages && conf.mobile_mode==true" (ionInfinite)="$event.waitFor(doInfinite())">\n    <ion-infinite-scroll-content loadingSpinner="bubbles">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="重新整理" ion-button color="dark" icon-left (click)="LoadData(true)">\n            <ion-checkbox name="order_type" title="遞增/遞減" color="dark" [(ngModel)]="order_type" (ionChange)="LoadData(true)"></ion-checkbox>\n            <ion-icon name="refresh"></ion-icon>\n          </button>\n          <button *ngIf="CanEditBatch==true" small title="新增" ion-button color="dark" icon-left (click)="ShowModal(null,\'n\')">\n            <ion-icon name="add"></ion-icon>\n          </button>\n\n\n        </div>\n        <StatusComponent [pageNumber]="pageNumber" [totalPages]="totalPages" [totalRows]="totalRows"></StatusComponent>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\un-zip-file-loop-pwd\un-zip-file-loop-pwd.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_4_ionic_angular__["m" /* NavParams */],
@@ -437,7 +449,7 @@ var UnZipFileLoopPwdPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1694:
+/***/ 1692:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -478,6 +490,12 @@ var UnZipFileLoopPwdListResponse = /** @class */ (function (_super) {
                 item.job02 = data.job02;
                 item.job03 = data.job03;
                 item.pwd = data.pwd;
+                item.input_pwd = data.input_pwd;
+                item.enc_type = data.enc_type;
+                item.CliperMode = data.CliperMode;
+                item.key = data.key;
+                item.iv = data.iv;
+                item.pad_left = data.pad_left;
                 item.lc01 = data.lc01;
                 item.lc02 = data.lc02;
                 item.lc03 = data.lc03;
@@ -485,6 +503,24 @@ var UnZipFileLoopPwdListResponse = /** @class */ (function (_super) {
                 item.create_time = data.create_time;
                 item.modifier = data.modifier;
                 item.last_update_time = data.last_update_time;
+                item.enc_type_desc = (item.enc_type == "PWD" ? "純密碼" : item.enc_type);
+                switch (item.CliperMode) {
+                    case "1":
+                        item.CliperMode_Desc = "CBC";
+                        break;
+                    case "2":
+                        item.CliperMode_Desc = "CFB";
+                        break;
+                    case "3":
+                        item.CliperMode_Desc = "CTS";
+                        break;
+                    case "4":
+                        item.CliperMode_Desc = "ECB";
+                        break;
+                    case "5":
+                        item.CliperMode_Desc = "OFB";
+                        break;
+                }
                 _this.Model.push(item);
             }) || null;
         }
@@ -497,7 +533,7 @@ var UnZipFileLoopPwdListResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 1695:
+/***/ 1693:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -533,10 +569,35 @@ var UnZipFileLoopPwdResponse = /** @class */ (function (_super) {
             _this.Model.lc01 = obj.Model.lc01;
             _this.Model.lc02 = obj.Model.lc02;
             _this.Model.lc03 = obj.Model.lc03;
+            _this.Model.pwd = obj.Model.pwd;
+            _this.Model.input_pwd = obj.Model.input_pwd;
+            _this.Model.enc_type = obj.Model.enc_type;
+            _this.Model.CliperMode = obj.Model.CliperMode;
+            _this.Model.key = obj.Model.key;
+            _this.Model.iv = obj.Model.iv;
+            _this.Model.pad_left = obj.Model.pad_left;
             _this.Model.creator = obj.Model.creator;
             _this.Model.create_time = obj.Model.create_time;
             _this.Model.modifier = obj.Model.modifier;
             _this.Model.last_update_time = obj.Model.last_update_time;
+            _this.Model.enc_type_desc = (_this.Model.enc_type == "PWD" ? "純密碼" : _this.Model.enc_type);
+            switch (_this.Model.CliperMode) {
+                case "1":
+                    _this.Model.CliperMode_Desc = "CBC";
+                    break;
+                case "2":
+                    _this.Model.CliperMode_Desc = "CFB";
+                    break;
+                case "3":
+                    _this.Model.CliperMode_Desc = "CTS";
+                    break;
+                case "4":
+                    _this.Model.CliperMode_Desc = "ECB";
+                    break;
+                case "5":
+                    _this.Model.CliperMode_Desc = "OFB";
+                    break;
+            }
         }
         return _this;
     }
@@ -547,7 +608,7 @@ var UnZipFileLoopPwdResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 769:
+/***/ 768:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -555,9 +616,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UnZipFileLoopPwdPageModule", function() { return UnZipFileLoopPwdPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__un_zip_file_loop_pwd__ = __webpack_require__(1693);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__un_zip_file_loop_pwd__ = __webpack_require__(1691);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(809);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_un_zip_file_loop_pwd_services_un_zip_file_loop_pwd_services__ = __webpack_require__(1261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_un_zip_file_loop_pwd_services_un_zip_file_loop_pwd_services__ = __webpack_require__(1259);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);

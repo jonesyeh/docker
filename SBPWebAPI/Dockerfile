@@ -32,10 +32,6 @@ RUN .\install.BAT
 WORKDIR C:\SRC\SBPScheduleService
 RUN .\install.BAT
 
-
-
-COPY bootstrap.ps1 C:\
-ENTRYPOINT ["powershell", "C:\\bootstrap.ps1"]
 HEALTHCHECK --interval=5s `
  CMD powershell -command `
     try { `
@@ -43,3 +39,7 @@ HEALTHCHECK --interval=5s `
      if ($response.StatusCode -eq 200) { return 0} `
      else {return 1}; `
     } catch { return 1 }
+
+COPY bootstrap.ps1 C:\
+ENTRYPOINT ["powershell", "C:\\bootstrap.ps1"]
+

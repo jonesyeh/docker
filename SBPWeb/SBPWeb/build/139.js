@@ -24,7 +24,7 @@ var FileExportedHeaderViewModel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileExportedHeaderResponse__ = __webpack_require__(1412);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileExportedHeaderResponse__ = __webpack_require__(1413);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -121,7 +121,7 @@ var FileExportedHeaderServicesProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1411:
+/***/ 1412:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -165,7 +165,7 @@ var FileExportedHeaderAddEditPage = /** @class */ (function () {
         this.authServices = authServices;
         this.FileExportedHeaderServices = FileExportedHeaderServices;
         this.alertCtrl = alertCtrl;
-        this.sql_help = "\n  \u8B8A\u6578\u8AAA\u660E\uFF1A\n   {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n\n\n  ";
+        this.sql_help = "\n  \u8B8A\u6578\u8AAA\u660E\uFF1A\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  {LC01},{LC02},{LC03}=\u5167\u90E8\u6A94\u6848\u8FF4\u5708\u53C3\u6578,\n  {file_size}=\u532F\u51FA\u6A94\u6848\u5927\u5C0F\n\n\n  ";
         this.sql_page = "SqlPage";
         this.exec_file_seq = navParams.data.item.exec_file_seq;
         this.subject = __WEBPACK_IMPORTED_MODULE_2__Model_String__["a" /* String */].Format("{0}", this.exec_file_seq);
@@ -328,7 +328,7 @@ var FileExportedHeaderAddEditPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 1412:
+/***/ 1413:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -390,7 +390,7 @@ var FileExportedHeaderResponse = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 548:
+/***/ 549:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -398,7 +398,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileExportedHeaderAddEditPageModule", function() { return FileExportedHeaderAddEditPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_exported_header_add_edit__ = __webpack_require__(1411);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_exported_header_add_edit__ = __webpack_require__(1412);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_components_module__ = __webpack_require__(809);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_file_exported_header_services_file_exported_header_services__ = __webpack_require__(1224);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {

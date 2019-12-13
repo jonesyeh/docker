@@ -1,9 +1,10 @@
-version: '3.3'
+version: '3.7'
 
 services:
   
   sbpdb:
     image: jonesyeh/mssql-2017-dev-sqlfile
+    container_name: sbpdb
     env_file:
       - db_lab.env
     volumes:
@@ -11,10 +12,11 @@ services:
     hostname: sbpdb
     networks:
       nd-net:
-        ipv4_address: 172.18.0.23
+        #ipv4_address: 172.18.0.23
       
   sbpwebapi01:
     image: jonesyeh/sbpwebapi
+    container_name: sbpwebapi01  
     env_file:
       - webapi_lab01.env
     volumes:
@@ -26,10 +28,11 @@ services:
       - sbpdb
     networks:
       nd-net:
-        ipv4_address: 172.18.0.24
+       # ipv4_address: 172.18.0.24
   
   sbpwebapi02:
     image: jonesyeh/sbpwebapi
+    container_name: sbpwebapi02   
     env_file:
       - webapi_lab02.env
     volumes:
@@ -41,18 +44,35 @@ services:
       - sbpwebapi01
     networks:
       nd-net:
-        ipv4_address: 172.18.0.25
-      
-  sbpweb:
-    image: jonesyeh/sbpweb
-    hostname: sbpweb
+        #ipv4_address: 172.18.0.25
+  
+  sbpwebapi03:
+    image: jonesyeh/sbpwebapi
+    container_name: sbpwebapi03   
+    env_file:
+      - webapi_lab03.env
+    volumes:
+      - c:\lic:c:\lic
+      - c:\log:c:\log
+      - C:\ibs:c:\ibs
+    hostname: sbpwebapi03
     depends_on:
       - sbpwebapi02
     networks:
       nd-net:
-        ipv4_address: 172.18.0.21
+        #ipv4_address: 172.18.0.26
+      
+  sbpweb:
+    image: jonesyeh/sbpweb
+    container_name: sbpweb
+    hostname: sbpweb
+    depends_on:
+      - sbpwebapi03
+    networks:
+      nd-net:
+        #ipv4_address: 172.18.0.21
 
 networks:
   nd-net:
         external:
-            name: mynet             
+            name: docker              

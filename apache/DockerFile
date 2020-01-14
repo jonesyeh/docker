@@ -1,0 +1,16 @@
+# Apache Server
+#
+# VERSION               0.0.1
+
+FROM     ubuntu:16.04
+MAINTAINER Thatcher R. Peskens "jonesyeh@msn.com"
+
+#安裝Apache
+RUN apt-get update && apt-get install -y apache2 && apt-get clean
+
+#開啟https支援
+RUN /usr/sbin/a2ensite default-ssl
+RUN /usr/sbin/a2enmod ssl
+EXPOSE 80
+EXPOSE 443
+CMD    ["/usr/sbin/apache2ctl", "-D" ,"FOREGROUND"]

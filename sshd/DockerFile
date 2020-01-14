@@ -1,0 +1,17 @@
+# sshd
+#
+# VERSION               0.0.1
+
+FROM     ubuntu:16.04
+MAINTAINER Thatcher R. Peskens "jonesyeh@msn.com"
+
+# make sure the package repository is up to date
+RUN apt-get update && apt-get install -y openssh-server && apt-get clean
+RUN mkdir /var/run/sshd
+RUN echo 'root:p@ssw0rd' |chpasswd
+RUN mkdir /home/wuser
+RUN groupadd wgroup
+RUN useradd -g wgroup wuser
+RUN chown wuser /home/wuser
+EXPOSE 22
+CMD    ["/usr/sbin/sshd", "-D"]

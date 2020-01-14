@@ -1,0 +1,26 @@
+#Dockerfile跟shell script一樣，使用#當作註解符號
+
+FROM centos:latest
+#Dockerfile內第一行皆為宣告從哪一個基礎映像檔開始搭建
+
+MAINTAINER jonesyeh@msn.com
+#標示 author
+
+RUN yum -y install openssh-server passwd
+#RUN為在當前映像檔基底上執行命令(此處用法相當於以/bin/sh執行)
+
+RUN echo "p@ssw0rd" | passwd root --stdin
+#測試設定root的密碼
+
+COPY run-sshd.sh /run-sshd.sh
+#把"Dockerfile當前所在目錄的腳本檔"複製近Image裡面，這個腳本檔目的是用來啟動SSH server
+
+RUN chmod +x /run-sshd.sh
+RUN chmod 755 /run-sshd.sh
+RUN /usr/sbin/sshd-keygen -A
+
+EXPOSE 22
+#設定對外的Port
+
+CMD ["/run-sshd.sh"]
+#建立好的Image被執行時，會自動執行的動作，這裡設定成一旦run這個映像檔，就會執行腳本啟動SSH服務

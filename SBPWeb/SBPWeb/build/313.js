@@ -1,14 +1,28 @@
 webpackJsonp([313],{
 
-/***/ 1347:
+/***/ 1030:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailUserAddEditModalPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailViewModel; });
+var EmailViewModel = /** @class */ (function () {
+    function EmailViewModel() {
+    }
+    return EmailViewModel;
+}());
+
+//# sourceMappingURL=EmailViewModel.js.map
+
+/***/ }),
+
+/***/ 1344:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailAddEditModalPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_EmailUserViewModel__ = __webpack_require__(943);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_global_global__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_EmailViewModel__ = __webpack_require__(1030);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,108 +36,85 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
- * Generated class for the EmailUserModalPage page.
+ * Generated class for the EmailModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var EmailUserAddEditModalPage = /** @class */ (function () {
-    function EmailUserAddEditModalPage(navCtrl, navParams, viewCtrl, loadingCtrl, modalCtrl, global) {
+var EmailAddEditModalPage = /** @class */ (function () {
+    function EmailAddEditModalPage(navCtrl, navParams, viewCtrl, loadingCtrl, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
         this.loadingCtrl = loadingCtrl;
         this.modalCtrl = modalCtrl;
-        this.global = global;
-        this.sql_help = "\n  \u6A19\u984C\u8207\u5167\u6587-\u8B8A\u6578\u8AAA\u660E\uFF1A\n  {SSIS_JOB_NO}=\u4F5C\u696D\u7DE8\u865F,\n  {JOBDESC}=\u4F5C\u696D\u8AAA\u660E,\n  {ERR_MSG}=\u7570\u5E38\u8A0A\u606F,\n  {ERR_MSG_SEQ}=\u7570\u5E38\u8A0A\u606F\u7DE8\u865F,\n  {JOB01},{JOB02},{JOB03}=\u4F5C\u696D\u8FF4\u5708\u53C3\u6578,\n  ";
-        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_EmailUserViewModel__["a" /* EmailUserViewModel */]();
+        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_EmailViewModel__["a" /* EmailViewModel */]();
+        this.item.exec_group = navParams.data.item.exec_group;
+        this.item.exec_status_key = navParams.data.item.exec_status_key;
+        this.item.exec_status = navParams.data.item.exec_status;
         this.item.email_id = navParams.data.item.email_id;
-        this.item.email_desc = navParams.data.item.email_desc;
-        this.item.fromaddress = navParams.data.item.fromaddress;
-        this.item.toaddress = navParams.data.item.toaddress;
-        this.item.ccaddress = navParams.data.item.ccaddress;
-        this.item.bccaddress = navParams.data.item.bccaddress;
-        this.item.subject = navParams.data.item.subject;
-        this.item.body = navParams.data.item.body;
-        this.item.parameter_column_group = navParams.data.item.parameter_column_group;
         this.item.creator = navParams.data.item.creator;
         this.item.create_time = navParams.data.item.create_time;
         this.item.modifier = navParams.data.item.modifier;
         this.item.last_update_time = navParams.data.item.last_update_time;
-        this.item.send_status_key = navParams.data.item.send_status_key;
-        this.item.send_status = navParams.data.item.send_status;
-        this.item.can_rerun = navParams.data.item.can_rerun;
+        this.item.email_desc = navParams.data.item.email_desc;
+        this.item.email_full_desc = navParams.data.item.email_full_desc;
         this.CanEditEmail = navParams.data.CanEditEmail;
         this.mode = navParams.data.mode;
-        this.title = "收件者分類";
+        this.title = "Email寄發設定";
     }
-    EmailUserAddEditModalPage.prototype.SelectSendStatus = function () {
+    EmailAddEditModalPage.prototype.SelectExecStatus = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
-            select_key: this.item.send_status_key,
-            code_type: "071"
+            select_key: this.item.exec_status_key,
+            code_key: "012|C,012|F,012|S",
         });
         modal.onDidDismiss(function (select_data) {
             if (select_data == null)
                 return;
-            _this.item.send_status_key = select_data.code_key;
-            _this.item.send_status = select_data.code_desc;
+            _this.item.exec_status_key = select_data.code_key;
+            _this.item.exec_status = select_data.code_desc;
         });
         modal.present();
     };
-    EmailUserAddEditModalPage.prototype.SelectParameterGroup = function () {
+    EmailAddEditModalPage.prototype.SelectEmailID = function () {
         var _this = this;
-        var modal = this.modalCtrl.create("ParameterGroupSelectModelPage", {
-            select_parameter_column_group: this.item.parameter_column_group,
+        var modal = this.modalCtrl.create("EmailUserSelectModelPage", {
+            select_id: this.item.email_id,
+            show_select_add: (this.mode === "POST" ? true : false),
         });
         modal.onDidDismiss(function (select_data) {
             if (select_data == null)
                 return;
-            _this.item.parameter_column_group = select_data.parameter_column_group;
+            _this.item.email_id = select_data.email_id;
+            _this.item.email_desc = select_data.email_desc;
         });
         modal.present();
     };
-    EmailUserAddEditModalPage.prototype.Help = function () {
-        var _this = this;
-        this.global.createLoader();
-        this.global.loading.present().then(function () {
-            _this.global.showMessage("SQL語法說明", _this.sql_help);
-        });
-    };
-    EmailUserAddEditModalPage.prototype.openNavParameterColumnPage = function (item) {
-        var _this = this;
-        this.global.createLoader("連線中...");
-        this.global.loading.present().then(function () {
-            _this.navCtrl.push("ParameterColumnPage", { item: item });
-        });
-        this.global.dismissLoading();
-    };
-    EmailUserAddEditModalPage.prototype.Save = function () {
+    EmailAddEditModalPage.prototype.Save = function () {
         this.viewCtrl.dismiss(this.item);
     };
-    EmailUserAddEditModalPage.prototype.close = function () {
+    EmailAddEditModalPage.prototype.close = function () {
         this.viewCtrl.dismiss();
     };
-    EmailUserAddEditModalPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad EmailUserModalPage");
+    EmailAddEditModalPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad EmailModalPage");
     };
-    EmailUserAddEditModalPage = __decorate([
+    EmailAddEditModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: "page-email-user-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\email-user-add-edit-modal\email-user-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content  padding>\n    <form #Form="ngForm">\n\n        <ion-row>\n          <ion-col col-6 >\n            <ion-item>\n              <ion-label stacked >郵件編號</ion-label>\n              <ion-input type="text" [disabled]="CanEditEmail==false || mode==\'PUT\'" name="email_id" #email_id="ngModel" [(ngModel)]="item.email_id"\n                required maxlength="50"></ion-input>\n            </ion-item>\n            <div *ngIf="email_id.errors && email_id.touched" class="error-message">\n              郵件編號不能為空白\n            </div>\n          </ion-col>\n          <ion-col col-6 >\n            <ion-item>\n              <ion-label stacked>重送</ion-label>\n              <ion-checkbox [disabled]="CanEditEmail==false" name="can_rerun" #can_rerun="ngModel" [(ngModel)]="item.can_rerun"></ion-checkbox>\n            </ion-item>\n\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-item>\n              <ion-label stacked >郵件說明</ion-label>\n              <ion-input type="text"  name="email_desc" #email_desc="ngModel" [(ngModel)]="item.email_desc"\n                required  maxlength="50"></ion-input>\n            </ion-item>\n            <div *ngIf="email_desc.errors && email_desc.touched" class="error-message">\n              郵件說明不能為空白\n            </div>\n\n          </ion-col>\n        </ion-row>\n\n        <ion-row>\n          <ion-col>\n            <ion-item>\n                <ion-label stacked >寄件者清單</ion-label>\n              <ion-input type="text"  [disabled]="CanEditEmail==false" name="fromaddress" #fromaddress="ngModel" [(ngModel)]="item.fromaddress"\n                required  maxlength="255"></ion-input>\n            </ion-item>\n            <div *ngIf="fromaddress.errors && fromaddress.touched" class="error-message">\n              寄件者清單不能為空白\n            </div>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-item>\n                <ion-label stacked >收件者清單</ion-label>\n              <ion-input type="text"  [disabled]="CanEditEmail==false" name="toaddress" #toaddress="ngModel" [(ngModel)]="item.toaddress"\n                required  maxlength="255"></ion-input>\n            </ion-item>\n            <div *ngIf="fromaddress.errors && fromaddress.touched" class="error-message">\n              收件者清單不能為空白\n            </div>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-item>\n                <ion-label stacked >收件者副本清單</ion-label>\n              <ion-input type="text"  [disabled]="CanEditEmail==false" name="ccaddress" #ccaddress="ngModel" [(ngModel)]="item.ccaddress"\n                  maxlength="255"></ion-input>\n            </ion-item>\n            <div *ngIf="ccaddress.errors && ccaddress.touched" class="error-message">\n              收件者副本清單不能為空白\n            </div>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-item>\n                <ion-label stacked >隱密收件者清單</ion-label>\n              <ion-input type="text"  [disabled]="CanEditEmail==false" name="bccaddress" #bccaddress="ngModel" [(ngModel)]="item.bccaddress"\n                maxlength="255"></ion-input>\n            </ion-item>\n            <div *ngIf="bccaddress.errors && bccaddress.touched" class="error-message">\n              隱密收件者清單不能為空白\n            </div>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n              <ion-item>\n                <ion-label stacked>參數群組</ion-label>\n                <ion-input type="text" readonly=true [disabled]="CanEditEmail==false" name="parameter_column_group" #parameter_column_group="ngModel" [(ngModel)]="item.parameter_column_group"\n                  required maxlength="3"></ion-input>\n\n                <button ion-button outline item-end *ngIf="CanEditEmail==true" icon-right (click)="SelectParameterGroup()">\n                  <ion-icon name="arrow-dropdown"></ion-icon>\n                </button>\n              </ion-item>\n\n              <div *ngIf="parameter_column_group.errors && parameter_column_group.touched " class="error-message">\n                參數群組不能為空白\n              </div>\n            </ion-col>\n      </ion-row>\n      <ion-row *ngIf="mode==\'PUT\'">\n        <ion-col col-12 col-sm-4>\n          <ion-item>\n            <ion-label stacked>寄送狀態</ion-label>\n            <ion-input type="text" readonly=true [disabled]="CanEditEmail==false" name="send_status_key" #send_status_key="ngModel" [(ngModel)]="item.send_status_key"\n              required></ion-input>\n\n            <button ion-button outline item-end *ngIf="CanEditEmail==true" icon-right (click)="SelectSendStatus()">\n              <ion-icon name="arrow-dropdown"></ion-icon>\n            </button>\n          </ion-item>\n\n          <div *ngIf="send_status_key.errors && send_status_key.touched " class="error-message">\n            寄送狀態不能為空白\n          </div>\n        </ion-col>\n        <ion-col col-12 col-sm-8>\n          <ion-item>\n            <ion-label stacked>寄送狀態</ion-label>\n\n            <ion-textarea [disabled]=true name="send_status" #send_status="ngModel" [(ngModel)]="item.send_status" required>\n            </ion-textarea>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-item>\n                <ion-label stacked >標題</ion-label>\n              <ion-input type="text"  [disabled]="CanEditEmail==false" name="subject" #subject="ngModel" [(ngModel)]="item.subject"\n                required  maxlength="40"></ion-input>\n            </ion-item>\n            <div *ngIf="subject.errors && subject.touched" class="error-message">\n              標題不能為空白\n            </div>\n          </ion-col>\n        </ion-row>\n        <ion-row>\n          <ion-col>\n            <ion-item>\n              <ion-label stacked>內文</ion-label>\n              <ion-textarea [disabled]="CanEditEmail==false" name="body" #body="ngModel" rows="10" [(ngModel)]="item.body"   required></ion-textarea>\n            </ion-item>\n            <div *ngIf="body.errors && body.touched " class="error-message">\n                內文不能為空白\n            </div>\n          </ion-col>\n        </ion-row>\n      </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small title="確認" [disabled]="CanEditEmail==false"  ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n          <button small title="變數說明" [disabled]="CanEditEmail==false" ion-button color="dark"  icon-left\n          (click)="Help()">\n          <ion-icon name="help"></ion-icon>\n        </button>\n        <button small title="參數群組" ion-button color="dark" icon-left (click)="openNavParameterColumnPage(item)">\n          <ion-icon name="outlet"></ion-icon>\n        </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\email-user-add-edit-modal\email-user-add-edit-modal.html"*/
+            selector: "page-email-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\email-add-edit-modal\email-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content  padding>\n    <form #Form="ngForm">\n\n      <ion-row>\n        <ion-col >\n          <ion-item>\n            <ion-label stacked>作業編號</ion-label>\n            <ion-input type="text" [disabled]="CanEditEmail==false || mode==\'PUT\'" name="exec_group" #exec_group="ngModel" [(ngModel)]="item.exec_group"\n              required maxlength="30"></ion-input>\n          </ion-item>\n          <div *ngIf="exec_group.errors && exec_group.touched" class="error-message">\n            作業編號不能為空白\n          </div>\n        </ion-col>\n\n      </ion-row>\n      <ion-row>\n        <ion-col col-12 col-sm-4>\n          <ion-item>\n            <ion-label stacked>執行狀態</ion-label>\n            <ion-input type="text" readonly=true [disabled]="CanEditEmail==false || mode==\'PUT\'" name="exec_status_key" #exec_status_key="ngModel" [(ngModel)]="item.exec_status_key"\n              required></ion-input>\n\n            <button ion-button outline item-end *ngIf="CanEditEmail==true && mode==\'POST\'" icon-right (click)="SelectExecStatus()">\n              <ion-icon name="arrow-dropdown"></ion-icon>\n            </button>\n          </ion-item>\n\n          <div *ngIf="exec_status_key.errors && exec_status_key.touched " class="error-message">\n            執行狀態不能為空白\n          </div>\n        </ion-col>\n        <ion-col col-12 col-sm-8>\n          <ion-item>\n            <ion-label stacked>執行狀態</ion-label>\n            <ion-input type="text" [disabled]=true name="exec_status" #exec_status="ngModel" [(ngModel)]="item.exec_status" required></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      <ion-row>\n        <ion-col col-12 col-sm-4>\n          <ion-item>\n            <ion-label stacked>收件者</ion-label>\n            <ion-input type="text" readonly=true [disabled]="CanEditEmail==false || mode==\'PUT\' " name="email_id" #email_id="ngModel" [(ngModel)]="item.email_id"\n              required maxlength="255"></ion-input>\n\n            <button ion-button outline item-end *ngIf="CanEditEmail==true" icon-right (click)="SelectEmailID()">\n              <ion-icon name="arrow-dropdown"></ion-icon>\n            </button>\n          </ion-item>\n\n          <div *ngIf="email_id.errors && email_id.touched " class="error-message">\n            收件者不能為空白\n          </div>\n        </ion-col>\n        <ion-col col-12 col-sm-8>\n          <ion-item>\n            <ion-label stacked>收件者</ion-label>\n            <ion-input type="text" [disabled]=true name="email_desc" #email_desc="ngModel" [(ngModel)]="item.email_desc" required></ion-input>\n          </ion-item>\n        </ion-col>\n      </ion-row>\n      </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small title="確認" [disabled]="CanEditEmail==false || mode==\'PUT\'"  ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\email-add-edit-modal\email-add-edit-modal.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ViewController */],
             __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */],
-            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_3__components_global_global__["a" /* GlobalComponent */]])
-    ], EmailUserAddEditModalPage);
-    return EmailUserAddEditModalPage;
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */]])
+    ], EmailAddEditModalPage);
+    return EmailAddEditModalPage;
 }());
 
-//# sourceMappingURL=email-user-add-edit-modal.js.map
+//# sourceMappingURL=email-add-edit-modal.js.map
 
 /***/ }),
 
@@ -132,10 +123,10 @@ var EmailUserAddEditModalPage = /** @class */ (function () {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmailUserAddEditModalPageModule", function() { return EmailUserAddEditModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmailAddEditModalPageModule", function() { return EmailAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__email_user_add_edit_modal__ = __webpack_require__(1347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__email_add_edit_modal__ = __webpack_require__(1344);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -145,38 +136,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var EmailUserAddEditModalPageModule = /** @class */ (function () {
-    function EmailUserAddEditModalPageModule() {
+var EmailAddEditModalPageModule = /** @class */ (function () {
+    function EmailAddEditModalPageModule() {
     }
-    EmailUserAddEditModalPageModule = __decorate([
+    EmailAddEditModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__email_user_add_edit_modal__["a" /* EmailUserAddEditModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__email_add_edit_modal__["a" /* EmailAddEditModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__email_user_add_edit_modal__["a" /* EmailUserAddEditModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__email_add_edit_modal__["a" /* EmailAddEditModalPage */]),
             ],
         })
-    ], EmailUserAddEditModalPageModule);
-    return EmailUserAddEditModalPageModule;
+    ], EmailAddEditModalPageModule);
+    return EmailAddEditModalPageModule;
 }());
 
-//# sourceMappingURL=email-user-add-edit-modal.module.js.map
-
-/***/ }),
-
-/***/ 943:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailUserViewModel; });
-var EmailUserViewModel = /** @class */ (function () {
-    function EmailUserViewModel() {
-    }
-    return EmailUserViewModel;
-}());
-
-//# sourceMappingURL=EmailUserViewModel.js.map
+//# sourceMappingURL=email-add-edit-modal.module.js.map
 
 /***/ })
 

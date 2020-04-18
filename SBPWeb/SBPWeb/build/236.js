@@ -1,15 +1,15 @@
 webpackJsonp([236],{
 
-/***/ 1046:
+/***/ 1051:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpDownServicesProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpUpServicesProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_String__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileFtpDownListResponse__ = __webpack_require__(1148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileFtpDownResponse__ = __webpack_require__(1149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_services__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileFtpUpListResponse__ = __webpack_require__(1154);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileFtpUpResponse__ = __webpack_require__(1155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__file_services_file_services__ = __webpack_require__(127);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -37,33 +37,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /*
-  Generated class for the FileFtpDownServiceProvider provider.
+  Generated class for the FileFtpUpServiceProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
-var FileFtpDownServicesProvider = /** @class */ (function (_super) {
-    __extends(FileFtpDownServicesProvider, _super);
-    function FileFtpDownServicesProvider(Services) {
+var FileFtpUpServicesProvider = /** @class */ (function (_super) {
+    __extends(FileFtpUpServicesProvider, _super);
+    function FileFtpUpServicesProvider(Services) {
         var _this = _super.call(this, Services) || this;
         _this.Services = Services;
-        _this.ctl = "FileFtpDown";
-        console.log("Hello FileFtpDownServiceProvider Provider");
+        _this.ctl = "FileFtpUp";
+        console.log("Hello FileFtpUpServiceProvider Provider");
         return _this;
     }
-    FileFtpDownServicesProvider.prototype.GetListsByAsync = function (PageSize, PageNumber, keyword, exec_group, exec_file_seq, order_type) {
+    FileFtpUpServicesProvider.prototype.GetListsByAsync = function (PageSize, PageNumber, keyword, exec_group, exec_file_seq, order_type) {
         var _this = this;
         var sub_url;
         if (exec_file_seq === 0) {
-            sub_url = "FileFtpDown?PageSize={1}&PageNumber={2}&keyword={3}&exec_group={4}&order_type={5}";
+            sub_url = "FileFtpUp?PageSize={1}&PageNumber={2}&keyword={3}&exec_group={4}&order_type={5}";
             sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, PageSize, PageNumber, keyword, exec_group, order_type);
         }
         else {
-            sub_url = "FileFtpDown/Select?PageSize={1}&PageNumber={2}&keyword={3}&exec_group={4}&exec_file_seq={5}&order_type={6}";
+            sub_url = "FileFtpUp/Select?PageSize={1}&PageNumber={2}&keyword={3}&exec_group={4}&exec_file_seq={5}&order_type={6}";
             sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, PageSize, PageNumber, keyword, exec_group, exec_file_seq, order_type);
         }
         return this.Services.GetAsync(sub_url, this.ctl, true).map(function (item) {
-            _this.FileFtpDowns = new __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileFtpDownListResponse__["a" /* FileFtpDownListResponse */]({
+            _this.FileFtpUps = new __WEBPACK_IMPORTED_MODULE_3__Model_Response_FileFtpUpListResponse__["a" /* FileFtpUpListResponse */]({
                 Message: item.Message,
                 DidError: item.DidError,
                 ErrorMessage: item.ErrorMessage,
@@ -74,46 +74,46 @@ var FileFtpDownServicesProvider = /** @class */ (function (_super) {
                 TotalPages: item.TotalPages,
                 Model: item.Model
             });
-            return _this.FileFtpDowns;
+            return _this.FileFtpUps;
         });
     };
-    FileFtpDownServicesProvider.prototype.PostPutAsync = function (FileFtpDownViewModel, mode) {
+    FileFtpUpServicesProvider.prototype.PostPutAsync = function (FileFtpUpViewModel, mode) {
         var _this = this;
         var sub_url;
         if (mode === "POST")
-            sub_url = "FileFtpDown";
+            sub_url = "FileFtpUp";
         else
-            sub_url = "FileFtpDown/{1}";
-        sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, FileFtpDownViewModel.exec_file_seq);
-        return this.Services.PostPutAsync(sub_url, this.ctl, true, FileFtpDownViewModel, mode).map(function (item) {
-            _this.FileFtpDown = new __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileFtpDownResponse__["a" /* FileFtpDownResponse */]({
+            sub_url = "FileFtpUp/{1}";
+        sub_url = __WEBPACK_IMPORTED_MODULE_0__Model_String__["a" /* String */].Format(sub_url, this.ctl, FileFtpUpViewModel.exec_file_seq);
+        return this.Services.PostPutAsync(sub_url, this.ctl, true, FileFtpUpViewModel, mode).map(function (item) {
+            _this.FileFtpUp = new __WEBPACK_IMPORTED_MODULE_4__Model_Response_FileFtpUpResponse__["a" /* FileFtpUpResponse */]({
                 Message: item.Message,
                 DidError: item.DidError,
                 ErrorMessage: item.ErrorMessage,
                 Model: item.Model
             });
-            return _this.FileFtpDown;
+            return _this.FileFtpUp;
         });
     };
-    FileFtpDownServicesProvider = __decorate([
+    FileFtpUpServicesProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__services_services__["a" /* ServicesProvider */]])
-    ], FileFtpDownServicesProvider);
-    return FileFtpDownServicesProvider;
+    ], FileFtpUpServicesProvider);
+    return FileFtpUpServicesProvider;
 }(__WEBPACK_IMPORTED_MODULE_5__file_services_file_services__["a" /* FileServicesProvider */]));
 
-//# sourceMappingURL=file-ftp-down-services.js.map
+//# sourceMappingURL=file-ftp-up-services.js.map
 
 /***/ }),
 
-/***/ 1148:
+/***/ 1154:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpDownListResponse; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileFtpDownViewModel__ = __webpack_require__(972);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ViewModel_FtpRemoteViewModel__ = __webpack_require__(923);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpUpListResponse; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileFtpUpViewModel__ = __webpack_require__(977);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ListModelResponse__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ViewModel_FtpRemoteViewModel__ = __webpack_require__(927);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -127,9 +127,9 @@ var __extends = (this && this.__extends) || (function () {
 
 
 
-var FileFtpDownListResponse = /** @class */ (function (_super) {
-    __extends(FileFtpDownListResponse, _super);
-    function FileFtpDownListResponse(obj) {
+var FileFtpUpListResponse = /** @class */ (function (_super) {
+    __extends(FileFtpUpListResponse, _super);
+    function FileFtpUpListResponse(obj) {
         var _this = _super.call(this, obj) || this;
         _this.Model = [];
         _this.Message = obj.Messag;
@@ -142,7 +142,7 @@ var FileFtpDownListResponse = /** @class */ (function (_super) {
         _this.TotalRows = obj.TotalRows;
         if (_this.DidError === false) {
             obj.Model.forEach(function (data) {
-                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileFtpDownViewModel__["a" /* FileFtpDownViewModel */]();
+                var item = new __WEBPACK_IMPORTED_MODULE_0__ViewModel_FileFtpUpViewModel__["a" /* FileFtpUpViewModel */]();
                 item.exec_file_seq = data.exec_file_seq;
                 item.exec_group = data.exec_group;
                 item.file_keyword = data.file_keyword;
@@ -174,11 +174,11 @@ var FileFtpDownListResponse = /** @class */ (function (_super) {
                 item.empty_file_check_flag = data.empty_file_check_flag;
                 item.is_fail_stop = data.is_fail_stop;
                 item.remote_file_path = data.remote_file_path;
-                item.remote_bk_file_path = data.remote_bk_file_path;
-                item.down_file_path = data.down_file_path;
+                item.bk_file_path = data.bk_file_path;
+                item.up_file_path = data.up_file_path;
                 item.remote_file_path_key = data.remote_file_path_key;
-                item.remote_bk_file_path_key = data.remote_bk_file_path_key;
-                item.down_file_path_key = data.down_file_path_key;
+                item.bk_file_path_key = data.bk_file_path_key;
+                item.up_file_path_key = data.up_file_path_key;
                 item.is_processed_sql = data.is_processed_sql;
                 if (item.is_processed_sql === true) {
                     item.processed_sql_color = "danger";
@@ -211,21 +211,21 @@ var FileFtpDownListResponse = /** @class */ (function (_super) {
         }
         return _this;
     }
-    return FileFtpDownListResponse;
+    return FileFtpUpListResponse;
 }(__WEBPACK_IMPORTED_MODULE_1__ListModelResponse__["a" /* ListModelResponse */]));
 
-//# sourceMappingURL=FileFtpDownListResponse.js.map
+//# sourceMappingURL=FileFtpUpListResponse.js.map
 
 /***/ }),
 
-/***/ 1149:
+/***/ 1155:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpDownResponse; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpUpResponse; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileFtpDownViewModel__ = __webpack_require__(972);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ViewModel_FtpRemoteViewModel__ = __webpack_require__(923);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileFtpUpViewModel__ = __webpack_require__(977);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ViewModel_FtpRemoteViewModel__ = __webpack_require__(927);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -239,15 +239,15 @@ var __extends = (this && this.__extends) || (function () {
 
 
 
-var FileFtpDownResponse = /** @class */ (function (_super) {
-    __extends(FileFtpDownResponse, _super);
-    function FileFtpDownResponse(obj) {
+var FileFtpUpResponse = /** @class */ (function (_super) {
+    __extends(FileFtpUpResponse, _super);
+    function FileFtpUpResponse(obj) {
         var _this = _super.call(this, obj) || this;
         _this.Message = obj.Message;
         _this.DidError = obj.DidError;
         _this.ErrorMessage = obj.ErrorMessage;
         if (_this.DidError === false) {
-            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileFtpDownViewModel__["a" /* FileFtpDownViewModel */]();
+            _this.Model = new __WEBPACK_IMPORTED_MODULE_1__ViewModel_FileFtpUpViewModel__["a" /* FileFtpUpViewModel */]();
             _this.Model.exec_file_seq = obj.Model.exec_file_seq;
             _this.Model.exec_group = obj.Model.exec_group;
             _this.Model.file_keyword = obj.Model.file_keyword;
@@ -276,8 +276,8 @@ var FileFtpDownResponse = /** @class */ (function (_super) {
             _this.Model.empty_file_check_flag = obj.Model.empty_file_check_flag;
             _this.Model.is_fail_stop = obj.Model.is_fail_stop;
             _this.Model.remote_file_path_key = obj.Model.remote_file_path_key;
-            _this.Model.remote_bk_file_path_key = obj.Model.remote_bk_file_path_key;
-            _this.Model.down_file_path_key = obj.Model.down_file_path_key;
+            _this.Model.bk_file_path_key = obj.Model.bk_file_path_key;
+            _this.Model.up_file_path_key = obj.Model.up_file_path_key;
             _this.Model.is_processed_sql = obj.Model.is_processed_sql;
             if (_this.Model.is_processed_sql === true) {
                 _this.Model.processed_sql_color = "danger";
@@ -308,28 +308,28 @@ var FileFtpDownResponse = /** @class */ (function (_super) {
         }
         return _this;
     }
-    return FileFtpDownResponse;
+    return FileFtpUpResponse;
 }(__WEBPACK_IMPORTED_MODULE_0__SingleModelResponse__["a" /* SingleModelResponse */]));
 
-//# sourceMappingURL=FileFtpDownResponse.js.map
+//# sourceMappingURL=FileFtpUpResponse.js.map
 
 /***/ }),
 
-/***/ 1421:
+/***/ 1430:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpDownAddEditModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_file_ftp_down_services_file_ftp_down_services__ = __webpack_require__(1046);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpUpAddEditModalPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_file_ftp_up_services_file_ftp_up_services__ = __webpack_require__(1051);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_global_global__ = __webpack_require__(119);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(63);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Model_String__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileFtpDownViewModel__ = __webpack_require__(972);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileFtpUpViewModel__ = __webpack_require__(977);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_file_path_services_file_path_services__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_conn_services_conn_services__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Model_ViewModel_FtpRemoteViewModel__ = __webpack_require__(923);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Model_ViewModel_FtpDirectoryBrowserViewModel__ = __webpack_require__(928);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Model_ViewModel_FtpRemoteViewModel__ = __webpack_require__(927);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Model_ViewModel_FtpDirectoryBrowserViewModel__ = __webpack_require__(932);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -351,30 +351,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 /**
- * Generated class for the FileFtpDownModalPage page.
+ * Generated class for the FileFtpUpModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var FileFtpDownAddEditModalPage = /** @class */ (function () {
-    function FileFtpDownAddEditModalPage(navCtrl, navParams, viewCtrl, FileFtpDownServices, FilePathServices, loadingCtrl, global, modalCtrl, ConnServices) {
+var FileFtpUpAddEditModalPage = /** @class */ (function () {
+    function FileFtpUpAddEditModalPage(navCtrl, navParams, viewCtrl, FileFtpUpServices, FilePathServices, loadingCtrl, global, modalCtrl, ConnServices) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
-        this.FileFtpDownServices = FileFtpDownServices;
+        this.FileFtpUpServices = FileFtpUpServices;
         this.FilePathServices = FilePathServices;
         this.loadingCtrl = loadingCtrl;
         this.global = global;
         this.modalCtrl = modalCtrl;
         this.ConnServices = ConnServices;
-        this.func_no = 1;
+        this.func_no = 4;
         this.func_key = "014|" + this.func_no;
-        this.min_exec_file_seq = 10000;
+        this.min_exec_file_seq = 40000;
         this.max_exec_file_seq = this.min_exec_file_seq + 9999;
         this.range_exec_file_seq = __WEBPACK_IMPORTED_MODULE_4__Model_String__["a" /* String */].Format("{0}-{1}", this.min_exec_file_seq, this.max_exec_file_seq);
         this.mode = navParams.data.mode;
         this.change_mode = navParams.data.change_mode;
-        this.item = new __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileFtpDownViewModel__["a" /* FileFtpDownViewModel */]();
+        this.item = new __WEBPACK_IMPORTED_MODULE_5__Model_ViewModel_FileFtpUpViewModel__["a" /* FileFtpUpViewModel */]();
         this.item.exec_file_seq = navParams.data.item.exec_file_seq;
         this.item.exec_group = navParams.data.item.exec_group;
         this.item.file_keyword = navParams.data.item.file_keyword;
@@ -395,16 +395,16 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
         this.item.empty_file_check_flag = navParams.data.item.empty_file_check_flag;
         this.item.is_fail_stop = navParams.data.item.is_fail_stop;
         this.item.remote_file_path_key = navParams.data.item.remote_file_path_key;
-        this.item.remote_bk_file_path_key =
-            navParams.data.item.remote_bk_file_path_key;
-        this.item.down_file_path_key = navParams.data.item.down_file_path_key;
+        this.item.bk_file_path_key = navParams.data.item.bk_file_path_key;
+        this.item.up_file_path_key = navParams.data.item.up_file_path_key;
         this.item.remote_file_path = navParams.data.item.remote_file_path;
-        this.item.remote_bk_file_path = navParams.data.item.remote_bk_file_path;
-        this.item.down_file_path = navParams.data.item.down_file_path;
+        this.item.bk_file_path = navParams.data.item.bk_file_path;
+        this.item.up_file_path = navParams.data.item.up_file_path;
         this.item.exec_file_seq = navParams.data.item.exec_file_seq;
         this.item.remoteViewModel = new __WEBPACK_IMPORTED_MODULE_8__Model_ViewModel_FtpRemoteViewModel__["a" /* FtpRemoteViewModel */]();
         if (navParams.data.item.remoteViewModel != null) {
-            this.item.remoteViewModel.exec_file_seq = navParams.data.item.remoteViewModel.exec_file_seq;
+            this.item.remoteViewModel.exec_file_seq =
+                navParams.data.item.remoteViewModel.exec_file_seq;
             this.item.remoteViewModel.remote_conn_id =
                 navParams.data.item.remoteViewModel.remote_conn_id;
             this.item.remoteViewModel.conn_type_key =
@@ -429,9 +429,17 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
         this.CanEditBatch = navParams.data.CanEditBatch;
         this.CanFileBrowser = navParams.data.CanFileBrowser;
         this.CanFtpFileBrowser = navParams.data.CanFtpFileBrowser;
-        this.title = "FTP下載";
+        this.title = "FTP上傳";
     }
-    FileFtpDownAddEditModalPage.prototype.openNavPage = function (parent_path) {
+    FileFtpUpAddEditModalPage.prototype.openNavParameterColumnPage = function (item) {
+        var _this = this;
+        this.global.createLoader("連線中...");
+        this.global.loading.present().then(function () {
+            _this.navCtrl.push("ParameterColumnPage", { item: item });
+        });
+        this.global.dismissLoading();
+    };
+    FileFtpUpAddEditModalPage.prototype.openNavPage = function (parent_path) {
         var _this = this;
         var page;
         if (parent_path.indexOf("\\") >= 0)
@@ -463,11 +471,11 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
         });
         this.global.dismissLoading();
     };
-    FileFtpDownAddEditModalPage.prototype.SelectConn = function () {
+    FileFtpUpAddEditModalPage.prototype.SelectConn = function () {
         var _this = this;
         var modal = this.modalCtrl.create("ConnSelectModalPage", {
             select_remote_conn_id: this.item.remoteViewModel.remote_conn_id,
-            conn_type_key: "065|002",
+            conn_type_key: "065|002"
         });
         modal.onDidDismiss(function (select_data) {
             if (select_data == null)
@@ -477,7 +485,7 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileFtpDownAddEditModalPage.prototype.SelectConnType = function () {
+    FileFtpUpAddEditModalPage.prototype.SelectConnType = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
             select_key: this.item.remoteViewModel.conn_type_key,
@@ -499,7 +507,7 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileFtpDownAddEditModalPage.prototype.SelectEncryptMethod = function () {
+    FileFtpUpAddEditModalPage.prototype.SelectEncryptMethod = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
             select_key: this.item.remoteViewModel.encrypt_method_key,
@@ -513,7 +521,7 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileFtpDownAddEditModalPage.prototype.SelectFileProcType = function () {
+    FileFtpUpAddEditModalPage.prototype.SelectFileProcType = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
             select_key: this.item.file_proc_key,
@@ -527,7 +535,7 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileFtpDownAddEditModalPage.prototype.SelectParameterGroup = function () {
+    FileFtpUpAddEditModalPage.prototype.SelectParameterGroup = function () {
         var _this = this;
         var modal = this.modalCtrl.create("ParameterGroupSelectModelPage", {
             select_parameter_column_group: this.item.parameter_column_group
@@ -539,7 +547,7 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileFtpDownAddEditModalPage.prototype.SelectRemoteFilePath = function () {
+    FileFtpUpAddEditModalPage.prototype.SelectRemoteFilePath = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
             select_key: this.item.remote_file_path_key,
@@ -553,39 +561,39 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
         });
         modal.present();
     };
-    FileFtpDownAddEditModalPage.prototype.SelectDownFilePath = function () {
+    FileFtpUpAddEditModalPage.prototype.SelectUpFilePath = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
-            select_key: this.item.down_file_path_key,
+            select_key: this.item.up_file_path_key,
             code_type: "005"
         });
         modal.onDidDismiss(function (select_data) {
             if (select_data == null)
                 return;
-            _this.item.down_file_path_key = select_data.code_key;
-            _this.item.down_file_path = select_data.code_desc;
+            _this.item.up_file_path_key = select_data.code_key;
+            _this.item.up_file_path = select_data.code_desc;
         });
         modal.present();
     };
-    FileFtpDownAddEditModalPage.prototype.SelectRemoteBkFilePath = function () {
+    FileFtpUpAddEditModalPage.prototype.SelectRemoteBkFilePath = function () {
         var _this = this;
         var modal = this.modalCtrl.create("CodeSelectModalPage", {
-            select_key: this.item.remote_bk_file_path_key,
+            select_key: this.item.bk_file_path_key,
             code_type: "005"
         });
         modal.onDidDismiss(function (select_data) {
             if (select_data == null)
                 return;
-            _this.item.remote_bk_file_path_key = select_data.code_key;
-            _this.item.remote_bk_file_path = select_data.code_desc;
+            _this.item.bk_file_path_key = select_data.code_key;
+            _this.item.bk_file_path = select_data.code_desc;
         });
         modal.present();
     };
-    FileFtpDownAddEditModalPage.prototype.get_max_exec_file_seq = function () {
+    FileFtpUpAddEditModalPage.prototype.get_max_exec_file_seq = function () {
         var _this = this;
         this.global.createLoader("取得最大值中...");
         this.global.loading.present().then(function () {
-            _this.FileFtpDownServices.GetMaxExecFileSeqAsync(_this.func_no, _this.item.exec_group).subscribe(function (data) {
+            _this.FileFtpUpServices.GetMaxExecFileSeqAsync(_this.func_no, _this.item.exec_group).subscribe(function (data) {
                 if (data.DidError === true) {
                     _this.global.dismissLoading();
                     _this.global.showError(data.ErrorMessage);
@@ -600,7 +608,7 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
             });
         });
     };
-    FileFtpDownAddEditModalPage.prototype.get_default_path = function () {
+    FileFtpUpAddEditModalPage.prototype.get_default_path = function () {
         var _this = this;
         this.global.createLoader("取得預設資料夾中...");
         this.global.loading.present().then(function () {
@@ -611,15 +619,15 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
                 }
                 else {
                     _this.default_path = data.Model;
-                    _this.remote_file_path = _this.default_path.filter(function (item, FilePathViewModel) { return item.file_path_type_key === "004|RDN"; })[0];
+                    _this.remote_file_path = _this.default_path.filter(function (item, FilePathViewModel) { return item.file_path_type_key === "004|RUP"; })[0];
                     _this.item.remote_file_path_key = _this.remote_file_path.file_path_key;
                     _this.item.remote_file_path = _this.remote_file_path.file_path;
-                    _this.remote_bk_file_path = _this.default_path.filter(function (item, FilePathViewModel) { return item.file_path_type_key === "004|RBK"; })[0];
-                    _this.item.remote_bk_file_path_key = _this.remote_bk_file_path.file_path_key;
-                    _this.item.remote_bk_file_path = _this.remote_bk_file_path.file_path;
-                    _this.down_file_path = _this.default_path.filter(function (item, FilePathViewModel) { return item.file_path_type_key === "004|DN"; })[0];
-                    _this.item.down_file_path_key = _this.down_file_path.file_path_key;
-                    _this.item.down_file_path = _this.down_file_path.file_path;
+                    _this.bk_file_path = _this.default_path.filter(function (item, FilePathViewModel) { return item.file_path_type_key === "004|BK"; })[0];
+                    _this.item.bk_file_path_key = _this.bk_file_path.file_path_key;
+                    _this.item.bk_file_path = _this.bk_file_path.file_path;
+                    _this.up_file_path = _this.default_path.filter(function (item, FilePathViewModel) { return item.file_path_type_key === "004|UP"; })[0];
+                    _this.item.up_file_path_key = _this.up_file_path.file_path_key;
+                    _this.item.up_file_path = _this.up_file_path.file_path;
                     _this.global.dismissLoading();
                 }
             }, function (err) {
@@ -628,11 +636,11 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
             });
         });
     };
-    FileFtpDownAddEditModalPage.prototype.get_max_exec_seq = function () {
+    FileFtpUpAddEditModalPage.prototype.get_max_exec_seq = function () {
         var _this = this;
         this.global.createLoader("取得最大值中...");
         this.global.loading.present().then(function () {
-            _this.FileFtpDownServices.GetMaxExecSeqAsync(_this.func_no, _this.item.exec_group).subscribe(function (data) {
+            _this.FileFtpUpServices.GetMaxExecSeqAsync(_this.func_no, _this.item.exec_group).subscribe(function (data) {
                 if (data.DidError === true) {
                     _this.global.dismissLoading();
                     _this.global.showError(data.ErrorMessage);
@@ -647,7 +655,7 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
             });
         });
     };
-    FileFtpDownAddEditModalPage.prototype.get_ftp_conn_string = function (remote_conn_id) {
+    FileFtpUpAddEditModalPage.prototype.get_ftp_conn_string = function (remote_conn_id) {
         var _this = this;
         this.global.createLoader("取得連線字串中...");
         this.global.loading.present().then(function () {
@@ -667,54 +675,46 @@ var FileFtpDownAddEditModalPage = /** @class */ (function () {
             });
         });
     };
-    FileFtpDownAddEditModalPage.prototype.openNavParameterColumnPage = function (item) {
-        var _this = this;
-        this.global.createLoader("連線中...");
-        this.global.loading.present().then(function () {
-            _this.navCtrl.push("ParameterColumnPage", { item: item });
-        });
-        this.global.dismissLoading();
-    };
-    FileFtpDownAddEditModalPage.prototype.Save = function () {
+    FileFtpUpAddEditModalPage.prototype.Save = function () {
         this.viewCtrl.dismiss(this.item);
     };
-    FileFtpDownAddEditModalPage.prototype.close = function () {
+    FileFtpUpAddEditModalPage.prototype.close = function () {
         this.viewCtrl.dismiss();
     };
-    FileFtpDownAddEditModalPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad FileFtpDownModalPage");
+    FileFtpUpAddEditModalPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad FileFtpUpModalPage");
     };
-    FileFtpDownAddEditModalPage = __decorate([
+    FileFtpUpAddEditModalPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_3__angular_core__["Component"])({
-            selector: "page-file-ftp-down-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\file-ftp-down-add-edit-modal\file-ftp-down-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm">\n\n\n    <ion-row>\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>轉檔群組</ion-label>\n          <ion-input type="text" [disabled]="CanEditBatch==false" name="exec_group" #exec_group="ngModel" [(ngModel)]="item.exec_group"\n            required maxlength="30"></ion-input>\n        </ion-item>\n        <div *ngIf="exec_group.errors && exec_group.touched" class="error-message">\n          轉檔群組不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>轉檔序號:{{range_exec_file_seq}}</ion-label>\n          <ion-input type="number" [disabled]="CanEditBatch==false || mode==\'PUT\'" name="exec_file_seq" #exec_file_seq="ngModel" [(ngModel)]="item.exec_file_seq"\n            required></ion-input>\n          <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="get_max_exec_file_seq()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n        <div *ngIf="exec_file_seq.errors && exec_file_seq.touched" class="error-message">\n          轉檔序號不能為空白\n        </div>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n        <ion-col col-12 col-sm-8 >\n            <ion-item>\n              <ion-label stacked>檔案搜尋關鍵字</ion-label>\n              <ion-input type="text" [disabled]="CanEditBatch==false" name="file_keyword" #file_keyword="ngModel" [(ngModel)]="item.file_keyword"\n                required maxlength="256"></ion-input>\n            </ion-item>\n            <div *ngIf="file_keyword.errors && file_keyword.touched" class="error-message">\n              檔案搜尋關鍵字不能為空白\n            </div>\n          </ion-col>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>執行順序</ion-label>\n          <ion-input type="number" [disabled]="CanEditBatch==false" name="exec_seq" #exec_seq="ngModel" [(ngModel)]="item.exec_seq"\n            required></ion-input>\n          <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="get_max_exec_seq()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n        <div *ngIf="exec_seq.errors && exec_seq.touched" class="error-message">\n          執行順序不能為空白\n        </div>\n      </ion-col>\n\n    </ion-row>\n    <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked>檔名最小長度</ion-label>\n            <ion-input type="number" [disabled]="CanEditBatch==false" name="file_min_length" #file_min_length="ngModel" [(ngModel)]="item.file_min_length"></ion-input>\n          </ion-item>\n\n        </ion-col>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked>檔名最大長度</ion-label>\n            <ion-input type="number" [disabled]="CanEditBatch==false" name="file_max_length" #file_max_length="ngModel" [(ngModel)]="item.file_max_length"></ion-input>\n          </ion-item>\n\n        </ion-col>\n      </ion-row>\n    <ion-row>\n\n        <ion-col>\n            <ion-item>\n              <ion-label stacked>失敗停止</ion-label>\n              <ion-checkbox [disabled]="CanEditBatch==false" name="is_fail_stop" #is_fail_stop="ngModel" [(ngModel)]="item.is_fail_stop"></ion-checkbox>\n            </ion-item>\n\n          </ion-col>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>啟用</ion-label>\n          <ion-checkbox [disabled]="CanEditBatch==false" name="is_active" #is_active="ngModel" [(ngModel)]="item.is_active"></ion-checkbox>\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n        <ion-col>\n            <ion-item>\n              <ion-label stacked>空檔檢核</ion-label>\n              <ion-checkbox [disabled]="CanEditBatch==false" name="empty_file_check_flag" #empty_file_check_flag="ngModel" [(ngModel)]="item.empty_file_check_flag"></ion-checkbox>\n            </ion-item>\n          </ion-col>\n          <ion-col>\n              <ion-item>\n                <ion-label stacked>重複</ion-label>\n                <ion-checkbox [disabled]="CanEditBatch==false" name="can_rerun" #can_rerun="ngModel" [(ngModel)]="item.can_rerun"></ion-checkbox>\n              </ion-item>\n            </ion-col>\n      </ion-row>\n\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>執行後處理方式</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="file_proc_key" #file_proc_key="ngModel" [(ngModel)]="item.file_proc_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectFileProcType()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="file_proc_key.errors && file_proc_key.touched " class="error-message">\n          執行後處理方式不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>執行後處理方式</ion-label>\n\n          <ion-textarea [disabled]=true name="file_proc" #file_proc="ngModel" [(ngModel)]="item.file_proc" required>\n          </ion-textarea>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>連線</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="remote_conn_id" #remote_conn_id="ngModel" [(ngModel)]="item.remoteViewModel.remote_conn_id"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectConn()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="remote_conn_id.errors && remote_conn_id.touched " class="error-message">\n          連線不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>連線</ion-label>\n\n          <ion-textarea [disabled]=true name="remote_conn_string" #remote_conn_string="ngModel" [(ngModel)]="item.remoteViewModel.remote_conn_string" required>\n          </ion-textarea>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>連線類型</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="conn_type_key" #conn_type_key="ngModel" [(ngModel)]="item.remoteViewModel.conn_type_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectConnType()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="conn_type_key.errors && conn_type_key.touched " class="error-message">\n          連線類型不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>連線類型</ion-label>\n\n          <ion-textarea [disabled]=true name="conn_type" #conn_type="ngModel" [(ngModel)]="item.remoteViewModel.conn_type" required>\n          </ion-textarea>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="item.remoteViewModel.conn_type_key==\'006|3\'" >\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>壓密方法</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="encrypt_method_key" #encrypt_method_key="ngModel" [(ngModel)]="item.remoteViewModel.encrypt_method_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectEncryptMethod()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="encrypt_method_key.errors && encrypt_method_key.touched " class="error-message">\n          壓密方法不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>壓密方法</ion-label>\n\n          <ion-textarea [disabled]=true name="encrypt_method" #encrypt_method="ngModel" [(ngModel)]="item.remoteViewModel.encrypt_method" required>\n          </ion-textarea>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>遠端下載檔案路徑</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="remote_file_path_key" #remote_file_path_key="ngModel" [(ngModel)]="item.remote_file_path_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectRemoteFilePath()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="remote_file_path_key.errors && remote_file_path_key.touched " class="error-message">\n          遠端下載檔案路徑不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n            <button ion-button clear=true [disabled]="CanFtpFileBrowser==false" (click)="openNavPage(item.remote_file_path)">\n                {{item.remote_file_path}}\n              </button>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>下載本機檔案路徑</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="down_file_path_key" #down_file_path_key="ngModel" [(ngModel)]="item.down_file_path_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectDownFilePath()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="down_file_path_key.errors && down_file_path_key.touched " class="error-message">\n          下載本機檔案路徑不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n\n\n          <button ion-button clear=true [disabled]="CanFileBrowser==false" (click)="openNavPage(item.down_file_path)">\n              {{item.down_file_path}}\n            </button>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>遠端備份檔案路徑</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="remote_bk_file_path_key" #remote_bk_file_path_key="ngModel" [(ngModel)]="item.remote_bk_file_path_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectRemoteBkFilePath()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="remote_bk_file_path_key.errors && remote_bk_file_path_key.touched " class="error-message">\n          遠端備份檔案路徑不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n            <button ion-button clear=true [disabled]="CanFtpFileBrowser==false" (click)="openNavPage(item.remote_bk_file_path)">\n                {{item.remote_bk_file_path}}\n              </button>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n<ion-row>\n    <ion-col>\n        <ion-item>\n          <ion-label stacked>參數群組</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="parameter_column_group" #parameter_column_group="ngModel" [(ngModel)]="item.parameter_column_group"\n            required maxlength="3"></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectParameterGroup()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="parameter_column_group.errors && parameter_column_group.touched " class="error-message">\n          參數群組不能為空白\n        </div>\n      </ion-col>\n</ion-row>\n    <ion-row>\n\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>備註</ion-label>\n          <ion-textarea required  [disabled]="CanEditBatch==false" name="note" #note="ngModel" [(ngModel)]="item.note" maxlength="255"></ion-textarea>\n        </ion-item>\n        <div *ngIf="note.errors && note.touched " class="error-message">\n          備註不能為空白\n        </div>\n      </ion-col>\n    </ion-row>\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small title="確認" [disabled]="CanEditBatch==false" ion-button color="dark" [disabled]="!Form.form.valid" icon-left\n            (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n          <button small title="參數群組" ion-button color="dark" icon-left (click)="openNavParameterColumnPage(item)">\n            <ion-icon name="outlet"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\file-ftp-down-add-edit-modal\file-ftp-down-add-edit-modal.html"*/
+            selector: "page-file-ftp-Up-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\file-ftp-up-add-edit-modal\file-ftp-Up-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm">\n\n\n    <ion-row>\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>轉檔群組</ion-label>\n          <ion-input type="text" [disabled]="CanEditBatch==false" name="exec_group" #exec_group="ngModel" [(ngModel)]="item.exec_group"\n            required maxlength="30"></ion-input>\n        </ion-item>\n        <div *ngIf="exec_group.errors && exec_group.touched" class="error-message">\n          轉檔群組不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-6>\n        <ion-item>\n          <ion-label stacked>轉檔序號:{{range_exec_file_seq}}</ion-label>\n          <ion-input type="number" [disabled]="CanEditBatch==false || mode==\'PUT\'" name="exec_file_seq" #exec_file_seq="ngModel" [(ngModel)]="item.exec_file_seq"\n            required></ion-input>\n          <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="get_max_exec_file_seq()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n        <div *ngIf="exec_file_seq.errors && exec_file_seq.touched" class="error-message">\n          轉檔序號不能為空白\n        </div>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n        <ion-col col-12 col-sm-8 >\n            <ion-item>\n              <ion-label stacked>檔案搜尋關鍵字</ion-label>\n              <ion-input type="text" [disabled]="CanEditBatch==false" name="file_keyword" #file_keyword="ngModel" [(ngModel)]="item.file_keyword"\n                required maxlength="256"></ion-input>\n            </ion-item>\n            <div *ngIf="file_keyword.errors && file_keyword.touched" class="error-message">\n              檔案搜尋關鍵字不能為空白\n            </div>\n          </ion-col>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>執行順序</ion-label>\n          <ion-input type="number" [disabled]="CanEditBatch==false" name="exec_seq" #exec_seq="ngModel" [(ngModel)]="item.exec_seq"\n            required></ion-input>\n          <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'" icon-right (click)="get_max_exec_seq()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n        <div *ngIf="exec_seq.errors && exec_seq.touched" class="error-message">\n          執行順序不能為空白\n        </div>\n      </ion-col>\n\n    </ion-row>\n    <ion-row>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked>檔名最小長度</ion-label>\n            <ion-input type="number" [disabled]="CanEditBatch==false" name="file_min_length" #file_min_length="ngModel" [(ngModel)]="item.file_min_length"></ion-input>\n          </ion-item>\n\n        </ion-col>\n        <ion-col>\n          <ion-item>\n            <ion-label stacked>檔名最大長度</ion-label>\n            <ion-input type="number" [disabled]="CanEditBatch==false" name="file_max_length" #file_max_length="ngModel" [(ngModel)]="item.file_max_length"></ion-input>\n          </ion-item>\n\n        </ion-col>\n      </ion-row>\n    <ion-row>\n\n        <ion-col>\n            <ion-item>\n              <ion-label stacked>失敗停止</ion-label>\n              <ion-checkbox [disabled]="CanEditBatch==false" name="is_fail_stop" #is_fail_stop="ngModel" [(ngModel)]="item.is_fail_stop"></ion-checkbox>\n            </ion-item>\n\n          </ion-col>\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>啟用</ion-label>\n          <ion-checkbox [disabled]="CanEditBatch==false" name="is_active" #is_active="ngModel" [(ngModel)]="item.is_active"></ion-checkbox>\n        </ion-item>\n\n      </ion-col>\n    </ion-row>\n\n    <ion-row>\n        <ion-col>\n            <ion-item>\n              <ion-label stacked>空檔檢核</ion-label>\n              <ion-checkbox [disabled]="CanEditBatch==false" name="empty_file_check_flag" #empty_file_check_flag="ngModel" [(ngModel)]="item.empty_file_check_flag"></ion-checkbox>\n            </ion-item>\n          </ion-col>\n          <ion-col>\n              <ion-item>\n                <ion-label stacked>重複</ion-label>\n                <ion-checkbox [disabled]="CanEditBatch==false" name="can_rerun" #can_rerun="ngModel" [(ngModel)]="item.can_rerun"></ion-checkbox>\n              </ion-item>\n            </ion-col>\n      </ion-row>\n\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>執行後處理方式</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="file_proc_key" #file_proc_key="ngModel" [(ngModel)]="item.file_proc_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectFileProcType()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="file_proc_key.errors && file_proc_key.touched " class="error-message">\n          執行後處理方式不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>執行後處理方式</ion-label>\n\n          <ion-textarea [disabled]=true name="file_proc" #file_proc="ngModel" [(ngModel)]="item.file_proc" required>\n          </ion-textarea>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>連線</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="remote_conn_id" #remote_conn_id="ngModel" [(ngModel)]="item.remoteViewModel.remote_conn_id"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectConn()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="remote_conn_id.errors && remote_conn_id.touched " class="error-message">\n          連線不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>連線</ion-label>\n\n          <ion-textarea [disabled]=true name="remote_conn_string" #remote_conn_string="ngModel" [(ngModel)]="item.remoteViewModel.remote_conn_string" required>\n          </ion-textarea>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>連線類型</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="conn_type_key" #conn_type_key="ngModel" [(ngModel)]="item.remoteViewModel.conn_type_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectConnType()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="conn_type_key.errors && conn_type_key.touched " class="error-message">\n          連線類型不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>連線類型</ion-label>\n\n          <ion-textarea [disabled]=true name="conn_type" #conn_type="ngModel" [(ngModel)]="item.remoteViewModel.conn_type" required>\n          </ion-textarea>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row *ngIf="item.remoteViewModel.conn_type_key==\'006|3\'" >\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>壓密方法</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="encrypt_method_key" #encrypt_method_key="ngModel" [(ngModel)]="item.remoteViewModel.encrypt_method_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectEncryptMethod()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="encrypt_method_key.errors && encrypt_method_key.touched " class="error-message">\n          壓密方法不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n          <ion-label stacked>壓密方法</ion-label>\n\n          <ion-textarea [disabled]=true name="encrypt_method" #encrypt_method="ngModel" [(ngModel)]="item.remoteViewModel.encrypt_method" required>\n          </ion-textarea>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>遠端檔案路徑</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="remote_file_path_key" #remote_file_path_key="ngModel" [(ngModel)]="item.remote_file_path_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectRemoteFilePath()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="remote_file_path_key.errors && remote_file_path_key.touched " class="error-message">\n          遠端檔案路徑不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n            <button ion-button clear=true [disabled]="CanFtpFileBrowser==false" (click)="openNavPage(item.remote_file_path)">\n                {{item.remote_file_path}}\n              </button>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>本機上傳檔案路徑</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="up_file_path_key" #up_file_path_key="ngModel" [(ngModel)]="item.up_file_path_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectUpFilePath()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="up_file_path_key.errors && up_file_path_key.touched " class="error-message">\n          本機上傳檔案路徑不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n            <button ion-button clear=true [disabled]="CanFileBrowser==false" (click)="openNavPage(item.up_file_path)">\n                {{item.up_file_path}}\n              </button>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12 col-sm-4>\n        <ion-item>\n          <ion-label stacked>備份檔案路徑</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="bk_file_path_key" #bk_file_path_key="ngModel" [(ngModel)]="item.bk_file_path_key"\n            required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectRemoteBkFilePath()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="bk_file_path_key.errors && bk_file_path_key.touched " class="error-message">\n          備份檔案路徑不能為空白\n        </div>\n      </ion-col>\n      <ion-col col-12 col-sm-8>\n        <ion-item>\n            <button ion-button clear=true [disabled]="CanFileBrowser==false" (click)="openNavPage(item.bk_file_path)">\n                {{item.bk_file_path}}\n              </button>\n        </ion-item>\n      </ion-col>\n    </ion-row>\n<ion-row>\n    <ion-col>\n        <ion-item>\n          <ion-label stacked>參數群組</ion-label>\n          <ion-input type="text" readonly=true [disabled]="CanEditBatch==false" name="parameter_column_group" #parameter_column_group="ngModel" [(ngModel)]="item.parameter_column_group"\n            required maxlength="3"></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true" icon-right (click)="SelectParameterGroup()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="parameter_column_group.errors && parameter_column_group.touched " class="error-message">\n          參數群組不能為空白\n        </div>\n      </ion-col>\n</ion-row>\n    <ion-row>\n\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>備註</ion-label>\n          <ion-textarea  required [disabled]="CanEditBatch==false" name="note" #note="ngModel" [(ngModel)]="item.note" maxlength="255"></ion-textarea>\n\n        </ion-item>\n        <div *ngIf="note.errors && note.touched " class="error-message">\n          備註不能為空白\n        </div>\n      </ion-col>\n    </ion-row>\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small title="確認" [disabled]="CanEditBatch==false" ion-button color="dark" [disabled]="!Form.form.valid" icon-left\n            (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n          <button small title="參數群組" ion-button color="dark" icon-left (click)="openNavParameterColumnPage(item)">\n            <ion-icon name="outlet"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\file-ftp-up-add-edit-modal\file-ftp-Up-add-edit-modal.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["p" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_0__providers_file_ftp_down_services_file_ftp_down_services__["a" /* FileFtpDownServicesProvider */],
+            __WEBPACK_IMPORTED_MODULE_0__providers_file_ftp_up_services_file_ftp_up_services__["a" /* FileFtpUpServicesProvider */],
             __WEBPACK_IMPORTED_MODULE_6__providers_file_path_services_file_path_services__["a" /* FilePathServicesProvider */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* LoadingController */],
             __WEBPACK_IMPORTED_MODULE_1__components_global_global__["a" /* GlobalComponent */],
             __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* ModalController */],
             __WEBPACK_IMPORTED_MODULE_7__providers_conn_services_conn_services__["a" /* ConnServicesProvider */]])
-    ], FileFtpDownAddEditModalPage);
-    return FileFtpDownAddEditModalPage;
+    ], FileFtpUpAddEditModalPage);
+    return FileFtpUpAddEditModalPage;
 }());
 
-//# sourceMappingURL=file-ftp-down-add-edit-modal.js.map
+//# sourceMappingURL=file-ftp-up-add-edit-modal.js.map
 
 /***/ }),
 
-/***/ 555:
+/***/ 562:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileFtpDownAddEditModalPageModule", function() { return FileFtpDownAddEditModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FileFtpUpAddEditModalPageModule", function() { return FileFtpUpAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_ftp_down_add_edit_modal__ = __webpack_require__(1421);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_file_ftp_down_services_file_ftp_down_services__ = __webpack_require__(1046);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__file_ftp_up_add_edit_modal__ = __webpack_require__(1430);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_file_ftp_up_services_file_ftp_up_services__ = __webpack_require__(1051);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -725,29 +725,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var FileFtpDownAddEditModalPageModule = /** @class */ (function () {
-    function FileFtpDownAddEditModalPageModule() {
+var FileFtpUpAddEditModalPageModule = /** @class */ (function () {
+    function FileFtpUpAddEditModalPageModule() {
     }
-    FileFtpDownAddEditModalPageModule = __decorate([
+    FileFtpUpAddEditModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__file_ftp_down_add_edit_modal__["a" /* FileFtpDownAddEditModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__file_ftp_up_add_edit_modal__["a" /* FileFtpUpAddEditModalPage */],
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_file_ftp_down_services_file_ftp_down_services__["a" /* FileFtpDownServicesProvider */],
+            providers: [__WEBPACK_IMPORTED_MODULE_3__providers_file_ftp_up_services_file_ftp_up_services__["a" /* FileFtpUpServicesProvider */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__file_ftp_down_add_edit_modal__["a" /* FileFtpDownAddEditModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__file_ftp_up_add_edit_modal__["a" /* FileFtpUpAddEditModalPage */]),
             ],
         })
-    ], FileFtpDownAddEditModalPageModule);
-    return FileFtpDownAddEditModalPageModule;
+    ], FileFtpUpAddEditModalPageModule);
+    return FileFtpUpAddEditModalPageModule;
 }());
 
-//# sourceMappingURL=file-ftp-down-add-edit-modal.module.js.map
+//# sourceMappingURL=file-ftp-up-add-edit-modal.module.js.map
 
 /***/ }),
 
-/***/ 923:
+/***/ 927:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -762,7 +762,7 @@ var FtpRemoteViewModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 928:
+/***/ 932:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -791,18 +791,18 @@ var FtpDirectoryBrowserViewModel = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ 972:
+/***/ 977:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpDownViewModel; });
-var FileFtpDownViewModel = /** @class */ (function () {
-    function FileFtpDownViewModel() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FileFtpUpViewModel; });
+var FileFtpUpViewModel = /** @class */ (function () {
+    function FileFtpUpViewModel() {
     }
-    return FileFtpDownViewModel;
+    return FileFtpUpViewModel;
 }());
 
-//# sourceMappingURL=FileFtpDownViewModel.js.map
+//# sourceMappingURL=FileFtpUpViewModel.js.map
 
 /***/ })
 

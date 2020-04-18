@@ -1,14 +1,13 @@
 webpackJsonp([330],{
 
-/***/ 1594:
+/***/ 1608:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuDetailEditModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Model_ViewModel_ProgramPageMenuViewModel__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Model_ViewModel_ProgramPageViewModel__ = __webpack_require__(48);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PermissionAddEditModalPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_PermissionViewModel__ = __webpack_require__(66);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21,64 +20,65 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
- * Generated class for the MenuModalPage page.
+ * Generated class for the PermissionModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var MenuDetailEditModalPage = /** @class */ (function () {
-    function MenuDetailEditModalPage(navCtrl, navParams, viewCtrl) {
+var PermissionAddEditModalPage = /** @class */ (function () {
+    function PermissionAddEditModalPage(navCtrl, navParams, viewCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
-        this.title = "順序修改";
-        this.item = new __WEBPACK_IMPORTED_MODULE_0__Model_ViewModel_ProgramPageMenuViewModel__["a" /* ProgramPageMenuViewModel */]();
-        this.item.page_name = navParams.data.item.page_name;
-        this.item.menu_no = navParams.data.item.menu_no;
-        this.item.display_order_no = navParams.data.item.display_order_no;
+        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_PermissionViewModel__["a" /* PermissionViewModel */]();
+        this.item.permission_no = navParams.data.item.permission_no;
+        this.item.permission_desc = navParams.data.item.permission_desc;
+        this.item.permission_func_desc = navParams.data.item.permission_func_desc;
         this.item.creator = navParams.data.item.creator;
         this.item.create_time = navParams.data.item.create_time;
         this.item.modifier = navParams.data.item.modifier;
         this.item.last_update_time = navParams.data.item.last_update_time;
-        var pm = new __WEBPACK_IMPORTED_MODULE_3__Model_ViewModel_ProgramPageViewModel__["a" /* ProgramPageViewModel */]();
-        pm.page_desc = navParams.data.item.ProgramPageViewModel.page_desc;
-        this.item.ProgramPageViewModel = pm;
         this.CanEditPermission = navParams.data.CanEditPermission;
-        // console.log(this.item);
+        this.mode = navParams.data.mode;
+        if (this.mode === "PUT")
+            this.title = "修改";
+        else
+            this.title = "新增";
     }
-    MenuDetailEditModalPage.prototype.Save = function () {
+    PermissionAddEditModalPage.prototype.Save = function () {
         this.viewCtrl.dismiss(this.item);
     };
-    MenuDetailEditModalPage.prototype.close = function () {
+    PermissionAddEditModalPage.prototype.close = function () {
         this.viewCtrl.dismiss();
     };
-    MenuDetailEditModalPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad MenuModalPage');
+    PermissionAddEditModalPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad PermissionModalPage");
     };
-    MenuDetailEditModalPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-menu-detail-edit-modal',template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\menu-detail-edit-modal\menu-detail-edit-modal.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <ion-title>{{title}}</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n  <ion-content  padding>\n      <form #Form="ngForm">\n\n          <ion-row>\n            <ion-col>\n              <ion-item>\n                <ion-label stacked >選單編號</ion-label>\n                <ion-input type="text"   disabled=true name="menu_no"  [(ngModel)]="item.menu_no"\n                  required></ion-input>\n              </ion-item>\n\n            </ion-col>\n          </ion-row>\n          <ion-row>\n              <ion-col>\n                <ion-item>\n                  <ion-label stacked >功能名稱</ion-label>\n                  <ion-input type="text"  disabled=true name="page_name"  [(ngModel)]="item.page_name"\n                    required></ion-input>\n                </ion-item>\n\n              </ion-col>\n            </ion-row>\n            <ion-row>\n                <ion-col>\n                  <ion-item>\n                    <ion-label stacked >功能說明</ion-label>\n                    <ion-input type="text" disabled=true name="page_desc" [(ngModel)]="item.ProgramPageViewModel.page_desc"\n                      required></ion-input>\n                  </ion-item>\n\n                </ion-col>\n              </ion-row>\n              <ion-row>\n                  <ion-col>\n                    <ion-item>\n                      <ion-label stacked>顯示順序</ion-label>\n                      <ion-input type="number" [disabled]="CanEditPermission==false"  #display_order_no="ngModel"  name="display_order_no" [(ngModel)]="item.display_order_no"\n                        required></ion-input>\n                    </ion-item>\n                    <div *ngIf="display_order_no.errors?.required && display_order_no.touched" class="error-message">\n                        顯示順序不能為空白\n                    </div>\n                  </ion-col>\n                </ion-row>\n\n\n\n        </form>\n\n  </ion-content>\n  <ion-footer>\n    <ion-toolbar>\n      <ion-row>\n        <ion-col>\n          <div [ngClass]="[\'command\']">\n            <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n              <ion-icon name="backspace"></ion-icon>\n            </button>\n            <button small [disabled]="CanEditPermission==false"  title="確認" ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n              <ion-icon name="checkmark-circle"></ion-icon>\n            </button>\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-toolbar>\n  </ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\menu-detail-edit-modal\menu-detail-edit-modal.html"*/,
+    PermissionAddEditModalPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: "page-permission-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\permission-add-edit-modal\permission-add-edit-modal.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <ion-title>{{title}}</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n  <ion-content  padding>\n      <form #Form="ngForm">\n\n          <ion-row>\n            <ion-col>\n              <ion-item>\n                <ion-label stacked >權限編號</ion-label>\n                <ion-input type="text" [disabled]="CanEditPermission==false" [disabled]="mode==\'PUT\'" name="permission_no" #permission_no="ngModel" [(ngModel)]="item.permission_no"\n                  required></ion-input>\n              </ion-item>\n              <div *ngIf="permission_no.errors?.required && permission_no.touched" class="error-message">\n                權限編號不能為空白\n              </div>\n            </ion-col>\n          </ion-row>\n\n          <ion-row>\n            <ion-col>\n              <ion-item>\n                  <ion-label stacked >權限名稱</ion-label>\n                <ion-input type="text" [disabled]="CanEditPermission==false" name="permission_desc" #permission_desc="ngModel" [(ngModel)]="item.permission_desc"\n                  required></ion-input>\n              </ion-item>\n              <div *ngIf="permission_desc.errors?.required && permission_desc.touched" class="error-message">\n                權限名稱不能為空白\n              </div>\n            </ion-col>\n          </ion-row>\n\n          <ion-row>\n            <ion-col>\n              <ion-item>\n                  <ion-label stacked >權限描述</ion-label>\n                <ion-input type="text" [disabled]="CanEditPermission==false" name="permission_func_desc" #permission_func_desc="ngModel" [(ngModel)]="item.permission_func_desc"\n                  required></ion-input>\n              </ion-item>\n              <div *ngIf="permission_func_desc.errors?.required && permission_func_desc.touched" class="error-message">\n                權限描述不能為空白\n              </div>\n            </ion-col>\n          </ion-row>\n        </form>\n\n  </ion-content>\n  <ion-footer>\n    <ion-toolbar>\n      <ion-row>\n        <ion-col>\n          <div [ngClass]="[\'command\']">\n            <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n              <ion-icon name="backspace"></ion-icon>\n            </button>\n            <button small [disabled]="CanEditPermission==false" title="確認" ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n              <ion-icon name="checkmark-circle"></ion-icon>\n            </button>\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-toolbar>\n  </ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\permission-add-edit-modal\permission-add-edit-modal.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["p" /* ViewController */]])
-    ], MenuDetailEditModalPage);
-    return MenuDetailEditModalPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */]])
+    ], PermissionAddEditModalPage);
+    return PermissionAddEditModalPage;
 }());
 
-//# sourceMappingURL=menu-detail-edit-modal.js.map
+//# sourceMappingURL=permission-add-edit-modal.js.map
 
 /***/ }),
 
-/***/ 689:
+/***/ 700:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuDetailEditModalPageModule", function() { return MenuDetailEditModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PermissionAddEditModalPageModule", function() { return PermissionAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__menu_detail_edit_modal__ = __webpack_require__(1594);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__permission_add_edit_modal__ = __webpack_require__(1608);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -88,23 +88,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var MenuDetailEditModalPageModule = /** @class */ (function () {
-    function MenuDetailEditModalPageModule() {
+var PermissionAddEditModalPageModule = /** @class */ (function () {
+    function PermissionAddEditModalPageModule() {
     }
-    MenuDetailEditModalPageModule = __decorate([
+    PermissionAddEditModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__menu_detail_edit_modal__["a" /* MenuDetailEditModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__permission_add_edit_modal__["a" /* PermissionAddEditModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__menu_detail_edit_modal__["a" /* MenuDetailEditModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__permission_add_edit_modal__["a" /* PermissionAddEditModalPage */]),
             ],
         })
-    ], MenuDetailEditModalPageModule);
-    return MenuDetailEditModalPageModule;
+    ], PermissionAddEditModalPageModule);
+    return PermissionAddEditModalPageModule;
 }());
 
-//# sourceMappingURL=menu-detail-edit-modal.module.js.map
+//# sourceMappingURL=permission-add-edit-modal.module.js.map
 
 /***/ })
 

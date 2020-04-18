@@ -1,13 +1,52 @@
 webpackJsonp([327],{
 
-/***/ 1620:
+/***/ 738:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return QuoteColumnAddEditModalPage; });
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SchPageModule", function() { return SchPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_QuoteColumnViewModel__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sch__ = __webpack_require__(944);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var SchPageModule = /** @class */ (function () {
+    function SchPageModule() {
+    }
+    SchPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__sch__["a" /* SchPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sch__["a" /* SchPage */]),
+            ],
+        })
+    ], SchPageModule);
+    return SchPageModule;
+}());
+
+//# sourceMappingURL=sch.module.js.map
+
+/***/ }),
+
+/***/ 944:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_global_global__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_sch_services_sch_services__ = __webpack_require__(271);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,105 +59,63 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the QuoteColumnModalPage page.
+ * Generated class for the SchPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var QuoteColumnAddEditModalPage = /** @class */ (function () {
-    function QuoteColumnAddEditModalPage(navCtrl, navParams, viewCtrl, modalCtrl) {
+var SchPage = /** @class */ (function () {
+    function SchPage(navCtrl, global, SchServices) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.viewCtrl = viewCtrl;
-        this.modalCtrl = modalCtrl;
-        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_QuoteColumnViewModel__["a" /* QuoteColumnViewModel */]();
-        this.item.schemaname = navParams.data.item.schemaname;
-        this.item.tablename = navParams.data.item.tablename;
-        this.item.columnname = navParams.data.item.columnname;
-        this.item.creator = navParams.data.item.creator;
-        this.item.create_time = navParams.data.item.create_time;
-        this.item.modifier = navParams.data.item.modifier;
-        this.item.last_update_time = navParams.data.item.last_update_time;
-        this.mode = navParams.data.mode;
-        this.CanEditBatch = navParams.data.CanEditBatch;
-        if (this.mode === "POST")
-            this.title = "新增";
-        else
-            this.title = "更新";
+        this.global = global;
+        this.SchServices = SchServices;
     }
-    QuoteColumnAddEditModalPage.prototype.SelectColumn = function () {
+    SchPage.prototype.openNavSqlPage = function (item, method) {
         var _this = this;
-        var modal = this.modalCtrl.create("TableColumnExtSelectModalPage", {
-            item: this.item,
+        this.global.createLoader("連線中...");
+        this.global.loading.present().then(function () {
+            _this.SchServices.GetSqlAsync(item.sch_no, method).subscribe(function (data) {
+                if (data.DidError === true) {
+                    _this.global.dismissLoading();
+                    _this.global.showError(data.ErrorMessage);
+                }
+                else {
+                    _this.navCtrl.push("SqlPage", {
+                        sql_statement: data.Model,
+                        is_exec: false
+                    });
+                    _this.global.dismissLoading();
+                }
+            }, function (err) {
+                _this.global.dismissLoading();
+                _this.global.showError("無法連上WebAPI伺服器-" + err.message);
+            });
         });
-        modal.onDidDismiss(function (select_data) {
-            if (select_data == null)
-                return;
-            _this.item.columnname = select_data.columnname;
+    };
+    SchPage.prototype.openNavJobPage = function (item) {
+        var _this = this;
+        this.global.createLoader("連線中...");
+        this.global.loading.present().then(function () {
+            _this.navCtrl.push("JobBySchPage", { item: item });
         });
-        modal.present();
     };
-    QuoteColumnAddEditModalPage.prototype.Save = function () {
-        this.viewCtrl.dismiss(this.item);
+    SchPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad SchPage');
     };
-    QuoteColumnAddEditModalPage.prototype.close = function () {
-        this.viewCtrl.dismiss();
-    };
-    QuoteColumnAddEditModalPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad QuoteColumnAddEditModalPage");
-    };
-    QuoteColumnAddEditModalPage = __decorate([
+    SchPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: "page quote-column-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\quote-column-add-edit-modal\quote-column-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form #Form="ngForm" >\n\n    <ion-row>\n\n      <ion-col>\n        <ion-item>\n          <ion-label stacked>欄位名稱</ion-label>\n          <ion-input type="text" readonly=true [disabled]="mode==\'PUT\'"  name="columnname" #columnname="ngModel" [(ngModel)]="item.columnname" required></ion-input>\n\n          <button ion-button outline item-end *ngIf="CanEditBatch==true && mode==\'POST\'"  icon-right (click)="SelectColumn()">\n            <ion-icon name="arrow-dropdown"></ion-icon>\n          </button>\n        </ion-item>\n\n        <div *ngIf="columnname.errors && columnname.touched " class="error-message">\n          欄位名稱不能為空白\n        </div>\n      </ion-col>\n\n    </ion-row>\n\n\n\n\n  </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small [disabled]="CanEditBatch==false" title="確認" ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\quote-column-add-edit-modal\quote-column-add-edit-modal.html"*/
+            selector: 'page-sch',template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\sch\sch.html"*/'<!--\n  Generated template for the SchPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Sch</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\sch\sch.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ModalController */]])
-    ], QuoteColumnAddEditModalPage);
-    return QuoteColumnAddEditModalPage;
+            __WEBPACK_IMPORTED_MODULE_2__components_global_global__["a" /* GlobalComponent */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_sch_services_sch_services__["a" /* SchServicesProvider */]])
+    ], SchPage);
+    return SchPage;
 }());
 
-//# sourceMappingURL=quote-column-add-edit-modal.js.map
-
-/***/ }),
-
-/***/ 713:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuoteColumnAddEditModalPageModule", function() { return QuoteColumnAddEditModalPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__quote_column_add_edit_modal__ = __webpack_require__(1620);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-
-var QuoteColumnAddEditModalPageModule = /** @class */ (function () {
-    function QuoteColumnAddEditModalPageModule() {
-    }
-    QuoteColumnAddEditModalPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-            declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__quote_column_add_edit_modal__["a" /* QuoteColumnAddEditModalPage */],
-            ],
-            imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__quote_column_add_edit_modal__["a" /* QuoteColumnAddEditModalPage */]),
-            ],
-        })
-    ], QuoteColumnAddEditModalPageModule);
-    return QuoteColumnAddEditModalPageModule;
-}());
-
-//# sourceMappingURL=quote-column-add-edit-modal.module.js.map
+//# sourceMappingURL=sch.js.map
 
 /***/ })
 

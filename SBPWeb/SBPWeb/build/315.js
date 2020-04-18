@@ -1,13 +1,28 @@
 webpackJsonp([315],{
 
-/***/ 1668:
+/***/ 1029:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TableCopyModalPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_CopyViewModel__ = __webpack_require__(1669);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailAttachViewModel; });
+var EmailAttachViewModel = /** @class */ (function () {
+    function EmailAttachViewModel() {
+    }
+    return EmailAttachViewModel;
+}());
+
+//# sourceMappingURL=EmailAttachViewModel.js.map
+
+/***/ }),
+
+/***/ 1342:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailAttachAddEditModalPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_ionic_angular__ = __webpack_require__(63);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_EmailAttachViewModel__ = __webpack_require__(1029);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,74 +35,81 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
- * Generated class for the TableModalPage page.
+ * Generated class for the EmailAttachModalPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var TableCopyModalPage = /** @class */ (function () {
-    function TableCopyModalPage(navCtrl, navParams, viewCtrl) {
+var EmailAttachAddEditModalPage = /** @class */ (function () {
+    function EmailAttachAddEditModalPage(navCtrl, navParams, viewCtrl, loadingCtrl, modalCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.viewCtrl = viewCtrl;
-        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_CopyViewModel__["a" /* CopyViewModel */]();
-        this.item.src_schemaname = navParams.data.item.schemaname;
-        this.item.src_tablename = navParams.data.item.tablename;
-        this.item.to_schemaname = navParams.data.item.schemaname;
-        this.item.to_tablename = navParams.data.item.tablename;
-        this.item.to_tablecname = navParams.data.item.tablecname;
-        this.item.to_file_group = navParams.data.item.file_group;
-        this.title = "複製";
+        this.loadingCtrl = loadingCtrl;
+        this.modalCtrl = modalCtrl;
+        this.item = new __WEBPACK_IMPORTED_MODULE_2__Model_ViewModel_EmailAttachViewModel__["a" /* EmailAttachViewModel */]();
+        this.item.exec_group = navParams.data.item.exec_group;
+        this.item.exec_status_key = navParams.data.item.exec_status_key;
+        this.item.attach_exec_group = navParams.data.item.attach_exec_group;
+        this.item.creator = navParams.data.item.creator;
+        this.item.create_time = navParams.data.item.create_time;
+        this.item.modifier = navParams.data.item.modifier;
+        this.item.last_update_time = navParams.data.item.last_update_time;
+        this.item.email_id = navParams.data.item.email_id;
+        this.CanEditEmail = navParams.data.CanEditEmail;
+        this.mode = navParams.data.mode;
+        this.title = "Email附件設定";
     }
-    TableCopyModalPage.prototype.Save = function () {
+    EmailAttachAddEditModalPage.prototype.SelectBatchExecProgram = function () {
+        var _this = this;
+        var modal = this.modalCtrl.create("BatchExecProgramSelectModalPage", {
+            select_item: "attach_filelist_" + this.item.attach_exec_group,
+            ssis_program_set_no: "attach_filelist",
+        });
+        modal.onDidDismiss(function (select_data) {
+            if (select_data == null)
+                return;
+            _this.item.attach_exec_group = select_data.exec_group;
+        });
+        modal.present();
+    };
+    EmailAttachAddEditModalPage.prototype.Save = function () {
         this.viewCtrl.dismiss(this.item);
     };
-    TableCopyModalPage.prototype.close = function () {
+    EmailAttachAddEditModalPage.prototype.close = function () {
         this.viewCtrl.dismiss();
     };
-    TableCopyModalPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad TableModalPage");
+    EmailAttachAddEditModalPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad EmailAttachModalPage");
     };
-    TableCopyModalPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: "page-table-copy-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\table-copy-modal\table-copy-modal.html"*/'<ion-header>\n\n    <ion-navbar>\n\n      <ion-title>{{title}}</ion-title>\n    </ion-navbar>\n  </ion-header>\n\n  <ion-content padding>\n    <form #Form="ngForm" >\n\n      <ion-row>\n          <ion-col col-12 col-sm-6 >\n              <ion-item>\n                <ion-label stacked>來源結構描述</ion-label>\n                <ion-input type="text" disabled="true" name="src_schemaname" #src_schemaname="ngModel" [(ngModel)]="item.src_schemaname" required></ion-input>\n              </ion-item>\n\n            </ion-col>\n        <ion-col col-12 col-sm-6>\n          <ion-item>\n            <ion-label stacked>來源資料表名稱</ion-label>\n            <ion-input type="text" disabled="true" name="src_tablename" #src_tablename="ngModel" [(ngModel)]="item.src_tablename" required></ion-input>\n          </ion-item>\n\n        </ion-col>\n\n      </ion-row>\n      <ion-row>\n          <ion-col col-12 col-sm-6 >\n              <ion-item>\n                <ion-label stacked>結構描述</ion-label>\n                <ion-input type="text" [disabled]="CanEditTable==false || mode==\'PUT\'" name="to_schemaname" #to_schemaname="ngModel" [(ngModel)]="item.to_schemaname" required></ion-input>\n              </ion-item>\n              <div *ngIf="to_schemaname.errors && to_schemaname.touched" class="error-message">\n                  結構描述不能為空白\n              </div>\n            </ion-col>\n        <ion-col col-12 col-sm-6>\n          <ion-item>\n            <ion-label stacked>資料表名稱</ion-label>\n            <ion-input type="text" [disabled]="CanEditTable==false || mode==\'PUT\'" name="to_tablename" #to_tablename="ngModel" [(ngModel)]="item.to_tablename" required></ion-input>\n          </ion-item>\n          <div *ngIf="to_tablename.errors && to_tablename.touched" class="error-message">\n            資料表名稱不能為空白\n          </div>\n        </ion-col>\n\n      </ion-row>\n      <ion-row>\n        <ion-col col-12>\n          <ion-item>\n            <ion-label stacked>資料表說明</ion-label>\n            <ion-input type="text" [disabled]="CanEditTable==false" name="to_tablecname" #to_tablecname="ngModel" [(ngModel)]="item.to_tablecname" required></ion-input>\n          </ion-item>\n          <div *ngIf="to_tablecname.errors && to_tablecname.touched" class="error-message">\n            資料表說明不能為空白\n          </div>\n        </ion-col>\n\n      </ion-row>\n      <ion-row>\n\n        <ion-col col-12  col-sm-6>\n            <ion-item>\n              <ion-label stacked>檔案群組</ion-label>\n              <ion-input type="text" [disabled]="CanEditTable==false" name="to_file_group" #to_file_group="ngModel" [(ngModel)]="item.to_file_group" required></ion-input>\n\n            </ion-item>\n            <div *ngIf="to_file_group.errors && to_file_group.touched" class="error-message">\n              檔案群組不能為空白\n            </div>\n          </ion-col>\n      </ion-row>\n\n    </form>\n\n  </ion-content>\n  <ion-footer>\n    <ion-toolbar>\n      <ion-row>\n        <ion-col>\n          <div [ngClass]="[\'command\']">\n            <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n              <ion-icon name="backspace"></ion-icon>\n            </button>\n            <button small [disabled]="CanEditTable==false" title="確認" ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n              <ion-icon name="checkmark-circle"></ion-icon>\n            </button>\n          </div>\n        </ion-col>\n      </ion-row>\n    </ion-toolbar>\n  </ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\table-copy-modal\table-copy-modal.html"*/
+    EmailAttachAddEditModalPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
+            selector: "page-email-attach-add-edit-modal",template:/*ion-inline-start:"C:\jones\ionic\prod\src\pages\email-attach-add-edit-modal\email-attach-add-edit-modal.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>{{title}}</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content  padding>\n    <form #Form="ngForm">\n\n      <ion-row>\n        <ion-col >\n          <ion-item>\n            <ion-label stacked>附件轉檔群組</ion-label>\n            <ion-input type="text" [disabled]="CanEditEmail==false || mode==\'PUT\'" name="attach_exec_group" #attach_exec_group="ngModel" [(ngModel)]="item.attach_exec_group"\n              required maxlength="30"></ion-input>\n              <button ion-button outline item-end *ngIf="CanEditEmail==true" icon-right (click)="SelectBatchExecProgram()">\n                <ion-icon name="arrow-dropdown"></ion-icon>\n              </button>\n          </ion-item>\n          <div *ngIf="attach_exec_group.errors && attach_exec_group.touched" class="error-message">\n            附件轉檔群組不能為空白\n          </div>\n        </ion-col>\n\n      </ion-row>\n\n      </form>\n\n</ion-content>\n<ion-footer>\n  <ion-toolbar>\n    <ion-row>\n      <ion-col>\n        <div [ngClass]="[\'command\']">\n          <button small title="取消" ion-button color="dark" icon-left (click)="close()">\n            <ion-icon name="backspace"></ion-icon>\n          </button>\n          <button small title="確認" [disabled]="CanEditEmail==false || mode==\'PUT\'"  ion-button color="dark" [disabled]="!Form.form.valid" icon-left (click)="Save()">\n            <ion-icon name="checkmark-circle"></ion-icon>\n          </button>\n        </div>\n      </ion-col>\n    </ion-row>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"C:\jones\ionic\prod\src\pages\email-attach-add-edit-modal\email-attach-add-edit-modal.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */]])
-    ], TableCopyModalPage);
-    return TableCopyModalPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["m" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["p" /* ViewController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_0_ionic_angular__["j" /* ModalController */]])
+    ], EmailAttachAddEditModalPage);
+    return EmailAttachAddEditModalPage;
 }());
 
-//# sourceMappingURL=table-copy-modal.js.map
+//# sourceMappingURL=email-attach-add-edit-modal.js.map
 
 /***/ }),
 
-/***/ 1669:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CopyViewModel; });
-var CopyViewModel = /** @class */ (function () {
-    function CopyViewModel() {
-    }
-    return CopyViewModel;
-}());
-
-//# sourceMappingURL=CopyViewModel.js.map
-
-/***/ }),
-
-/***/ 748:
+/***/ 495:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TableCopyModalPageModule", function() { return TableCopyModalPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmailAttachAddEditModalPageModule", function() { return EmailAttachAddEditModalPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(63);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__table_copy_modal__ = __webpack_require__(1668);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__email_attach_add_edit_modal__ = __webpack_require__(1342);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -97,23 +119,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TableCopyModalPageModule = /** @class */ (function () {
-    function TableCopyModalPageModule() {
+var EmailAttachAddEditModalPageModule = /** @class */ (function () {
+    function EmailAttachAddEditModalPageModule() {
     }
-    TableCopyModalPageModule = __decorate([
+    EmailAttachAddEditModalPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__table_copy_modal__["a" /* TableCopyModalPage */],
+                __WEBPACK_IMPORTED_MODULE_2__email_attach_add_edit_modal__["a" /* EmailAttachAddEditModalPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__table_copy_modal__["a" /* TableCopyModalPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__email_attach_add_edit_modal__["a" /* EmailAttachAddEditModalPage */]),
             ],
         })
-    ], TableCopyModalPageModule);
-    return TableCopyModalPageModule;
+    ], EmailAttachAddEditModalPageModule);
+    return EmailAttachAddEditModalPageModule;
 }());
 
-//# sourceMappingURL=table-copy-modal.module.js.map
+//# sourceMappingURL=email-attach-add-edit-modal.module.js.map
 
 /***/ })
 
